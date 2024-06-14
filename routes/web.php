@@ -19,5 +19,5 @@ Route::get('/', function () {
 });
 
 
-Route::get('/index', [WmaController::class, 'index'])
-    ->name('index');
+Route::get('/{language}/index', [WmaController::class, 'index'])
+    ->name('home');
