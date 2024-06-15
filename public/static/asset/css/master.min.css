@@ -18436,7 +18436,7 @@ table.dataTable.no-footer {
 }
 
 .bg-dark {
-    background: #006f8b !important;
+    background: #f89629 !important;
 }
 
 .bg-dark-2 {
@@ -18749,7 +18749,7 @@ button.white-purple {
 button.white-purple:hover {
     color: #d79e12;
     background: #fff;
-    border-color: #006f8b;
+    border-color: #f89629;
 }
 
 .a-link.white-primary,
@@ -18776,7 +18776,7 @@ button.white-primary:hover {
 
 .section-title {
     font-family: Verdana, Geneva, sans-serif;
-    color: #006f8b;
+    color: #f89629;
     font-size: 1.575rem;
     /* font-size: 1.875rem; */
     font-weight: 500 !important
@@ -18804,7 +18804,7 @@ button.white-primary:hover {
 }
 
 .title {
-    color: #006f8b;
+    color: #f89629;
     margin-bottom: 2rem;
     font-weight: 700
 }
@@ -20654,7 +20654,7 @@ header .top_nav li:not(:last-child) {
 
 header .top-list li a,
 header .top_nav li a {
-    color: #006f8b;
+    color: #f89629;
     display: inline-block;
     padding: 6px;
     font-weight: 900;
@@ -20819,7 +20819,7 @@ header .top-middle .logo-container {
 }
 
 header .top-bottom .navbar {
-    background: #006f8b !important
+    background: #f89629 !important
 }
 
 header .top-bottom .navbar .navbar-nav>li {
@@ -21097,7 +21097,7 @@ header .top-bottom .navbar .search .search-form .form-inline input.form-control:
 
 .tirdo-footer {
     font-size: 14px;
-    background: #006f8b;
+    background: #f89629;
     padding: 0
 }
 
@@ -21146,7 +21146,7 @@ header .top-bottom .navbar .search .search-form .form-inline input.form-control:
 }
 
 .tirdo-footer .credit {
-    background-color: #005b72;
+    background-color: #eaa558;
     padding: 15px 0;
     color: #212121;
     font: 400 15px/30px;
@@ -24284,7 +24284,7 @@ div.contact form button.btn {
 .core-home-section .core-activity .div-link .core-activity-inside button {
     width: 100%;
     color: #fefefe;
-    background-color: #006f8b;
+    background-color: #f89629;
     padding: 0 1.5rem;
     transition: all .2s;
     height: 80px;
@@ -25163,13 +25163,13 @@ div.contact form button.btn {
     bottom: -60px;
     left: -25%;
     border: 15px solid transparent;
-    border-top-color: #006f8b;
+    border-top-color: #f89629;
 }
 
 .news-tab nav div a.nav-item.nav-link:focus,
 .news-tab nav div a.nav-item.nav-link:hover {
     border: none;
-    background: #006f8b;
+    background: #f89629;
     color: #fff;
     border-radius: 0;
     transition: background .2s linear
@@ -25179,8 +25179,8 @@ div.contact form button.btn {
     background: #fdfdfd;
     line-height: 25px;
     border: 1px solid #ddd;
-    border-top: 5px solid #006f8b;
-    border-bottom: 5px solid #006f8b;
+    border-top: 5px solid #f89629;
+    border-bottom: 5px solid #f89629;
     padding: 30px 25px;
     height: auto;
     overflow-x: hidden;
@@ -25234,7 +25234,7 @@ div.contact form button.btn {
     color: #333;
     border: none;
     transition: all .9s ease;
-    border-right: 1px solid #006f8b;
+    border-right: 1px solid #f89629;
 }
 
 .nemc-news #myCarousel .carousel-inner {

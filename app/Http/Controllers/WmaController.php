@@ -25,4 +25,6 @@ class WmaController extends Controller
 
         return view($templatePath, $data);
     }
+
+    
 }

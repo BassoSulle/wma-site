@@ -11,7 +11,7 @@
     <meta name="theme-color" content="#2d4a84">
     <meta name="apple-mobile-web-app-status-bar-style" content="#2d4a84">
 
-    <title> TIRDO | Home
+    <title> WMA | Home
     </title>
 
     <!-- favicons -->

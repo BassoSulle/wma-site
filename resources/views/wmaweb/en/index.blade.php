@@ -88,7 +88,7 @@
                         <div class="col-md-5">
                             <div class="card-body">
                             <div class="">
-                              <h5 class="title mb-2"><br>Welcome to TIRDO</h5>
+                              <h5 class="title mb-2"><br>Welcome to WMA</h5>
                               <small><i></i></small>
                             </div>
                             <div class="col-12 px-0 my-2">

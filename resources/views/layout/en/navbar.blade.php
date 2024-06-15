@@ -88,11 +88,10 @@
                                 class="mx-auto img-fluid emblem"></a>
                     </div>
 
-                    <div class="col-md-8 col-sm-8 col-xs-8 text-center pt-4 pt-xs-0">
-                        <h2 class="mb-0 title title-main" style="color: #1e4594">TANZANIA INDUSTRIAL RESEARCH AND
-                            DEVELOPMENT ORGANIZATION </h2>
-                        <h6 class="title-desc pt-2" style="color: black"><b><i>TIRDO for sustainable industrial
-                                    development</i></b></h6>
+                    <div class="col-md-8 col-sm-8 col-xs-8 text-center pt-2 pt-xs-0">
+                        <h5 class="" style="color: #1e4594">The united republic of Tanzania </h5>
+                        <h3 class="mb-0 title title-main" style="color: black"><b><i> WEIGHT AND MEASURES AGENCY</i></b></h3>
+                        <h3 class="mb-0 title title-main pt-2" style="color: black"><b><i> (WMA)</i></b></h3>
                     </div>
 
                     <div class="col-md-2 col-sm-2 col-xs-2 text-right pt-1 pr-0 logo-container"><img
@@ -126,9 +125,12 @@
                             <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
                                     data-toggle='dropdown'>About Us</a>
                                 <ul class='dropdown-menu'>
-                                    {{-- <li><a class='dropdown-item' href="{{ route('missionvission', ['language' => $current_language]) }}">Mission and vision</a></li>
+                                   <li><a class='dropdown-item' href="#">Background</a></li>
+                                   <li><a class='dropdown-item' href="#">Mission and vision</a></li>
+                                   <li><a class='dropdown-item' href="#">Core Value</a></li>
+                                   <li><a class='dropdown-item' href="#">Mandete and Roles</a></li>
 
-                                    <li><a class='dropdown-item' href="{{ route('organizationstructure', ['language' => $current_language]) }}">Organization Structure</a>
+                                     {{-- <li><a class='dropdown-item' href="{{ route('organizationstructure', ['language' => $current_language]) }}">Organization Structure</a>
                                     </li>
                                     <li><a class='dropdown-item' href="{{ route('boarddirectors', ['language' => $current_language]) }}">Board of Directors</a>
                                     </li>
@@ -141,12 +143,12 @@
                                 </ul>
                             </li>
                             <li class='nav-item dropdown'><a href='#'
-                                    class='nav-link dropdown-toggle'data-toggle='dropdown'>Departments</a>
+                                    class='nav-link dropdown-toggle'data-toggle='dropdown'>Administration</a>
                                 <ul class='dropdown-menu'>
-                                    <li class='nav-item dropdown-submenu'>
-                                        <a class='dropdown-item dropdown-toggle' data-toggle='dropdown'
-                                            href='#'>Industry and Research </a>
-                                        <ul class='dropdown-menu'>
+                                    <li class='nav-item '>
+                                        <a class='dropdown-item '
+                                            href='#'>Organization Structure </a>
+                                        {{-- <ul class='dropdown-menu'> --}}
                                             {{-- <li><a class='dropdown-item'
                                                     href="{{ route('environment', ['language' => $current_language]) }}">Environment</a>
                                             </li>
@@ -156,65 +158,34 @@
                                             <li><a class='dropdown-item'
                                                     href="{{ route('industrialchemistry', ['language' => $current_language]) }}">Industrial
                                                     Chemistry</a></li> --}}
-                                        </ul>
+                                        {{-- </ul> --}}
                                     </li>
-                                    <li class='nav-item dropdown-submenu'>
-                                        <a class='dropdown-item dropdown-toggle' data-toggle='dropdown'
-                                            href='#'>Engineering Development</a>
-                                        <ul class='dropdown-menu'>
-                                            {{-- <li><a class='dropdown-item'
-                                                    href="{{ route('energy', ['language' => $current_language]) }}">Energy</a>
-                                            </li>
-                                            <li><a class='dropdown-item'
-                                                    href="{{ route('materialsciencetech', ['language' => $current_language]) }}">Material
-                                                    Science & Technology</a></li>
-                                            <li><a class='dropdown-item'
-                                                    href="{{ route('textilelatherchemistry', ['language' => $current_language]) }}">Textile
-                                                    & Leather Technologies</a></li> --}}
-                                        </ul>
+                                    <li class='nav-item '>
+                                        <a class='dropdown-item '
+                                            href='#'>Directorate </a>
                                     </li>
-                                    <li class='nav-item dropdown-submenu'>
-                                        <a class='dropdown-item dropdown-toggle mr-2' data-toggle='dropdown'
-                                            href='#'>ICT and Technology Development</a>
-                                        <ul class='dropdown-menu'>
-                                            {{-- <li><a class='dropdown-item'
-                                                    href="{{ route('ict', ['language' => $current_language]) }}">ICT</a>
-                                            </li>
-                                            <li><a class='dropdown-item'
-                                                    href="{{ route('instrumentation', ['language' => $current_language]) }}">Instrumentation</a>
-                                            </li>
-                                            <li><a class='dropdown-item'
-                                                    href="{{ route('technology', ['language' => $current_language]) }}">Technology
-                                                    Transfer</i></a></li> --}}
-                                        </ul>
+                                    <li class='nav-item '>
+                                        <a class='dropdown-item '
+                                            href='#'>Section </a>
                                     </li>
-                                    <li class='nav-item dropdown-submenu'>
-                                        <a class='dropdown-item dropdown-toggle' data-toggle='dropdown'
-                                            href='#'>Finance </a>
-                                        <ul class='dropdown-menu'>
-                                            {{-- <li><a class='dropdown-item'
-                                                    href="{{ route('finance', ['language' => $current_language]) }}">Finance</a>
-                                            </li> --}}
-                                        </ul>
+                                    <li class='nav-item '>
+                                        <a class='dropdown-item '
+                                            href='#'>Unit </a>
                                     </li>
-                                    <li class='nav-item dropdown-submenu'>
-                                        <a class='dropdown-item dropdown-toggle' data-toggle='dropdown'
-                                            href='#'>Human Resource </a>
-                                        <ul class='dropdown-menu'>
-                                            <li><a class='dropdown-item' href='#'>Human resource division <i
-                                                        class="fas fa-lock"></i></a></li>
-                                            <li><a class='dropdown-item' href='#'>Administration division <i
-                                                        class="fas fa-lock"></i></a></li>
-                                            <li><a class='dropdown-item' href='#'>Estate division <i
-                                                        class="fas fa-lock"></i></a></li>
-                                        </ul>
+                                    <li class='nav-item '>
+                                        <a class='dropdown-item '
+                                            href='#'>Board Member </a>
+                                    </li>
+                                    <li class='nav-item '>
+                                        <a class='dropdown-item '
+                                            href='#'>WMA Managements </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
-                                    data-toggle='dropdown'>COMSATS Center</a>
-                                <ul class='dropdown-menu'>
-                                    {{-- <li><a class='dropdown-item'
+                            <li class='nav-item '><a href='#' class='nav-link '
+                                    data-toggle='dropdown'>W&M Practitioners</a>
+                                {{-- <ul class='dropdown-menu'>
+                                    <li><a class='dropdown-item'
                                             href="{{ route('background', ['language' => $current_language]) }}">Background</a>
                                     </li>
                                     <li><a class='dropdown-item'
@@ -222,13 +193,13 @@
                                             Objectives</a></li>
                                     <li><a class='dropdown-item'
                                             href="{{ route('centreactivities', ['language' => $current_language]) }}">Center
-                                            Activities</a></li> --}}
-                                </ul>
+                                            Activities</a></li>
+                                </ul> --}}
                             </li>
-                            <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
-                                    data-toggle='dropdown'>Services</a>
-                                <ul class='dropdown-menu'>
-                                    {{-- <li><a class='dropdown-item'
+                            <li class='nav-item dropdown'><a href='#' class='nav-link'
+                                    data-toggle='dropdown'>Forms</a>
+                                {{-- <ul class='dropdown-menu'>
+                                    <li><a class='dropdown-item'
                                             href="{{ route('research', ['language' => $current_language]) }}">Research</a>
                                     </li>
                                     <li><a class='dropdown-item'
@@ -248,7 +219,7 @@
                                             Installation and Configuration</a></li>
                                     <li><a class='dropdown-item'
                                             href="{{ route('cyber', ['language' => $current_language]) }}">Cybersecurity
-                                            and Software Development</a></li> --}}
+                                            and Software Development</a></li>
                                     <li><a class='dropdown-item' href="#">Laboratory analytical Services <i
                                                 class="fas fa-lock"></i></a></li>
                                     <li><a class='dropdown-item' href="#">Equipment Repair and maintenance <i
@@ -256,65 +227,63 @@
                                     <li><a class='dropdown-item' href="#">Training and skill development
                                             services <i class="fas fa-lock"></i></a></li>
 
-                                </ul>
+                                </ul> --}}
                             </li>
 
                             <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
-                                    data-toggle='dropdown'>T-Hub</a>
-                                <ul class='dropdown-menu'>
-                                    {{-- <li><a class='dropdown-item'
-                                            href="{{ route('about_T_hub', ['language' => $current_language]) }}">About
-                                            T-Hub</a></li>
-                                    <li><a class='dropdown-item'
-                                            href="{{ route('thubservices', ['language' => $current_language]) }}">T-Hub
-                                            Services</a></li>
-                                    <li><a class='dropdown-item'
-                                            href="{{ route('whythub', ['language' => $current_language]) }}">Why
-                                            T-Hub</a></li>
-                                    <li class="nav-item dropdown-submenu">
-                                        <a class='dropdown-item dropdown-toggle mr-2' data-toggle='dropdown'
-                                            href='#'>Companies under T-hub</a>
-                                        <ul class='dropdown-menu'>
-                                            <li><a class='dropdown-item'
-                                                    href="{{ route('innovasie', ['language' => $current_language]) }}">Innovasie</a>
-                                            </li>
-                                            <li><a class='dropdown-item'
-                                                    href="{{ route('awamupay', ['language' => $current_language]) }}">Ammacom</a>
-                                            </li>
-                                            <li><a class='dropdown-item'
-                                                    href="{{ route('albetus', ['language' => $current_language]) }}">Albetus
-                                                    Technologies</a></li>
-                                            <li><a class='dropdown-item'
-                                                    href="{{ route('bivatekafrica', ['language' => $current_language]) }}">Bivatek
-                                                    Africa</a></li>
-                                            <li><a class='dropdown-item'
-                                                    href="{{ route('amanisolar', ['language' => $current_language]) }}">Amani
-                                                    Solar</a></li>
-                                            <li><a class='dropdown-item'
-                                                    href="{{ route('olas', ['language' => $current_language]) }}">Olas</a>
-                                            </li>
-                                        </ul>
-                                    </li> --}}
-                                </ul>
+                                data-toggle='dropdown'>Media Center</a>
+                            <ul class='dropdown-menu'>
+                                <li><a class='dropdown-item'
+                                        href="#">Photo Gallery</a></li>
+                                <li><a class='dropdown-item'
+                                        href="#">Video Gallery</a></li>
+                                <li><a class='dropdown-item'
+                                        href="#">Audio Gallery</a></li>
+                                <li><a class='dropdown-item'
+                                            href="#">Press Release</a></li>
+                                <li><a class='dropdown-item'
+                                    href="#">Special Supplements</a></li>
+                                <li><a class='dropdown-item'
+                                        href="#">Speech</a></li>
+                                <li><a class='dropdown-item'
+                                    href="#">Brochures</a></li>
+                                <li><a class='dropdown-item'
+                                    href="#">Posters</a></li>
+                                <li><a class='dropdown-item'
+                                    href="#">News Letter</a></li>
+                            </ul>
+                        </li>
+                            <li class='nav-item dropdown'><a href='#' class='nav-link'
+                                    data-toggle='dropdown'>Tenders</a>
+
+                            </li>
+                            <li class='nav-item dropdown'><a href='#' class='nav-link'
+                                data-toggle='dropdown'>Regional Office</a>
+
+                            </li>
+                            <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
+                                data-toggle='dropdown'>Audit Report</a>
+                            <ul class='dropdown-menu'>
+                                <li><a class='dropdown-item'
+                                        href="#">Audit Report 2018-2019</a></li>
+                                <li><a class='dropdown-item'
+                                        href="#">Audit Report 2019-2020</a></li>
+                                <li><a class='dropdown-item'
+                                        href="#">Audit Report 2020-2021</a></li>
+                                <li><a class='dropdown-item'
+                                            href="#">Audit Report 2021-2022</a></li>
+                                <li><a class='dropdown-item'
+                                    href="#">Audit Report 2022-2023</a></li>
+                            </ul>
+                        </li>
+                            <li class='nav-item dropdown'><a href='https://emrejesho.gov.go.tz/tenganisha_aina_za_walalamikaji?PQI70xlXGIGpQajIcg16EMX74XYFJZf9NV6nrjnzNiHgtt6Iqhlm6VYeXW2vhplQ&to_this_inst=415$PQI70xlXGIGpQajIcg16EMX74XYFJZf9NV6nrjnzNiHgtt6Iqhlm6VYeXW2vhplQ'
+                                class='nav-link'
+                                data-toggle='dropdown'>e-Mrejesho</a>
+
                             </li>
 
-                            <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
-                                    data-toggle='dropdown'>Industrial Information Center</a>
-                                <ul class='dropdown-menu'>
-                                    {{-- <li><a class='dropdown-item'
-                                            href="{{ route('industrialbackground', ['language' => $current_language]) }}">Center
-                                            Background</a></li>
-                                    <li><a class='dropdown-item'
-                                            href="{{ route('industrialobjectives', ['language' => $current_language]) }}">Center
-                                            Objectives</a></li>
-                                    <li><a class='dropdown-item'
-                                            href="{{ route('industrial_activities', ['language' => $current_language]) }}">Center
-                                            Activities</a></li> --}}
-                                </ul>
-                            </li>
-
-                            <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
-                                    data-toggle='dropdown'>e-Services</a>
+                            {{-- <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
+                                    data-toggle='dropdown'>e-Mrejesho</a>
                                 <ul class='dropdown-menu'>
                                     <li><a class='dropdown-item' href='https://eoffice.gov.go.tz/users/login'
                                             target="_blank">e-Office</a></li>
@@ -327,14 +296,14 @@
                                             href='https://safari.gov.go.tz/index.php/user/auth/login'
                                             target="_blank">e-Vibali</a></li>
                                 </ul>
-                            </li>
+                            </li> --}}
 
                             <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
                                     data-toggle='dropdown'>Documents</a>
                                 <ul class='dropdown-menu'>
-                                    {{-- <li><a class="dropdown-item"
-                                            href="{{ route('publications', ['language' => $current_language]) }}">Publications</a>
-                                    </li> --}}
+                                    <li><a class="dropdown-item"
+                                            href="#">Publications</a>
+                                    </li>
                                 </ul>
                             </li>
 
