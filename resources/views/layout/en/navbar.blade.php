@@ -94,9 +94,10 @@
                         <h3 class="mb-0 title title-main pt-2" style="color: black"><b><i> (WMA)</i></b></h3>
                     </div>
 
-                    <div class="col-md-2 col-sm-2 col-xs-2 text-right pt-1 pr-0 logo-container"><img
-                            src="{{ asset('static/asset/images/logo.jpg') }}" alt="TIRDO Logo"
-                            class="img-fluid client-logo"></div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 text-right pt-1 pr-0 logo-container position-relative">
+                        <img style="width: 140px; height: 120px;" src="{{ asset('static/asset/images/flag.png') }}" alt="Tz flag" class="img-fluid position-absolute bottom-0 left-0 w-100 h-100">
+                        <img style="width: 110px; height: 90px; border-radius: 5px; padding: 5px;  0 0 10px rgba(0, 0, 0, 0.2);" src="{{ asset('static/asset/images/logo.png') }}" alt="WMA Logo" class="img-fluid position-absolute bottom-0 left-0">
+                    </div>
                 </div>
             </div>
         </div>
