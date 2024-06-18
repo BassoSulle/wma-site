@@ -4,15 +4,13 @@
          <div class="col-lg-3 col-sm-6 px-3 no-padding-sm footer-content shadow-right">
 
              <div class="col-12">
-                 <h5 class="footer-heading">Contact Us</h5>
-                 <p class="py-0">Tanzania Industrial Research and Development Organization</p>
+                 <h5 class="footer-heading">Address</h5>
+                 <p class="py-0">Weights and Measures Agency </p>
                  <p class="py-0">
-                     Kimweri Avenue,<br>
-                     Msasani TIRDO Complex,<br>
-                     P.O.BOX 23235.<br>
-                     Dar es Salaam, Tanzania.<br>
-                     +255-22-2666034 / 2668822<br></p>
-                 <p class="py-0">info@tirdo.or.tz</p>
+                    P.O BOX 313, Dar es Salaam,<br>
+                     NSSF House (Mafao), 7th floor Fax : Namba bila Malipo: 0800 110097 <br>
+                     Phone No : +255 (022) 2928158<br>
+                 <p class="py-0">Email : info@wma.go.tz</p>
              </div>
              <div class="col-12 px-3 pt-3">
                  <!-- Boxicons -->
@@ -53,27 +51,20 @@
                                          <a href="https://www.ikulu.go.tz/" target="_blank">State House</a>
                                      </li> <br>
                                      <li class="list-inline-item pr-1 py-2">
-                                         <a href="https://www.vpo.go.tz/" target="_blank">Vice Presidents Office
+                                         <a href="https://www.vpo.go.tz/" target="_blank">Zanzibar Bureau Standard
                                              (VPO)</a>
                                      </li> <br>
                                      <li class="list-inline-item pr-1 py-2">
-                                         <a href="https://www.pmo.go.tz/" target="_blank">Prime Ministers Office
-                                             (PMO)</a>
+                                         <a href="https://www.pmo.go.tz/" target="_blank">Small Industrial Development Organization(SIDO)
                                      </li>
                                      <li class="list-inline-item pr-1 py-2">
-                                         <a href="https://www.viwanda.go.tz/" target="_blank">Ministry of Industry and
-                                             Trade</a>
+                                         <a href="https://www.viwanda.go.tz/" target="_blank">Ministry of Industry,
+                                             Trade and Investiment</a>
                                      </li> <br>
                                      <li class="list-inline-item pr-1 py-2">
-                                         <a href="https://business.go.tz/" target="_blank">Business Portal</a>
+                                         <a href="https://business.go.tz/" target="_blank">International Organization of Legal Metrology </a>
                                      </li> <br>
-                                     <li class="list-inline-item pr-1 py-2">
-                                         <a href="https://www.tanzania.go.tz/" target="_blank">Tanzania Government
-                                             Portal</a>
-                                     </li> <br>
-                                     <li class="list-inline-item pr-1 py-2">
-                                         <a href="http://tic.go.tz/" target="_blank">Tanzania Investment Centre</a>
-                                     </li> <br>
+                                     <br>
                                  </ul>
                              </div>
 
@@ -82,26 +73,26 @@
                                  <h5 class="footer-heading">Quick Links</h5>
                                  <ul class="list-inline text-left">
                                      <li class="list-inline-item pr-1 py-2"><a
-                                             href="https://mail.tirdo.or.tz">Government Mailing System</a>
+                                             href="https://mail.tirdo.or.tz">General Procurement Notice</a>
                                      </li>
                                      <br>
                                      <li class="list-inline-item pr-1 py-2"><a
-                                             href="https://eoffice.gov.go.tz/users/login">e-Office Management
+                                             href="https://eoffice.gov.go.tz/users/login">WMA Acts
                                              System</a></li>
                                      <br>
                                      <li class="list-inline-item pr-1 py-2"><a
                                              href="https://emrejesho.gov.go.tz/tenganisha_aina_za_walalamikaji?PQI70xlXGIGpQajIcg16EMX74XYFJZf9NV6nrjnzNiHgtt6Iqhlm6VYeXW2vhplQ&to_this_inst=415$PQI70xlXGIGpQajIcg16EMX74XYFJZf9NV6nrjnzNiHgtt6Iqhlm6VYeXW2vhplQ">eMrejesho</a>
                                      </li>
                                      <br>
-                                     <li class="list-inline-item pr-1 py-2"><a href="https://cti.co.tz/">Confederation
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://cti.co.tz/">Speeches
                                              Tanzania Industries</a></li>
                                      <br>
                                      <li class="list-inline-item pr-1 py-2"><a
-                                             href="https://safari.gov.go.tz/index.php/user/auth/login">e-Vibali
+                                             href="https://safari.gov.go.tz/index.php/user/auth/login">Technical manuals
                                              System</a></li>
                                      <br>
                                      <li class="list-inline-item pr-1 py-2"><a
-                                             href="https://salaryslip.mof.go.tz/Account/Login?ReturnUrl=%2F">Salary
+                                             href="https://salaryslip.mof.go.tz/Account/Login?ReturnUrl=%2F">Client Service Charter
                                              Slip Portal</a></li>
                                      <br>
                                  </ul>

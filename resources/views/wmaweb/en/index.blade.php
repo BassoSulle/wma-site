@@ -177,7 +177,7 @@
 
                 <div class="row px-xs-3">
                     <div class="col-md-8 my-3">
-                        <h5 class="my-xs-2 text-center text-xs-center section-title"> <b>TIRDO Research Products</b> </h5>
+                        <h5 class="my-xs-2 text-center text-xs-center section-title"> <b>TOP NEWS</b> </h5>
 
                         <div class="row mt-4">
                         {{-- @foreach($resources_products as $product) --}}
@@ -197,30 +197,30 @@
                                         height: auto;
                                     }
                                 </style>
-                                {{-- <div class="image-wrapper">
-                                    <img src="{{ asset('storage/'.$product->img) }}" class="w-100" alt="Thumbnail">
+                                <div class="image-wrapper">
+                                    <img src="https://th.bing.com/th/id/OIP.Ryg8afX5EeVEQvvy-et3AgHaE8?w=252&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="w-100" alt="Thumbnail">
                                 </div>
                                 <div class="col-12 bg-light px-xs-2 p-3">
                                     <div>
                                         <p class="text-justify mb-2">
-                                            <b><h6 class="article-h2">{{ $product->name }}</h6></b>
-                                            <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i> {{ $product->created_at }}
-                                            <p class="mt-2">{!! Str::limit($product->preview_desc, 100) !!}</p>
-                                            <a href="{{ route('product.product_detail', ['language' => $current_language, 'product_id' => $product->id]) }}">Read More</a>
+                                            <b><h6 class="article-h2">YALIYOJIRI KATIKA KIKAO CHA BARAZA LA 34 LA WAFANYAKAZI WA WAKALA WA VIPIMO (WMA).</h6></b>
+                                            <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i>June 19 2024
+                                            <p class="mt-2">Afisa Mtendaji Mkuu Bw. Alban Kihulla ameongoza kikao cha therasini na nne (34) cha Baraza la Wafanyakazi wa Wakala wa Vipimo kili..</p>
+                                            <a href="#">Read More</a>
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
+                            {{-- @endforeach --}}
                         </div>
                         <div class="row justify-content-center mt-3">
-                            <a href="{{ route('product.all_products', ['language' => $current_language]) }}"class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a>
+                            {{-- <a href="{{ route('product.all_products', ['language' => $current_language]) }}"class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
                         </div>
-                    </div> --}}
+                    </div>
 
 
                     <div class="col-md-4 my-3">
-                        <h5 class="my-xs-2 text-center text-xs-center section-title"><b>News/ Announcements</b></h5>
+                        <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Announcements</b></h5>
                         <div class="row mt-4">
                             <div class="col-md-12 pb-2 mb-2">
                                 <div class="col-12 px-xs-2 p-4">
@@ -232,11 +232,45 @@
                                         </div>
                                         <div class="col-10 col-md-9">
                                             <p class="text-justify mb-2">
-                                                {{-- <b><h6 class="article-h2">{{ $article->name }}</h6></b> --}}
+                                                <b><h6 class="article-h2">TANGAZO KWA WAUZAJI WA SARUJI</h6></b>
                                             </p>
-                                            {{-- <p><i class="fa fa-calendar" style="color: #006f8b;"></i> {{ $article->created_at }}</p> --}}
-                                            {{-- <p>{!! Str::limit($article->preview_desc, 60)  !!} --}}
+                                            <p><i class="fa fa-calendar" style="color: #006f8b;"></i> Feb 12 2024</p>
+                                            <p>Wakala wa Vipimo ni Taasisi ya Serikali iliyopo chini ya... </p>
+                                            <a href="#" class="read ml-2">Read more</a>
+                                            {{-- <a href="{{ route('news.article_detail', ['language' => $current_language, 'article_id' => $article->id]) }}" class="read ml-2">Read more</a> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="hr">
+                                {{-- @endforeach --}}
+                                <!-- Add a link for "Tazama Zote" -->
+                                <div class="row justify-content-center mt-3">
+                                    {{-- <a href="{{ route('news.all_articles', ['language' => $current_language]) }}" class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
+                                </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        {{-- Top Events --}}
+                        <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Top Events</b></h5>
+                        <div class="row mt-4">
+                            <div class="col-md-12 pb-2 mb-2">
+                                <div class="col-12 px-xs-2 p-4">
+                                {{-- @foreach($news_articles as $article) --}}
+                                <div href="#" target="_blank">
+                                    <div class="row align-items-center bg-light1">
+                                        <div class="col-2 col-md-3">
+                                            {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
+                                        </div>
+                                        <div class="col-10 col-md-9">
+                                            <p class="text-justify mb-2">
+                                                <b><h6 class="article-h2">World Metrology Day 2023</h6></b>
                                             </p>
+                                            <p><i class="fa fa-calendar" style="color: #006f8b;"></i> Feb 12 2024</p>
+                                            <p>@WMA ILALA  </p>
+                                            <a href="#" class="read ml-2">Read more</a>
                                             {{-- <a href="{{ route('news.article_detail', ['language' => $current_language, 'article_id' => $article->id]) }}" class="read ml-2">Read more</a> --}}
                                         </div>
                                     </div>
@@ -259,7 +293,7 @@
 
 
 
-        <div class="col-12 my-3">
+        {{-- <div class="col-12 my-3">
             <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Online Services in Industrial Sectors</b> </h5>
 
             <div class="row px-xs-2 online-services">
@@ -386,9 +420,7 @@
 
 
             </div>
-        </div>
-
-
+        </div> --}}
 
         <div class="container mb-5">
             <div class="col-md-10 mt-5 mb-3">
