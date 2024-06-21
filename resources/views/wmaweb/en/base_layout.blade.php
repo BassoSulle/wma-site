@@ -15,8 +15,8 @@
     </title>
 
     <!-- favicons -->
-    <link rel="icon" href="{{asset('static/asset/images/pngegg.png')}}" type="image/png">
-    <link rel="icon" href="{{asset('static/asset/images/favicon.ico')}}" type="image/x-icon">
+    {{-- <link rel="icon" href="{{asset('static/asset/images/favicon.ico')}}" type="image/x-icon"> --}}
+    <link rel="icon" href="{{asset('static/asset/images/logo.png')}}" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap">
 
     <!-- Stylesheet  -->
