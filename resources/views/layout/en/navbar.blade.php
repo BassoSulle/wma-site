@@ -78,7 +78,11 @@
         <!-- /top navbar -->
 
         <!-- top middle -->
-        <div class="col-md-12 mt-0 top-middle">
+        <div class="col-md-12 mt-0 top-middle" style="background-image: url('https://www.wma.go.tz/site/images/banner.png');
+        background-repeat: no-repeat;
+        object-fit: cover;
+        background-size: cover;">
+
             <div class="container-fluid px-0">
                 <div class="row ">
                     <div class="col-md-2 col-sm-2 col-xs-2 float-left text-left pt-1 logo-container">
@@ -89,14 +93,14 @@
                     </div>
 
                     <div class="col-md-8 col-sm-8 col-xs-8 text-center pt-2 pt-xs-0">
-                        <h5 class="" style="color: #1e4594">The united republic of Tanzania </h5>
-                        <h3 class="mb-0 title title-main" style="color: black"><b><i> WEIGHT AND MEASURES AGENCY</i></b></h3>
-                        <h3 class="mb-0 title title-main pt-2" style="color: black"><b><i> (WMA)</i></b></h3>
+                        <h5 class="" style="color: #000; ">The united republic of Tanzania </h5>
+                        <h3 class="mb-0 title title-main" style="color: #000; text-shadow: 1px 1px 2px #f8a52f;"><b><i> WEIGHT AND MEASURES AGENCY</i></b></h3>
+                        <h3 class="mb-0 title title-main pt-2 pb-2" style="color: #000; text-shadow: 1px 1px 2px #f8a52f; margin-bottom:8px;" ><b><i> (WMA)</i></b></h3>
                     </div>
 
                     <div class="col-md-2 col-sm-2 col-xs-2 text-right pt-1 pr-0 logo-container position-relative">
-                        <img style="width: 140px; height: 120px;" src="{{ asset('static/asset/images/flag.png') }}" alt="Tz flag" class="img-fluid position-absolute bottom-0 left-0 w-100 h-100">
-                        <img style="width: 110px; height: 90px; border-radius: 5px; padding: 5px;  0 0 10px rgba(0, 0, 0, 0.2);" src="{{ asset('static/asset/images/logo.png') }}" alt="WMA Logo" class="img-fluid position-absolute bottom-0 left-0">
+                        {{-- <img style="width: 140px; height: 120px;" src="{{ asset('static/asset/images/flag.png') }}" alt="Tz flag" class="img-fluid position-absolute bottom-0 left-0 w-100 h-100"> --}}
+                        <img style="width: 110px; height: 90px; border-radius: 5px; padding: 5px" src="{{ asset('static/asset/images/logo.png') }}" alt="" class="img-fluid position-absolute bottom-0 left-0">
                     </div>
                 </div>
             </div>

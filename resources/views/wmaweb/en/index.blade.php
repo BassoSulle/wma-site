@@ -153,7 +153,7 @@
             </div>
         </div>
 
-        <div class="col-12 my-3 px-0">
+        {{-- <div class="col-12 my-3 px-0">
             <h5 class="my-xs-2 text-center text-xs-center section-title mb-md-5"><b>Our Core Activities</b> </h5>
 
             <div class="row core-home-section justify-content-center">
@@ -211,11 +211,11 @@
                 </div>
             </div>
 
-        </div>
+        </div> --}}
 
         <div class="row px-xs-3">
             <div class="col-md-8 my-3">
-                <h5 class="my-xs-2 text-center text-xs-center section-title"> <b>TIRDO Research Products</b> </h5>
+                <h5 class="my-xs-2 text-center text-xs-center section-title"> <b>Top News</b> </h5>
 
                 <div class="row mt-4">
                     {{-- @foreach ($resources_products as $product) --}}
@@ -235,31 +235,31 @@
                                 height: auto;
                             }
                         </style>
-                        {{-- <div class="image-wrapper">
-                                    <img src="{{ asset('storage/'.$product->img) }}" class="w-100" alt="Thumbnail">
+                        <div class="image-wrapper">
+                                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrWpzpkb7T0pUaop_349q6DcNzEGzd3YISnZr1WpwAZeU-xhdIEnZ8bVkFRM1BsLC8G-75OuIu8gk0dWemBLDzeXgVuFXa2dRES6LuRjrMC8Op24SZTXJHKBZ73-f4gegIf0YW9wEGxncOpm-hgM92FQrXH2XHg927hZyertEuZ-WS4CBAUUth9j7gPH8/s2560/IMG-20240206-WA0495.jpg" class="w-100" alt="Thumbnail">
                                 </div>
                                 <div class="col-12 bg-light px-xs-2 p-3">
                                     <div>
                                         <p class="text-justify mb-2">
-                                            <b><h6 class="article-h2">{{ $product->name }}</h6></b>
-                                            <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i> {{ $product->created_at }}
-                                            <p class="mt-2">{!! Str::limit($product->preview_desc, 100) !!}</p>
-                                            <a href="{{ route('product.product_detail', ['language' => $current_language, 'product_id' => $product->id]) }}">Read More</a>
+                                            <b><h6 class="article-h2">YALIYOJIRI KATIKA KIKAO CHA BARAZA LA 34 LA WAFANYAKAZI WA WAKALA WA VIPIMO (WMA).</h6></b>
+                                            <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i> June 04, 2024
+                                            <p class="mt-2">Afisa Mtendaji Mkuu Bw. Alban Kihulla ameongoza kikao cha therasini na nne (34) cha Baraza la Wafanyakazi wa Wakala wa Vipimo kili..</p>
+                                            <a href="">Read More</a>
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
+                            {{-- @endforeach --}}
                         </div>
                         <div class="row justify-content-center mt-3">
-                            <a href="{{ route('product.all_products', ['language' => $current_language]) }}"class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a>
+                            {{-- <a href="{{ route('product.all_products', ['language' => $current_language]) }}"class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
                         </div>
-                    </div> --}}
+                    </div>
 
-                    
+
 
                         <div class="col-md-4 my-3">
-                            <h5 class="my-xs-2 text-center text-xs-center section-title"><b>News/ Announcements</b></h5>
+                            <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Announcements</b></h5>
                             <div class="row mt-4">
                                 <div class="col-md-12 pb-2 mb-2">
                                     <div class="col-12 px-xs-2 p-4">
@@ -271,12 +271,45 @@
                                                 </div>
                                                 <div class="col-10 col-md-9">
                                                     <p class="text-justify mb-2">
-                                                        {{-- <b><h6 class="article-h2">{{ $article->name }}</h6></b> --}}
+                                                        <b><h6 class="article-h2">TANGAZO KWA WAUZAJI WA SARUJ</h6></b>
                                                     </p>
-                                                    {{-- <p><i class="fa fa-calendar" style="color: #006f8b;"></i> {{ $article->created_at }}</p> --}}
-                                                    {{-- <p>{!! Str::limit($article->preview_desc, 60)  !!} --}}
+                                                    <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Feb 27 2024</p>
+                                                    <p>Wakala wa Vipimo ni Taasisi ya Serikali iliyopo chini ya...
                                                     </p>
-                                                    {{-- <a href="{{ route('news.article_detail', ['language' => $current_language, 'article_id' => $article->id]) }}" class="read ml-2">Read more</a> --}}
+                                                    <a href="" class="read ml-2">Read more</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="hr">
+                                        {{-- @endforeach --}}
+                                        <!-- Add a link for "Tazama Zote" -->
+                                        <div class="row justify-content-center mt-3">
+                                            {{-- <a href="{{ route('news.all_articles', ['language' => $current_language]) }}" class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Top Events</b></h5>
+                            <div class="row mt-4">
+                                <div class="col-md-12 pb-2 mb-2">
+                                    <div class="col-12 px-xs-2 p-4">
+                                        {{-- @foreach ($news_articles as $article) --}}
+                                        <div href="#" target="_blank">
+                                            <div class="row align-items-center bg-light1">
+                                                <div class="col-2 col-md-3">
+                                                    {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
+                                                </div>
+                                                <div class="col-10 col-md-9">
+                                                    <p class="text-justify mb-2">
+                                                        <b><h6 class="article-h2">World Metrology Day 2023</h6></b>
+                                                    </p>
+                                                    <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Jule 12 2024</p>
+                                                    <p>WMA ILALA
+                                                    </p>
+                                                    <a href="" class="read ml-2">Read more</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -299,34 +332,34 @@
 
 
             <div class="col-12 my-3">
-                <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Online Services in Industrial Sectors</b>
+                <h5 class="my-xs-2 text-center text-xs-center section-title"><b>How Do I</b>
                 </h5>
 
                 <div class="row px-xs-2 online-services">
 
-                    <div class="service-item col-md-2">
+                    <div class="service-item col-md-3">
                         <div class="service-icon">
                             <img src="/uploads/icon/contract.png" alt="">
                         </div>
-                        <div class="service-title">Company Registration</div>
+                        <div class="service-title">REQUEST FOR THE LECENCE</div>
                         <div class="service-btn-wrapper">
-                            <a target="_blank" href="https://ors.brela.go.tz/ors/start?returnUrl=%2fbrela%2fprod%2fors"
-                                class="serv-btn orange">Get The Service</a>
+                            <a target="_blank" href="https://www.wma.go.tz/howdo/6"
+                                class="serv-btn orange">Get instruction</a>
                         </div>
                     </div>
 
-                    <div class="service-item col-md-2">
+                    <div class="service-item col-md-3">
                         <div class="service-icon">
                             <img src="/uploads/icon/contract.png" alt="">
                         </div>
-                        <div class="service-title">Business Registration</div>
+                        <div class="service-title">REQUEST FOR THE PARTTERN APPROVE</div>
                         <div class="service-btn-wrapper">
-                            <a target="_blank" href="https://ors.brela.go.tz/ors/start?returnUrl=%2fbrela%2fprod%2fors"
-                                class="serv-btn orange">Get The Service</a>
+                            <a target="_blank" href="https://www.wma.go.tz/howdo/4"
+                                class="serv-btn orange">Get instruction</a>
                         </div>
                     </div>
 
-                    <div class="service-item col-md-2">
+                    <div class="service-item col-md-3">
                         <div class="service-icon">
                             <img src="/uploads/icon/contract.png" alt="">
                         </div>
@@ -337,7 +370,7 @@
                         </div>
                     </div>
 
-                    <div class="service-item col-md-2">
+                    <div class="service-item col-md-3">
                         <div class="service-icon">
                             <img src="/uploads/icon/contract.png" alt="">
                         </div>
@@ -347,93 +380,7 @@
                         </div>
                     </div>
 
-                    <div class="service-item col-md-2">
-                        <div class="service-icon">
-                            <img src="/uploads/icon/contract.png" alt="">
-                        </div>
-                        <div class="service-title">Patents Registration</div>
-                        <div class="service-btn-wrapper">
-                            <a target="_blank" href="https://ors.brela.go.tz/ors/start?returnUrl=%2fbrela%2fprod%2fors"
-                                class="serv-btn orange">Get The Service</a>
-                        </div>
-                    </div>
 
-                    <div class="service-item col-md-2">
-                        <div class="service-icon">
-                            <img src="/uploads/icon/contract.png" alt="">
-                        </div>
-                        <div class="service-title">TBS Portal</div>
-                        <div class="service-btn-wrapper">
-                            <a target="_blank"
-                                href="https://portal.tbs.go.tz/isqmt/tz/co/infowise/amis4t/web/home/home.jsf"
-                                class="serv-btn orange">Get The Service</a>
-                        </div>
-                    </div>
-
-                    <div class="service-item col-md-2">
-                        <div class="service-icon">
-                            <img src="/uploads/icon/contract.png" alt="">
-                        </div>
-                        <div class="service-title">TBS Online Services</div>
-                        <div class="service-btn-wrapper">
-                            <a target="_blank" href="https://standards.tbs.go.tz/" class="serv-btn orange">Get The
-                                Service</a>
-                        </div>
-                    </div>
-
-                    <div class="service-item col-md-2">
-                        <div class="service-icon">
-                            <img src="/uploads/icon/contract.png" alt="">
-                        </div>
-                        <div class="service-title">Business Information</div>
-                        <div class="service-btn-wrapper">
-                            <a target="_blank" href="https://trade.business.go.tz/" class="serv-btn orange">Get The
-                                Service</a>
-                        </div>
-                    </div>
-
-                    <div class="service-item col-md-2">
-                        <div class="service-icon">
-                            <img src="/uploads/icon/contract.png" alt="">
-                        </div>
-                        <div class="service-title">TIC: Investment Procedures</div>
-                        <div class="service-btn-wrapper">
-                            <a target="_blank" href="https://procedures.tic.go.tz/" class="serv-btn orange">Get The
-                                Service</a>
-                        </div>
-                    </div>
-
-                    <div class="service-item col-md-2">
-                        <div class="service-icon">
-                            <img src="/uploads/icon/contract.png" alt="">
-                        </div>
-                        <div class="service-title">Beneficial Ownership</div>
-                        <div class="service-btn-wrapper">
-                            <a target="_blank" href="https://bo.brela.go.tz/" class="serv-btn orange">Get The Service</a>
-                        </div>
-                    </div>
-
-                    <div class="service-item col-md-2">
-                        <div class="service-icon">
-                            <img src="/uploads/icon/contract.png" alt="">
-                        </div>
-                        <div class="service-title">CTI: Confederation of Tanzania Industries</div>
-                        <div class="service-btn-wrapper">
-                            <a target="_blank" href="https://cti.co.tz/" class="serv-btn orange">Get The Service</a>
-                        </div>
-                    </div>
-
-                    <div class="service-item col-md-2">
-                        <div class="service-icon">
-                            <img src="/uploads/icon/contract.png" alt="">
-                        </div>
-                        <div class="service-title">eMrejesho</div>
-                        <div class="service-btn-wrapper">
-                            <a target="_blank"
-                                href="https://emrejesho.gov.go.tz/tenganisha_aina_za_walalamikaji?PQI70xlXGIGpQajIcg16EMX74XYFJZf9NV6nrjnzNiHgtt6Iqhlm6VYeXW2vhplQ&to_this_inst=415$PQI70xlXGIGpQajIcg16EMX74XYFJZf9NV6nrjnzNiHgtt6Iqhlm6VYeXW2vhplQ"
-                                class="serv-btn orange">Get The Service</a>
-                        </div>
-                    </div>
 
 
                 </div>
