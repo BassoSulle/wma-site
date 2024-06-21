@@ -10,6 +10,7 @@
                     P.O BOX 313, Dar es Salaam,<br>
                      NSSF House (Mafao), 7th floor Fax : Namba bila Malipo: 0800 110097 <br>
                      Phone No : +255 (022) 2928158<br>
+
                  <p class="py-0">Email : info@wma.go.tz</p>
              </div>
              <div class="col-12 px-3 pt-3">
