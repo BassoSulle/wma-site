@@ -46,14 +46,14 @@
                         @endforeach --}}
 
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="https://i.ytimg.com/vi/P51DSn2AFts/maxresdefault.jpg">
+                    <img class="d-block w-100" src="https://www.wma.go.tz/uploads/1718130636-IMG-20240611-WA0014.jpg">
                     <div class="mask flex-center">
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-md-12 order-md-1 order-2 text-center">
-                                    <p class="text-primary" style="font-size: 10px;">Maafisa wa Wakala wa Vipimo wakiwa
-                                        katika ukaguzi wa kushtukiza kwenye masoko Jijini Dar es Salaam kuangalia kama mazao
-                                        yanafungashwa kwa mujibu wa Sheria 100 kg.</p>
+                                    <p class="text-primary" style="font-size: 10px;">Rais wa Jamhuri ya Muungano wa Tanzania Mhe. Dkt. Samia Suluhu Hassan akikabidhi tuzo
+                                        kwa Mwenyekiti wa Bodi ya WMA Prof. Eliza Mwakasangula na Afisa Mtendaji Mkuu Ndg. Alban Kihulla kwa kuwa taasisi zinazowasilisha
+                                         gawio kwa wakati kwa Msajili wa Hazina kwenye hafla iliyofanyika Ikulu Jijini Dar es Salaam tarehe 11.06.2024.</p>
                                 </div>
                             </div>
                         </div>
@@ -95,52 +95,43 @@
             <div class="col-12 px-0 mt-4">
 
                 <div class="row">
-                    <div class="col-md-2 col-xs-12">
+                    <div class="col-md-4 my-5 mx-5 col-xs-6">
                         <div
                             class="img-frame p-3 border rounded d-flex justify-content-center align-items-center img-fluid">
-                            <img src="/uploads/administration/1. Prof. Mkumbukwa M. A. message.png"
+                            <img src="https://th.bing.com/th/id/OIP.cZVb5jBEvIN3EjzBZmq2fgHaEK?w=351&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
                                 alt="Prof. Mkumbukwa M. A." class="img-fluid">
-                        </div>
 
+                        </div>
+                        <center>
+                            <div class="">
+                                <h5 class="title mb-2"><br>Prof. Mkumbukwa M. A.</h5>
+                                <small><i>Director General</i></small>
+                            </div>
+                        </center>
                     </div>
 
-                    <div class="col-md-5 vertical-line">
-                        <div class="">
-                            <h5 class="title mb-2"><br>Prof. Mkumbukwa M. A.</h5>
-                            <small><i>Director General</i></small>
-                        </div>
-                        <div class="col-12 px-0 my-2">
-                            <p class="card-text" class="text-justify">
-                                Dear visitor,</br>
-                                It is my distinguished pleasure and honor to welcome you all to Tanzania Industrial Research
-                                and Development Organization.
-                                TIRDO is a national industrial research organization whose mandate is to undertake
-                                industrial research, provide technology services, and,
-                                to disseminate research findings that will have an impact on socio-economic activities in
-                                the country.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- <div class="d-none d-md-block col-md-1 border-right vertical-line"></div> -->
-
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                         <div class="card-body">
                             <div class="">
                                 <h5 class="title mb-2"><br>Welcome to WMA</h5>
                                 <small><i></i></small>
                             </div>
                             <div class="col-12 px-0 my-2">
-                                <p class="card-text" class="text-justify">
-                                    Tanzania Industrial Research and Development Organization (TIRDO) is a
-                                    multi-disciplinary research and development organization established
-                                    by an Act of Parliament No. 5 of 1979 and it became operational on 1st April 1979.
+                                <p class="card-text" class="text-justify;" style="letter-spacing: 0.05em; line-height: 1.5;">
+                                    The history of Weights and Measures is traced back since the early human civilisation.
+                                    Measurement System is undoubtedly one of man’s greatest and most important inventions
+                                    that cannot be left aside in the history of evolution of civilisation. Every human being
+                                     on our planet is affected by measurements in one way or another. Imagine, from the moment
+                                     we are born and throughout our daily lives, the act of weighing or measuring is an important
+                                     and often vital part of our existence. Our bodies, the food we eat and all the products we
+                                      use as an integral part of modern living have all been weighed and measured at some stage
+                                       or another in their development. It is almost impossible to describe anything without
+                                        referring to weights and measures. Therefore, weighing or measuring is natural and vital part of our everyday life.
                                     </br>
-                                    Its mandate is to assist the industrial sector of Tanzania by providing technical
-                                    expertise and support services to upgrade their technology base. Additionally,
-                                    TIRDO carries out applied research...
+                                    Economies in the world depend on reliable measurements that are trusted and accepted internationally.
+                                    This facilitates trade and reduces transaction costs.
                                     {{-- <a href="{{ route('aboutus', ['language' => $current_language]) }}" class=""> --}}
-                                    Read more</a>
+                                        <a href="#"> Read more..</a>
                                 </p>
                                 <!-- <a href="aboutus" class="link-no-underline">Read more</a> -->
                             </div>
@@ -249,22 +240,72 @@
                                     </div>
                                 </div>
                             </div>
+
+                    <div class="col-md-6 pb-3 mb-3">
+                        <style>
+                            .image-wrapper {
+                                max-width: 1200px;
+                                /* Adjust the maximum width as needed */
+                                max-height: 638px;
+                                /* Adjust the maximum height as needed */
+                                text-align: center;
+                                /* margin: 10px; */
+                            }
+
+                            img {
+                                max-width: 100%;
+                                height: auto;
+                            }
+                        </style>
+                        <div class="image-wrapper">
+                                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrWpzpkb7T0pUaop_349q6DcNzEGzd3YISnZr1WpwAZeU-xhdIEnZ8bVkFRM1BsLC8G-75OuIu8gk0dWemBLDzeXgVuFXa2dRES6LuRjrMC8Op24SZTXJHKBZ73-f4gegIf0YW9wEGxncOpm-hgM92FQrXH2XHg927hZyertEuZ-WS4CBAUUth9j7gPH8/s2560/IMG-20240206-WA0495.jpg" class="w-100" alt="Thumbnail">
+                                </div>
+                                <div class="col-12 bg-light px-xs-2 p-3">
+                                    <div>
+                                        <p class="text-justify mb-2">
+                                            <b><h6 class="article-h2">YALIYOJIRI KATIKA KIKAO CHA BARAZA LA 34 LA WAFANYAKAZI WA WAKALA WA VIPIMO (WMA).</h6></b>
+                                            <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i> June 04, 2024
+                                            <p class="mt-2">Afisa Mtendaji Mkuu Bw. Alban Kihulla ameongoza kikao cha therasini na nne (34) cha Baraza la Wafanyakazi wa Wakala wa Vipimo kili..</p>
+                                            <a href="">Read More</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             {{-- @endforeach --}}
                         </div>
+
                         <div class="row justify-content-center mt-3">
                             {{-- <a href="{{ route('product.all_products', ['language' => $current_language]) }}"class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
                         </div>
                     </div>
+                    </div>
 
-
-
-                        <div class="col-md-4 my-3">
+            {{-- Anouncement and news --}}
+                    <div class="row">
+                        <div class="col-md-6 my-3">
                             <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Announcements</b></h5>
                             <div class="row mt-4">
                                 <div class="col-md-12 pb-2 mb-2">
                                     <div class="col-12 px-xs-2 p-4">
                                         {{-- @foreach ($news_articles as $article) --}}
                                         <div href="#" target="_blank">
+                                            <div class="row align-items-center bg-light1">
+                                                <div class="col-2 col-md-3">
+                                                    {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
+                                                </div>
+                                                <div class="col-10 col-md-9">
+                                                    <p class="text-justify mb-2">
+                                                        <b><h6 class="article-h2">TANGAZO KWA WAUZAJI WA SARUJ</h6></b>
+                                                    </p>
+                                                    <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Feb 27 2024</p>
+                                                    <p>Wakala wa Vipimo ni Taasisi ya Serikali iliyopo chini ya...
+                                                    </p>
+                                                    <a href="" class="read ml-2">Read more</a>
+                                                </div>
+                                            </div>
+                                            <div style="margin-top: 20px"></div>
                                             <div class="row align-items-center bg-light1">
                                                 <div class="col-2 col-md-3">
                                                     {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
@@ -291,13 +332,32 @@
 
                                 </div>
                             </div>
+                        </div>
 
-                            <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Top Events</b></h5>
-                            <div class="row mt-4">
+
+                {{-- Top Events --}}
+
+                        <div class="col-md-6 my-3">
+                            <h5 class="my-xs-4 text-center text-xs-center section-title"><b>Top Events</b></h5>
                                 <div class="col-md-12 pb-2 mb-2">
                                     <div class="col-12 px-xs-2 p-4">
                                         {{-- @foreach ($news_articles as $article) --}}
                                         <div href="#" target="_blank">
+                                            <div class="row align-items-center bg-light1">
+                                                <div class="col-2 col-md-3">
+                                                    {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
+                                                </div>
+                                                <div class="col-10 col-md-9">
+                                                    <p class="text-justify mb-2">
+                                                        <b><h6 class="article-h2">World Metrology Day 2023</h6></b>
+                                                    </p>
+                                                    <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Jule 12 2024</p>
+                                                    <p>WMA ILALA
+                                                    </p>
+                                                    <a href="" class="read ml-2">Read more</a>
+                                                </div>
+                                            </div>
+                                            <div style="margin-top: 20px"></div>
                                             <div class="row align-items-center bg-light1">
                                                 <div class="col-2 col-md-3">
                                                     {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
@@ -324,7 +384,9 @@
 
                                 </div>
                             </div>
-                        </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -388,7 +450,7 @@
 
 
 
-            <div class="container mb-5">
+            {{-- <div class="container mb-5">
                 <div class="col-md-10 mt-5 mb-3">
 
                     <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Our Patners</b></h5>
@@ -554,7 +616,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> --}}
         </div>
 
 

@@ -1,4 +1,7 @@
  <!-- FOOTER -->
+ <svg viewBox="0 0 1440 160">
+    <path fill="#F89724" fill-opacity="1" d="M0,80L360,120C480,140,600,120,720,100C840,80,960,100,1080,120C1200,140,1320,120,1400,100L1440,80L1440,160L1400,160C1320,160,1200,160,1080,160C960,160,840,160,720,160C600,160,480,160,360,160C240,160,120,160,0,160Z"></path>
+  </svg>
  <footer class="tirdo-footer tirdo-section col-12 pb-0">
      <div class="row">
          <div class="col-lg-3 col-sm-6 px-3 no-padding-sm footer-content shadow-right">
@@ -27,13 +30,13 @@
                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAhBJREFUSEvdlb1rFEEYxp9nT9ydD67SQlD8ABFBRcRKS0VQBD+QoAQstBBJryiKf4A2FhEbCUIamxSCkCKNiE1QULSwMhgQBbnK25lNTOaVhdxxudvbuz1Ikyln3vf5zTMz+yyxwYMbrI9NBhARQzItOzZpNOpLcfxIgPMg9wL4R3IyVuq+935HBFyIlZokKblO+4hEpJZ5/zUKYSy29ks/iHduDiKnCtYXAewS8prW+lVrvQ3w3u9BCAsA/gh5SWv9vlskTdNjEfCxxOEHkm9XQpi21n7qdpBkzv0FsGVN4EUAHhpjfrUEfbM5DnK6BJBCZEJZ+7LHQT7h0zTf9Yl1AiLvBHjNWm2eIkdF5GkJYEoZc6NzvfMOrHPuQATMAtg2yvdB8nGi9Z1CgHNuJ0V+AGgA2D4SAJhIjHnWz0GUOfcdwO5RxPOeaHX1YFyvfysE5JPOucsUyZ9Y66KrsBaUMfu6G3qiwjk3RpEHAA5XUSdwOzHm+UBAlqbnBHhTRRzAYqL1fpLLAwFrzzV/x9eHhKwIeVJrPV9UX5imIhItp+mhANwDebUEJBC5qayd6lfTA8gDL8uy4wjhLoCzJeKZkONa65kyp21A1myeDuQTAkc6Q7BP8yyi6JZSKg+40rHOQR7FWZJcEeAigTMAYgBLAH4D+AlgriYys9Xaz4OEC7No2KYqdZvsl1nF+rC1/wHPWrsZUsmliAAAAABJRU5ErkJggg==" /></a>
                  </div>
              </div>
-             <div class="col-12 mt-3">
+             {{-- <div class="col-12 mt-3">
                  <p class="m-0 text-white fs-6">Website Visitors</p>
                  <a href='https://www.free-counters.org/'>powered by Free-Counters</a>
                  <script type='text/javascript'
                      src='https://www.freevisitorcounters.com/auth.php?id=08790e8b62aa5726c545a00f8ab0acaba319fb16'></script>
                  <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1056645/t/0"></script>
-             </div>
+             </div> --}}
          </div>
 
 

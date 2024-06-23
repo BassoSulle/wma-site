@@ -1,4 +1,7 @@
     <!-- FOOTER -->
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#F89724" fill-opacity="1" d="M0,160L80,149.3C160,139,320,117,480,138.7C640,160,800,224,960,245.3C1120,267,1280,245,1360,234.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+    </svg>
     <footer class="tirdo-footer tirdo-section col-12 pb-0">
         <div class="row">
             <div class="col-lg-3 col-sm-6 px-3 no-padding-sm footer-content shadow-right">
