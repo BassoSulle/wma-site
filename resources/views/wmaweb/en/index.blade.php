@@ -163,19 +163,19 @@
                     <div class="col-md-4 my-5 mx-5 col-xs-6">
                         <div
                             class="img-frame p-3 border rounded d-flex justify-content-center align-items-center img-fluid">
-                            <img src="https://th.bing.com/th/id/OIP.cZVb5jBEvIN3EjzBZmq2fgHaEK?w=351&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                            <img src="https://www.wma.go.tz/uploads/management/20-0.23238400%201713965009.png"
                                 alt="Prof. Mkumbukwa M. A." class="img-fluid">
 
                         </div>
                         <center>
                             <div class="">
-                                <h5 class="title mb-2"><br>Prof. Mkumbukwa M. A.</h5>
-                                <small><i>Director General</i></small>
+                                <h5 class="title mb-2"><br>Alban M. Kihulla.</h5>
+                                <small>Chief executive oofficer</small>
                             </div>
                         </center>
                     </div>
 
-                    <div class="col-md-7">
+                    <div class="col-md-6">
                         <div class="card-body">
                             <div class="">
                                 <h5 class="title mb-2"><br>Welcome to WMA</h5>
@@ -205,6 +205,8 @@
                                     Economies in the world depend on reliable measurements that are trusted and accepted
                                     internationally.
                                     This facilitates trade and reduces transaction costs.
+                                    <br>
+                                    <br>
                                     {{-- <a href="{{ route('aboutus', ['language' => $current_language]) }}" class=""> --}}
                                     <a href="#"> Read more..</a>
                                 </p>
@@ -339,7 +341,7 @@
                         </style>
                         <div class="image-wrapper">
                             <img src="https://www.wma.go.tz/uploads/news/medium/1717517519-4Z9A8371.jpg" class="w-100"
-                                alt="Thumbnail">
+                                style="width: 422px; height: 237px;" alt="Thumbnail">
                         </div>
                         <div class="col-12 bg-light px-xs-2 p-3">
                             <div>
@@ -375,7 +377,7 @@
                         </style>
                         <div class="image-wrapper">
                             <img src="https://www.wma.go.tz/uploads/news/medium/1716304662-_Z9A8095%20WAZR.jpg"
-                                class="w-100" alt="Thumbnail">
+                                style="width: 422px; height: 237px;" class="w-100" alt="Thumbnail">
                         </div>
                         <div class="col-12 bg-light px-xs-2 p-3">
                             <div>
@@ -415,8 +417,7 @@
                             <div href="#" target="_blank">
                                 <div class="row align-items-center bg-light1">
                                     <div class="col-2 col-md-3">
-                                        <img
-                                            src="https://www.wma.go.tz/uploads/news/medium/1717157606-4Z9A8201%20mbb.jpg" />
+                                        <img src="https://www.wma.go.tz/uploads/1718109034-4Z9A8735.jpg" />
                                         {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
                                     </div>
                                     <div class="col-10 col-md-9">
@@ -434,8 +435,7 @@
                                 <div style="margin-top: 20px"></div>
                                 <div class="row align-items-center bg-light1">
                                     <div class="col-2 col-md-3">
-                                        <img
-                                            src="https://www.wma.go.tz/uploads/news/medium/1717157606-4Z9A8201%20mbb.jpg" />
+                                        <img src="https://www.wma.go.tz/uploads/news/medium/1717517519-4Z9A8371.jpg" />
                                         {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
                                     </div>
                                     <div class="col-10 col-md-9">
@@ -476,7 +476,7 @@
                             <div class="row align-items-center bg-light1">
                                 <div class="col-2 col-md-3">
                                     {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
-                                    <img src="https://www.wma.go.tz/uploads/news/medium/1717157606-4Z9A8201%20mbb.jpg"
+                                    <img src="https://www.wma.go.tz/uploads/news/medium/1716281495-LO2A0468%20sokoni.jpg"
                                         alt="Thumbnail" class="img-thumbnail">
                                 </div>
                                 <div class="col-10 col-md-9">
