@@ -79,6 +79,68 @@
                         </div>
                     </div>
                 </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://www.wma.go.tz/uploads/1717784476-_Z9A8648.jpg">
+                    <div class="mask flex-center">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-md-12 order-md-1 order-2 text-center">
+                                    <p class="text-primary" style="font-size: 10px;">Makamu Mwenyekiti wa Bodi Mhandisi
+                                        Shaban Seleman akisikiliza maelezo kutoka kwa Afisa Mtendaji Mkuu Bw. Alban Kihulla
+                                        kuhusu mtambo saidizi unaotumika kuhakiki dira za maji Mkoani Manyara.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wave-svg max-1920 container sm-hide">
+                            <svg width="2000" height="128" x="2000" y="128" viewBox="0 0 2000 128"
+                                enable-background="new 0 0 2000 128" xml:space="preserve">
+                                <path opacity="0.2" fill="#f7f7f7"
+                                    d="M1999.5,22.2c-346-0.6-524.6-4.7-878.8,4.4c-286.6,7.4-442.3,54-608.1,51.2C307.3,74.3,202.5,5-0.5,28.1v100.4l2000-0.5V22.2z">
+                                </path>
+                                <path opacity="0.2" fill="#f7f7f7"
+                                    d="M-0.3,46.1C251,15.3,440.9,84.7,499.6,98.4c54.7,12.8,122.5,12,186.7-5.3c154.2-41.6,315.5-70.9,475.2-67.5s324.6,22.4,484.3,19.7c133-2.3,302.8,1.7,352.8,3.7c0,21.3,0,80,0,80H-0.5L-0.3,46.1z">
+                                </path>
+                                <path opacity="0.4" fill="#f7f7f7"
+                                    d="M2000,41.2c-139.8-12.7-219.9-10.8-360.2-11.2c-285.5-0.8-487.5,18-736.2,51.1C647,115.4,546.7,116.4,199.2,53.6C140.3,43,59.5,45.6-0.5,52.3V130h2000L2000,41.2z">
+                                </path>
+                                <path fill="#EDEEF0"
+                                    d="M1634.6,50.1c-193.8,11.9-366.9,24.9-569,50c-110.2,13.7-221.2,21.5-332.3,19.6c-187-3.3-344.5-29.7-560.9-69.8c-122.2-22.6-172.8-4-172.8-4V130h1998V46C1997.5,46,1831,38.1,1634.6,50.1z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://www.wma.go.tz/uploads/1717410657-4Z9A8231%20WEB.jpg">
+                    <div class="mask flex-center">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-md-12 order-md-1 order-2 text-center">
+                                    <p class="text-primary" style="font-size: 10px;">Afisa Mtendaji Mkuu Bw. Alban Kihulla
+                                        akipokelewa na baadhi ya viongozi pichani alipowasili katika kikao cha menejimenti
+                                        Mkoani Kilimanjaro.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wave-svg max-1920 container sm-hide">
+                            <svg width="2000" height="128" x="2000" y="128" viewBox="0 0 2000 128"
+                                enable-background="new 0 0 2000 128" xml:space="preserve">
+                                <path opacity="0.2" fill="#f7f7f7"
+                                    d="M1999.5,22.2c-346-0.6-524.6-4.7-878.8,4.4c-286.6,7.4-442.3,54-608.1,51.2C307.3,74.3,202.5,5-0.5,28.1v100.4l2000-0.5V22.2z">
+                                </path>
+                                <path opacity="0.2" fill="#f7f7f7"
+                                    d="M-0.3,46.1C251,15.3,440.9,84.7,499.6,98.4c54.7,12.8,122.5,12,186.7-5.3c154.2-41.6,315.5-70.9,475.2-67.5s324.6,22.4,484.3,19.7c133-2.3,302.8,1.7,352.8,3.7c0,21.3,0,80,0,80H-0.5L-0.3,46.1z">
+                                </path>
+                                <path opacity="0.4" fill="#f7f7f7"
+                                    d="M2000,41.2c-139.8-12.7-219.9-10.8-360.2-11.2c-285.5-0.8-487.5,18-736.2,51.1C647,115.4,546.7,116.4,199.2,53.6C140.3,43,59.5,45.6-0.5,52.3V130h2000L2000,41.2z">
+                                </path>
+                                <path fill="#EDEEF0"
+                                    d="M1634.6,50.1c-193.8,11.9-366.9,24.9-569,50c-110.2,13.7-221.2,21.5-332.3,19.6c-187-3.3-344.5-29.7-560.9-69.8c-122.2-22.6-172.8-4-172.8-4V130h1998V46C1997.5,46,1831,38.1,1634.6,50.1z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -101,19 +163,19 @@
                     <div class="col-md-4 my-5 mx-5 col-xs-6">
                         <div
                             class="img-frame p-3 border rounded d-flex justify-content-center align-items-center img-fluid">
-                            <img src="https://th.bing.com/th/id/OIP.cZVb5jBEvIN3EjzBZmq2fgHaEK?w=351&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                            <img src="https://www.wma.go.tz/uploads/management/20-0.23238400%201713965009.png"
                                 alt="Prof. Mkumbukwa M. A." class="img-fluid">
 
                         </div>
                         <center>
                             <div class="">
-                                <h5 class="title mb-2"><br>Prof. Mkumbukwa M. A.</h5>
-                                <small><i>Director General</i></small>
+                                <h5 class="title mb-2"><br>Alban M. Kihulla.</h5>
+                                <small>Chief executive oofficer</small>
                             </div>
                         </center>
                     </div>
 
-                    <div class="col-md-7">
+                    <div class="col-md-6">
                         <div class="card-body">
                             <div class="">
                                 <h5 class="title mb-2"><br>Welcome to WMA</h5>
@@ -133,14 +195,18 @@
                                     we
                                     use as an integral part of modern living have all been weighed and measured at some
                                     stage
-                                    or another in their development. It is almost impossible to describe anything without
+                                    or another in their development.
+                                    </br>
+                                    </br>
+                                    It is almost impossible to describe anything without
                                     referring to weights and measures. Therefore, weighing or measuring is natural and vital
                                     part of our everyday life.
-                                    </br>
-                                    </br>
+
                                     Economies in the world depend on reliable measurements that are trusted and accepted
                                     internationally.
                                     This facilitates trade and reduces transaction costs.
+                                    <br>
+                                    <br>
                                     {{-- <a href="{{ route('aboutus', ['language' => $current_language]) }}" class=""> --}}
                                     <a href="#"> Read more..</a>
                                 </p>
@@ -247,9 +313,9 @@
                                         <h6 class="article-h2">ELIMU YA MATUMIZI SAHIHI YA VIPIMO YATOLEWA KWA WABUNGE</h6>
                                     </b>
                                     <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i> June 04, 2024
-                                <p class="mt-2">AWaziri wa Biashara na Maendeleo ya Viwanda Zanzibar Mhe. Omar S. Shaaban
-                                    ameipongeza taasisi ya Wakala wa Vipimo (WMA) kwa namna inavyoendelea kusimamia usahihi wa
-                                    vipimo katika sekta mbalimbali na kuhakikisha kunakuwa na haki baina ya pande mbili zinazofanya biashara...</p>
+                                <p class="mt-2">Afisa Mtendaji Mkuu Bw. Alban Kihulla ameongoza kikao cha therasini na
+                                    nne
+                                    (34) cha Baraza la Wafanyakazi wa Wakala wa Vipimo kili..</p>
                                 <a href="">Read More</a>
                                 </p>
                             </div>
@@ -273,8 +339,8 @@
                             }
                         </style>
                         <div class="image-wrapper">
-                            <img src="https://www.wma.go.tz/uploads/news/medium/1717517519-4Z9A8371.jpg"
-                                class="w-100" alt="Thumbnail">
+                            <img src="https://www.wma.go.tz/uploads/news/medium/1717517519-4Z9A8371.jpg" class="w-100"
+                                style="width: 422px; height: 237px;" alt="Thumbnail">
                         </div>
                         <div class="col-12 bg-light px-xs-2 p-3">
                             <div>
@@ -284,7 +350,8 @@
                                             WAKALA WA VIPIMO (WMA).</h6>
                                     </b>
                                     <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i> June 04, 2024
-                                <p class="mt-2">Afisa Mtendaji Mkuu Bw. Alban Kihulla ameongoza kikao cha therasini na nne
+                                <p class="mt-2">Afisa Mtendaji Mkuu Bw. Alban Kihulla ameongoza kikao cha therasini na
+                                    nne
                                     (34) cha Baraza la Wafanyakazi wa Wakala wa Vipimo kili..</p>
                                 <a href="">Read More</a>
                                 </p>
@@ -308,8 +375,8 @@
                             }
                         </style>
                         <div class="image-wrapper">
-                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrWpzpkb7T0pUaop_349q6DcNzEGzd3YISnZr1WpwAZeU-xhdIEnZ8bVkFRM1BsLC8G-75OuIu8gk0dWemBLDzeXgVuFXa2dRES6LuRjrMC8Op24SZTXJHKBZ73-f4gegIf0YW9wEGxncOpm-hgM92FQrXH2XHg927hZyertEuZ-WS4CBAUUth9j7gPH8/s2560/IMG-20240206-WA0495.jpg"
-                                class="w-100" alt="Thumbnail">
+                            <img src="https://www.wma.go.tz/uploads/news/medium/1716304662-_Z9A8095%20WAZR.jpg"
+                                style="width: 422px; height: 237px;" class="w-100" alt="Thumbnail">
                         </div>
                         <div class="col-12 bg-light px-xs-2 p-3">
                             <div>
@@ -349,6 +416,7 @@
                             <div href="#" target="_blank">
                                 <div class="row align-items-center bg-light1">
                                     <div class="col-2 col-md-3">
+                                        <img src="https://www.wma.go.tz/uploads/1718109034-4Z9A8735.jpg" />
                                         {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
                                     </div>
                                     <div class="col-10 col-md-9">
@@ -366,6 +434,7 @@
                                 <div style="margin-top: 20px"></div>
                                 <div class="row align-items-center bg-light1">
                                     <div class="col-2 col-md-3">
+                                        <img src="https://www.wma.go.tz/uploads/news/medium/1717517519-4Z9A8371.jpg" />
                                         {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
                                     </div>
                                     <div class="col-10 col-md-9">
@@ -406,6 +475,8 @@
                             <div class="row align-items-center bg-light1">
                                 <div class="col-2 col-md-3">
                                     {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
+                                    <img src="https://www.wma.go.tz/uploads/news/medium/1716281495-LO2A0468%20sokoni.jpg"
+                                        alt="Thumbnail" class="img-thumbnail">
                                 </div>
                                 <div class="col-10 col-md-9">
                                     <p class="text-justify mb-2">
@@ -423,6 +494,8 @@
                             <div class="row align-items-center bg-light1">
                                 <div class="col-2 col-md-3">
                                     {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
+                                    <img src="https://www.wma.go.tz/uploads/news/medium/1717157606-4Z9A8201%20mbb.jpg"
+                                        alt="Thumbnail" class="img-thumbnail">
                                 </div>
                                 <div class="col-10 col-md-9">
                                     <p class="text-justify mb-2">
@@ -465,7 +538,8 @@
 
             <div class="service-item col-md-3">
                 <div class="service-icon">
-                    <img src="/uploads/icon/contract.png" alt="">
+                    <img src="{{ asset('assets/images/how_to_icon.png') }}" alt="" width="80px"
+                        style="margin-bottom: 15px;">
                 </div>
                 <div class="service-title">REQUEST FOR THE LECENCE</div>
                 <div class="service-btn-wrapper">
@@ -475,7 +549,10 @@
 
             <div class="service-item col-md-3">
                 <div class="service-icon">
-                    <img src="/uploads/icon/contract.png" alt="">
+                    <img src="{{ asset('assets/images/how_to_icon.png') }}" alt="" width="80px"
+                        style="margin-bottom: 15px;">
+
+                    {{-- <img src="/uploads/icon/contract.png" alt=""> --}}
                 </div>
                 <div class="service-title">REQUEST FOR THE PARTTERN APPROVE</div>
                 <div class="service-btn-wrapper">
@@ -485,7 +562,10 @@
 
             <div class="service-item col-md-3">
                 <div class="service-icon">
-                    <img src="/uploads/icon/contract.png" alt="">
+                    <img src="{{ asset('assets/images/how_to_icon.png') }}" alt="" width="80px"
+                        style="margin-bottom: 15px;">
+
+                    {{-- <img src="/uploads/icon/contract.png" alt=""> --}}
                 </div>
                 <div class="service-title">Trade Marks/Service Registration</div>
                 <div class="service-btn-wrapper">
@@ -496,7 +576,10 @@
 
             <div class="service-item col-md-3">
                 <div class="service-icon">
-                    <img src="/uploads/icon/contract.png" alt="">
+                    <img src="{{ asset('assets/images/how_to_icon.png') }}" alt="" width="80px"
+                        style="margin-bottom: 15px;">
+
+                    {{-- <img src="/uploads/icon/contract.png" alt=""> --}}
                 </div>
                 <div class="service-title">TBS Online Application System</div>
                 <div class="service-btn-wrapper">
