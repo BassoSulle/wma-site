@@ -187,52 +187,42 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class='nav-item '><a href='#' class='nav-link '
-                                    data-toggle='dropdown'>W&M Practitioners</a>
-                                {{-- <ul class='dropdown-menu'>
+                            <li class='nav-item dropdown'><a href='#'
+                                class='nav-link dropdown-toggle'data-toggle='dropdown'>W&M Practitioners</a>
+                            <ul class='dropdown-menu'>
+                                <li class='nav-item '>
                                     <li><a class='dropdown-item'
-                                            href="{{ route('background', ['language' => $current_language]) }}">Background</a>
+                                        href="#">Pump Technicians</a>
+                                </li>
+                                    <li><a class='dropdown-item'
+                                            href="">Scale Mechanics</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="">Tank Calibrators</a></li>
+                                    <li><a class='dropdown-item' href="">Gas Meter Calbrators</a></li>
+                                    <li><a class='dropdown-item' href="">Scale Manufactures</a></li>
+                                    <li><a class='dropdown-item' href="">Tank Constructors</a></li>
+                                    <li><a class='dropdown-item' href="">Pressure gauges & Values Calbrators</a></li>
+                                    <li><a class='dropdown-item' href="">Fuel Measurements Survey</a></li>
+                            </ul>
+                        </li>
+                            <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'data-toggle='dropdown'>Forms</a>
+                                <ul class='dropdown-menu'>
+                                    <li><a class='dropdown-item'
+                                            href="">Application form for tank calibrators</a>
                                     </li>
                                     <li><a class='dropdown-item'
-                                            href="{{ route('centreobjectives', ['language' => $current_language]) }}">Center
-                                            Objectives</a></li>
-                                    <li><a class='dropdown-item'
-                                            href="{{ route('centreactivities', ['language' => $current_language]) }}">Center
-                                            Activities</a></li>
-                                </ul> --}}
-                            </li>
-                            <li class='nav-item dropdown'><a href='#' class='nav-link'
-                                    data-toggle='dropdown'>Forms</a>
-                                {{-- <ul class='dropdown-menu'>
-                                    <li><a class='dropdown-item'
-                                            href="{{ route('research', ['language' => $current_language]) }}">Research</a>
+                                            href="">Form D for Pump Mechanics</a>
                                     </li>
                                     <li><a class='dropdown-item'
-                                            href="{{ route('energyauditing', ['language' => $current_language]) }}">Energy
-                                            Auditing</a></li>
+                                        href="">Application form for Licensing scale/Pump Mechanics</a>
+                                    </li>
                                     <li><a class='dropdown-item'
-                                            href="{{ route('feasibility', ['language' => $current_language]) }}">Feasibility
-                                            Studies</a></li>
-                                    <li><a class='dropdown-item'
-                                            href="{{ route('consultancysupport', ['language' => $current_language]) }}">Consultancy
-                                            & Technical Services</a></li>
-                                    <li><a class='dropdown-item'
-                                            href="{{ route('industrialaudits', ['language' => $current_language]) }}">Industrial
-                                            Technical Audits</a></li>
-                                    <li><a class='dropdown-item'
-                                            href="{{ route('lan', ['language' => $current_language]) }}">LAN
-                                            Installation and Configuration</a></li>
-                                    <li><a class='dropdown-item'
-                                            href="{{ route('cyber', ['language' => $current_language]) }}">Cybersecurity
-                                            and Software Development</a></li>
-                                    <li><a class='dropdown-item' href="#">Laboratory analytical Services <i
-                                                class="fas fa-lock"></i></a></li>
-                                    <li><a class='dropdown-item' href="#">Equipment Repair and maintenance <i
-                                                class="fas fa-lock"></i></a></li>
-                                    <li><a class='dropdown-item' href="#">Training and skill development
-                                            services <i class="fas fa-lock"></i></a></li>
+                                        href="">Compounding Forms</a>
+                                     </li>
 
-                                </ul> --}}
+
+
+                                </ul>
                             </li>
 
                             <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'

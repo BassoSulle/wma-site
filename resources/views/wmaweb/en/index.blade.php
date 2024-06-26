@@ -237,19 +237,19 @@
                             }
                         </style>
                         <div class="image-wrapper">
-                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrWpzpkb7T0pUaop_349q6DcNzEGzd3YISnZr1WpwAZeU-xhdIEnZ8bVkFRM1BsLC8G-75OuIu8gk0dWemBLDzeXgVuFXa2dRES6LuRjrMC8Op24SZTXJHKBZ73-f4gegIf0YW9wEGxncOpm-hgM92FQrXH2XHg927hZyertEuZ-WS4CBAUUth9j7gPH8/s2560/IMG-20240206-WA0495.jpg"
+                            <img src="https://www.wma.go.tz/uploads/news/medium/1716304662-_Z9A8095%20WAZR.jpg"
                                 class="w-100" alt="Thumbnail">
                         </div>
                         <div class="col-12 bg-light px-xs-2 p-3">
                             <div>
                                 <p class="text-justify mb-2">
                                     <b>
-                                        <h6 class="article-h2">YALIYOJIRI KATIKA KIKAO CHA BARAZA LA 34 LA WAFANYAKAZI WA
-                                            WAKALA WA VIPIMO (WMA).</h6>
+                                        <h6 class="article-h2">ELIMU YA MATUMIZI SAHIHI YA VIPIMO YATOLEWA KWA WABUNGE</h6>
                                     </b>
                                     <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i> June 04, 2024
-                                <p class="mt-2">Afisa Mtendaji Mkuu Bw. Alban Kihulla ameongoza kikao cha therasini na nne
-                                    (34) cha Baraza la Wafanyakazi wa Wakala wa Vipimo kili..</p>
+                                <p class="mt-2">AWaziri wa Biashara na Maendeleo ya Viwanda Zanzibar Mhe. Omar S. Shaaban
+                                    ameipongeza taasisi ya Wakala wa Vipimo (WMA) kwa namna inavyoendelea kusimamia usahihi wa
+                                    vipimo katika sekta mbalimbali na kuhakikisha kunakuwa na haki baina ya pande mbili zinazofanya biashara...</p>
                                 <a href="">Read More</a>
                                 </p>
                             </div>
@@ -273,7 +273,7 @@
                             }
                         </style>
                         <div class="image-wrapper">
-                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrWpzpkb7T0pUaop_349q6DcNzEGzd3YISnZr1WpwAZeU-xhdIEnZ8bVkFRM1BsLC8G-75OuIu8gk0dWemBLDzeXgVuFXa2dRES6LuRjrMC8Op24SZTXJHKBZ73-f4gegIf0YW9wEGxncOpm-hgM92FQrXH2XHg927hZyertEuZ-WS4CBAUUth9j7gPH8/s2560/IMG-20240206-WA0495.jpg"
+                            <img src="https://www.wma.go.tz/uploads/news/medium/1717517519-4Z9A8371.jpg"
                                 class="w-100" alt="Thumbnail">
                         </div>
                         <div class="col-12 bg-light px-xs-2 p-3">
