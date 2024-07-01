@@ -551,7 +551,7 @@
 
             <div class="service-item col mx-2">
                 <div class="service-icon">
-                    <img src="{{ asset('assets/images/approval_icon.png') }}" alt="" width="80px"
+                    <img src="{{ asset('assets/images/doc_approval_icon.png') }}" alt="" width="80px"
                         style="margin-bottom: 10px;">
 
                     {{-- <img src="/uploads/icon/contract.png" alt=""> --}}
