@@ -1,7 +1,9 @@
  <!-- FOOTER -->
  <svg viewBox="0 0 1440 160">
-    <path fill="#F89724" fill-opacity="1" d="M0,80L360,120C480,140,600,120,720,100C840,80,960,100,1080,120C1200,140,1320,120,1400,100L1440,80L1440,160L1400,160C1320,160,1200,160,1080,160C960,160,840,160,720,160C600,160,480,160,360,160C240,160,120,160,0,160Z"></path>
-  </svg>
+     <path fill="#F89724" fill-opacity="1"
+         d="M0,80L360,120C480,140,600,120,720,100C840,80,960,100,1080,120C1200,140,1320,120,1400,100L1440,80L1440,160L1400,160C1320,160,1200,160,1080,160C960,160,840,160,720,160C600,160,480,160,360,160C240,160,120,160,0,160Z">
+     </path>
+ </svg>
  <footer class="tirdo-footer tirdo-section col-12 pb-0">
      <div class="row">
          <div class="col-lg-3 col-sm-6 px-3 no-padding-sm footer-content shadow-right">
@@ -10,7 +12,7 @@
                  <h5 class="footer-heading">Address</h5>
                  <p class="py-0">Weights and Measures Agency </p>
                  <p class="py-0">
-                    P.O BOX 313, Dar es Salaam,<br>
+                     P.O BOX 313, Dar es Salaam,<br>
                      NSSF House (Mafao), 7th floor Fax : Namba bila Malipo: 0800 110097 <br>
                      Phone No : +255 (022) 2928158<br>
 
@@ -48,6 +50,11 @@
                      <div class="col-md-12">
                          <div class="row mx-2">
 
+                             <style>
+                                 .list-inline-item>a:hover {
+                                     color: #000;
+                                 }
+                             </style>
                              <div class="col-lg-4 col-sm-6 no-padding-sm">
                                  <h5 class="footer-heading">Related Links</h5>
                                  <ul class="list-inline text-left">
@@ -59,14 +66,16 @@
                                              (VPO)</a>
                                      </li> <br>
                                      <li class="list-inline-item pr-1 py-2">
-                                         <a href="https://www.pmo.go.tz/" target="_blank">Small Industrial Development Organization(SIDO)
+                                         <a href="https://www.pmo.go.tz/" target="_blank">Small Industrial Development
+                                             Organization(SIDO)
                                      </li>
                                      <li class="list-inline-item pr-1 py-2">
                                          <a href="https://www.viwanda.go.tz/" target="_blank">Ministry of Industry,
                                              Trade and Investiment</a>
                                      </li> <br>
                                      <li class="list-inline-item pr-1 py-2">
-                                         <a href="https://business.go.tz/" target="_blank">International Organization of Legal Metrology </a>
+                                         <a href="https://business.go.tz/" target="_blank">International Organization of
+                                             Legal Metrology </a>
                                      </li> <br>
                                      <br>
                                  </ul>
@@ -76,8 +85,8 @@
                              <div class="col-lg-4 no-padding-sm">
                                  <h5 class="footer-heading">Quick Links</h5>
                                  <ul class="list-inline text-left">
-                                     <li class="list-inline-item pr-1 py-2"><a
-                                             href="https://mail.tirdo.or.tz">General Procurement Notice</a>
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://mail.tirdo.or.tz">General
+                                             Procurement Notice</a>
                                      </li>
                                      <br>
                                      <li class="list-inline-item pr-1 py-2"><a
@@ -96,7 +105,8 @@
                                              System</a></li>
                                      <br>
                                      <li class="list-inline-item pr-1 py-2"><a
-                                             href="https://salaryslip.mof.go.tz/Account/Login?ReturnUrl=%2F">Client Service Charter
+                                             href="https://salaryslip.mof.go.tz/Account/Login?ReturnUrl=%2F">Client
+                                             Service Charter
                                              Slip Portal</a></li>
                                      <br>
                                  </ul>
@@ -171,8 +181,7 @@
                      <div class="row  pr-3">
                          <div class="col-md-8 text-left text-white-50 text-xs-center">
                              Designed and Developed by
-                             <a href="{{ route('home', ['language' => $current_language]) }}"
-                                 target="_blank">TIRDO</a>
+                             <a href="{{ route('home', ['language' => $current_language]) }}" target="_blank">TIRDO</a>
                          </div>
                          <div class="col-md-4 text-right text-white-50 text-xs-center">
                              © 2023 TIRDO, All Rights Reserved.

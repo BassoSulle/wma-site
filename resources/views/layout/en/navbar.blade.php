@@ -60,15 +60,14 @@
 
                             <li class='nav-item'><a class='nav-link' target='_black' href='https://mail.tirdo.or.tz'
                                     style="color: white">Staff Mail</a></li>
-                            </li>
                             <li class='nav-item'><a class='nav-link' target='_black'
                                     href='https://eoffice.gov.go.tz/users/login' style="color: white">e-Office</a></li>
                             </li>
                             <li class='nav-item'><a class='nav-link' href="{% url 'faq' current_language %}"
                                     style="color: white">FAQs</a></li>
                             </li>
-                            <li class='nav-item'><a class='nav-link' href='#'
-                                    style="color: white">help@tirdo.or.tz</a></li>
+                            <li class='nav-item'><a class='nav-link' href='mailto:info@wma.go.tz'
+                                    style="color: white">info@wma.go.tz</a></li>
                             </li>
                         </ul>
                     </div>
@@ -78,7 +77,8 @@
         <!-- /top navbar -->
 
         <!-- top middle -->
-        <div class="col-md-12 mt-0 top-middle" style="background-image: url('https://www.wma.go.tz/site/images/banner.png');
+        <div class="col-md-12 mt-0 top-middle"
+            style="background-image: url('https://www.wma.go.tz/site/images/banner.png');
         background-repeat: no-repeat;
         object-fit: cover;
         background-size: cover;">
@@ -93,14 +93,19 @@
                     </div>
 
                     <div class="col-md-8 col-sm-8 col-xs-8 text-center pt-2 pt-xs-0">
-                        <h5 class="" style="color: #000; ">The united republic of Tanzania </h5>
-                        <h3 class="mb-0 title title-main" style="color: #000; text-shadow: 1px 1px 2px #f8a52f;"><b><i> WEIGHT AND MEASURES AGENCY</i></b></h3>
-                        <h3 class="mb-0 title title-main pt-2 pb-2" style="color: #000; text-shadow: 1px 1px 2px #f8a52f; margin-bottom:8px;" ><b><i> (WMA)</i></b></h3>
+                        <h5 class="" style="color: #000; ">The united Republic of Tanzania </h5>
+                        <h3 class="mb-0 title title-main" style="color: #000; text-shadow: 1px 1px 2px #f8a52f;"><b><i>
+                                    WEIGHTS AND MEASURES AGENCY</i></b></h3>
+                        <h3 class="mb-0 title title-main pt-2 pb-2"
+                            style="color: #000; text-shadow: 1px 1px 2px #f8a52f; margin-bottom:8px;"><b><i>
+                                    (WMA)</i></b></h3>
                     </div>
 
                     <div class="col-md-2 col-sm-2 col-xs-2 text-right pt-1 pr-0 logo-container position-relative">
                         {{-- <img style="width: 140px; height: 120px;" src="{{ asset('static/asset/images/flag.png') }}" alt="Tz flag" class="img-fluid position-absolute bottom-0 left-0 w-100 h-100"> --}}
-                        <img style="width: 110px; height: 90px; border-radius: 5px; padding: 5px" src="{{ asset('static/asset/images/logo.png') }}" alt="" class="img-fluid position-absolute bottom-0 left-0">
+                        <img style="width: 110px; height: 90px; border-radius: 5px; padding: 5px"
+                            src="{{ asset('static/asset/images/logo.png') }}" alt=""
+                            class="img-fluid position-absolute bottom-0 left-0">
                     </div>
                 </div>
             </div>
@@ -119,23 +124,42 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
+                    <style>
+                        header .top-bottom .navbar .navbar-nav>li {
+                            border-top: 5px solid black;
+                        }
+
+                        header .top-bottom .navbar .navbar-nav>li.active,
+                        header .top-bottom .navbar .navbar-nav>li:active,
+                        header .top-bottom .navbar .navbar-nav>li:focus,
+                        header .top-bottom .navbar .navbar-nav>li:hover {
+
+                            transition: all .7s ease !important;
+                            background: rgba(215, 158, 18, .3) !important;
+                            border-top: 5px solid #fff !important;
+                            /* color: #000 !important; */
+                            /* background: white; */
+                        }
+                    </style>
                     <div class="collapse navbar-collapse col-12 px-0" id="middleNavbarMenu">
                         <ul class="navbar-nav mr-auto nav-bottom-header justify-content-center d-flex col-12">
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{ route('home', ['language' => $current_language]) }}">
-                                    <span class="mt-0 pt-0"><i class="fa fa-home"></i> Home</span>
+                                    <span class="mt-0 pt-0">
+                                        {{-- <i class="fa fa-home"></i> --}}
+                                        Home</span>
                                 </a>
                             </li>
 
                             <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
                                     data-toggle='dropdown'>About Us</a>
                                 <ul class='dropdown-menu'>
-                                   <li><a class='dropdown-item' href="#">Background</a></li>
-                                   <li><a class='dropdown-item' href="#">Mission and vision</a></li>
-                                   <li><a class='dropdown-item' href="#">Core Value</a></li>
-                                   <li><a class='dropdown-item' href="#">Mandete and Roles</a></li>
+                                    <li><a class='dropdown-item' href="#">Background</a></li>
+                                    <li><a class='dropdown-item' href="#">Mission and vision</a></li>
+                                    <li><a class='dropdown-item' href="#">Core Value</a></li>
+                                    <li><a class='dropdown-item' href="#">Mandete and Roles</a></li>
 
-                                     {{-- <li><a class='dropdown-item' href="{{ route('organizationstructure', ['language' => $current_language]) }}">Organization Structure</a>
+                                    {{-- <li><a class='dropdown-item' href="{{ route('organizationstructure', ['language' => $current_language]) }}">Organization Structure</a>
                                     </li>
                                     <li><a class='dropdown-item' href="{{ route('boarddirectors', ['language' => $current_language]) }}">Board of Directors</a>
                                     </li>
@@ -151,10 +175,9 @@
                                     class='nav-link dropdown-toggle'data-toggle='dropdown'>Administration</a>
                                 <ul class='dropdown-menu'>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item '
-                                            href='#'>Organization Structure </a>
+                                        <a class='dropdown-item ' href='#'>Organization Structure </a>
                                         {{-- <ul class='dropdown-menu'> --}}
-                                            {{-- <li><a class='dropdown-item'
+                                        {{-- <li><a class='dropdown-item'
                                                     href="{{ route('environment', ['language' => $current_language]) }}">Environment</a>
                                             </li>
                                             <li><a class='dropdown-item'
@@ -166,59 +189,51 @@
                                         {{-- </ul> --}}
                                     </li>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item '
-                                            href='#'>Directorate </a>
+                                        <a class='dropdown-item ' href='#'>Directorate </a>
                                     </li>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item '
-                                            href='#'>Section </a>
+                                        <a class='dropdown-item ' href='#'>Section </a>
                                     </li>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item '
-                                            href='#'>Unit </a>
+                                        <a class='dropdown-item ' href='#'>Unit </a>
                                     </li>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item '
-                                            href='#'>Board Member </a>
+                                        <a class='dropdown-item ' href='#'>Board Member </a>
                                     </li>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item '
-                                            href='#'>WMA Managements </a>
+                                        <a class='dropdown-item ' href='#'>WMA Managements </a>
                                     </li>
                                 </ul>
                             </li>
                             <li class='nav-item dropdown'><a href='#'
-                                class='nav-link dropdown-toggle'data-toggle='dropdown'>W&M Practitioners</a>
-                            <ul class='dropdown-menu'>
-                                <li class='nav-item '>
-                                    <li><a class='dropdown-item'
-                                        href="#">Pump Technicians</a>
-                                </li>
-                                    <li><a class='dropdown-item'
-                                            href="">Scale Mechanics</a></li>
-                                    <li><a class='dropdown-item'
-                                            href="">Tank Calibrators</a></li>
+                                    class='nav-link dropdown-toggle'data-toggle='dropdown'>W&M Practitioners</a>
+                                <ul class='dropdown-menu'>
+                                    <li class='nav-item '>
+                                    <li><a class='dropdown-item' href="#">Pump Technicians</a>
+                                    </li>
+                                    <li><a class='dropdown-item' href="">Scale Mechanics</a></li>
+                                    <li><a class='dropdown-item' href="">Tank Calibrators</a></li>
                                     <li><a class='dropdown-item' href="">Gas Meter Calbrators</a></li>
                                     <li><a class='dropdown-item' href="">Scale Manufactures</a></li>
                                     <li><a class='dropdown-item' href="">Tank Constructors</a></li>
-                                    <li><a class='dropdown-item' href="">Pressure gauges & Values Calbrators</a></li>
+                                    <li><a class='dropdown-item' href="">Pressure gauges & Values
+                                            Calbrators</a></li>
                                     <li><a class='dropdown-item' href="">Fuel Measurements Survey</a></li>
-                            </ul>
-                        </li>
-                            <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'data-toggle='dropdown'>Forms</a>
+                                </ul>
+                            </li>
+                            <li class='nav-item dropdown'><a href='#'
+                                    class='nav-link dropdown-toggle'data-toggle='dropdown'>Forms</a>
                                 <ul class='dropdown-menu'>
-                                    <li><a class='dropdown-item'
-                                            href="">Application form for tank calibrators</a>
+                                    <li><a class='dropdown-item' href="">Application form for tank
+                                            calibrators</a>
                                     </li>
-                                    <li><a class='dropdown-item'
-                                            href="">Form D for Pump Mechanics</a>
+                                    <li><a class='dropdown-item' href="">Form D for Pump Mechanics</a>
                                     </li>
-                                    <li><a class='dropdown-item'
-                                        href="">Application form for Licensing scale/Pump Mechanics</a>
+                                    <li><a class='dropdown-item' href="">Application form for Licensing
+                                            scale/Pump Mechanics</a>
                                     </li>
-                                    <li><a class='dropdown-item'
-                                        href="">Compounding Forms</a>
-                                     </li>
+                                    <li><a class='dropdown-item' href="">Compounding Forms</a>
+                                    </li>
 
 
 
@@ -226,54 +241,40 @@
                             </li>
 
                             <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
-                                data-toggle='dropdown'>Media Center</a>
-                            <ul class='dropdown-menu'>
-                                <li><a class='dropdown-item'
-                                        href="#">Photo Gallery</a></li>
-                                <li><a class='dropdown-item'
-                                        href="#">Video Gallery</a></li>
-                                <li><a class='dropdown-item'
-                                        href="#">Audio Gallery</a></li>
-                                <li><a class='dropdown-item'
-                                            href="#">Press Release</a></li>
-                                <li><a class='dropdown-item'
-                                    href="#">Special Supplements</a></li>
-                                <li><a class='dropdown-item'
-                                        href="#">Speech</a></li>
-                                <li><a class='dropdown-item'
-                                    href="#">Brochures</a></li>
-                                <li><a class='dropdown-item'
-                                    href="#">Posters</a></li>
-                                <li><a class='dropdown-item'
-                                    href="#">News Letter</a></li>
-                            </ul>
-                        </li>
+                                    data-toggle='dropdown'>Media Center</a>
+                                <ul class='dropdown-menu'>
+                                    <li><a class='dropdown-item' href="#">Photo Gallery</a></li>
+                                    <li><a class='dropdown-item' href="#">Video Gallery</a></li>
+                                    <li><a class='dropdown-item' href="#">Audio Gallery</a></li>
+                                    <li><a class='dropdown-item' href="#">Press Release</a></li>
+                                    <li><a class='dropdown-item' href="#">Special Supplements</a></li>
+                                    <li><a class='dropdown-item' href="#">Speech</a></li>
+                                    <li><a class='dropdown-item' href="#">Brochures</a></li>
+                                    <li><a class='dropdown-item' href="#">Posters</a></li>
+                                    <li><a class='dropdown-item' href="#">News Letter</a></li>
+                                </ul>
+                            </li>
                             <li class='nav-item dropdown'><a href='#' class='nav-link'
                                     data-toggle='dropdown'>Tenders</a>
 
                             </li>
                             <li class='nav-item dropdown'><a href='#' class='nav-link'
-                                data-toggle='dropdown'>Regional Office</a>
+                                    data-toggle='dropdown'>Regional Office</a>
 
                             </li>
                             <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
-                                data-toggle='dropdown'>Audit Report</a>
-                            <ul class='dropdown-menu'>
-                                <li><a class='dropdown-item'
-                                        href="#">Audit Report 2018-2019</a></li>
-                                <li><a class='dropdown-item'
-                                        href="#">Audit Report 2019-2020</a></li>
-                                <li><a class='dropdown-item'
-                                        href="#">Audit Report 2020-2021</a></li>
-                                <li><a class='dropdown-item'
-                                            href="#">Audit Report 2021-2022</a></li>
-                                <li><a class='dropdown-item'
-                                    href="#">Audit Report 2022-2023</a></li>
-                            </ul>
-                        </li>
-                            <li class='nav-item dropdown'><a href='https://emrejesho.gov.go.tz/tenganisha_aina_za_walalamikaji?PQI70xlXGIGpQajIcg16EMX74XYFJZf9NV6nrjnzNiHgtt6Iqhlm6VYeXW2vhplQ&to_this_inst=415$PQI70xlXGIGpQajIcg16EMX74XYFJZf9NV6nrjnzNiHgtt6Iqhlm6VYeXW2vhplQ'
-                                class='nav-link'
-                                data-toggle='dropdown'>e-Mrejesho</a>
+                                    data-toggle='dropdown'>Audit Report</a>
+                                <ul class='dropdown-menu'>
+                                    <li><a class='dropdown-item' href="#">Audit Report 2018-2019</a></li>
+                                    <li><a class='dropdown-item' href="#">Audit Report 2019-2020</a></li>
+                                    <li><a class='dropdown-item' href="#">Audit Report 2020-2021</a></li>
+                                    <li><a class='dropdown-item' href="#">Audit Report 2021-2022</a></li>
+                                    <li><a class='dropdown-item' href="#">Audit Report 2022-2023</a></li>
+                                </ul>
+                            </li>
+                            <li class='nav-item dropdown'><a
+                                    href='https://emrejesho.gov.go.tz/tenganisha_aina_za_walalamikaji?PQI70xlXGIGpQajIcg16EMX74XYFJZf9NV6nrjnzNiHgtt6Iqhlm6VYeXW2vhplQ&to_this_inst=415$PQI70xlXGIGpQajIcg16EMX74XYFJZf9NV6nrjnzNiHgtt6Iqhlm6VYeXW2vhplQ'
+                                    class='nav-link' data-toggle='dropdown'>e-Mrejesho</a>
 
                             </li>
 
@@ -296,8 +297,7 @@
                             <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
                                     data-toggle='dropdown'>Documents</a>
                                 <ul class='dropdown-menu'>
-                                    <li><a class="dropdown-item"
-                                            href="#">Publications</a>
+                                    <li><a class="dropdown-item" href="#">Publications</a>
                                     </li>
                                 </ul>
                             </li>

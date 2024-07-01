@@ -304,7 +304,7 @@
                         </style>
                         <div class="image-wrapper">
                             <img src="https://www.wma.go.tz/uploads/news/medium/1716304662-_Z9A8095%20WAZR.jpg"
-                                class="w-100" alt="Thumbnail">
+                                class="w-100" style="width: 422px; height: 245px;" alt="Thumbnail">
                         </div>
                         <div class="col-12 bg-light px-xs-2 p-3">
                             <div>
@@ -340,7 +340,7 @@
                         </style>
                         <div class="image-wrapper">
                             <img src="https://www.wma.go.tz/uploads/news/medium/1717517519-4Z9A8371.jpg" class="w-100"
-                                style="width: 422px; height: 237px;" alt="Thumbnail">
+                                style="width: 422px; height: 245px;" alt="Thumbnail">
                         </div>
                         <div class="col-12 bg-light px-xs-2 p-3">
                             <div>
@@ -376,7 +376,7 @@
                         </style>
                         <div class="image-wrapper">
                             <img src="https://www.wma.go.tz/uploads/news/medium/1716304662-_Z9A8095%20WAZR.jpg"
-                                style="width: 422px; height: 237px;" class="w-100" alt="Thumbnail">
+                                style="width: 422px; height: 245px;" class="w-100" alt="Thumbnail">
                         </div>
                         <div class="col-12 bg-light px-xs-2 p-3">
                             <div>
@@ -409,14 +409,16 @@
         <div class="row">
             <div class="col-md-6 my-3">
                 <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Announcements</b></h5>
-                <div class="row mt-4">
+                <div class="row mt-0">
                     <div class="col-md-12 pb-2 mb-2">
                         <div class="col-12 px-xs-2 p-4">
                             {{-- @foreach ($news_articles as $article) --}}
                             <div href="#" target="_blank">
                                 <div class="row align-items-center bg-light1">
                                     <div class="col-2 col-md-3">
-                                        <img src="https://www.wma.go.tz/uploads/1718109034-4Z9A8735.jpg" />
+                                        <img src="https://www.wma.go.tz/uploads/1718109034-4Z9A8735.jpg"
+                                            style="width: 128px; height: 90px; object-fit: cover;"
+                                            class="img-thumbnail" />
                                         {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
                                     </div>
                                     <div class="col-10 col-md-9">
@@ -434,7 +436,9 @@
                                 <div style="margin-top: 20px"></div>
                                 <div class="row align-items-center bg-light1">
                                     <div class="col-2 col-md-3">
-                                        <img src="https://www.wma.go.tz/uploads/news/medium/1717517519-4Z9A8371.jpg" />
+                                        <img src="https://www.wma.go.tz/uploads/news/medium/1717517519-4Z9A8371.jpg"
+                                            style="width: 128px; height: 90px; object-fit: cover;"
+                                            class="img-thumbnail" />
                                         {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
                                     </div>
                                     <div class="col-10 col-md-9">
@@ -463,67 +467,66 @@
                 </div>
             </div>
 
-
             {{-- Top Events --}}
-
             <div class="col-md-6 my-3">
                 <h5 class="my-xs-4 text-center text-xs-center section-title"><b>Top Events</b></h5>
-                <div class="col-md-12 pb-2 mb-2">
-                    <div class="col-12 px-xs-2 p-4">
-                        {{-- @foreach ($news_articles as $article) --}}
-                        <div href="#" target="_blank">
-                            <div class="row align-items-center bg-light1">
-                                <div class="col-2 col-md-3">
-                                    {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
-                                    <img src="https://www.wma.go.tz/uploads/news/medium/1716281495-LO2A0468%20sokoni.jpg"
-                                        alt="Thumbnail" class="img-thumbnail">
+                <div class="row mt-0">
+                    <div class="col-md-12 pb-2 mb-2">
+                        <div class="col-12 px-xs-2 p-4">
+                            {{-- @foreach ($news_articles as $article) --}}
+                            <div href="#" target="_blank">
+                                <div class="row align-items-center bg-light1">
+                                    <div class="col-2 col-md-3">
+                                        {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
+                                        <img src="https://www.wma.go.tz/uploads/news/medium/1716281495-LO2A0468%20sokoni.jpg"
+                                            style="width: 128px; height: 90px; object-fit: cover;" alt="Thumbnail"
+                                            class="img-thumbnail">
+                                    </div>
+                                    <div class="col-10 col-md-9">
+                                        <p class="text-justify mb-2">
+                                            <b>
+                                                <h6 class="article-h2">World Metrology Day 2023</h6>
+                                            </b>
+                                        </p>
+                                        <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Jule 12 2024</p>
+                                        <p>WMA ILALA
+                                        </p>
+                                        <a href="" class="read ml-2">Read more</a>
+                                    </div>
                                 </div>
-                                <div class="col-10 col-md-9">
-                                    <p class="text-justify mb-2">
-                                        <b>
-                                            <h6 class="article-h2">World Metrology Day 2023</h6>
-                                        </b>
-                                    </p>
-                                    <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Jule 12 2024</p>
-                                    <p>WMA ILALA
-                                    </p>
-                                    <a href="" class="read ml-2">Read more</a>
+                                <div style="margin-top: 20px"></div>
+                                <div class="row align-items-center bg-light1">
+                                    <div class="col-2 col-md-3">
+                                        {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
+                                        <img src="https://www.wma.go.tz/uploads/news/medium/1717157606-4Z9A8201%20mbb.jpg"
+                                            style="width: 128px; height: 90px; object-fit: cover;" alt="Thumbnail"
+                                            class="img-thumbnail">
+                                    </div>
+                                    <div class="col-10 col-md-9">
+                                        <p class="text-justify mb-2">
+                                            <b>
+                                                <h6 class="article-h2">World Metrology Day 2023</h6>
+                                            </b>
+                                        </p>
+                                        <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Jule 12 2024</p>
+                                        <p>WMA ILALA
+                                        </p>
+                                        <a href="" class="read ml-2">Read more</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div style="margin-top: 20px"></div>
-                            <div class="row align-items-center bg-light1">
-                                <div class="col-2 col-md-3">
-                                    {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
-                                    <img src="https://www.wma.go.tz/uploads/news/medium/1717157606-4Z9A8201%20mbb.jpg"
-                                        alt="Thumbnail" class="img-thumbnail">
-                                </div>
-                                <div class="col-10 col-md-9">
-                                    <p class="text-justify mb-2">
-                                        <b>
-                                            <h6 class="article-h2">World Metrology Day 2023</h6>
-                                        </b>
-                                    </p>
-                                    <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Jule 12 2024</p>
-                                    <p>WMA ILALA
-                                    </p>
-                                    <a href="" class="read ml-2">Read more</a>
-                                </div>
+                            <hr class="hr">
+                            {{-- @endforeach --}}
+                            <!-- Add a link for "Tazama Zote" -->
+                            <div class="row justify-content-center mt-3">
+                                {{-- <a href="{{ route('news.all_articles', ['language' => $current_language]) }}" class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
                             </div>
-                        </div>
-                        <hr class="hr">
-                        {{-- @endforeach --}}
-                        <!-- Add a link for "Tazama Zote" -->
-                        <div class="row justify-content-center mt-3">
-                            {{-- <a href="{{ route('news.all_articles', ['language' => $current_language]) }}" class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
+
                         </div>
 
                     </div>
-
                 </div>
             </div>
-
-
-
         </div>
     </div>
     </div>
@@ -531,69 +534,36 @@
 
 
     <div class="col-12 my-3">
-        <h5 class="my-xs-2 text-center text-xs-center section-title"><b>How Do I</b>
+        <h5 class="my-xs-4 text-center text-xs-center section-title"><b>How Do I</b>
         </h5>
-
-        <div class="row px-xs-2 online-services">
-
-            <div class="service-item col-md-3">
+        <div class="row mt-4 px-xs-0 online-services">
+            <div class="service-item col mx-2">
                 <div class="service-icon">
-                    <img src="{{ asset('assets/images/how_to_icon.png') }}" alt="" width="80px"
-                        style="margin-bottom: 15px;">
+                    <img src="{{ asset('assets/images/licence_icon.png') }}" alt="" width="80px"
+                        style="margin-bottom: 10px;">
                 </div>
-                <div class="service-title">REQUEST FOR THE LECENCE</div>
+                <div class="service-title">REQUEST FOR THE LICENCE</div>
                 <div class="service-btn-wrapper">
-                    <a target="_blank" href="https://www.wma.go.tz/howdo/6" class="serv-btn orange">Get instruction</a>
+                    <a target="_blank" href="https://www.wma.go.tz/howdo/6" class="serv-btn orange">Get
+                        instruction</a>
                 </div>
             </div>
 
-            <div class="service-item col-md-3">
+            <div class="service-item col mx-2">
                 <div class="service-icon">
-                    <img src="{{ asset('assets/images/how_to_icon.png') }}" alt="" width="80px"
-                        style="margin-bottom: 15px;">
+                    <img src="{{ asset('assets/images/approval_icon.png') }}" alt="" width="80px"
+                        style="margin-bottom: 10px;">
 
                     {{-- <img src="/uploads/icon/contract.png" alt=""> --}}
                 </div>
                 <div class="service-title">REQUEST FOR THE PARTTERN APPROVE</div>
                 <div class="service-btn-wrapper">
-                    <a target="_blank" href="https://www.wma.go.tz/howdo/4" class="serv-btn orange">Get instruction</a>
+                    <a target="_blank" href="https://www.wma.go.tz/howdo/4" class="serv-btn orange">Get
+                        instruction</a>
                 </div>
             </div>
-
-            <div class="service-item col-md-3">
-                <div class="service-icon">
-                    <img src="{{ asset('assets/images/how_to_icon.png') }}" alt="" width="80px"
-                        style="margin-bottom: 15px;">
-
-                    {{-- <img src="/uploads/icon/contract.png" alt=""> --}}
-                </div>
-                <div class="service-title">Trade Marks/Service Registration</div>
-                <div class="service-btn-wrapper">
-                    <a target="_blank" href="https://ors.brela.go.tz/ors/start?returnUrl=%2fbrela%2fprod%2fors"
-                        class="serv-btn orange">Get The Service</a>
-                </div>
-            </div>
-
-            <div class="service-item col-md-3">
-                <div class="service-icon">
-                    <img src="{{ asset('assets/images/how_to_icon.png') }}" alt="" width="80px"
-                        style="margin-bottom: 15px;">
-
-                    {{-- <img src="/uploads/icon/contract.png" alt=""> --}}
-                </div>
-                <div class="service-title">TBS Online Application System</div>
-                <div class="service-btn-wrapper">
-                    <a target="_blank" href="https://oas.tbs.go.tz/" class="serv-btn orange">Get The Service</a>
-                </div>
-            </div>
-
-
-
-
         </div>
     </div>
-
-
 
     {{-- <div class="container mb-5">
                 <div class="col-md-10 mt-5 mb-3">
@@ -763,7 +733,5 @@
 
             </div> --}}
     </div>
-
-
     <!-- /contents -->
 @endsection
