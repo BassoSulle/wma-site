@@ -454,7 +454,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <hr class="hr">
+                            {{-- <hr class="hr"> --}}
+                            <img src="https://www.wma.go.tz/site/images/strip.png" width="1055px">
                             {{-- @endforeach --}}
                             <!-- Add a link for "Tazama Zote" -->
                             <div class="row justify-content-center mt-3">
@@ -515,7 +516,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <hr class="hr">
+                            {{-- <hr class="hr"> --}}
+                            <img src="https://www.wma.go.tz/site/images/strip.png" width="1055px">
                             {{-- @endforeach --}}
                             <!-- Add a link for "Tazama Zote" -->
                             <div class="row justify-content-center mt-3">
@@ -529,9 +531,7 @@
             </div>
         </div>
     </div>
-    </div>
-
-
+    {{-- </div> --}}
 
     <div class="col-12 my-3">
         <h5 class="my-xs-4 text-center text-xs-center section-title"><b>How Do I</b>

@@ -21,3 +21,6 @@ Route::get('/', function () {
 
 Route::get('/{language}/index', [WmaController::class, 'index'])
     ->name('home');
+
+Route::get('/{language}/background', [WmaController::class, 'background'])
+    ->name('background');

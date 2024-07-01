@@ -26,5 +26,16 @@ class WmaController extends Controller
         return view($templatePath, $data);
     }
 
-    
+    public function background($language)
+    {
+        $templateName = 'background';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+
+        return view($templatePath, $data);
+    }
 }

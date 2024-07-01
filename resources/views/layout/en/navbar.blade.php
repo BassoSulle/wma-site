@@ -154,7 +154,9 @@
                             <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
                                     data-toggle='dropdown'>About Us</a>
                                 <ul class='dropdown-menu'>
-                                    <li><a class='dropdown-item' href="#">Background</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('background', ['language' => $current_language]) }}">Background</a>
+                                    </li>
                                     <li><a class='dropdown-item' href="#">Mission and vision</a></li>
                                     <li><a class='dropdown-item' href="#">Core Value</a></li>
                                     <li><a class='dropdown-item' href="#">Mandete and Roles</a></li>
