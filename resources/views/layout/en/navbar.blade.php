@@ -157,9 +157,15 @@
                                     <li><a class='dropdown-item'
                                             href="{{ route('background', ['language' => $current_language]) }}">Background</a>
                                     </li>
-                                    <li><a class='dropdown-item' href="{{ route('vision-and-mission', ['language' => $current_language]) }}">Vision and Mission</a></li>
-                                    <li><a class='dropdown-item' href="{{ route('core-value', ['language' => $current_language]) }}">Core Value</a></li>
-                                    <li><a class='dropdown-item' href="{{ route('mandate-and-role', ['language' => $current_language]) }}">Mandete and Roles</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('vision-and-mission', ['language' => $current_language]) }}">Vision
+                                            and Mission</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('core-value', ['language' => $current_language]) }}">Core
+                                            Value</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('mandate-and-role', ['language' => $current_language]) }}">Mandete
+                                            and Roles</a></li>
 
                                     {{-- <li><a class='dropdown-item' href="{{ route('organizationstructure', ['language' => $current_language]) }}">Organization Structure</a>
                                     </li>
@@ -177,7 +183,9 @@
                                     class='nav-link dropdown-toggle'data-toggle='dropdown'>Administration</a>
                                 <ul class='dropdown-menu'>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item ' href='{{ route('organization-structure', ['language' => $current_language]) }}'>Organization Structure </a>
+                                        <a class='dropdown-item '
+                                            href='{{ route('organization-structure', ['language' => $current_language]) }}'>Organization
+                                            Structure </a>
                                         {{-- <ul class='dropdown-menu'> --}}
                                         {{-- <li><a class='dropdown-item'
                                                     href="{{ route('environment', ['language' => $current_language]) }}">Environment</a>
@@ -191,19 +199,28 @@
                                         {{-- </ul> --}}
                                     </li>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item ' href='{{ route('directorate', ['language' => $current_language]) }}'>Directorate </a>
+                                        <a class='dropdown-item '
+                                            href='{{ route('directorate', ['language' => $current_language]) }}'>Directorate
+                                        </a>
                                     </li>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item ' href='{{ route('section', ['language' => $current_language]) }}'>Section </a>
+                                        <a class='dropdown-item '
+                                            href='{{ route('section', ['language' => $current_language]) }}'>Section
+                                        </a>
                                     </li>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item ' href='{{ route('unit', ['language' => $current_language]) }}'>Unit </a>
+                                        <a class='dropdown-item '
+                                            href='{{ route('unit', ['language' => $current_language]) }}'>Unit </a>
                                     </li>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item ' href='{{ route('board-member', ['language' => $current_language]) }}'>Board Member </a>
+                                        <a class='dropdown-item '
+                                            href='{{ route('board-member', ['language' => $current_language]) }}'>Board
+                                            Member </a>
                                     </li>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item ' href='{{ route('wma-management', ['language' => $current_language]) }}'>WMA Managements </a>
+                                        <a class='dropdown-item '
+                                            href='{{ route('wma-management', ['language' => $current_language]) }}'>WMA
+                                            Management</a>
                                     </li>
                                 </ul>
                             </li>
@@ -211,16 +228,32 @@
                                     class='nav-link dropdown-toggle'data-toggle='dropdown'>W&M Practitioners</a>
                                 <ul class='dropdown-menu'>
                                     <li class='nav-item '>
-                                    <li><a class='dropdown-item' href="{{ route('pump-technician', ['language' => $current_language]) }}">Pump Technicians</a>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('pump-technician', ['language' => $current_language]) }}">Pump
+                                            Technicians</a>
                                     </li>
-                                    <li><a class='dropdown-item' href="{{ route('scale-mechanics', ['language' => $current_language]) }}">Scale Mechanics</a></li>
-                                    <li><a class='dropdown-item' href="{{ route('tank-calibrator', ['language' => $current_language]) }}">Tank Calibrators</a></li>
-                                    <li><a class='dropdown-item' href="{{ route('gas-metre-calibrator', ['language' => $current_language]) }}">Gas Meter Calbrators</a></li>
-                                    <li><a class='dropdown-item' href="{{ route('scale-manufacture', ['language' => $current_language]) }}">Scale Manufactures</a></li>
-                                    <li><a class='dropdown-item' href="{{ route('tank-constructor', ['language' => $current_language]) }}">Tank Constructors</a></li>
-                                    <li><a class='dropdown-item' href="{{ route('pressure-gauge-and-value-calibrator', ['language' => $current_language]) }}">Pressure gauges & Values
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('scale-mechanics', ['language' => $current_language]) }}">Scale
+                                            Mechanics</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('tank-calibrator', ['language' => $current_language]) }}">Tank
+                                            Calibrators</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('gas-metre-calibrator', ['language' => $current_language]) }}">Gas
+                                            Meter Calbrators</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('scale-manufacture', ['language' => $current_language]) }}">Scale
+                                            Manufactures</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('tank-constructor', ['language' => $current_language]) }}">Tank
+                                            Constructors</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('pressure-gauge-and-value-calibrator', ['language' => $current_language]) }}">Pressure
+                                            gauges & Values
                                             Calbrators</a></li>
-                                    <li><a class='dropdown-item' href="{{ route('fuel-measurement-survey', ['language' => $current_language]) }}">Fuel Measurements Survey</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('fuel-measurement-survey', ['language' => $current_language]) }}">Fuel
+                                            Measurements Survey</a></li>
                                 </ul>
                             </li>
                             <li class='nav-item dropdown'><a href='#'
@@ -299,9 +332,15 @@
                             <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
                                     data-toggle='dropdown'>Publications</a>
                                 <ul class='dropdown-menu'>
-                                    <li><a class="dropdown-item" href="{{ route('weight-and-measure-act', ['language' => $current_language]) }}">WEIGHT AND MEASURE ACT</a>
-                                    <li><a class="dropdown-item" href="{{ route('wma-regulation', ['language' => $current_language]) }}">WMA Regulations</a>
-                                    <li><a class="dropdown-item" href="{{ route('approved-pattern', ['language' => $current_language]) }}">Approved Patterns</a>
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('weight-and-measure-act', ['language' => $current_language]) }}">WEIGHT
+                                            AND MEASURE ACT</a>
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('wma-regulation', ['language' => $current_language]) }}">WMA
+                                            Regulations</a>
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('approved-pattern', ['language' => $current_language]) }}">Approved
+                                            Patterns</a>
                                     <li><a class="dropdown-item" href="#">Miscelleneous Amendiment act</a>
                                     <li><a class="dropdown-item" href="#">Technical Manuals</a>
                                     <li><a class="dropdown-item" href="#">Establishment order</a>

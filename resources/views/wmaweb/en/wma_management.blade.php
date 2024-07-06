@@ -21,30 +21,14 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-9 bg-white py-2 page-content">
+                    <div class="col-md-12 bg-white py-2 page-content">
                         <h4>WMA Management</h4>
-
-                        <div class="row justify-content-center mb-4">
-                            <div class="col-md-4 col-sm-6">
-                                <div class="post-module">
-                                    <div class="post-content">
-                                        <div class="category">Member</div>
-                                        <h6 class="sub_title">
-                                            <p class="card-text fw-medium">ENG. SHABAN SELEMAN</p>
-                                        </h6>
-                                    </div>
-                                    <div class="thumbnail">
-                                        <img class="w-100 bg-white" src="{{asset('assets/images/shaban.png')}}" alt="ENG. SHABAN SELEMAN">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="row justify-content-center mb-4">
                             <div class="col-md-4 col-sm-6">
                                 <div class="post-module">
                                     <div class="thumbnail">
-                                        <img class="w-100 bg-white" src="{{asset('assets/images/shaban.png')}}" alt="ENG. SHABAN SELEMAN">
+                                        <img class="w-100 bg-white" src="{{ asset('assets/images/shaban.png') }}"
+                                            alt="ENG. SHABAN SELEMAN">
                                     </div>
                                     <div class="post-content">
                                         <div class="category">Member</div>
@@ -56,16 +40,11 @@
                             </div>
                         </div>
 
-
-
-
+                    </div>
 
                 </div>
-                {{-- @include('tirdoweb.en.newsection') --}}
-
             </div>
         </div>
-    </div>
 
     </div>
     <!-- /contents -->
