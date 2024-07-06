@@ -247,4 +247,58 @@ class WmaController extends Controller
         ];
         return view($templatePath, $data);
     }
+
+    public function sections($language)
+    {
+
+        $templateName = 'section';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function units($language)
+    {
+
+        $templateName = 'unit';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function board_member($language)
+    {
+
+        $templateName = 'board_member';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function wma_management($language)
+    {
+
+        $templateName = 'wma_management';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+
 }

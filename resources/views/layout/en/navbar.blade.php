@@ -194,16 +194,16 @@
                                         <a class='dropdown-item ' href='{{ route('directorate', ['language' => $current_language]) }}'>Directorate </a>
                                     </li>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item ' href='#'>Section </a>
+                                        <a class='dropdown-item ' href='{{ route('section', ['language' => $current_language]) }}'>Section </a>
                                     </li>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item ' href='#'>Unit </a>
+                                        <a class='dropdown-item ' href='{{ route('unit', ['language' => $current_language]) }}'>Unit </a>
                                     </li>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item ' href='#'>Board Member </a>
+                                        <a class='dropdown-item ' href='{{ route('board-member', ['language' => $current_language]) }}'>Board Member </a>
                                     </li>
                                     <li class='nav-item '>
-                                        <a class='dropdown-item ' href='#'>WMA Managements </a>
+                                        <a class='dropdown-item ' href='{{ route('wma-management', ['language' => $current_language]) }}'>WMA Managements </a>
                                     </li>
                                 </ul>
                             </li>

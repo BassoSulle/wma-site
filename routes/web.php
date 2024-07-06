@@ -75,3 +75,15 @@ Route::get('/{language}/pressure-gauge-and-value-calibrator', [WmaController::cl
 
 Route::get('/{language}/fuel-measurement-survey', [WmaController::class, 'fuel_measurement_survey'])
 ->name('fuel-measurement-survey');
+
+Route::get('/{language}/section', [WmaController::class, 'sections'])
+->name('section');
+
+Route::get('/{language}/unit', [WmaController::class, 'units'])
+->name('unit');
+
+Route::get('/{language}/board-member', [WmaController::class, 'board_member'])
+->name('board-member');
+
+Route::get('/{language}/wma-management', [WmaController::class, 'wma_management'])
+->name('wma-management');
