@@ -14,10 +14,12 @@ use App\Http\Controllers\WmaController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/', function () {
+    return redirect()->route('home', ['language' => 'en']);
+})->name('root');
+
+$language = 'en';
 
 Route::get('/{language}/index', [WmaController::class, 'index'])
     ->name('home');

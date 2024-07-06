@@ -10,7 +10,6 @@ class WmaController extends Controller
     {
         return "wmaweb.$language.$templateName";
     }
-
     public function index($language = 'en')
     {
         $templateName = 'index';
@@ -299,6 +298,4 @@ class WmaController extends Controller
         ];
         return view($templatePath, $data);
     }
-
-
 }

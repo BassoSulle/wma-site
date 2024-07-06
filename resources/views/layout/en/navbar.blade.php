@@ -42,7 +42,7 @@
                     <div class="col-7 sm-hide px-0">
                         <ul class="list-inline mx-auto justify-content-end">
                             <li class="list-inline-item">
-                                <a id="english-link" title="Switch Language to English" href="{% url 'home' 'en' %}"
+                                <a id="english-link" title="Switch Language to English" href="#"
                                     style="color: white">
                                     <object data="{{ asset('static/asset/images/Flag_of_the_United_Kingdom.svg') }}"
                                         type="image/svg+xml" width="20px"></object>
@@ -50,7 +50,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a id="swahili-link" title="Switch Language to Swahili" href="{% url 'home' 'sw' %}"
+                                <a id="swahili-link" title="Switch Language to Swahili" href="#"
                                     style="color: white">
                                     <object data="{{ asset('static/asset/images/Flag_of_Tanzania.svg') }}"
                                         type="image/svg+xml" width="18px"></object>
