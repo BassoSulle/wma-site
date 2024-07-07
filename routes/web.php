@@ -89,3 +89,53 @@ Route::get('/{language}/board-member', [WmaController::class, 'board_member'])
 
 Route::get('/{language}/wma-management', [WmaController::class, 'wma_management'])
     ->name('wma-management');
+
+Route::get('/{language}/tender', [WmaController::class, 'tender'])
+->name('tender');
+
+Route::get('/{language}/regianal-office', [WmaController::class, 'regional_office'])
+->name('regional-office');
+
+Route::get('/{language}/audit-report-2018-2019', [WmaController::class, 'audit_report_2018_2019'])
+->name('audit-report-2018-2019');
+
+Route::get('/{language}/audit-report-2019-2020', [WmaController::class, 'audit_report_2019_2020'])
+->name('audit-report-2019-2020');
+
+Route::get('/{language}/audit-report-2020-2021', [WmaController::class, 'audit_report_2020_2021'])
+->name('audit-report-2020-2021');
+
+Route::get('/{language}/audit-report-2021-2022', [WmaController::class, 'audit_report_2021_2022'])
+->name('audit-report-2021-2022');
+
+Route::get('/{language}/audit-report-2022-2023', [WmaController::class, 'audit_report_2022_2023'])
+->name('audit-report-2022-2023');
+
+Route::get('/{language}/miscalleneous-amendment-act', [WmaController::class, 'miscalleneous_amendment_act'])
+->name('miscalleneous-amendment-act');
+
+Route::get('/{language}/technical-manual', [WmaController::class, 'technical_manual'])
+->name('technical-manual');
+
+Route::get('/{language}/establishment-order', [WmaController::class, 'establishment_order'])
+->name('establishment-order');
+
+Route::get('/{language}/framework-document', [WmaController::class, 'framework_document'])
+->name('framework-document');
+
+Route::get('/{language}/client-service-charter', [WmaController::class, 'client_service_charter'])
+->name('client-service-charter');
+
+Route::get('/{language}/application-form-for-tank-calibrator', [WmaController::class, 'application_form_for_tank_calibrator'])
+->name('application-form-for-tank-calibrator');
+
+Route::get('/{language}/form-d-for-pump-mechanics', [WmaController::class, 'form_d_for_pump_mechanics'])
+->name('form-d-for-pump-mechanics');
+
+Route::get('/{language}/application-form-for-licencing-scale', [WmaController::class, 'application_form_for_licencing_scale'])
+->name('application-form-for-licencing-scale');
+
+Route::get('/{language}/compounding-form', [WmaController::class, 'compounding_form'])
+->name('compounding-form');
+
+

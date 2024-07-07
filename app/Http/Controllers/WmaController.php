@@ -298,4 +298,212 @@ class WmaController extends Controller
         ];
         return view($templatePath, $data);
     }
+
+    public function tender($language)
+    {
+
+        $templateName = 'tender';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function regional_office($language)
+    {
+
+        $templateName = 'regional_office';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function audit_report_2018_2019($language)
+    {
+
+        $templateName = 'audit_report_2018-2019';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function audit_report_2019_2020($language)
+    {
+
+        $templateName = 'audit_report_2019-2020';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function audit_report_2020_2021($language)
+    {
+
+        $templateName = 'audit_report_2020-2021';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function audit_report_2021_2022($language)
+    {
+
+        $templateName = 'audit_report_2021-2022';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function audit_report_2022_2023($language)
+    {
+
+        $templateName = 'audit_report_2022-2023';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function miscalleneous_amendment_act($language)
+    {
+
+        $templateName = 'miscalleneous_amendment_act';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function technical_manual($language)
+    {
+
+        $templateName = 'technical_manual';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function establishment_order($language)
+    {
+
+        $templateName = 'establishment_order ';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function framework_document($language)
+    {
+
+        $templateName = 'framework_document ';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function client_service_charter($language)
+    {
+
+        $templateName = 'client_service_charter ';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function application_form_for_tank_calibrator($language)
+    {
+
+        $templateName = 'application_form_for_tank_calibrator ';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function form_d_for_pump_mechanics($language)
+    {
+
+        $templateName = 'form_d_for_pump_mechanics';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function application_form_for_licencing_scale($language)
+    {
+
+        $templateName = 'application_form_for_licencing_scale';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function compounding_form($language)
+    {
+
+        $templateName = 'compounding_form';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
 }
