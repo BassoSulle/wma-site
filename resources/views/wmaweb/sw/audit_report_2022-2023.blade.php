@@ -14,29 +14,22 @@
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
                                 {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
-                                <li class="breadcrumb-item list-inline-item active">Vision and Mission</li>
+                                <li class="breadcrumb-item list-inline-item active">Report</li>
                             </ol>
                         </nav>
                     </div>
                 </div>
 
+
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        <h4>Vision and Mission</h4>
-
+                        <h4>Report</h4>
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
-                            <p class="vision and mission">
-                            <h5>VISION</h5>
-                            Accurate and reliable measurements for all.<br><br>
+                            <p class="organization structure">
+                                Under Constraction....
 
-
-                            <h5>MISSION</h5>
-
-                            To provide Consumer protection in relation to legal metrology through Verification
-                            of measuring instruments or measuring instruments, metrological supervision and expertise for
-                            socio-economic development.
-                            <br>
+                                    {{-- <a href="https://www.wma.go.tz/uploads/files/Audited%20Financial%20statement%202021-22.pdf">Audited Financial statements 2021 - 2022</a> --}}
 
                             </p>
 
@@ -46,6 +39,7 @@
                     <div class="col-md-3 navigation-column">
                         @include('wmaweb.en.announcments_and_events')
                     </div>
+
                 </div>
 
             </div>

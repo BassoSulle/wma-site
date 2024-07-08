@@ -1,4 +1,4 @@
-@extends('wmaweb.sw.base_layout')
+@extends('wmaweb.en.base_layout')
 <!-- /HEADER -->
 
 <!-- contents -->
@@ -26,18 +26,8 @@
                         <h4>Approved Patterns</h4>
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
-                            {{-- <p class="vision and mission">
-                                <h5>VISION</h5>
-                                Accurate and reliable measurements for all.<br><br>
-
-
-                               <h5>MISSION</h5>
-
-                                To provide Consumer protection in relation to legal metrology through Verification
-                                 of measuring instruments or measuring instruments, metrological supervision and expertise for socio-economic development.
-                                <br>
-
-                            </p> --}}
+                            
+                            <a href="https://www.wma.go.tz/uploads/files/LIST%20OF%20APPROVED%20PATTERNS%20(NEW)UPDATEDx%20(2).docx">list of approved patterns </a>
 
                         </div>
                     </div>

@@ -14,7 +14,7 @@
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
                                 {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
-                                <li class="breadcrumb-item list-inline-item active">WMA Regulations</li>
+                                <li class="breadcrumb-item list-inline-item active">Establishment order </li>
                             </ol>
                         </nav>
                     </div>
@@ -23,7 +23,7 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        <h4>WMA Regulations</h4>
+                        <h4>Establishment order </h4>
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <table class="table table-striped">
@@ -36,35 +36,12 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>WEIGHTS AND MEASURES GENERAL REGULATIONS, GN 288 OF 2019 (2)</td>
-                                        <td>07/11/2019</td>
-                                        <td><a href="#" target="_blank">Downloads</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>WEIGHTS AND MEASURES GENERAL REGULATIONS, GN 288 OF 2019</td>
-                                        <td>16/09/2019</td>
-                                        <td><a href="#" target="_blank">Downloads</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>(SAND AND OTHER BALLAST) REGULATIONS-2013</td>
+                                        <td>Establishment order</td>
                                         <td>21/12/2016</td>
-                                        <td><a href="#" target="_blank">Downloads</a></td>
+                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1482325714-ESTABLISHMENT%20ORDER.pdf" target="_blank">Downloads</a></td>
                                     </tr>
-                                    <tr>
-                                        <td>(SALE OF LIQUEFIED PETROLEUM GAS) REGULATIONS, 2013</td>
-                                        <td>21/12/2016</td>
-                                        <td><a href="#" target="_blank">Downloads</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>(METROLOGICAL CONTROL OF WATER METERS) REGULATIONS, 2014</td>
-                                        <td>21/12/2016</td>
-                                        <td><a href="#" target="_blank">Downloads</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>(CREDIT AND DEBT CONTROL) REGULATIONS, 2014</td>
-                                        <td>21/12/2016</td>
-                                        <td><a href="#" target="_blank">Downloads</a></td>
-                                    </tr>
+
+
                                 </tbody>
                             </table>
                 </div>

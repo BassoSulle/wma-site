@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{% block language %}sw{% endblock %}">
+<html lang="{% block language %}en{% endblock %}">
 
     <head>
         <meta charset="utf-8">

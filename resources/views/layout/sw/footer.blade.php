@@ -9,14 +9,14 @@
          <div class="col-lg-3 col-sm-6 px-3 no-padding-sm footer-content shadow-right">
 
              <div class="col-12">
-                 <h5 class="footer-heading">Address</h5>
-                 <p class="py-0">Weights and Measures Agency </p>
+                 <h5 class="footer-heading">Anuani</h5>
+                 <p class="py-0">Wakala wa Vipimo </p>
                  <p class="py-0">
                      P.O BOX 313, Dar es Salaam,<br>
                      NSSF House (Mafao), 7th floor Fax : Namba bila Malipo: 0800 110097 <br>
-                     Phone No : +255 (022) 2928158<br>
+                     Namba ya Simu : +255 (022) 2928158<br>
 
-                 <p class="py-0">Email : info@wma.go.tz</p>
+                 <p class="py-0">Barua Pepe : info@wma.go.tz</p>
              </div>
              <div class="col-12 px-3 pt-3">
                  <!-- Boxicons -->
@@ -59,23 +59,22 @@
                                  <h5 class="footer-heading">Related Links</h5>
                                  <ul class="list-inline text-left">
                                      <li class="list-inline-item pr-1 py-2">
-                                         <a href="https://www.ikulu.go.tz/" target="_blank">State House</a>
+                                         <a href="https://www.ikulu.go.tz/" target="_blank">Ikulu</a>
                                      </li> <br>
                                      <li class="list-inline-item pr-1 py-2">
-                                         <a href="https://www.vpo.go.tz/" target="_blank">Zanzibar Bureau Standard
+                                         <a href="https://www.vpo.go.tz/" target="_blank">Wakala wa Vipimo Zanzibar
                                              (VPO)</a>
                                      </li> <br>
                                      <li class="list-inline-item pr-1 py-2">
-                                         <a href="https://www.pmo.go.tz/" target="_blank">Small Industrial Development
-                                             Organization(SIDO)
+                                         <a href="https://www.pmo.go.tz/" target="_blank">Shirika la Viwanda
+                                             vidogo(SIDO)
                                      </li>
                                      <li class="list-inline-item pr-1 py-2">
-                                         <a href="https://www.viwanda.go.tz/" target="_blank">Ministry of Industry,
-                                             Trade and Investiment</a>
+                                         <a href="https://www.viwanda.go.tz/" target="_blank">Wizara ya Viwanda,
+                                             Biashara na Uwekezaji</a>
                                      </li> <br>
                                      <li class="list-inline-item pr-1 py-2">
-                                         <a href="https://business.go.tz/" target="_blank">International Organization of
-                                             Legal Metrology </a>
+                                         <a href="https://oiml.org/en" target="_blank">Shirika la Vipimo Duniani </a>
                                      </li> <br>
                                      <br>
                                  </ul>
@@ -83,38 +82,35 @@
 
 
                              <div class="col-lg-4 no-padding-sm">
-                                 <h5 class="footer-heading">Quick Links</h5>
+                                 <h5 class="footer-heading">Kurasa za karibu</h5>
                                  <ul class="list-inline text-left">
-                                     <li class="list-inline-item pr-1 py-2"><a href="https://mail.tirdo.or.tz">General
-                                             Procurement Notice</a>
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://mail.tirdo.or.tz">Mpangi wa
+                                             Manunuzi wa Mwaka</a>
                                      </li>
                                      <br>
                                      <li class="list-inline-item pr-1 py-2"><a
-                                             href="https://eoffice.gov.go.tz/users/login">WMA Acts
-                                             System</a></li>
+                                             href="https://eoffice.gov.go.tz/users/login">Sheria</a></li>
                                      <br>
                                      <li class="list-inline-item pr-1 py-2"><a
                                              href="https://emrejesho.gov.go.tz/tenganisha_aina_za_walalamikaji?PQI70xlXGIGpQajIcg16EMX74XYFJZf9NV6nrjnzNiHgtt6Iqhlm6VYeXW2vhplQ&to_this_inst=415$PQI70xlXGIGpQajIcg16EMX74XYFJZf9NV6nrjnzNiHgtt6Iqhlm6VYeXW2vhplQ">eMrejesho</a>
                                      </li>
                                      <br>
-                                     <li class="list-inline-item pr-1 py-2"><a href="https://cti.co.tz/">Speeches
-                                             Tanzania Industries</a></li>
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://cti.co.tz/">Hotuba</a></li>
                                      <br>
                                      <li class="list-inline-item pr-1 py-2"><a
-                                             href="https://safari.gov.go.tz/index.php/user/auth/login">Technical manuals
-                                             System</a></li>
+                                             href="https://safari.gov.go.tz/index.php/user/auth/login">Miongozo ya
+                                             kiufundi</a></li>
                                      <br>
                                      <li class="list-inline-item pr-1 py-2"><a
-                                             href="https://salaryslip.mof.go.tz/Account/Login?ReturnUrl=%2F">Client
-                                             Service Charter
-                                             Slip Portal</a></li>
+                                             href="https://salaryslip.mof.go.tz/Account/Login?ReturnUrl=%2F">Mkataba wa
+                                             Huduma kwa Mteja</a></li>
                                      <br>
                                  </ul>
                              </div>
 
 
                              <div class="col-lg-4 no-padding-sm">
-                                 <h5 class="footer-heading">Our Partners</h5>
+                                 <h5 class="footer-heading">Washirika wetu</h5>
                                  <ul class="list-inline text-left">
                                      <li class="list-inline-item pr-1 py-2"><a href="https://comsats.org/">Commission on
                                              Science and Technology for Sustainable Development in the South
@@ -155,17 +151,16 @@
                          <div class="footer-links">
                              <div class="col-md-12 pl-0 list no-padding-sm text-xs-center footer-nav">
                                  <ol>
-                                     <li class='list-inline-item'><a href=''>Privacy Policy</a></li>
+                                     <li class='list-inline-item'><a href=''>Sera ya Faragha</a></li>
                                      </li>
-                                     <li class='list-inline-item'><a href=''>Copyright Statement</a></li>
+                                     <li class='list-inline-item'><a href=''>Taarifa ya Hakimiliki</a></li>
                                      </li>
-                                     <li class='list-inline-item'><a href=''>Sitemap</a>
+                                     <li class='list-inline-item'><a href=''>Ramani ya tovuti</a>
                                      </li>
                                      </li>
-                                     <li class='list-inline-item'><a href=''>Disclaimer</a></li>
+                                     <li class='list-inline-item'><a href=''>Kanusho</a></li>
                                      </li>
-                                     <li class='list-inline-item'><a href=''>Contact
-                                             Us</a></li>
+                                     <li class='list-inline-item'><a href=''>Wasiliana Nasi</a></li>
                                      </li>
                                  </ol>
                              </div>
@@ -180,11 +175,11 @@
 
                      <div class="row  pr-3">
                          <div class="col-md-8 text-left text-white-50 text-xs-center">
-                             Designed and Developed by
+                             Imeundwa na Kutengenezwa na
                              <a href="{{ route('home', ['language' => $current_language]) }}" target="_blank">TIRDO</a>
                          </div>
                          <div class="col-md-4 text-right text-white-50 text-xs-center">
-                             © 2023 TIRDO, All Rights Reserved.
+                             © {{ date('Y') }} TIRDO, Haki zote zimehifadhiwa.
                          </div>
                      </div>
                  </div>

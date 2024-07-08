@@ -1,4 +1,4 @@
-@extends('wmaweb.sw.base_layout')
+@extends('wmaweb.en.base_layout')
 <!-- /HEADER -->
 
 <!-- contents -->
@@ -27,9 +27,7 @@
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="organization structure">
-                            <h5><a
-                                    href="https://www.wma.go.tz/uploads/files/Scale%20Mechanics%20Class%20A,%20B%20&%20C.pdf">Scale
-                                    Mechanics class A, B & C</a></h5>
+                                <h5><a href="https://www.wma.go.tz/uploads/files/Scale%20Mechanics%20Class%20A,%20B%20&%20C.pdf">Scale Mechanics class A, B & C</a></h5>
 
 
 
