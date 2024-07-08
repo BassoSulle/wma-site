@@ -170,7 +170,7 @@
                         <center>
                             <div class="">
                                 <h5 class="title mb-2"><br>Alban M. Kihulla.</h5>
-                                <small>Chief executive oofficer</small>
+                                <small>Mkurugenzi Mkuu</small>
                             </div>
                         </center>
                     </div>
@@ -178,39 +178,40 @@
                     <div class="col-md-6">
                         <div class="card-body">
                             <div class="">
-                                <h5 class="title mb-2"><br>Welcome to WMA</h5>
+                                <h5 class="title mb-2"><br>Karibu WMA</h5>
                                 <small><i></i></small>
                             </div>
                             <div class="col-12 px-0 my-2">
                                 <p class="card-text" class="text-justify;"
                                     style="letter-spacing: 0.05em; line-height: 1.5;">
-                                    The history of Weights and Measures is traced back since the early human civilisation.
-                                    Measurement System is undoubtedly one of man’s greatest and most important inventions
-                                    that cannot be left aside in the history of evolution of civilisation. Every human being
-                                    on our planet is affected by measurements in one way or another. Imagine, from the
-                                    moment
-                                    we are born and throughout our daily lives, the act of weighing or measuring is an
-                                    important
-                                    and often vital part of our existence. Our bodies, the food we eat and all the products
-                                    we
-                                    use as an integral part of modern living have all been weighed and measured at some
-                                    stage
-                                    or another in their development.
+                                    Historia ya Uzito na Vipimo inafuatiliwa nyuma tangu ustaarabu wa mapema wa mwanadamu.
+                                    Mfumo wa Vipimo bila shaka ni moja ya uvumbuzi mkubwa na muhimu zaidi wa mwanadamu
+                                    ambayo haiwezi kuachwa kando katika historia ya mageuzi ya ustaarabu. Kila binadamu
+                                    kwenye sayari yetu huathiriwa na vipimo kwa njia moja au nyingine. Fikiria, kutoka kwa
+                                    dakika
+                                    tunazaliwa na katika maisha yetu ya kila siku, kitendo cha kupima au kupima ni
+                                    muhimu
+                                    na mara nyingi sehemu muhimu ya uwepo wetu. Miili yetu, chakula tunachokula na bidhaa
+                                    zote
+                                    sisi
+                                    matumizi kama sehemu muhimu ya maisha ya kisasa yote yamepimwa na kupimwa kwa baadhi
+                                    jukwaa
+                                    au mwingine katika maendeleo yao.
                                     </br>
                                     </br>
-                                    It is almost impossible to describe anything without
-                                    referring to weights and measures. Therefore, weighing or measuring is natural and vital
-                                    part of our everyday life.
+                                    Karibu haiwezekani kuelezea chochote bila
+                                    akimaanisha uzito na vipimo. Kwa hiyo, kupima au kupima ni asili na muhimu
+                                    sehemu ya maisha yetu ya kila siku.
 
-                                    Economies in the world depend on reliable measurements that are trusted and accepted
-                                    internationally.
-                                    This facilitates trade and reduces transaction costs.
+                                    Uchumi ulimwenguni hutegemea vipimo vya kuaminika ambavyo vinaaminika na kukubalika
+                                    kimataifa.
+                                    Hii hurahisisha biashara na kupunguza gharama za muamala.
                                     <br>
                                     <br>
                                     {{-- <a href="{{ route('aboutus', ['language' => $current_language]) }}" class=""> --}}
-                                    <a href="#"> Read more..</a>
+                                    <a href="#"> Soma zaidi...</a>
                                 </p>
-                                <!-- <a href="aboutus" class="link-no-underline">Read more</a> -->
+                                <!-- <a href="aboutus" class="link-no-underline">Soma zaidi</a> -->
                             </div>
                         </div>
                     </div>
@@ -283,7 +284,7 @@
 
         <div class="row px-xs-3">
             <div class="col-md-12 my-3">
-                <h5 class="my-xs-2 mt-3 text-center text-xs-center section-title"> <b>Top News</b> </h5>
+                <h5 class="my-xs-2 mt-3 text-center text-xs-center section-title"> <b>Habari Kuu</b> </h5>
                 <div class="row mt-4">
                     {{-- @foreach ($resources_products as $product) --}}
                     <div class="col-md-4 pb-3 mb-3">
@@ -316,7 +317,7 @@
                                 <p class="mt-2">Afisa Mtendaji Mkuu Bw. Alban Kihulla ameongoza kikao cha therasini na
                                     nne
                                     (34) cha Baraza la Wafanyakazi wa Wakala wa Vipimo kili..</p>
-                                <a href="">Read More</a>
+                                <a href="">Soma zaidi</a>
                                 </p>
                             </div>
                         </div>
@@ -353,7 +354,7 @@
                                 <p class="mt-2">Afisa Mtendaji Mkuu Bw. Alban Kihulla ameongoza kikao cha therasini na
                                     nne
                                     (34) cha Baraza la Wafanyakazi wa Wakala wa Vipimo kili..</p>
-                                <a href="">Read More</a>
+                                <a href="">Soma zaidi</a>
                                 </p>
                             </div>
                         </div>
@@ -389,7 +390,7 @@
                                 <p class="mt-2">Afisa Mtendaji Mkuu Bw. Alban Kihulla ameongoza kikao cha therasini na
                                     nne
                                     (34) cha Baraza la Wafanyakazi wa Wakala wa Vipimo kili..</p>
-                                <a href="">Read More</a>
+                                <a href="">Soma zaidi</a>
                                 </p>
                             </div>
                         </div>
@@ -408,7 +409,7 @@
         {{-- Anouncement and news --}}
         <div class="row">
             <div class="col-md-6 my-3">
-                <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Announcements</b></h5>
+                <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Matangazo</b></h5>
                 <div class="row mt-0">
                     <div class="col-md-12 pb-2 mb-2">
                         <div class="col-12 px-xs-2 p-4">
@@ -430,7 +431,7 @@
                                         <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Feb 27 2024</p>
                                         <p>Wakala wa Vipimo ni Taasisi ya Serikali iliyopo chini ya...
                                         </p>
-                                        <a href="" class="read ml-2">Read more</a>
+                                        <a href="" class="read ml-2">Soma zaidi</a>
                                     </div>
                                 </div>
                                 <div style="margin-top: 20px"></div>
@@ -450,7 +451,7 @@
                                         <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Feb 27 2024</p>
                                         <p>Wakala wa Vipimo ni Taasisi ya Serikali iliyopo chini ya...
                                         </p>
-                                        <a href="" class="read ml-2">Read more</a>
+                                        <a href="" class="read ml-2">Soma zaidi</a>
                                     </div>
                                 </div>
                             </div>
@@ -470,7 +471,7 @@
 
             {{-- Top Events --}}
             <div class="col-md-6 my-3">
-                <h5 class="my-xs-4 text-center text-xs-center section-title"><b>Top Events</b></h5>
+                <h5 class="my-xs-4 text-center text-xs-center section-title"><b>Matukio</b></h5>
                 <div class="row mt-0">
                     <div class="col-md-12 pb-2 mb-2">
                         <div class="col-12 px-xs-2 p-4">
@@ -486,13 +487,13 @@
                                     <div class="col-10 col-md-9">
                                         <p class="text-justify mb-2">
                                             <b>
-                                                <h6 class="article-h2">World Metrology Day 2023</h6>
+                                                <h6 class="article-h2">Siku ya Metrolojia Duniani 2023</h6>
                                             </b>
                                         </p>
                                         <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Jule 12 2024</p>
                                         <p>WMA ILALA
                                         </p>
-                                        <a href="" class="read ml-2">Read more</a>
+                                        <a href="" class="read ml-2">Soma zaidi</a>
                                     </div>
                                 </div>
                                 <div style="margin-top: 20px"></div>
@@ -506,13 +507,13 @@
                                     <div class="col-10 col-md-9">
                                         <p class="text-justify mb-2">
                                             <b>
-                                                <h6 class="article-h2">World Metrology Day 2023</h6>
+                                                <h6 class="article-h2">Siku ya Metrolojia Duniani 2023</h6>
                                             </b>
                                         </p>
                                         <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Jule 12 2024</p>
                                         <p>WMA ILALA
                                         </p>
-                                        <a href="" class="read ml-2">Read more</a>
+                                        <a href="" class="read ml-2">Soma zaidi</a>
                                     </div>
                                 </div>
                             </div>
@@ -534,7 +535,7 @@
     {{-- </div> --}}
 
     <div class="col-12 my-3">
-        <h5 class="my-xs-4 text-center text-xs-center section-title"><b>How Do I</b>
+        <h5 class="my-xs-4 text-center text-xs-center section-title"><b>Nifanyaje</b>
         </h5>
         <div class="row mt-4 px-xs-0 online-services">
             <div class="service-item col mx-2">
@@ -542,10 +543,9 @@
                     <img src="{{ asset('assets/images/licence_icon.png') }}" alt="" width="80px"
                         style="margin-bottom: 10px;">
                 </div>
-                <div class="service-title">REQUEST FOR THE LICENCE</div>
+                <div class="service-title">Utaratibu wa Uombaji wa Reseni</div>
                 <div class="service-btn-wrapper">
-                    <a target="_blank" href="https://www.wma.go.tz/howdo/6" class="serv-btn orange">Get
-                        instruction</a>
+                    <a target="_blank" href="https://www.wma.go.tz/howdo/6" class="serv-btn orange">Pata Maelekezo</a>
                 </div>
             </div>
 
@@ -556,10 +556,9 @@
 
                     {{-- <img src="/uploads/icon/contract.png" alt=""> --}}
                 </div>
-                <div class="service-title">REQUEST FOR THE PARTTERN APPROVE</div>
+                <div class="service-title">Mombi ya Kuidhinisha Vipimo Vipya</div>
                 <div class="service-btn-wrapper">
-                    <a target="_blank" href="https://www.wma.go.tz/howdo/4" class="serv-btn orange">Get
-                        instruction</a>
+                    <a target="_blank" href="https://www.wma.go.tz/howdo/4" class="serv-btn orange">Pata Maelekezo</a>
                 </div>
             </div>
         </div>

@@ -1,10 +1,10 @@
-    <aside class="col-12 sticky side-bar px-2 sm-hide bg-white">
+    <aside class="col-12 sticky side-bar px-2 sm-hide bg-white pb-3">
         <ul class="nav nav-tabs row pl-3" role="tablist" id="myTab">
             <li class="nav-item col-6 float-left px-0 text-left">
-                <a class="nav-link active px-0" data-toggle="tab" href="#announcements" role="tab">Announcements</a>
+                <a class="nav-link active px-0" data-toggle="tab" href="#announcements" role="tab">Matangazo</a>
             </li>
             <li class="nav-item col-6">
-                <a class="nav-link px-0" data-toggle="tab" href="#events" role="tab">Events</a>
+                <a class="nav-link px-0" data-toggle="tab" href="#events" role="tab">Matukio</a>
             </li>
         </ul>
 
@@ -65,7 +65,7 @@
                 {{-- @endforeach --}}
                 <!-- Add a link for "Tazama Zote" -->
                 <div class="row justify-content-center mt-2">
-                    <a href="#" class="link-no-underline"><i>View all <i
+                    <a href="#" class="link-no-underline"><i>Tazama zote <i
                                 class="far fa-arrow-alt-circle-right"></i></i></a>
                 </div>
             </div>
@@ -124,8 +124,8 @@
                 {{-- @endforeach --}}
 
                 <div class="row justify-content-center mt-2">
-                    <a href="#" class="link-no-underline"><i>View
-                            all <i class="far fa-arrow-alt-circle-right"></i></i></a>
+                    <a href="#" class="link-no-underline"><i>Tazama zote <i
+                                class="far fa-arrow-alt-circle-right"></i></i></a>
                 </div>
             </div>
 
