@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-12 bg-white py-3 page-content">
+                    <div class="col-md-9 bg-white py-3 page-content">
                         <h4>Board Members</h4>
                         <div class="container mb-3">
                             <div class="row mt-4 justify-content-center">
@@ -147,6 +147,10 @@
 
                             </div>
                         </div>
+                    </div>
+
+                    <div class="col-md-3 navigation-column">
+                        @include('wmaweb.en.announcments_and_events')
                     </div>
                 </div>
 
