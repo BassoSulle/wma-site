@@ -1,4 +1,4 @@
-@extends('wmaweb.en.base_layout')
+@extends('wmaweb.sw.base_layout')
 <!-- /HEADER -->
 
 <!-- contents -->
