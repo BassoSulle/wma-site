@@ -261,7 +261,7 @@
                                             Calbrators</a></li>
                                     <li><a class='dropdown-item'
                                             href="{{ route('fuel-measurement-survey', ['language' => $current_language]) }}">Wakaguzi
-                                            wa Mafuta</a></li>
+                                            wa Vipimo vya Mafuta</a></li>
                                 </ul>
                             </li>
                             <li class='nav-item dropdown'><a href='#'

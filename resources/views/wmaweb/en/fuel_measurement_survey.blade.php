@@ -23,11 +23,12 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        {{-- <h4>Organization structure</h4> --}}
+                        <h4>Fuel Measurements Surveyors</h4>
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="organization structure">
-                                <h5><a href="https://www.wma.go.tz/uploads/files/Fuel%20Measurements%20Surveyors.pdf">Fuel Measurements Surveyors</a></h5>
+                            <h5><a href="https://www.wma.go.tz/uploads/files/Fuel%20Measurements%20Surveyors.pdf">Fuel
+                                    Measurements Surveyors</a></h5>
 
 
 

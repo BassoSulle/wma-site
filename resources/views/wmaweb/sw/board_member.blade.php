@@ -1,5 +1,4 @@
-@extends('wmaweb.en.base_layout')
-<!-- /HEADER -->
+@extends('wmaweb.sw.base_layout')
 
 <!-- contents -->
 @section('content')
@@ -153,7 +152,4 @@
             </div>
         </div>
     </div>
-
-    </div>
-    <!-- /contents -->
 @endsection

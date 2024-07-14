@@ -41,7 +41,7 @@
                             <div class="regional-office-select">
                                 <h4><label for="regionalOffice">Chagua ofisi ya Mkoa:</label></h4>
                                 <select class="form-control" id="regionalOffice" name="regionalOffice">
-                                    <option selected>Select office</option>
+                                    <option selected>Chagua ofisi</option>
                                     <option value="arusha">Arusha</option>
                                     <option value="dodoma">Dodoma</option>
                                     <option value="ilala">Ilala</option>
@@ -53,33 +53,41 @@
                         </div>
 
                         <div id="arushaInfo" class="office-info"><br>
-                            <h2>ARUSHA</h2><br>
-                            <p>Arusha</p>
-                            <p>Mahali: ENGO LA CAMARTEC, BARABARA YA NJIRO</p>
-                            <p>Anuani: 7335 Arusha</p>
-                            <p>Nukushi: -</p>
-                            <p>Number ya Simu: 027 2549438</p>
-                            <p>Barua Pepe: arusha@wma.go.tz</p>
+                            <h2>ARUSHA</h2>
+                            <hr>
+                            <p>Arusha</p><br>
+                            <p><span style="font-weight: bold;">Mahali: </span>ENGO LA CAMARTEC, BARABARA YA NJIRO</p>
+                            <p><span style="font-weight: bold;">Anuani: </span>7335 Arusha</p>
+                            <p><span style="font-weight: bold;">Nukushi: </span>-</p>
+                            <p><span style="font-weight: bold;">Number ya Simu: </span>027 2549438</p>
+                            <p><span style="font-weight: bold;">Barua Pepe: </span>arusha@wma.go.tz</p>
                         </div>
 
                         <div id="dodomaInfo" class="office-info"><br>
-                            <h2>DODOMA</h2><br>
-                            <p>Dodoma</p>
-                            <p>Mahali: JENGO LA KAMBARAGE OROFA YA 10 </p>
-                            <p>Anuani: 266 Dodoma</p>
-                            <p>Nukushi: -</p>
-                            <p>Number ya Simu: 026 2321757</p>
-                            <p>Barua Pepe: dodoma@wma.go.tz</p>
+                            <h2>DODOMA</h2>
+                            <hr>
+                            <p>Dodoma</p><br>
+                            <p><span style="font-weight: bold;">Mahali: </span>JENGO LA KAMBARAGE OROFA YA 10 </p>
+                            <p><span style="font-weight: bold;">Anuani: </span>266 Dodoma</p>
+                            <p><span style="font-weight: bold;">Nukushi: </span>-</p>
+                            <p><span style="font-weight: bold;">Number ya Simu: </span>026 2321757</p>
+                            <p><span style="font-weight: bold;">Barua Pepe: </span>dodoma@wma.go.tz</p>
                         </div>
 
                         <div id="ilalainfo" class="office-info"><br>
-                            <h2>ILALA</h2><br>
-                            <p>Ilala</p>
-                            <p>Mahali: Mtaa wa Uhuru, Ilala Boma </p>
-                            <p>Anuani: 313, Dar Es Salaam</p>
-                            <p>Nukushi: -</p>
-                            <p>Number ya Simu: 022 2203105 </p>
-                            <p>Barua Pepe: ilala@wma.go.tz</p>
+                            <h2>ILALA</h2>
+                            <hr>
+                            <p>Ilala</p><br>
+                            <p>
+                            <p><span style="font-weight: bold;">Mahali: </span>Mtaa wa Uhuru, Ilala Boma </p>
+                            <p>
+                            <p><span style="font-weight: bold;">Anuani: </span>313, Dar Es Salaam</p>
+                            <p>
+                            <p><span style="font-weight: bold;">Nukushi: </span>-</p>
+                            <p>
+                            <p><span style="font-weight: bold;">Number ya Simu: </span>022 2203105 </p>
+                            <p>
+                            <p><span style="font-weight: bold;">Barua Pepe: </span>ilala@wma.go.tz</p>
                         </div>
                     </div>
 

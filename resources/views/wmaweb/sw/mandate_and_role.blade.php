@@ -1,5 +1,4 @@
-@extends('wmaweb.en.base_layout')
-<!-- /HEADER -->
+@extends('wmaweb.sw.base_layout')
 
 <!-- contents -->
 @section('content')
@@ -14,7 +13,7 @@
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
                                 {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
-                                <li class="breadcrumb-item list-inline-item active">Mandate and Roles</li>
+                                <li class="breadcrumb-item list-inline-item active">Majukumu ya Wakala wa Vipimo</li>
                             </ol>
                         </nav>
                     </div>
@@ -23,52 +22,39 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        <h4>Mandate and roles</h4>
+                        <h4>Majukumu ya Wakala wa Vipimo</h4>
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="vision and mission">
-                            <h5>MANDATE</h5>
-                            The Mandate of WMA is to provide protection to consumers in relation to legal metrological
-                            control which
-                            includes legal control of measuring instruments,metrological supervision and metrological
-                            expertise in trade,
-                            health, safety and environment.<br><br><br>
+                            <h5>Wakala wa Vipimo ana majukumu yafuatayo:</h5>
+                            1. Kumlinda mlaji katika Sekta ya Biashara, Usalama, Mazingira na Afya kupitia matumizi ya
+                            vipimo sahihi;<br>
 
-                            <h5>ROLES</h5>
-                            The Roles of WMA as stipulated under the Weights and Measures Act (Cap.340) and the Executive
-                            Agencies Act (Cap.245) are to:
+                            2. Kuilinda jamii kuepukana na madhara yatokanayo na matumizi mabaya ya vipimo katika Sekta ya
+                            Biashara, Usalama, Mazingira na Afya;<br>
 
-                            1. Protect consumers in trade, safety, health and environment in relation to legal metrology;
+                            3. Kusimamia na kutoa ushauri wa kitaalamu kwa wanaojihusisha na utengenezaji, uundaji, na
+                            uingizaji wa vipimo mbalimbali katika Biashara, Usalama, Mazingira na Afya;<br>
 
-                            2. Protect society from the consequences of false measurements in public and private
-                            transactions;
+                            4. Kuwa kiungo kati ya Taifa letu na taasisi za kikanda na Kimataifa katika masuala ya Vipimo
+                            (Legal Metrology);<br>
 
-                            3. Approve (or ensure approval by another designated institutions) measuring instruments to be
-                            used for a public or private transaction in
+                            5. Kuhakikisha vifaa vyote vitumikavyo nchini kama standards za vipimo vinaulinganisho sahihi na
+                            ule wa Kimataifa;<br>
 
-                            trade, safety, health and environment sectors;
-
-                            4. Control the use of measuring instruments in public and private transactions;
-
-                            5. Control pre-packaging of products;
-
-                            6. Liaise with regional and international organizations with similar objectives;
+                            6. Kukagua na kuhakiki bidhaa zilizofungashwa (Net quantity & labeling);<br>
 
                             7. Give effect to the decisions and recommendations of the OIML Council and Committee with
                             regard to legal metrology;
 
-                            8. Provide information on Legal Metrology in general and
-
-                            9. Ensure that legal metrology measurement standards are traceable to national and 9.
-                            International measurement standards
-
+                            8. Kutoaelimu na ushauri wa kitaalamu kuhusu masuala ya vipimo kwa wadau.
                             </p>
 
                         </div>
                     </div>
 
                     <div class="col-md-3 navigation-column">
-                        @include('wmaweb.en.announcments_and_events')
+                        @include('wmaweb.sw.announcments_and_events')
                     </div>
                 </div>
 

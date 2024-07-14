@@ -1,5 +1,4 @@
-@extends('wmaweb.en.base_layout')
-<!-- /HEADER -->
+@extends('wmaweb.sw.base_layout')
 
 <!-- contents -->
 @section('content')
@@ -13,7 +12,6 @@
                                 <li class="breadcrumb-item "><a
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
-                                {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
                                 <li class="breadcrumb-item list-inline-item active">Mafundi Mizani daraja A,B, na C</li>
                             </ol>
                         </nav>
@@ -23,9 +21,11 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
+                        <h4>Mafundi Mizani daraja A,B, na C</h4>
+
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="organization structure">
-                            <h5><a href="https://www.wma.go.tz/uploads/files/Gas%20meter%20calibrators.pdf">Sscale Mechanics
+                            <h5><a href="https://www.wma.go.tz/uploads/files/Gas%20meter%20calibrators.pdf">Scale Mechanics
                                     class a, b & c</a></h5>
                             </p>
 
@@ -39,8 +39,6 @@
 
             </div>
         </div>
-    </div>
-
     </div>
     <!-- /contents -->
 @endsection

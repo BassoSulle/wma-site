@@ -1,5 +1,4 @@
 @extends('wmaweb.sw.base_layout')
-<!-- /HEADER -->
 
 <!-- contents -->
 @section('content')
@@ -13,7 +12,6 @@
                                 <li class="breadcrumb-item "><a
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
-                                {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
                                 <li class="breadcrumb-item list-inline-item active">Miongozo ya Kiufundi</li>
                             </ol>
                         </nav>
@@ -66,8 +64,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
     </div>
     <!-- /contents -->
 @endsection
