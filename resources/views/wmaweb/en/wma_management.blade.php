@@ -232,6 +232,7 @@
                         @include('wmaweb.en.announcments_and_events')
                     </div>
                 </div> --}}
+                
 
             </div>
         </div>
