@@ -31,8 +31,8 @@
                                             <img class="w-100 bg-white" src="{{ asset('assets/images/Eliza.png') }}"
                                                 alt="DR. ELIZA ALFRED MWAKASANGULA">
                                         </div>
-                                        <div class="post-content">
-                                            <div class="category">Chairperson</div>
+                                        <div class="post-content mx-0 px-0 text-center">
+                                            <div class="category" style="background-color: #f89629;">Chairperson</div>
                                             <h6 class="sub_title">
                                                 <p class="card-text fw-medium">DR. ELIZA ALFRED MWAKASANGULA.</p>
                                             </h6>
@@ -46,8 +46,8 @@
                                             <img class="w-100 bg-white" src="{{ asset('assets/images/kihula.png') }}"
                                                 alt="ALBAN M. KIHULLA">
                                         </div>
-                                        <div class="post-content">
-                                            <div class="category">Secretary</div>
+                                        <div class="post-content mx-0 px-0 text-center">
+                                            <div class="category" style="background-color: #f89629;">Secretary</div>
                                             <h6 class="sub_title">
                                                 <p class="card-text fw-medium">ALBAN M. KIHULLA</p>
                                             </h6>
@@ -61,8 +61,8 @@
                                             <img class="w-100 bg-white" src="{{ asset('assets/images/anna.png') }}"
                                                 alt="MS. ANNA PETER KIANGO">
                                         </div>
-                                        <div class="post-content">
-                                            <div class="category">Member</div>
+                                        <div class="post-content mx-0 px-0 text-center">
+                                            <div class="category" style="background-color: #f89629;">Member</div>
                                             <h6 class="sub_title">
                                                 <p class="card-text fw-medium">MS. ANNA PETER KIANGO</p>
                                             </h6>
@@ -76,8 +76,8 @@
                                             <img class="w-100 bg-white" src="{{ asset('assets/images/mwambapa.png') }}"
                                                 alt="MR. JUMA SETH MWAMBAP">
                                         </div>
-                                        <div class="post-content">
-                                            <div class="category">Member</div>
+                                        <div class="post-content mx-0 px-0 text-center">
+                                            <div class="category" style="background-color: #f89629;">Member</div>
                                             <h6 class="sub_title">
                                                 <p class="card-text fw-medium">MR. JUMA SETH MWAMBAP</p>
                                             </h6>
@@ -91,8 +91,8 @@
                                             <img class="w-100 bg-white" src="{{ asset('assets/images/swalehe.png') }}"
                                                 alt="MR. SWALEHE SAID CHONDOMA">
                                         </div>
-                                        <div class="post-content">
-                                            <div class="category">Member</div>
+                                        <div class="post-content mx-0 px-0 text-center">
+                                            <div class="category" style="background-color: #f89629;">Member</div>
                                             <h6 class="sub_title">
                                                 <p class="card-text fw-medium">MR. SWALEHE SAID CHONDOMA</p>
                                             </h6>
@@ -106,8 +106,8 @@
                                             <img class="w-100 bg-white" src="{{ asset('assets/images/gibson.png') }}"
                                                 alt="DR. GIBSON HOSEA MUNISI">
                                         </div>
-                                        <div class="post-content">
-                                            <div class="category">Member</div>
+                                        <div class="post-content mx-0 px-0 text-center">
+                                            <div class="category" style="background-color: #f89629;">Member</div>
                                             <h6 class="sub_title">
                                                 <p class="card-text fw-medium">DR. GIBSON HOSEA MUNISI</p>
                                             </h6>
@@ -121,8 +121,8 @@
                                             <img class="w-100 bg-white" src="{{ asset('assets/images/shaban.png') }}"
                                                 alt="ENG. SHABAN SELEMAN">
                                         </div>
-                                        <div class="post-content">
-                                            <div class="category">Member</div>
+                                        <div class="post-content mx-0 px-0 text-center">
+                                            <div class="category" style="background-color: #f89629;">Member</div>
                                             <h6 class="sub_title">
                                                 <p class="card-text fw-medium">ENG. SHABAN SELEMAN</p>
                                             </h6>
@@ -136,8 +136,8 @@
                                             <img class="w-100 bg-white" src="{{ asset('assets/images/hassan-hamza.png') }}"
                                                 alt="MR. HASSAN HAMZA NKYA">
                                         </div>
-                                        <div class="post-content">
-                                            <div class="category">Member</div>
+                                        <div class="post-content mx-0 px-0 text-center">
+                                            <div class="category" style="background-color: #f89629;">Member</div>
                                             <h6 class="sub_title">
                                                 <p class="card-text fw-medium">MR. HASSAN HAMZA NKYA</p>
                                             </h6>
