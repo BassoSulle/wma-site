@@ -138,4 +138,13 @@ Route::get('/{language}/application-form-for-licencing-scale', [WmaController::c
 Route::get('/{language}/compounding-form', [WmaController::class, 'compounding_form'])
 ->name('compounding-form');
 
+Route::get('/{language}/video', [WmaController::class, 'video'])
+->name('video');
+
+Route::get('/{language}/gallaries', [WmaController::class, 'gallaries'])
+->name('gallaries');
+
+Route::get('/{language}/pressrelease', [WmaController::class, 'pressrelease'])
+->name('pressrelease');
+
 
