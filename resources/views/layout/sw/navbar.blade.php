@@ -63,20 +63,20 @@
                                 </a>
                             </li>
 
-                            <li class='nav-item'><a class='nav-link' target='_black' href='https://mail.tirdo.or.tz'
-                                    style="color: white">Ajira</a></li>
+                            <li class='nav-item'><a class='nav-link' href='https://mail.wma.go.tz/'
+                                    style="color: white">Barua za Wafanyakazi</a></li>
+                            </li>
                             <li class='nav-item'><a class='nav-link' target='_black'
                                     href='https://eoffice.gov.go.tz/users/login' style="color: white">e-Office</a></li>
                             </li>
+                            {{-- <li class='nav-item'><a class='nav-link' href="{% url 'faq' current_language %}"
+                                    style="color: white">Wasiliana Nasi</a></li>
+                            </li> --}}
                             <li class='nav-item'><a class='nav-link' href="{% url 'faq' current_language %}"
                                     style="color: white">Maswali</a></li>
                             </li>
-                            <li class='nav-item'><a class='nav-link' href="{% url 'faq' current_language %}"
-                                    style="color: white">Wasiliana nasi</a></li>
-                            </li>
-                            <li class='nav-item'><a class='nav-link' href='mailto:info@wma.go.tz'
-                                    style="color: white">info@wma.go.tz</a></li>
-                            </li>
+                            <li class='nav-item'><a class='nav-link' target='_black' href='https://mail.tirdo.or.tz'
+                                    style="color: white">Ajira</a></li>
                         </ul>
                     </div>
                 </div>

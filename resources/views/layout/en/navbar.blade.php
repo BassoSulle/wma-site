@@ -57,17 +57,20 @@
                                     Kiswahili
                                 </a>
                             </li>
-
-                            <li class='nav-item'><a class='nav-link' target='_black' href='https://mail.tirdo.or.tz'
+                            <li class='nav-item'><a class='nav-link' href='https://mail.wma.go.tz/'
                                     style="color: white">Staff Mail</a></li>
+                            </li>
                             <li class='nav-item'><a class='nav-link' target='_black'
                                     href='https://eoffice.gov.go.tz/users/login' style="color: white">e-Office</a></li>
                             </li>
+                            {{-- <li class='nav-item'><a class='nav-link' href="{% url 'faq' current_language %}"
+                                    style="color: white">Contact Us</a></li>
+                            </li> --}}
                             <li class='nav-item'><a class='nav-link' href="{% url 'faq' current_language %}"
                                     style="color: white">FAQs</a></li>
                             </li>
                             <li class='nav-item'><a class='nav-link' href='mailto:info@wma.go.tz'
-                                    style="color: white">info@wma.go.tz</a></li>
+                                    style="color: white">Vacancies</a></li>
                             </li>
                         </ul>
                     </div>
@@ -259,15 +262,23 @@
                             <li class='nav-item dropdown'><a href='#'
                                     class='nav-link dropdown-toggle'data-toggle='dropdown'>Forms</a>
                                 <ul class='dropdown-menu'>
-                                    <li><a class='dropdown-item' href="{{ route('application-form-for-tank-calibrator', ['language' => $current_language]) }}">Application form for tank
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('application-form-for-tank-calibrator', ['language' => $current_language]) }}">Application
+                                            form for tank
                                             calibrators</a>
                                     </li>
-                                    <li><a class='dropdown-item' href="{{ route('form-d-for-pump-mechanics', ['language' => $current_language]) }}">Form D for Pump Mechanics</a>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('form-d-for-pump-mechanics', ['language' => $current_language]) }}">Form
+                                            D for Pump Mechanics</a>
                                     </li>
-                                    <li><a class='dropdown-item' href="{{ route('application-form-for-licencing-scale', ['language' => $current_language]) }}">Application form for Licensing
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('application-form-for-licencing-scale', ['language' => $current_language]) }}">Application
+                                            form for Licensing
                                             scale/Pump Mechanics</a>
                                     </li>
-                                    <li><a class='dropdown-item' href="{{ route('compounding-form', ['language' => $current_language]) }}">Compounding Forms</a>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('compounding-form', ['language' => $current_language]) }}">Compounding
+                                            Forms</a>
                                     </li>
 
 
@@ -289,26 +300,38 @@
                                     <li><a class='dropdown-item' href="#">News Letter</a></li>
                                 </ul>
                             </li>
-                            <li class='nav-item dropdown'><a href='{{ route('tender', ['language' => $current_language]) }}' class='nav-link'
-                                    >Tenders</a>
+                            <li class='nav-item dropdown'><a
+                                    href='{{ route('tender', ['language' => $current_language]) }}'
+                                    class='nav-link'>Tenders</a>
                             </li>
-                            <li class='nav-item dropdown'><a href='{{ route('regional-office', ['language' => $current_language]) }}' class='nav-link'
-                                   >Regional Office</a>
+                            <li class='nav-item dropdown'><a
+                                    href='{{ route('regional-office', ['language' => $current_language]) }}'
+                                    class='nav-link'>Regional Office</a>
 
                             </li>
                             <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
                                     data-toggle='dropdown'>Audit Report</a>
                                 <ul class='dropdown-menu'>
-                                    <li><a class='dropdown-item' href="{{ route('audit-report-2018-2019', ['language' => $current_language]) }}">Audit Report 2018-2019</a></li>
-                                    <li><a class='dropdown-item' href="{{ route('audit-report-2019-2020', ['language' => $current_language]) }}">Audit Report 2019-2020</a></li>
-                                    <li><a class='dropdown-item' href="{{ route('audit-report-2020-2021', ['language' => $current_language]) }}">Audit Report 2020-2021</a></li>
-                                    <li><a class='dropdown-item' href="{{ route('audit-report-2021-2022', ['language' => $current_language]) }}">Audit Report 2021-2022</a></li>
-                                    <li><a class='dropdown-item' href="{{ route('audit-report-2022-2023', ['language' => $current_language]) }}">Audit Report 2022-2023</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('audit-report-2018-2019', ['language' => $current_language]) }}">Audit
+                                            Report 2018-2019</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('audit-report-2019-2020', ['language' => $current_language]) }}">Audit
+                                            Report 2019-2020</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('audit-report-2020-2021', ['language' => $current_language]) }}">Audit
+                                            Report 2020-2021</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('audit-report-2021-2022', ['language' => $current_language]) }}">Audit
+                                            Report 2021-2022</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('audit-report-2022-2023', ['language' => $current_language]) }}">Audit
+                                            Report 2022-2023</a></li>
                                 </ul>
                             </li>
                             <li class='nav-item dropdown'><a
                                     href='https://emrejesho.gov.go.tz/complaint_here?1ZBJFUFieXmHqMcY9aH6rjGh7gRSTSmj7tk5DpAVIPnEVd2ICOTR5tTBymbdkjDb&sector_code=12$1ZBJFUFieXmHqMcY9aH6rjGh7gRSTSmj7tk5DpAVIPnEVd2ICOTR5tTBymbdkjDb'
-                                    class='nav-link' target="_blank" >e-Mrejesho</a>
+                                    class='nav-link' target="_blank">e-Mrejesho</a>
 
                             </li>
 
@@ -340,11 +363,21 @@
                                     <li><a class="dropdown-item"
                                             href="{{ route('approved-pattern', ['language' => $current_language]) }}">Approved
                                             Patterns</a>
-                                    <li><a class="dropdown-item" href="{{ route('miscalleneous-amendment-act', ['language' => $current_language]) }}">Miscelleneous Amendiment act</a>
-                                    <li><a class="dropdown-item" href="{{ route('technical-manual', ['language' => $current_language]) }}">Technical Manuals</a>
-                                    <li><a class="dropdown-item" href="{{ route('establishment-order', ['language' => $current_language]) }}">Establishment order</a>
-                                    <li><a class="dropdown-item" href="{{ route('framework-document', ['language' => $current_language]) }}">Framework Documents</a>
-                                    <li><a class="dropdown-item" href="{{ route('client-service-charter', ['language' => $current_language]) }}">Client Services Charter</a>
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('miscalleneous-amendment-act', ['language' => $current_language]) }}">Miscelleneous
+                                            Amendiment act</a>
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('technical-manual', ['language' => $current_language]) }}">Technical
+                                            Manuals</a>
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('establishment-order', ['language' => $current_language]) }}">Establishment
+                                            order</a>
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('framework-document', ['language' => $current_language]) }}">Framework
+                                            Documents</a>
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('client-service-charter', ['language' => $current_language]) }}">Client
+                                            Services Charter</a>
                                     </li>
                                 </ul>
                             </li>
