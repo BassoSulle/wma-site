@@ -1,7 +1,7 @@
     <aside class="col-12 sticky side-bar px-2 sm-hide bg-white pb-3">
         <ul class="nav nav-tabs row pl-3" role="tablist" id="myTab">
             <li class="nav-item col-6 float-left px-0 text-left">
-                <a class="nav-link  px-0" data-toggle="tab" href="#events" role="tab">Events</a>
+                <a class="nav-link active px-0" data-toggle="tab" href="#events" role="tab">Events</a>
             </li>
             <li class="nav-item col-6">
                 <a class="nav-link px-0" data-toggle="tab" href="#announcements" role="tab">Announcements</a>

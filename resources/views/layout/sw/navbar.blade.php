@@ -72,7 +72,8 @@
                             {{-- <li class='nav-item'><a class='nav-link' href="{% url 'faq' current_language %}"
                                     style="color: white">Wasiliana Nasi</a></li>
                             </li> --}}
-                            <li class='nav-item'><a class='nav-link' href="{% url 'faq' current_language %}"
+                            <li class='nav-item'><a class='nav-link'
+                                    href="{{ route('faqs', ['language' => $current_language]) }}"
                                     style="color: white">Maswali</a></li>
                             </li>
                             <li class='nav-item'><a class='nav-link' target='_black'
@@ -102,7 +103,7 @@
                     </div>
 
                     <div class="col-md-8 col-sm-8 col-xs-8 text-center pt-2 pt-xs-0">
-                        <h5 class="" style="color: #000; ">Jamhuri ya Muungano wa Tanzania </h5>
+                        <h5 class="" style="color: #000;">Jamhuri ya Muungano wa Tanzania </h5>
                         <h3 class="mb-0 title title-main" style="color: #000; text-shadow: 1px 1px 2px #f8a52f;"><b><i>
                                     WAKALA WA VIPIMO</i></b></h3>
                         <h3 class="mb-0 title title-main pt-2 pb-2"

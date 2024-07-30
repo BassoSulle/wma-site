@@ -66,7 +66,8 @@
                             {{-- <li class='nav-item'><a class='nav-link' href="{% url 'faq' current_language %}"
                                     style="color: white">Contact Us</a></li>
                             </li> --}}
-                            <li class='nav-item'><a class='nav-link' href="{% url 'faq' current_language %}"
+                            <li class='nav-item'><a class='nav-link'
+                                    href="{{ route('faqs', ['language' => $current_language]) }}"
                                     style="color: white">FAQs</a></li>
                             </li>
                             <li class='nav-item'><a class='nav-link'

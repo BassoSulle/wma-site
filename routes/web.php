@@ -149,3 +149,6 @@ Route::get('/{language}/pressrelease', [WmaController::class, 'pressrelease'])
 
 Route::get('/{language}/vacancies', [WmaController::class, 'vacancies'])
     ->name('vacancies');
+
+Route::get('/{language}/faqs', [WmaController::class, 'faqs'])
+    ->name('faqs');
