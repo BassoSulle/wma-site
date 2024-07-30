@@ -163,7 +163,7 @@
                     <div class="col-md-4 my-5 mx-5 col-xs-6">
                         <div
                             class="img-frame p-3 border rounded d-flex justify-content-center align-items-center img-fluid">
-                            <img src="https://www.wma.go.tz/uploads/management/20-0.23238400%201713965009.png"
+                            <img src="https://www.wma.go.tz/uploads/profiles/9-0.30810600%201721628167.png"
                                 alt="Prof. Mkumbukwa M. A." class="img-fluid">
 
                         </div>
@@ -414,14 +414,14 @@
                     <div class="col-md-12 pb-2 mb-2">
                         <div class="col-12 px-xs-2 p-4">
                             {{-- @foreach ($news_articles as $article) --}}
-                            <div href="#" target="_blank">
+                            <div>
                                 <div class="row align-items-center bg-light1">
-                                    <div class="col-2 col-md-3">
-                                        <img src="https://www.wma.go.tz/uploads/1718109034-4Z9A8735.jpg"
+                                    {{-- <div class="col-2 col-md-3"> --}}
+                                    {{-- <img src="https://www.wma.go.tz/uploads/1718109034-4Z9A8735.jpg"
                                             style="width: 128px; height: 90px; object-fit: cover;"
-                                            class="img-thumbnail" />
-                                        {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
-                                    </div>
+                                            class="img-thumbnail" /> --}}
+                                    {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
+                                    {{-- </div> --}}
                                     <div class="col-10 col-md-9">
                                         <p class="text-justify mb-2">
                                             <b>
@@ -436,12 +436,12 @@
                                 </div>
                                 <div style="margin-top: 20px"></div>
                                 <div class="row align-items-center bg-light1">
-                                    <div class="col-2 col-md-3">
+                                    {{-- <div class="col-2 col-md-3">
                                         <img src="https://www.wma.go.tz/uploads/news/medium/1717517519-4Z9A8371.jpg"
                                             style="width: 128px; height: 90px; object-fit: cover;"
-                                            class="img-thumbnail" />
-                                        {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
-                                    </div>
+                                            class="img-thumbnail" /> --}}
+                                    {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
+                                    {{-- </div> --}}
                                     <div class="col-10 col-md-9">
                                         <p class="text-justify mb-2">
                                             <b>

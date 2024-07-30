@@ -75,7 +75,8 @@
                             <li class='nav-item'><a class='nav-link' href="{% url 'faq' current_language %}"
                                     style="color: white">Maswali</a></li>
                             </li>
-                            <li class='nav-item'><a class='nav-link' target='_black' href='https://mail.tirdo.or.tz'
+                            <li class='nav-item'><a class='nav-link' target='_black'
+                                    href='{{ route('vacancies', ['language' => $current_language]) }}'
                                     style="color: white">Ajira</a></li>
                         </ul>
                     </div>

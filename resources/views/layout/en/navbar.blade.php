@@ -69,7 +69,8 @@
                             <li class='nav-item'><a class='nav-link' href="{% url 'faq' current_language %}"
                                     style="color: white">FAQs</a></li>
                             </li>
-                            <li class='nav-item'><a class='nav-link' href='mailto:info@wma.go.tz'
+                            <li class='nav-item'><a class='nav-link'
+                                    href='{{ route('vacancies', ['language' => $current_language]) }}'
                                     style="color: white">Vacancies</a></li>
                             </li>
                         </ul>
@@ -289,10 +290,16 @@
                             <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
                                     data-toggle='dropdown'>Media Center</a>
                                 <ul class='dropdown-menu'>
-                                    <li><a class='dropdown-item' href="{{ route('gallaries', ['language' => $current_language]) }}">Photo Gallery</a></li>
-                                    <li><a class='dropdown-item' href="{{ route('video', ['language' => $current_language]) }}">Video Gallery</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('gallaries', ['language' => $current_language]) }}">Photo
+                                            Gallery</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('video', ['language' => $current_language]) }}">Video
+                                            Gallery</a></li>
                                     <li><a class='dropdown-item' href="#">Audio Gallery</a></li>
-                                    <li><a class='dropdown-item' href="{{ route('pressrelease', ['language' => $current_language]) }}">Press Release</a></li>
+                                    <li><a class='dropdown-item'
+                                            href="{{ route('pressrelease', ['language' => $current_language]) }}">Press
+                                            Release</a></li>
                                     <li><a class='dropdown-item' href="#">Special Supplements</a></li>
                                     <li><a class='dropdown-item' href="#">Speech</a></li>
                                     <li><a class='dropdown-item' href="#">Brochures</a></li>
