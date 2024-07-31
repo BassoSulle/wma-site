@@ -545,7 +545,9 @@
                 </div>
                 <div class="service-title">Utaratibu wa Uombaji wa Reseni</div>
                 <div class="service-btn-wrapper">
-                    <a target="_blank" href="https://www.wma.go.tz/howdo/6" class="serv-btn orange">Pata Maelekezo</a>
+                    <a href="{{ route('request_for_license_procedures', ['language' => $current_language]) }}"
+                        class="serv-btn orange">Pata
+                        Maelekezo</a>
                 </div>
             </div>
 
@@ -558,7 +560,7 @@
                 </div>
                 <div class="service-title">Mombi ya Kuidhinisha Vipimo Vipya</div>
                 <div class="service-btn-wrapper">
-                    <a target="_blank" href="https://www.wma.go.tz/howdo/4" class="serv-btn orange">Pata Maelekezo</a>
+                    <a href="https://www.wma.go.tz/howdo/4" class="serv-btn orange">Pata Maelekezo</a>
                 </div>
             </div>
         </div>

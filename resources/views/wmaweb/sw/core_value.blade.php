@@ -24,7 +24,7 @@
                         <h4>Tunu za Wakala</h4>
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
-                            <p class="core values">
+                            <p class="core-values">
                             <h5 style="font-weight:bold">Utendaji wenye matokeo</h5>
                             Ø Wakala inajali utendaji wa matokeo zaidi.<br><br>
 

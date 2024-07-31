@@ -152,3 +152,6 @@ Route::get('/{language}/vacancies', [WmaController::class, 'vacancies'])
 
 Route::get('/{language}/faqs', [WmaController::class, 'faqs'])
     ->name('faqs');
+
+Route::get('/{language}/request_for_license_procedures', [WmaController::class, 'request_for_license_procedures'])
+    ->name('request_for_license_procedures');

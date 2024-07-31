@@ -75,7 +75,7 @@
                             position: absolute;
                             left: 0;
                             top: 0;
-                            font: 700 50px / 1 Sans-Serif;
+                            font: 700 50px / 1 Verdana, Geneva, sans-serif;
                         }
                     </style>
                     <div class="col-md-9 bg-white py-3 page-content">
