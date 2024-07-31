@@ -55,7 +55,7 @@
                                 <li>Working Permit for non-citizen of Tanzania</li>
                             </ol>
                             <h5 style="margin-top: 30px;">License Categories.</h5>
-                            <table class="table" border="1">
+                            <table class="table" border="1" style="margin-bottom: 30px;">
                                 <tbody>
                                     <tr>
                                         <td style="width: 134.75pt; border-width: 1pt; border-color: windowtext;">
