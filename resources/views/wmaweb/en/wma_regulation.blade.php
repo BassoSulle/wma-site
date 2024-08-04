@@ -29,57 +29,63 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th><h4>Publication Name</h4></th>
-                                        <th><h4>Date Added</h4></th>
-                                        <th><h4>Downloads</h4></th>
+                                        <th>
+                                            <h4>Publication Name</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Date Added</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Download</h4>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>WEIGHTS AND MEASURES GENERAL REGULATIONS, GN 288 OF 2019 (2)</td>
                                         <td>07/11/2019</td>
-                                        <td><a href="#" target="_blank">Downloads</a></td>
+                                        <td><a href="#" target="_blank">Download</a></td>
                                     </tr>
                                     <tr>
                                         <td>WEIGHTS AND MEASURES GENERAL REGULATIONS, GN 288 OF 2019</td>
                                         <td>16/09/2019</td>
-                                        <td><a href="#" target="_blank">Downloads</a></td>
+                                        <td><a href="#" target="_blank">Download</a></td>
                                     </tr>
                                     <tr>
                                         <td>(SAND AND OTHER BALLAST) REGULATIONS-2013</td>
                                         <td>21/12/2016</td>
-                                        <td><a href="#" target="_blank">Downloads</a></td>
+                                        <td><a href="#" target="_blank">Download</a></td>
                                     </tr>
                                     <tr>
                                         <td>(SALE OF LIQUEFIED PETROLEUM GAS) REGULATIONS, 2013</td>
                                         <td>21/12/2016</td>
-                                        <td><a href="#" target="_blank">Downloads</a></td>
+                                        <td><a href="#" target="_blank">Download</a></td>
                                     </tr>
                                     <tr>
                                         <td>(METROLOGICAL CONTROL OF WATER METERS) REGULATIONS, 2014</td>
                                         <td>21/12/2016</td>
-                                        <td><a href="#" target="_blank">Downloads</a></td>
+                                        <td><a href="#" target="_blank">Download</a></td>
                                     </tr>
                                     <tr>
                                         <td>(CREDIT AND DEBT CONTROL) REGULATIONS, 2014</td>
                                         <td>21/12/2016</td>
-                                        <td><a href="#" target="_blank">Downloads</a></td>
+                                        <td><a href="#" target="_blank">Download</a></td>
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 navigation-column">
+                        @include('wmaweb.en.announcments_and_events')
+                    </div>
+
                 </div>
             </div>
-
-
-            <div class="col-md-3 navigation-column">
-                @include('wmaweb.en.announcments_and_events')
-            </div>
+        </div>
+    </div>
 
     </div>
-</div>
-</div>
-</div>
-
-</div>
     <!-- /contents -->
 @endsection

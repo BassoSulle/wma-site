@@ -1,4 +1,4 @@
-@extends('wmaweb.en.base_layout')
+@extends('wmaweb.sw.base_layout')
 <!-- /HEADER -->
 
 <style>
@@ -29,7 +29,7 @@
                                     <a href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a>
                                 </li>
-                                <li class="breadcrumb-item list-inline-item active">Regional Offices</li>
+                                <li class="breadcrumb-item list-inline-item active">Ofisi za Mikoa</li>
                             </ol>
                         </nav>
                     </div>
@@ -39,9 +39,9 @@
                     <div class="col-md-9 bg-white py-3 page-content">
                         <div class="form-group">
                             <div class="regional-office-select">
-                                <h4><label for="regionalOffice">Select regional office:</label></h4>
+                                <h4><label for="regionalOffice">Chagua ofisi ya Mkoa:</label></h4>
                                 <select class="form-control" id="regionalOffice" name="regionalOffice">
-                                    <option selected>Select office</option>
+                                    <option selected>Chagua ofisi</option>
                                     <option value="arusha">Arusha</option>
                                     <option value="dodoma">Dodoma</option>
                                     <option value="ilala">Ilala</option>
@@ -56,38 +56,43 @@
                             <h2>ARUSHA</h2>
                             <hr>
                             <p>Arusha</p><br>
-                            <p><span style="font-weight: bold;">Location: </span>ENGO LA CAMARTEC, BARABARA YA NJIRO</p>
-                            <p><span style="font-weight: bold;">Address: </span>7335 Arusha</p>
-                            <p><span style="font-weight: bold;">Fax: </span>-</p>
-                            <p><span style="font-weight: bold;">Phone No: </span>027 2549438</p>
-                            <p><span style="font-weight: bold;">Email: </span>arusha@wma.go.tz</p>
+                            <p><span style="font-weight: bold;">Mahali: </span>ENGO LA CAMARTEC, BARABARA YA NJIRO</p>
+                            <p><span style="font-weight: bold;">Anuani: </span>7335 Arusha</p>
+                            <p><span style="font-weight: bold;">Nukushi: </span>-</p>
+                            <p><span style="font-weight: bold;">Number ya Simu: </span>027 2549438</p>
+                            <p><span style="font-weight: bold;">Barua Pepe: </span>arusha@wma.go.tz</p>
                         </div>
 
                         <div id="dodomaInfo" class="office-info"><br>
                             <h2>DODOMA</h2>
                             <hr>
                             <p>Dodoma</p><br>
-                            <p><span style="font-weight: bold;">Location: </span>JENGO LA KAMBARAGE OROFA YA 10 </p>
-                            <p><span style="font-weight: bold;">Address: </span>266 Dodoma</p>
-                            <p><span style="font-weight: bold;">Fax: </span>-</p>
-                            <p><span style="font-weight: bold;">Phone No: </span>026 2321757</p>
-                            <p><span style="font-weight: bold;">Email: </span>dodoma@wma.go.tz</p>
+                            <p><span style="font-weight: bold;">Mahali: </span>JENGO LA KAMBARAGE OROFA YA 10 </p>
+                            <p><span style="font-weight: bold;">Anuani: </span>266 Dodoma</p>
+                            <p><span style="font-weight: bold;">Nukushi: </span>-</p>
+                            <p><span style="font-weight: bold;">Number ya Simu: </span>026 2321757</p>
+                            <p><span style="font-weight: bold;">Barua Pepe: </span>dodoma@wma.go.tz</p>
                         </div>
 
                         <div id="ilalainfo" class="office-info"><br>
                             <h2>ILALA</h2>
                             <hr>
                             <p>Ilala</p><br>
-                            <p><span style="font-weight: bold;">Location: </span>Mtaa wa Uhuru, Ilala Boma </p>
-                            <p><span style="font-weight: bold;">Address: </span>313, Dar Es Salaam</p>
-                            <p><span style="font-weight: bold;">Fax: </span>-</p>
-                            <p><span style="font-weight: bold;">Phone No: </span>022 2203105 </p>
-                            <p><span style="font-weight: bold;">Email: </span>@wma.go.tz</p>
+                            <p>
+                            <p><span style="font-weight: bold;">Mahali: </span>Mtaa wa Uhuru, Ilala Boma </p>
+                            <p>
+                            <p><span style="font-weight: bold;">Anuani: </span>313, Dar Es Salaam</p>
+                            <p>
+                            <p><span style="font-weight: bold;">Nukushi: </span>-</p>
+                            <p>
+                            <p><span style="font-weight: bold;">Number ya Simu: </span>022 2203105 </p>
+                            <p>
+                            <p><span style="font-weight: bold;">Barua Pepe: </span>ilala@wma.go.tz</p>
                         </div>
                     </div>
 
                     <div class="col-md-3 navigation-column">
-                        @include('wmaweb.en.announcments_and_events')
+                        @include('wmaweb.sw.announcments_and_events')
                     </div>
                 </div>
 

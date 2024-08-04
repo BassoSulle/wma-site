@@ -278,10 +278,10 @@
                             <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
                                     data-toggle='dropdown'>Media Center</a>
                                 <ul class='dropdown-menu'>
-                                    <li><a class='dropdown-item' href="#">Photo Gallery</a></li>
-                                    <li><a class='dropdown-item' href="#">Video Gallery</a></li>
+                                    <li><a class='dropdown-item' href="{{ route('gallaries', ['language' => $current_language]) }}">Photo Gallery</a></li>
+                                    <li><a class='dropdown-item' href="{{ route('video', ['language' => $current_language]) }}">Video Gallery</a></li>
                                     <li><a class='dropdown-item' href="#">Audio Gallery</a></li>
-                                    <li><a class='dropdown-item' href="#">Press Release</a></li>
+                                    <li><a class='dropdown-item' href="{{ route('pressrelease', ['language' => $current_language]) }}">Press Release</a></li>
                                     <li><a class='dropdown-item' href="#">Special Supplements</a></li>
                                     <li><a class='dropdown-item' href="#">Speech</a></li>
                                     <li><a class='dropdown-item' href="#">Brochures</a></li>

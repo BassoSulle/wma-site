@@ -13,7 +13,6 @@
                                 <li class="breadcrumb-item "><a
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
-                                {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
                                 <li class="breadcrumb-item list-inline-item active">Storage Tank Constructors</li>
                             </ol>
                         </nav>
@@ -23,11 +22,12 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        {{-- <h4>Organization structure</h4> --}}
+                        <h4>Storage Tank Constructors</h4>
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="organization structure">
-                                <h5><a href="https://www.wma.go.tz/uploads/files/Tank%20Constructors.pdf">Tank Constructors </a></h5>
+                            <h5><a href="https://www.wma.go.tz/uploads/files/Tank%20Constructors.pdf">Tank Constructors </a>
+                            </h5>
 
 
 

@@ -14,7 +14,8 @@
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
                                 {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
-                                <li class="breadcrumb-item list-inline-item active">Dira na Dhima</li>
+                                <li class="breadcrumb-item list-inline-item active">Fomu ya maombi ya leseni ya ufundi
+                                    Mizani/Pampu</li>
                             </ol>
                         </nav>
                     </div>
@@ -23,30 +24,21 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        <h4>Dira na Dhima</h4>
+                        <h4>Fomu ya maombi ya leseni ya ufundi Mizani/Pampu</h4>
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
-                            <p class="vision and mission">
-                            <h5>DIRA</h5>
-                            Vipimo sahihi na vya kuaminika kwa wote.<br><br>
+                            Kazi Inaendelea ...
 
-
-                            <h5>DHIMA</h5>
-
-                            Kutoa ulinzi wa Mtumiaji kuhusiana na vipimo vya kisheria kupitia Uthibitishaji wa vyombo vya
-                            kupimia, usimamizi wa vipimo na utaalam kwa maendeleo ya kijamii na kiuchumi.
-                            <br>
-
-                            </p>
 
                         </div>
                     </div>
 
+
                     <div class="col-md-3 navigation-column">
                         @include('wmaweb.sw.announcments_and_events')
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </div>

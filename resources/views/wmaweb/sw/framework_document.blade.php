@@ -13,8 +13,7 @@
                                 <li class="breadcrumb-item "><a
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
-                                {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
-                                <li class="breadcrumb-item list-inline-item active">Kanuni</li>
+                                <li class="breadcrumb-item list-inline-item active">Framework Document </li>
                             </ol>
                         </nav>
                     </div>
@@ -23,7 +22,7 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        <h4>Kanuni</h4>
+                        <h4>Framework Document </h4>
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <table class="table table-striped">
@@ -43,34 +42,10 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>WEIGHTS AND MEASURES GENERAL REGULATIONS, GN 288 OF 2019 (2)</td>
-                                        <td>07/11/2019</td>
-                                        <td><a href="#" target="_blank">Pakua</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>WEIGHTS AND MEASURES GENERAL REGULATIONS, GN 288 OF 2019</td>
-                                        <td>16/09/2019</td>
-                                        <td><a href="#" target="_blank">Pakua</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>(SAND AND OTHER BALLAST) REGULATIONS-2013</td>
-                                        <td>21/12/2016</td>
-                                        <td><a href="#" target="_blank">Pakua</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>(SALE OF LIQUEFIED PETROLEUM GAS) REGULATIONS, 2013</td>
-                                        <td>21/12/2016</td>
-                                        <td><a href="#" target="_blank">Pakua</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>(METROLOGICAL CONTROL OF WATER METERS) REGULATIONS, 2014</td>
-                                        <td>21/12/2016</td>
-                                        <td><a href="#" target="_blank">Pakua</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>(CREDIT AND DEBT CONTROL) REGULATIONS, 2014</td>
-                                        <td>21/12/2016</td>
-                                        <td><a href="#" target="_blank">Pakua</a></td>
+                                        <td>Framework Document</td>
+                                        <td>23/12/2016</td>
+                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1482475810-Framework%20Document.pdf"
+                                                target="_blank">Pakua</a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -85,8 +60,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
     </div>
     <!-- /contents -->
 @endsection

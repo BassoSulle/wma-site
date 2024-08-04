@@ -38,29 +38,30 @@
                             The Roles of WMA as stipulated under the Weights and Measures Act (Cap.340) and the Executive
                             Agencies Act (Cap.245) are to:
 
-                            1. Protect consumers in trade, safety, health and environment in relation to legal metrology;
+                            1. Protect consumers in trade, safety, health and environment in relation to legal
+                            metrology;<br>
 
                             2. Protect society from the consequences of false measurements in public and private
-                            transactions;
+                            transactions;<br>
 
                             3. Approve (or ensure approval by another designated institutions) measuring instruments to be
                             used for a public or private transaction in
 
-                            trade, safety, health and environment sectors;
+                            trade, safety, health and environment sectors;<br>
 
-                            4. Control the use of measuring instruments in public and private transactions;
+                            4. Control the use of measuring instruments in public and private transactions;<br>
 
-                            5. Control pre-packaging of products;
+                            5. Control pre-packaging of products;<br>
 
-                            6. Liaise with regional and international organizations with similar objectives;
+                            6. Liaise with regional and international organizations with similar objectives;<br>
 
                             7. Give effect to the decisions and recommendations of the OIML Council and Committee with
-                            regard to legal metrology;
+                            regard to legal metrology;<br>
 
-                            8. Provide information on Legal Metrology in general and
+                            8. Provide information on Legal Metrology in general and<br>
 
                             9. Ensure that legal metrology measurement standards are traceable to national and 9.
-                            International measurement standards
+                            International measurement standards.<br>
 
                             </p>
 

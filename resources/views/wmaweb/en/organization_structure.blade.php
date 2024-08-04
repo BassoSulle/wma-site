@@ -27,11 +27,8 @@
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="organization structure">
-                                {{-- <h5><a href="http://www.wma.go.tz/uploads/files/ORGANIZATION%20STRUCTURE%20NEW.doc%20(2).pdf">Organization structureNEW.doc(2)</a></h5> --}}
-
-
-
-
+                            <h5><a href="http://www.wma.go.tz/uploads/files/ORGANIZATION%20STRUCTURE%20NEW.doc%20(2).pdf">Organization
+                                    structureNEW.doc(2)</a></h5>
                             </p>
 
                         </div>

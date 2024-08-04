@@ -1,5 +1,4 @@
 @extends('wmaweb.sw.base_layout')
-<!-- /HEADER -->
 
 <!-- contents -->
 @section('content')
@@ -13,8 +12,7 @@
                                 <li class="breadcrumb-item "><a
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
-                                {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
-                                <li class="breadcrumb-item list-inline-item active">Core Values</li>
+                                <li class="breadcrumb-item list-inline-item active">Tunu za Wakala</li>
                             </ol>
                         </nav>
                     </div>
@@ -23,46 +21,42 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        <h4>Core Values</h4>
+                        <h4>Tunu za Wakala</h4>
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="core values">
-                            <h5 style="font-weight:bold">Result oriented</h5>
-                            Ø WMA is intended in the final outcome rather than going through the process.<br><br><br>
+                            <h5 style="font-weight:bold">Utendaji wenye matokeo</h5>
+                            Ø Wakala inajali utendaji wa matokeo zaidi.<br><br>
 
-                            <h5 style="font-weight:bold">Team work</h5>
-                            Ø WMA staffs work collaboratively to achieve the Agency’s goal.<br><br>
+                            <h5 style="font-weight:bold">Timu ya pamoja</h5>
+                            Ø Wafanyakazi wa Wakala wanatekeleza majukumu yao kwa pamoja, yaani kitimu.<br><br>
 
-                            <h5 style="font-weight:bold">Professional Excellence</h5>
-                            Ø WMA staffs try their level best to use their profession and skills to perform their duties at
-                            excellent level.<br><br>
+                            <h5 style="font-weight:bold">Weledi</h5>
+                            Ø Wafanyakazi wa Wakala wanatumia taaluma zao mahiri na ujuzi wao kuhakikisha wanafikia
+                            mafanikio ya Wakala.<br><br>
 
-                            <h5 style="font-weight:bold">Customer focus</h5>
-                            Ø The orientation of WMA towards serving its clients.<br><br>
+                            <h5 style="font-weight:bold">Kufikia matarajio ya mteja</h5>
+                            Ø Wakala mara zote inataka kufikia matarajio ya mteja katika huduma wanazotoa.<br><br>
 
-                            <h5 style="font-weight:bold">Transparence</h5>
-                            Ø WMA staff intends to work honestly and openly. <br><br>
+                            <h5 style="font-weight:bold">Uwazi</h5>
+                            Ø Mara zote Wakala inatekeleza majukumu yake kwa uwazi kwa wateja wake wote wa ndani na
+                            nje.<br><br>
 
-                            <h5 style="font-weight:bold">Accountability</h5>
-                            Ø WMA staff intends to be responsible for what they do and be able to give a satisfactory reason
-                            for it.<br><br>
-
-
-
+                            <h5 style="font-weight:bold">Uwajibikaji</h5>
+                            Ø Wakala na wafanyakazi wake wanawajibu wa kutekeleza majukumu yake kikamilifu kufikia mafanikio
+                            ya malengo yake.<br><br>
                             </p>
 
                         </div>
                     </div>
 
                     <div class="col-md-3 navigation-column">
-                        @include('wmaweb.en.announcments_and_events')
+                        @include('wmaweb.sw.announcments_and_events')
                     </div>
                 </div>
 
             </div>
         </div>
-    </div>
-
     </div>
     <!-- /contents -->
 @endsection

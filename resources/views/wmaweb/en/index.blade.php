@@ -542,7 +542,7 @@
                     <img src="{{ asset('assets/images/licence_icon.png') }}" alt="" width="80px"
                         style="margin-bottom: 10px;">
                 </div>
-                <div class="service-title">REQUEST FOR THE LICENCE</div>
+                <div class="service-title">Request for the Liecence</div>
                 <div class="service-btn-wrapper">
                     <a target="_blank" href="https://www.wma.go.tz/howdo/6" class="serv-btn orange">Get
                         instruction</a>
@@ -556,7 +556,7 @@
 
                     {{-- <img src="/uploads/icon/contract.png" alt=""> --}}
                 </div>
-                <div class="service-title">REQUEST FOR THE PARTTERN APPROVE</div>
+                <div class="service-title">Request for the Parttern Approval</div>
                 <div class="service-btn-wrapper">
                     <a target="_blank" href="https://www.wma.go.tz/howdo/4" class="serv-btn orange">Get
                         instruction</a>

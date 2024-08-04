@@ -14,7 +14,7 @@
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
                                 {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
-                                <li class="breadcrumb-item list-inline-item active">Gas Meters Calibrators</li>
+                                <li class="breadcrumb-item list-inline-item active">Scale Manufacturers</li>
                             </ol>
                         </nav>
                     </div>
@@ -23,11 +23,12 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        {{-- <h4>Organization structure</h4> --}}
+                        <h4>Organization structure</h4>
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="organization structure">
-                                <h5><a href="https://www.wma.go.tz/uploads/files/Gas%20meter%20calibrators.pdf">Scale Manufacture</a></h5>
+                            <h5><a href="https://www.wma.go.tz/uploads/files/Gas%20meter%20calibrators.pdf">Scale
+                                    Manufacture</a></h5>
 
 
 
