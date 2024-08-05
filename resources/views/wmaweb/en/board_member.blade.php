@@ -79,7 +79,7 @@
                                         <div class="post-content mx-0 px-0 text-center">
                                             <div class="category" style="background-color: #f89629;">Member</div>
                                             <h6 class="sub_title">
-                                                <p class="card-text fw-medium">MR. JUMA SETH MWAMBAP</p>
+                                                <p class="card-text fw-medium">MR. JUMA SETH MWAMBAPA</p>
                                             </h6>
                                         </div>
                                     </div>

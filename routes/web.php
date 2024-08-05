@@ -155,3 +155,15 @@ Route::get('/{language}/faqs', [WmaController::class, 'faqs'])
 
 Route::get('/{language}/request_for_license_procedures', [WmaController::class, 'request_for_license_procedures'])
     ->name('request_for_license_procedures');
+
+Route::get('/{language}/speeches', [WmaController::class, 'speeches'])
+    ->name('speeches');
+
+Route::get('/{language}/brochures', [WmaController::class, 'brochures'])
+    ->name('brochures');
+
+Route::get('/{language}/posters', [WmaController::class, 'posters'])
+    ->name('posters');
+
+Route::get('/{language}/newsletter', [WmaController::class, 'newsletter'])
+    ->name('newsletter');

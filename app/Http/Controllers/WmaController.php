@@ -585,4 +585,56 @@ class WmaController extends Controller
         ];
         return view($templatePath, $data);
     }
+
+    public function speeches($language)
+    {
+
+        $templateName = 'speeches';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function brochures($language)
+    {
+
+        $templateName = 'brochures';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function posters($language)
+    {
+
+        $templateName = 'posters';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function newsletter($language)
+    {
+
+        $templateName = 'newsletter';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+        ];
+        return view($templatePath, $data);
+    }
 }

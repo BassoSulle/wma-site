@@ -169,7 +169,7 @@
                                             href="{{ route('core-value', ['language' => $current_language]) }}">Core
                                             Value</a></li>
                                     <li><a class='dropdown-item'
-                                            href="{{ route('mandate-and-role', ['language' => $current_language]) }}">Mandete
+                                            href="{{ route('mandate-and-role', ['language' => $current_language]) }}">Mandate
                                             and Roles</a></li>
 
                                     {{-- <li><a class='dropdown-item' href="{{ route('organizationstructure', ['language' => $current_language]) }}">Organization Structure</a>
@@ -220,7 +220,7 @@
                                     <li class='nav-item '>
                                         <a class='dropdown-item '
                                             href='{{ route('board-member', ['language' => $current_language]) }}'>Board
-                                            Member </a>
+                                            Members </a>
                                     </li>
                                     <li class='nav-item '>
                                         <a class='dropdown-item '
@@ -302,10 +302,10 @@
                                             href="{{ route('pressrelease', ['language' => $current_language]) }}">Press
                                             Release</a></li>
                                     <li><a class='dropdown-item' href="#">Special Supplements</a></li>
-                                    <li><a class='dropdown-item' href="#">Speech</a></li>
-                                    <li><a class='dropdown-item' href="#">Brochures</a></li>
-                                    <li><a class='dropdown-item' href="#">Posters</a></li>
-                                    <li><a class='dropdown-item' href="#">News Letter</a></li>
+                                    <li><a class='dropdown-item' href="{{ route('speeches', ['language' => $current_language]) }}">Speech</a></li>
+                                    <li><a class='dropdown-item' href="{{ route('brochures', ['language' => $current_language]) }}">Brochures</a></li>
+                                    <li><a class='dropdown-item' href="{{ route('posters', ['language' => $current_language]) }}">Posters</a></li>
+                                    <li><a class='dropdown-item' href="{{ route('newsletter', ['language' => $current_language]) }}">News Letter</a></li>
                                 </ul>
                             </li>
                             <li class='nav-item dropdown'><a
