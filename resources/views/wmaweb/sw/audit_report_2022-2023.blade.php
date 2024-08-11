@@ -24,7 +24,7 @@
                         <h4>Ripoti</h4>
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="organization structure">
-                                Kazi Inaendelea ...
+                                Kazi Inaendelea ....
 
                                 {{-- <a href="https://www.wma.go.tz/uploads/files/Audited%20Financial%20statement%202021-22.pdf">Audited Financial statements 2021 - 2022</a> --}}
 

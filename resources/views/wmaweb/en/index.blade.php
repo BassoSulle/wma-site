@@ -424,7 +424,7 @@
                                     <div class="col-10 col-md-9">
                                         <p class="text-justify mb-2">
                                             <b>
-                                                <h6 class="article-h2">TANGAZO KWA WAUZAJI WA SARUJ</h6>
+                                                <h6 class="article-h2">TANGAZO KWA WAUZAJI WA SARUJI</h6>
                                             </b>
                                         </p>
                                         <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Feb 27 2024</p>
@@ -444,7 +444,7 @@
                                     <div class="col-10 col-md-9">
                                         <p class="text-justify mb-2">
                                             <b>
-                                                <h6 class="article-h2">TANGAZO KWA WAUZAJI WA SARUJ</h6>
+                                                <h6 class="article-h2">TANGAZO KWA WAUZAJI WA SARUJI</h6>
                                             </b>
                                         </p>
                                         <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Feb 27 2024</p>
