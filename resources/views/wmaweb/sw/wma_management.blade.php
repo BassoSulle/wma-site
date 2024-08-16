@@ -52,6 +52,25 @@
                                     <div class="post-module">
                                         <div class="thumbnail">
                                             <img class="w-100 bg-white"
+                                                src="{{ asset('assets/images/ALBOGAST KAJUNGU.png') }}"
+                                                alt="ALBOGAST KAJUNGU">
+                                        </div>
+                                        <div class="post-content mx-0 px-0 text-center">
+                                            <div class="category" style="background-color: #f89629;">MKURUGENZI</div>
+                                            <h6 class="sub_title">
+                                                <p class="card-text fw-medium">ALBOGAST KAJUNGU</p>
+                                            </h6>
+                                        </div>
+                                        <h6 class="sub_title">
+                                            <p class="card-text fw-medium text-center">KAIMU MKURUGENZI HUDUMA ZA UFUNDI</p>
+                                        </h6>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-12 mb-3">
+                                    <div class="post-module">
+                                        <div class="thumbnail">
+                                            <img class="w-100 bg-white"
                                                 src="{{ asset('assets/images/KARIM H. MKOREHE.png') }}"
                                                 alt="KARIM H. MKOREHE">
                                         </div>
