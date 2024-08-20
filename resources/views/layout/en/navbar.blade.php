@@ -99,11 +99,11 @@
 
                     <div class="col-md-8 col-sm-8 col-xs-8 text-center pt-2 pt-xs-0">
                         <h5 class="" style="color: #000; ">The united Republic of Tanzania </h5>
-                        <h3 class="mb-0 title title-main" style="color: #000; text-shadow: 1px 1px 2px #f8a52f;"><b><i>
-                                    WEIGHTS AND MEASURES AGENCY</i></b></h3>
+                        <h3 class="mb-0 title title-main" style="color: #000; text-shadow: 1px 1px 2px #f8a52f;"><b>
+                                    WEIGHTS AND MEASURES AGENCY</b></h3>
                         <h3 class="mb-0 title title-main pt-2 pb-2"
-                            style="color: #000; text-shadow: 1px 1px 2px #f8a52f; margin-bottom:8px;"><b><i>
-                                    (WMA)</i></b></h3>
+                            style="color: #000; text-shadow: 1px 1px 2px #f8a52f; margin-bottom:8px;"><b>
+                                    (WMA)</b></h3>
                     </div>
 
                     <div class="col-md-2 col-sm-2 col-xs-2 text-right pt-1 pr-0 logo-container position-relative">

@@ -77,7 +77,7 @@
                                         <div class="post-content mx-0 px-0 text-center">
                                             <div class="category" style="background-color: #f89629;">Mjumbe</div>
                                             <h6 class="sub_title">
-                                                <p class="card-text fw-medium">Bwana. JUMA SETH MWAMBAP</p>
+                                                <p class="card-text fw-medium">Bwana. JUMA SETH MWAMBAPA</p>
                                             </h6>
                                         </div>
                                     </div>

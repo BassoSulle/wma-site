@@ -98,6 +98,8 @@
                         </div>
                     </div>
 
+                    {{-- Announcement and Event section --}}
+
                     <div class="col-md-3 navigation-column">
                         @include('wmaweb.en.announcments_and_events')
                     </div>

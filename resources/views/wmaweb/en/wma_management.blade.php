@@ -31,7 +31,7 @@
                                 <div class="col-md-3 col-sm-12 mb-3">
                                     <div class="post-module">
                                         <div class="thumbnail">
-                                            <img class="w-100 bg-white" src="{{ asset('assets/images/kihula.png') }}"
+                                            <img class="w-100 bg-white" src="https://www.wma.go.tz/uploads/profiles/9-0.30810600%201721628167.png"
                                                 alt="KARIM H. MKOREHE">
                                         </div>
                                         <div class="post-content mx-0 px-0 text-center">

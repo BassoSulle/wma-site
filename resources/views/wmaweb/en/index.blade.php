@@ -169,8 +169,8 @@
                         </div>
                         <center>
                             <div class="">
-                                <h5 class="title mb-2"><br>Alban M. Kihulla.</h5>
-                                <small>Chief executive oofficer</small>
+                                <h5 class="title mb-2"><br>ALBAN M. KIHULLA.</h5>
+                                <small>CHIEF EXECUTIVE OFFICER </small>
                             </div>
                         </center>
                     </div>

@@ -21,108 +21,146 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-9 bg-white py-3 page-content">
-                        <h4>Board Members</h4>
+                    <div class="col-md-12 bg-white py-3 page-content">
+                        <h4 class="px-3">Board Members</h4>
                         <div class="container mb-3">
+                            <h5 class="mt-4 py-2" style="background-color: #f89629; color: #000;"><span class="px-2">CHAIRPERSON</span>
+                            </h5>
                             <div class="row mt-4 justify-content-center">
-                                <div class="col-md-4 col-sm-6 mb-3">
+                                <div class="col-md-3 col-sm-12 mb-3">
                                     <div class="post-module">
                                         <div class="thumbnail">
                                             <img class="w-100 bg-white" src="{{ asset('assets/images/Eliza.png') }}"
-                                                alt="DR. ELIZA ALFRED MWAKASANGULA">
+                                                alt="KARIM H. MKOREHE">
                                         </div>
                                         <div class="post-content mx-0 px-0 text-center">
-                                            <div class="category" style="background-color: #f89629;">Chairperson</div>
+                                            <div class="category" style="background-color: #f89629;">CHAIR PERSON
+                                            </div>
                                             <h6 class="sub_title">
                                                 <p class="card-text fw-medium">DR. ELIZA ALFRED MWAKASANGULA.</p>
                                             </h6>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-md-4 col-sm-6 mb-3">
+                            </div>
+                            <h5 class="mt-4 py-2" style="background-color: #f89629; color: #000;"><span
+                                    class="px-2">SECRETARY</span>
+                            </h5>
+                            <div class="row mt-4 justify-content-center">
+                                <div class="col-md-3 col-sm-12 mb-3">
                                     <div class="post-module">
                                         <div class="thumbnail">
-                                            <img class="w-100 bg-white" src="{{ asset('assets/images/kihula.png') }}"
-                                                alt="ALBAN M. KIHULLA">
+                                            <img class="w-100 bg-white" src="https://www.wma.go.tz/uploads/profiles/9-0.30810600%201721628167.png"
+                                                alt="KARIM H. MKOREHE">
                                         </div>
                                         <div class="post-content mx-0 px-0 text-center">
-                                            <div class="category" style="background-color: #f89629;">Secretary</div>
+                                            <div class="category" style="background-color: #f89629;">SECRETARY
+                                            </div>
                                             <h6 class="sub_title">
                                                 <p class="card-text fw-medium">ALBAN M. KIHULLA</p>
                                             </h6>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-md-4 col-sm-6 mb-3">
+                                <div class="col-md-3 col-sm-12 mb-3">
+                                    <div class="post-module">
+                                        <div class="thumbnail">
+                                            {{-- <img class="w-100 bg-white"
+                                                src="{{ asset('assets/images/KARIM H. MKOREHE.png') }}"
+                                                alt="KARIM H. MKOREHE"> --}}
+                                        </div>
+                                        {{-- <div class="post-content mx-0 px-0 text-center">
+                                            <div class="category" style="background-color: #f89629;">DIRECTOR</div>
+                                            <h6 class="sub_title">
+                                                <p class="card-text fw-medium">KARIM H. MKOREHE</p>
+                                            </h6>
+                                        </div> --}}
+                                        {{-- <h6 class="sub_title">
+                                            <p class="card-text fw-medium text-center">AG. DIRECTOR OF BUSINESS SUPPORT
+                                                DIVISION</p>
+                                        </h6> --}}
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <h5 class="mt-4 py-2" style="background-color: #f89629; color: #000;"><span class="px-2">MEMBERS</span>
+                            </h5>
+                            <div class="row mt-4 justify-content-center">
+                                <div class="col-md-3 col-sm-6 mb-3">
                                     <div class="post-module">
                                         <div class="thumbnail">
                                             <img class="w-100 bg-white" src="{{ asset('assets/images/anna.png') }}"
-                                                alt="MS. ANNA PETER KIANGO">
+                                                alt="JOSEPH MALITI">
                                         </div>
                                         <div class="post-content mx-0 px-0 text-center">
-                                            <div class="category" style="background-color: #f89629;">Member</div>
+                                            <div class="category" style="background-color: #f89629;">MEMBER</div>
                                             <h6 class="sub_title">
-                                                <p class="card-text fw-medium">MS. ANNA PETER KIANGO</p>
+                                                <p class="card-text fw-medium">BI. ANNA PETER KIANGO</p>
                                             </h6>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-6 mb-3">
+                                <div class="col-md-3 col-sm-6 mb-3">
                                     <div class="post-module">
                                         <div class="thumbnail">
                                             <img class="w-100 bg-white" src="{{ asset('assets/images/mwambapa.png') }}"
-                                                alt="MR. JUMA SETH MWAMBAP">
+                                                alt="ROSE JUMA">
                                         </div>
                                         <div class="post-content mx-0 px-0 text-center">
-                                            <div class="category" style="background-color: #f89629;">Member</div>
+                                            <div class="category" style="background-color: #f89629;">MEMBER</div>
                                             <h6 class="sub_title">
-                                                <p class="card-text fw-medium">MR. JUMA SETH MWAMBAPA</p>
+                                                <p class="card-text fw-medium">JUMA SETH MWAMBAPA</p>
                                             </h6>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-6 mb-3">
+                                <div class="col-md-3 col-sm-6 mb-3">
                                     <div class="post-module">
                                         <div class="thumbnail">
-                                            <img class="w-100 bg-white" src="{{ asset('assets/images/swalehe.png') }}"
-                                                alt="MR. SWALEHE SAID CHONDOMA">
+                                            <img class="w-100 bg-white"
+                                                src="{{ asset('assets/images/swalehe.png') }}"
+                                                alt="NELSON J. RUTURAGARA">
                                         </div>
                                         <div class="post-content mx-0 px-0 text-center">
-                                            <div class="category" style="background-color: #f89629;">Member</div>
+                                            <div class="category" style="background-color: #f89629;">MEMBER</div>
                                             <h6 class="sub_title">
-                                                <p class="card-text fw-medium">MR. SWALEHE SAID CHONDOMA</p>
+                                                <p class="card-text fw-medium">SWALEHE SAID CHONDOMA</p>
                                             </h6>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-6 mb-3">
+                                <div class="col-md-3 col-sm-6 mb-3">
                                     <div class="post-module">
                                         <div class="thumbnail">
-                                            <img class="w-100 bg-white" src="{{ asset('assets/images/gibson.png') }}"
-                                                alt="DR. GIBSON HOSEA MUNISI">
+                                            <img class="w-100 bg-white"
+                                                src="{{ asset('assets/images/gibson.png') }}"
+                                                alt="CHRISTOPHER MWAKIBINGA">
                                         </div>
                                         <div class="post-content mx-0 px-0 text-center">
-                                            <div class="category" style="background-color: #f89629;">Member</div>
+                                            <div class="category" style="background-color: #f89629;">MEMBER</div>
                                             <h6 class="sub_title">
-                                                <p class="card-text fw-medium">DR. GIBSON HOSEA MUNISI</p>
+                                                <p class="card-text fw-medium">GIBSON HOSEA MUNISI</p>
                                             </h6>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-6 mb-3">
+                                <div class="col-md-3 col-sm-6 mb-3">
                                     <div class="post-module">
                                         <div class="thumbnail">
-                                            <img class="w-100 bg-white" src="{{ asset('assets/images/shaban.png') }}"
-                                                alt="ENG. SHABAN SELEMAN">
+                                            <img class="w-100 bg-white"
+                                                src="{{ asset('assets/images/shaban.png') }}"
+                                                alt="ADV. OSCAR A. NGITU">
                                         </div>
                                         <div class="post-content mx-0 px-0 text-center">
-                                            <div class="category" style="background-color: #f89629;">Member</div>
+                                            <div class="category" style="background-color: #f89629;">MEMBER</div>
                                             <h6 class="sub_title">
                                                 <p class="card-text fw-medium">ENG. SHABAN SELEMAN</p>
                                             </h6>
@@ -130,28 +168,28 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-6 mb-3">
+                                <div class="col-md-3 col-sm-6 mb-3">
                                     <div class="post-module">
                                         <div class="thumbnail">
-                                            <img class="w-100 bg-white" src="{{ asset('assets/images/hassan-hamza.png') }}"
-                                                alt="MR. HASSAN HAMZA NKYA">
+                                            <img class="w-100 bg-white"
+                                                src="{{ asset('assets/images/hassan-hamza.png') }}"
+                                                alt="ADV. OSCAR A. NGITU">
                                         </div>
                                         <div class="post-content mx-0 px-0 text-center">
-                                            <div class="category" style="background-color: #f89629;">Member</div>
+                                            <div class="category" style="background-color: #f89629;">MEMBER</div>
                                             <h6 class="sub_title">
-                                                <p class="card-text fw-medium">MR. HASSAN HAMZA NKYA</p>
+                                                <p class="card-text fw-medium">HASSAN HAMZA NKYA</p>
                                             </h6>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
+{{--
                     <div class="col-md-3 navigation-column">
                         @include('wmaweb.en.announcments_and_events')
-                    </div>
+                    </div> --}}
                 </div>
 
             </div>

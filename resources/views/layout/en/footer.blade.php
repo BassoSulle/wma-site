@@ -116,22 +116,19 @@
                              <div class="col-lg-4 no-padding-sm">
                                  <h5 class="footer-heading">Our Partners</h5>
                                  <ul class="list-inline text-left">
-                                     <li class="list-inline-item pr-1 py-2"><a href="https://comsats.org/">Commission on
-                                             Science and Technology for Sustainable Development in the South
-                                             (COMSATS)</a></li>
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.tirdo.or.tz/en/home" target="_blank">Tanzania Industrial Research and Devolopment Organization (TIRDO)</a></li>
                                      <br>
                                      <li class="list-inline-item pr-1 py-2"><a
-                                             href="https://costechanalytical.com/">Tanzania Commission for Science and
+                                             href="https://costechanalytical.com/" target="_blank">Tanzania Commission for Science and
                                              Technology (COSTECH)</a></li>
                                      <br>
-                                     <li class="list-inline-item pr-1 py-2"><a href="https://cti.co.tz/">Confederation
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://cti.co.tz/" target="_blank">Confederation
                                              of Tanzania Industries (CTI)</a></li>
                                      <br>
-                                     <li class="list-inline-item pr-1 py-2"><a href="https://tpsftz.org/">Tanzania
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://tpsftz.org/" target="_blank">Tanzania
                                              Private Sector Foundation (TPSF)</a></li>
                                      <br>
-                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.sirim.my/">Standards
-                                             and Industrial Research Institute of Malaysia (SIRIM)</a>
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.tbs.go.tz/" target="_blank">Tanzania Bereau of Standard (TBS)</a>
                                      </li>
                                      <!-- <br>
                                     <li class="list-inline-item pr-1 py-2"><a
