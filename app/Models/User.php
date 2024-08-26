@@ -20,9 +20,28 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'email_verified_at',
         'password',
     ];
 
+
+    public function carousels(){
+        return  $this->hasMany(Carousel::class);
+    }
+    public function news(){
+
+        return  $this->hasMany(News::class);
+    }
+
+    public function events(){
+
+        return  $this->hasMany(Events::class);
+    }
+
+    public function announcements(){
+
+        return  $this->hasMany(Announcements::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
