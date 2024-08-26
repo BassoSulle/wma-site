@@ -170,11 +170,3 @@ Route::get('/{language}/newsletter', [WmaController::class, 'newsletter'])
     ->name('newsletter');
 
 
-//Admin dashboard routers
-//     Route::group(['prefix' => 'admin'], function () {
-
-//     Route::get('/admin', [AdminPanelController::class, 'carousel_items_list'])
-//     ->name('home');
-// });
-
-
