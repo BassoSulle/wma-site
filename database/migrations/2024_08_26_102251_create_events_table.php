@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('en_title')->required();
             $table->string('sw_title')->required();
-            $table->string('slug')->unique();
             $table->string('en_description')->nullable();
             $table->string('sw_description')->nullable();
-            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->string('slug')->unique();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
 
 

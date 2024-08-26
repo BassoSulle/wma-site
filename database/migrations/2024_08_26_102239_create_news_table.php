@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('en_description')->nullable();
             $table->string('sw_description')->nullable();
-            $table->unsignedBigInteger('created_by');
+            $table->string('image')->nullable();
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
 
 
