@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WmaController;
+use App\Http\Controllers\AdminPanelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -167,3 +168,13 @@ Route::get('/{language}/posters', [WmaController::class, 'posters'])
 
 Route::get('/{language}/newsletter', [WmaController::class, 'newsletter'])
     ->name('newsletter');
+
+
+//Admin dashboard routers
+//     Route::group(['prefix' => 'admin'], function () {
+
+//     Route::get('/admin', [AdminPanelController::class, 'carousel_items_list'])
+//     ->name('home');
+// });
+
+
