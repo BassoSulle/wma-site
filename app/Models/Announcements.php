@@ -15,11 +15,12 @@ class Announcements extends Model
         'slug',
         'en_description',
         'sw_description',
-        'image',
         'is_active',
+        'created_by',
+
     ];
 
     public function user(){
-        return  $this->belongTo(User::class);
+        return  $this->belongsTo(User::class, 'created_by');
     }
 }

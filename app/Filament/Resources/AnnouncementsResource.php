@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\EventsResource\Pages;
-use App\Filament\Resources\EventsResource\RelationManagers;
-use App\Models\Events;
+use App\Filament\Resources\AnnouncementsResource\Pages;
+use App\Filament\Resources\AnnouncementsResource\RelationManagers;
+use App\Models\Announcements;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -27,11 +27,11 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Set;
 
-class EventsResource extends Resource
+class AnnouncementsResource extends Resource
 {
-    protected static ?string $model = Events::class;
+    protected static ?string $model = Announcements::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-calendar-days';
+    protected static ?string $navigationIcon = 'heroicon-o-bell';
 
     public static function form(Form $form): Form
     {
@@ -58,7 +58,7 @@ class EventsResource extends Resource
                         ->maxlength(255)
                         ->disabled()
                         ->dehydrated()
-                        ->unique(Events::class, 'slug', ignoreRecord:true),
+                        ->unique(Announcements::class, 'slug', ignoreRecord:true),
 
                         Textarea::make('en_description')
                         ->required()
@@ -69,8 +69,7 @@ class EventsResource extends Resource
                         ->required()
                         ->maxlength(255),
 
-                        DatePicker::make('created_atclear
-                        ')
+                        DatePicker::make('created_at')
                             ->nullable(),
 
                         Hidden::make('created_by')
@@ -93,40 +92,40 @@ class EventsResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('en_title')
-                ->searchable()
-                ->formatStateUsing(function ($state){
-                    return Str::words($state, 5,'.....');
-                }),
+        ->columns([
+            Tables\Columns\TextColumn::make('en_title')
+            ->searchable()
+            ->formatStateUsing(function ($state){
+                return Str::words($state, 5,'.....');
+            }),
 
-                Tables\Columns\TextColumn::make('sw_title')
-                ->searchable()
-                ->formatStateUsing(function ($state){
-                    return Str::words($state, 5,'.....');
-                }),
+            Tables\Columns\TextColumn::make('sw_title')
+            ->searchable()
+            ->formatStateUsing(function ($state){
+                return Str::words($state, 5,'.....');
+            }),
 
-                Tables\Columns\TextColumn::make('user.name')
-                ->label('Created By')
-                ->searchable(query: function (Builder $query, string $search): Builder {
-                    return $query->whereHas('user', function (Builder $query) use ($search) {
-                        $query->where('name', 'like', "%{$search}%");
-                    });
-                }),
+            Tables\Columns\TextColumn::make('user.name')
+            ->label('Created By')
+            ->searchable(query: function (Builder $query, string $search): Builder {
+                return $query->whereHas('user', function (Builder $query) use ($search) { 
+                    $query->where('name', 'like', "%{$search}%");
+                });
+            }),
 
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable(),
+            Tables\Columns\TextColumn::make('created_at')
+                ->dateTime()
+                ->sortable(),
 
-                IconColumn::make('is_active')
-                ->label('Status')
-                ->boolean()
-                ->trueIcon('heroicon-o-check-circle')
-                ->falseIcon('heroicon-o-x-circle')
-                ->trueColor('primary')
-                ->falseColor('danger'),
+            IconColumn::make('is_active')
+            ->label('Status')
+            ->boolean()
+            ->trueIcon('heroicon-o-check-circle')
+            ->falseIcon('heroicon-o-x-circle')
+            ->trueColor('primary')
+            ->falseColor('danger'),
 
-            ])
+        ])
             ->filters([
                 //
             ])
@@ -154,9 +153,9 @@ class EventsResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListEvents::route('/'),
-            'create' => Pages\CreateEvents::route('/create'),
-            'edit' => Pages\EditEvents::route('/{record}/edit'),
+            'index' => Pages\ListAnnouncements::route('/'),
+            'create' => Pages\CreateAnnouncements::route('/create'),
+            'edit' => Pages\EditAnnouncements::route('/{record}/edit'),
         ];
     }
 }
