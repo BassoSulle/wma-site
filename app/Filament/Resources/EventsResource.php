@@ -69,8 +69,7 @@ class EventsResource extends Resource
                         ->required()
                         ->maxlength(255),
 
-                        DatePicker::make('created_atclear
-                        ')
+                        DatePicker::make('created_at')
                             ->nullable(),
 
                         Hidden::make('created_by')
