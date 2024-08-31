@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class press_release extends Model
+class PressRelease extends Model
 {
     use HasFactory;
 

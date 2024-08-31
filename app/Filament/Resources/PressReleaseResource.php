@@ -12,6 +12,20 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Hidden;
+use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Set;
 
 class PressReleaseResource extends Resource
 {
@@ -30,8 +44,8 @@ class PressReleaseResource extends Resource
                             ->required()
                             ->maxlength(255)
                             ->label('English Title')
-                            ->live(onBlur: true)
-                            ->afterStateUpdated(fn (string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+                            ->live(onBlur: true),
+                            // ->afterStateUpdated(fn (string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
 
                         TextInput::make('sw_title')
                             ->required()
@@ -76,8 +90,8 @@ class PressReleaseResource extends Resource
                         ->required()
                         ->maxlength(255)
                         ->disabled()
-                        ->dehydrated()
-                        ->unique(speeches::class, 'slug', ignoreRecord: true),
+                        ->dehydrated(),
+                        // ->unique(press_releases::class, 'slug', ignoreRecord: true),
 
                         Toggle::make('is_active')
                             ->required()

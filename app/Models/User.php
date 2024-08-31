@@ -62,6 +62,12 @@ class User extends Authenticatable
 
         return  $this->hasMany(Vachancies::class);
     }
+
+
+    public function press_releases(){
+
+        return  $this->hasMany(press_releases::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
