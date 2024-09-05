@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class form_category extends Model
+class PublicationCategory extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'en_title',
         'sw_title',
@@ -18,7 +17,7 @@ class form_category extends Model
         'is_active',
     ];
 
-    public function forms(){
-        return $this->hasMany(forms::class);
+    public function publicatios(){
+        return $this->hasMany(Publications::class);
     }
 }

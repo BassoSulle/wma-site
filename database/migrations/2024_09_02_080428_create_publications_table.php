@@ -11,28 +11,30 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('forms', function (Blueprint $table) {
+        Schema::create('publications', function (Blueprint $table) {
             $table->id();
             $table->string('en_title')->required();
             $table->string('sw_title')->required();
             $table->string('slug')->unique();
-            $table->string('en_details')->nullable();
-            $table->string('sw_details')->nullable();
-            $table->unsignedBigInteger('form_category_id')->nullable();
+            $table->string('en_file')->unique();
+            $table->string('sw_file')->unique();
+            $table->unsignedBigInteger('pub_category_id')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
 
+// Defining Foreign key
             $table->foreign('created_by')
             ->references('id')
             ->on('users')
             ->OnDelete('cascade');
 
-            $table->foreign('form_category_id')
+            $table->foreign('pub_category_id')
             ->references('id')
-            ->on('form_categories')
+            ->on('publication_categories')
             ->OnDelete('cascade');
         });
+        
     }
 
     /**
@@ -40,6 +42,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('forms');
+        Schema::dropIfExists('publications');
     }
 };

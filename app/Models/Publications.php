@@ -13,16 +13,16 @@ class Publications extends Model
         'en_title',
         'sw_title',
         'slug',
-        'form_category_id',
+        'pub_category_id',
         'en_file',
         'sw_file',
         'created_by',
         'is_active',
     ];
 
-    public function categories(){
+    public function pubilication_category(){
 
-        return $this->belongsTo(form_category::class, 'form_category_id');
+        return $this->belongsTo(PublicationCategory::class);
     }
 
     public function user(){
