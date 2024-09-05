@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcements;
+use App\Models\Carousel;
+use App\Models\Events as EventsModel;
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class WmaController extends Controller
@@ -17,7 +21,10 @@ class WmaController extends Controller
 
         $data = [
             'current_language' => $language,
-            // 'carousel_items' => CarouselItem::latest()->get(),
+            'carousel_items' => Carousel::select('slug', 'image', $language . '_title as title', $language . '_description as description')->where('is_active', true)->latest()->get(),
+            'news_articles' => News::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(6)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
             // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
             // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
         ];
