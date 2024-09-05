@@ -34,12 +34,25 @@
                                         <th><h4>Downloads</h4></th>
                                     </tr>
                                 </thead>
+
+
                                 <tbody>
+                                    @forelse ( $press_release as $item )
+
                                     <tr>
-                                        <td>Verification of Water Meters</td>
-                                        <td>September 06, 2019</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1481790689-COMPOUNDING-%20FORM.pdf" target="_blank">Downloads</a></td>
+                                        <td>{{$item->title}}</td>
+                                        <td>{{$item->created_at->format('F d, Y')}}</td>
+                                        <td><a href="{{asset('storage/'.$item->file)}}" download="{{ $item->title . '_' . basename($item->file) }}" target="_blank">Downloads</a></td>
                                     </tr>
+
+                                    @empty
+
+                                    <tr>
+                                        <td colspan="3" class="text-center">No Press Release found!.</td>
+                                    </tr>
+
+                                    @endforelse
+
 
 
                                 </tbody>

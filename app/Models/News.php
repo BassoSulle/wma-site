@@ -19,7 +19,9 @@ class News extends Model
         'created_by',
         'is_active',
     ];
-    public function user(){
+
+    public function user()
+    {
         return  $this->belongsTo(User::class,'created_by');
     }
 }

@@ -44,8 +44,9 @@ class PressReleaseResource extends Resource
                             ->required()
                             ->maxlength(255)
                             ->label('English Title')
-                            ->live(onBlur: true),
-                            // ->afterStateUpdated(fn (string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(fn (string $operation, $state, Set $set)=>$operation
+                          ==='create'? $set('slug', Str::slug($state)):null),
 
                         TextInput::make('sw_title')
                             ->required()
@@ -67,12 +68,14 @@ class PressReleaseResource extends Resource
                             ->label('English PDF')
                             ->required()
                             ->acceptedFileTypes(['application/pdf'])
+                            ->directory('press_release/en')
                             ->maxSize(10240),
 
                         FileUpload::make('sw_file')
                             ->label('Swahili PDF')
                             ->required()
                             ->acceptedFileTypes(['application/pdf'])
+                            ->directory('press_release/sw')
                             ->maxSize(10240),
 
                         DatePicker::make('created_at')
@@ -90,8 +93,8 @@ class PressReleaseResource extends Resource
                         ->required()
                         ->maxlength(255)
                         ->disabled()
-                        ->dehydrated(),
-                        // ->unique(press_releases::class, 'slug', ignoreRecord: true),
+                        ->dehydrated()
+                        ->unique(PressRelease::class, 'slug', ignoreRecord: true),
 
                         Toggle::make('is_active')
                             ->required()

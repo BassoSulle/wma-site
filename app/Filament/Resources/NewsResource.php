@@ -73,23 +73,16 @@ class NewsResource extends Resource
                         ->image()
                         ->directory('news'),
 
-                        // Select::make('created_by')
-                        // ->label('Created By')
-                        // ->required()
-                        // ->relationship('user', 'name')
-                        // ->searchable()
-                        // ->preload(),
-
 
                         DatePicker::make('created_at')
                             ->nullable(),
 
-                        Hidden::make('created_at')
-                        ->default(fn ()=> Auth::id()),
+                        Hidden::make('created_by')
+                            ->default(fn() => Auth::id()),
 
                         Placeholder::make('created_by_name')
-                        ->label('Created By')
-                        ->content(fn ()=>Auth::user()->name),
+                            ->label('Created By')
+                            ->content(fn() => Auth::user()->name),
 
 
 
@@ -127,12 +120,13 @@ class NewsResource extends Resource
                 }),
 
                 Tables\Columns\TextColumn::make('user.name')
-                ->label('Created By')
-                ->searchable(query: function (Builder $query, string $search): Builder {
-                    return $query->whereHas('user', function (Builder $query) use ($search) {
-                        $query->where('name', 'like', "%{$search}%");
-                    });
-                }),
+                    ->label('Created By')
+                    ->searchable(query: function (Builder $query, string $search): Builder {
+                        return $query->whereHas('user', function (Builder $query) use ($search) {
+                            $query->where('name', 'like', "%{$search}%");
+                        });
+                    }),
+
 
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

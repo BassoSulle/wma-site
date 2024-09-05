@@ -35,11 +35,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @forelse ( $press_release as $item )
+
                                     <tr>
-                                        <td>Uhakiki wa Dira za Maji</td>
-                                        <td>September 06, 2019</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1481790689-COMPOUNDING-%20FORM.pdf" target="_blank">Pakua</a></td>
+                                        <td>{{$item->title}}</td>
+                                        <td>{{$item->created_at->format('F d, Y')}}</td>
+                                        <td><a href="{{asset('storage/'.$item->file)}}" download="{{ $item->title . '_' . basename($item->file) }}" target="_blank">Pakua</a></td>
                                     </tr>
+
+                                    @empty
+
+                                    <tr>
+                                        <td colspan="3" class="text-center">Hakuna toleo maalumu!.</td>
+                                    </tr>
+
+                                    @endforelse
 
 
                                 </tbody>
