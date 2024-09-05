@@ -6,141 +6,45 @@
     <div class="home-page ">
         <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000">
             <ol class="carousel-indicators">
-                {{-- @foreach ($carousel_items as $key => $item)
+                @foreach ($carousel_items as $key => $item)
                     <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}"
                         {{ $loop->first ? 'class=active' : '' }}></li>
-                @endforeach --}}
+                @endforeach
                 <li data-target="#carouselExampleIndicators"></li>
             </ol>
             <div class="carousel-inner">
-                {{-- @foreach ($carousel_items as $key => $item)
-                        <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                            <img class="d-block w-100" alt="{{ $item->text }}" src="{{ asset('storage/' . $item->image) }}">
-                            <div class="mask flex-center">
-                                    <div class="container">
-                                        <div class="row align-items-center">
-                                            <div class="col-md-12 order-md-1 order-2 text-center">
-                                            <p class="text-primary" style="font-size: 10px;">{{ $item->text }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wave-svg max-1920 container sm-hide">
-                                        <svg width="2000" height="128" x="2000" y="128" viewBox="0 0 2000 128"
-                                            enable-background="new 0 0 2000 128" xml:space="preserve">
-                                            <path opacity="0.2" fill="#f7f7f7"
-                                                d="M1999.5,22.2c-346-0.6-524.6-4.7-878.8,4.4c-286.6,7.4-442.3,54-608.1,51.2C307.3,74.3,202.5,5-0.5,28.1v100.4l2000-0.5V22.2z">
-                                            </path>
-                                            <path opacity="0.2" fill="#f7f7f7"
-                                                d="M-0.3,46.1C251,15.3,440.9,84.7,499.6,98.4c54.7,12.8,122.5,12,186.7-5.3c154.2-41.6,315.5-70.9,475.2-67.5s324.6,22.4,484.3,19.7c133-2.3,302.8,1.7,352.8,3.7c0,21.3,0,80,0,80H-0.5L-0.3,46.1z">
-                                            </path>
-                                            <path opacity="0.4" fill="#f7f7f7"
-                                                d="M2000,41.2c-139.8-12.7-219.9-10.8-360.2-11.2c-285.5-0.8-487.5,18-736.2,51.1C647,115.4,546.7,116.4,199.2,53.6C140.3,43,59.5,45.6-0.5,52.3V130h2000L2000,41.2z">
-                                            </path>
-                                            <path fill="#EDEEF0"
-                                                d="M1634.6,50.1c-193.8,11.9-366.9,24.9-569,50c-110.2,13.7-221.2,21.5-332.3,19.6c-187-3.3-344.5-29.7-560.9-69.8c-122.2-22.6-172.8-4-172.8-4V130h1998V46C1997.5,46,1831,38.1,1634.6,50.1z">
-                                            </path>
-                                        </svg>
+                @foreach ($carousel_items as $key => $item)
+                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                        <img class="d-block w-100" alt="{{ $item->description }}"
+                            src="{{ asset('storage/' . $item->image) }}">
+                        <div class="mask flex-center">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-md-12 order-md-1 order-2 text-center">
+                                        <p class="text-primary" style="font-size: 10px;">{{ $item->description }}</p>
                                     </div>
                                 </div>
-                        </div>
-                        @endforeach --}}
-
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="https://www.wma.go.tz/uploads/1718130636-IMG-20240611-WA0014.jpg">
-                    <div class="mask flex-center">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 order-md-1 order-2 text-center">
-                                    <p class="text-primary" style="font-size: 10px;">Rais wa Jamhuri ya Muungano wa Tanzania
-                                        Mhe. Dkt. Samia Suluhu Hassan akikabidhi tuzo
-                                        kwa Mwenyekiti wa Bodi ya WMA Prof. Eliza Mwakasangula na Afisa Mtendaji Mkuu Ndg.
-                                        Alban Kihulla kwa kuwa taasisi zinazowasilisha
-                                        gawio kwa wakati kwa Msajili wa Hazina kwenye hafla iliyofanyika Ikulu Jijini Dar es
-                                        Salaam tarehe 11.06.2024.</p>
-                                </div>
+                            </div>
+                            <div class="wave-svg max-1920 container sm-hide">
+                                <svg width="2000" height="128" x="2000" y="128" viewBox="0 0 2000 128"
+                                    enable-background="new 0 0 2000 128" xml:space="preserve">
+                                    <path opacity="0.2" fill="#f7f7f7"
+                                        d="M1999.5,22.2c-346-0.6-524.6-4.7-878.8,4.4c-286.6,7.4-442.3,54-608.1,51.2C307.3,74.3,202.5,5-0.5,28.1v100.4l2000-0.5V22.2z">
+                                    </path>
+                                    <path opacity="0.2" fill="#f7f7f7"
+                                        d="M-0.3,46.1C251,15.3,440.9,84.7,499.6,98.4c54.7,12.8,122.5,12,186.7-5.3c154.2-41.6,315.5-70.9,475.2-67.5s324.6,22.4,484.3,19.7c133-2.3,302.8,1.7,352.8,3.7c0,21.3,0,80,0,80H-0.5L-0.3,46.1z">
+                                    </path>
+                                    <path opacity="0.4" fill="#f7f7f7"
+                                        d="M2000,41.2c-139.8-12.7-219.9-10.8-360.2-11.2c-285.5-0.8-487.5,18-736.2,51.1C647,115.4,546.7,116.4,199.2,53.6C140.3,43,59.5,45.6-0.5,52.3V130h2000L2000,41.2z">
+                                    </path>
+                                    <path fill="#EDEEF0"
+                                        d="M1634.6,50.1c-193.8,11.9-366.9,24.9-569,50c-110.2,13.7-221.2,21.5-332.3,19.6c-187-3.3-344.5-29.7-560.9-69.8c-122.2-22.6-172.8-4-172.8-4V130h1998V46C1997.5,46,1831,38.1,1634.6,50.1z">
+                                    </path>
+                                </svg>
                             </div>
                         </div>
-                        <div class="wave-svg max-1920 container sm-hide">
-                            <svg width="2000" height="128" x="2000" y="128" viewBox="0 0 2000 128"
-                                enable-background="new 0 0 2000 128" xml:space="preserve">
-                                <path opacity="0.2" fill="#f7f7f7"
-                                    d="M1999.5,22.2c-346-0.6-524.6-4.7-878.8,4.4c-286.6,7.4-442.3,54-608.1,51.2C307.3,74.3,202.5,5-0.5,28.1v100.4l2000-0.5V22.2z">
-                                </path>
-                                <path opacity="0.2" fill="#f7f7f7"
-                                    d="M-0.3,46.1C251,15.3,440.9,84.7,499.6,98.4c54.7,12.8,122.5,12,186.7-5.3c154.2-41.6,315.5-70.9,475.2-67.5s324.6,22.4,484.3,19.7c133-2.3,302.8,1.7,352.8,3.7c0,21.3,0,80,0,80H-0.5L-0.3,46.1z">
-                                </path>
-                                <path opacity="0.4" fill="#f7f7f7"
-                                    d="M2000,41.2c-139.8-12.7-219.9-10.8-360.2-11.2c-285.5-0.8-487.5,18-736.2,51.1C647,115.4,546.7,116.4,199.2,53.6C140.3,43,59.5,45.6-0.5,52.3V130h2000L2000,41.2z">
-                                </path>
-                                <path fill="#EDEEF0"
-                                    d="M1634.6,50.1c-193.8,11.9-366.9,24.9-569,50c-110.2,13.7-221.2,21.5-332.3,19.6c-187-3.3-344.5-29.7-560.9-69.8c-122.2-22.6-172.8-4-172.8-4V130h1998V46C1997.5,46,1831,38.1,1634.6,50.1z">
-                                </path>
-                            </svg>
-                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="https://www.wma.go.tz/uploads/1717784476-_Z9A8648.jpg">
-                    <div class="mask flex-center">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 order-md-1 order-2 text-center">
-                                    <p class="text-primary" style="font-size: 10px;">Makamu Mwenyekiti wa Bodi Mhandisi
-                                        Shaban Seleman akisikiliza maelezo kutoka kwa Afisa Mtendaji Mkuu Bw. Alban Kihulla
-                                        kuhusu mtambo saidizi unaotumika kuhakiki dira za maji Mkoani Manyara.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wave-svg max-1920 container sm-hide">
-                            <svg width="2000" height="128" x="2000" y="128" viewBox="0 0 2000 128"
-                                enable-background="new 0 0 2000 128" xml:space="preserve">
-                                <path opacity="0.2" fill="#f7f7f7"
-                                    d="M1999.5,22.2c-346-0.6-524.6-4.7-878.8,4.4c-286.6,7.4-442.3,54-608.1,51.2C307.3,74.3,202.5,5-0.5,28.1v100.4l2000-0.5V22.2z">
-                                </path>
-                                <path opacity="0.2" fill="#f7f7f7"
-                                    d="M-0.3,46.1C251,15.3,440.9,84.7,499.6,98.4c54.7,12.8,122.5,12,186.7-5.3c154.2-41.6,315.5-70.9,475.2-67.5s324.6,22.4,484.3,19.7c133-2.3,302.8,1.7,352.8,3.7c0,21.3,0,80,0,80H-0.5L-0.3,46.1z">
-                                </path>
-                                <path opacity="0.4" fill="#f7f7f7"
-                                    d="M2000,41.2c-139.8-12.7-219.9-10.8-360.2-11.2c-285.5-0.8-487.5,18-736.2,51.1C647,115.4,546.7,116.4,199.2,53.6C140.3,43,59.5,45.6-0.5,52.3V130h2000L2000,41.2z">
-                                </path>
-                                <path fill="#EDEEF0"
-                                    d="M1634.6,50.1c-193.8,11.9-366.9,24.9-569,50c-110.2,13.7-221.2,21.5-332.3,19.6c-187-3.3-344.5-29.7-560.9-69.8c-122.2-22.6-172.8-4-172.8-4V130h1998V46C1997.5,46,1831,38.1,1634.6,50.1z">
-                                </path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="https://www.wma.go.tz/uploads/1717410657-4Z9A8231%20WEB.jpg">
-                    <div class="mask flex-center">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 order-md-1 order-2 text-center">
-                                    <p class="text-primary" style="font-size: 10px;">Afisa Mtendaji Mkuu Bw. Alban Kihulla
-                                        akipokelewa na baadhi ya viongozi pichani alipowasili katika kikao cha menejimenti
-                                        Mkoani Kilimanjaro.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wave-svg max-1920 container sm-hide">
-                            <svg width="2000" height="128" x="2000" y="128" viewBox="0 0 2000 128"
-                                enable-background="new 0 0 2000 128" xml:space="preserve">
-                                <path opacity="0.2" fill="#f7f7f7"
-                                    d="M1999.5,22.2c-346-0.6-524.6-4.7-878.8,4.4c-286.6,7.4-442.3,54-608.1,51.2C307.3,74.3,202.5,5-0.5,28.1v100.4l2000-0.5V22.2z">
-                                </path>
-                                <path opacity="0.2" fill="#f7f7f7"
-                                    d="M-0.3,46.1C251,15.3,440.9,84.7,499.6,98.4c54.7,12.8,122.5,12,186.7-5.3c154.2-41.6,315.5-70.9,475.2-67.5s324.6,22.4,484.3,19.7c133-2.3,302.8,1.7,352.8,3.7c0,21.3,0,80,0,80H-0.5L-0.3,46.1z">
-                                </path>
-                                <path opacity="0.4" fill="#f7f7f7"
-                                    d="M2000,41.2c-139.8-12.7-219.9-10.8-360.2-11.2c-285.5-0.8-487.5,18-736.2,51.1C647,115.4,546.7,116.4,199.2,53.6C140.3,43,59.5,45.6-0.5,52.3V130h2000L2000,41.2z">
-                                </path>
-                                <path fill="#EDEEF0"
-                                    d="M1634.6,50.1c-193.8,11.9-366.9,24.9-569,50c-110.2,13.7-221.2,21.5-332.3,19.6c-187-3.3-344.5-29.7-560.9-69.8c-122.2-22.6-172.8-4-172.8-4V130h1998V46C1997.5,46,1831,38.1,1634.6,50.1z">
-                                </path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -151,8 +55,6 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-
-
     </div>
 
     <div class="container-fluid mb-3">
@@ -220,183 +122,47 @@
 
             </div>
         </div>
-
-        {{-- <div class="col-12 my-3 px-0">
-            <h5 class="my-xs-2 text-center text-xs-center section-title mb-md-5"><b>Our Core Activities</b> </h5>
-
-            <div class="row core-home-section justify-content-center">
-
-                <div class="col-md-3 core-activity ">
-                    <div class="div-link" href="" style="background-image: url(/uploads/services/ind_rese.jpg);">
-                        <div class="core-activity-inside">
-                            <div class="category-text-wrap">
-                                <h3>INDUSTRIAL RESEARCH</h3>
-                            </div>
-                            <button class="btn p-2">
-                                <p>Conducting research to advance industrial processes</p>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 core-activity ">
-                    <div class="div-link" href="" style="background-image: url(/uploads/services/ind_eng.jpg);">
-                        <div class="core-activity-inside">
-                            <div class="category-text-wrap">
-                                <h3>INDUSTRIAL ENGINEERING</h3>
-                            </div>
-                            <button class="btn p-2">
-                                <p>Ensuring optimization of systems and processes</p>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 core-activity ">
-                    <div class="div-link" style="background-image: url(/uploads/services/MPAF.jpg);">
-                        <div class="core-activity-inside">
-                            <div class="category-text-wrap">
-                                <h3>ICT & TECHNOLOGY TRANSFER</h3>
-                            </div>
-                            <button class="btn p-2">
-                                <p>Enabling technology transfer and innovation</p>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 core-activity ">
-                    <div class="div-link" href="" style="background-image: url(/uploads/services/ict.jpg);">
-                        <div class="core-activity-inside">
-                            <div class="category-text-wrap">
-                                <h3>TECHNOLOGY FORECASTING</h3>
-                            </div>
-                            <button class="btn p-2">
-                                <p>Conducting technology to advance industrial processes</p>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div> --}}
-
         <div class="row px-xs-3">
             <div class="col-md-12 my-3">
                 <h5 class="my-xs-2 mt-3 text-center text-xs-center section-title"> <b>Top News</b> </h5>
                 <div class="row mt-4">
-                    {{-- @foreach ($resources_products as $product) --}}
-                    <div class="col-md-4 pb-3 mb-3">
-                        <style>
-                            .image-wrapper {
-                                max-width: 1200px;
-                                /* Adjust the maximum width as needed */
-                                max-height: 638px;
-                                /* Adjust the maximum height as needed */
-                                text-align: center;
-                                /* margin: 10px; */
-                            }
+                    @foreach ($news_articles as $article)
+                        <div class="col-md-4 pb-3 mb-3">
+                            <style>
+                                .image-wrapper {
+                                    max-width: 1200px;
+                                    /* Adjust the maximum width as needed */
+                                    max-height: 638px;
+                                    /* Adjust the maximum height as needed */
+                                    text-align: center;
+                                    /* margin: 10px; */
+                                }
 
-                            img {
-                                max-width: 100%;
-                                height: auto;
-                            }
-                        </style>
-                        <div class="image-wrapper">
-                            <img src="https://www.wma.go.tz/uploads/news/medium/1716304662-_Z9A8095%20WAZR.jpg"
-                                class="w-100" style="width: 422px; height: 245px;" alt="Thumbnail">
-                        </div>
-                        <div class="col-12 bg-light px-xs-2 p-3">
-                            <div>
-                                <p class="text-justify mb-2">
-                                    <b>
-                                        <h6 class="article-h2">ELIMU YA MATUMIZI SAHIHI YA VIPIMO YATOLEWA KWA WABUNGE</h6>
-                                    </b>
-                                    <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i> June 04, 2024
-                                <p class="mt-2">Afisa Mtendaji Mkuu Bw. Alban Kihulla ameongoza kikao cha therasini na
-                                    nne
-                                    (34) cha Baraza la Wafanyakazi wa Wakala wa Vipimo kili..</p>
-                                <a href="">Read More</a>
-                                </p>
+                                img {
+                                    max-width: 100%;
+                                    height: auto;
+                                }
+                            </style>
+                            <div class="image-wrapper">
+                                <img src="{{ asset('storage/' . $article->image) }}" class="w-100"
+                                    style="width: 422px; height: 245px;" alt="Thumbnail">
+                            </div>
+                            <div class="col-12 bg-light px-xs-2 p-3">
+                                <div>
+                                    <p class="text-justify mb-2">
+                                        <b>
+                                            <h6 class="article-h2 text-uppercase">{{ $article->title }}
+                                            </h6>
+                                        </b>
+                                        <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i>
+                                        {{ $article->created_at->format('M j, Y') }}
+                                    <p class="mt-2">{{ Str::limit($article->description, 95) }}</p>
+                                    <a href="">Read More</a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-4 pb-3 mb-3">
-                        <style>
-                            .image-wrapper {
-                                max-width: 1200px;
-                                /* Adjust the maximum width as needed */
-                                max-height: 638px;
-                                /* Adjust the maximum height as needed */
-                                text-align: center;
-                                /* margin: 10px; */
-                            }
-
-                            img {
-                                max-width: 100%;
-                                height: auto;
-                            }
-                        </style>
-                        <div class="image-wrapper">
-                            <img src="https://www.wma.go.tz/uploads/news/medium/1717517519-4Z9A8371.jpg" class="w-100"
-                                style="width: 422px; height: 245px;" alt="Thumbnail">
-                        </div>
-                        <div class="col-12 bg-light px-xs-2 p-3">
-                            <div>
-                                <p class="text-justify mb-2">
-                                    <b>
-                                        <h6 class="article-h2">YALIYOJIRI KATIKA KIKAO CHA BARAZA LA 34 LA WAFANYAKAZI WA
-                                            WAKALA WA VIPIMO (WMA).</h6>
-                                    </b>
-                                    <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i> June 04, 2024
-                                <p class="mt-2">Afisa Mtendaji Mkuu Bw. Alban Kihulla ameongoza kikao cha therasini na
-                                    nne
-                                    (34) cha Baraza la Wafanyakazi wa Wakala wa Vipimo kili..</p>
-                                <a href="">Read More</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 pb-3 mb-3">
-                        <style>
-                            .image-wrapper {
-                                max-width: 1200px;
-                                /* Adjust the maximum width as needed */
-                                max-height: 638px;
-                                /* Adjust the maximum height as needed */
-                                text-align: center;
-                                /* margin: 10px; */
-                            }
-
-                            img {
-                                max-width: 100%;
-                                height: auto;
-                            }
-                        </style>
-                        <div class="image-wrapper">
-                            <img src="https://www.wma.go.tz/uploads/news/medium/1716304662-_Z9A8095%20WAZR.jpg"
-                                style="width: 422px; height: 245px;" class="w-100" alt="Thumbnail">
-                        </div>
-                        <div class="col-12 bg-light px-xs-2 p-3">
-                            <div>
-                                <p class="text-justify mb-2">
-                                    <b>
-                                        <h6 class="article-h2">YALIYOJIRI KATIKA KIKAO CHA BARAZA LA 34 LA WAFANYAKAZI WA
-                                            WAKALA WA VIPIMO (WMA).</h6>
-                                    </b>
-                                    <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i> June 04, 2024
-                                <p class="mt-2">Afisa Mtendaji Mkuu Bw. Alban Kihulla ameongoza kikao cha therasini na
-                                    nne
-                                    (34) cha Baraza la Wafanyakazi wa Wakala wa Vipimo kili..</p>
-                                <a href="">Read More</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    {{-- @endforeach --}}
+                    @endforeach
                 </div>
 
                 {{-- <div class="row justify-content-center mt-3"> --}}
@@ -411,59 +177,29 @@
                 <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Announcements</b></h5>
                 <div class="row mt-0">
                     <div class="col-md-12 pb-2 mb-2">
-                        <div class="col-12 px-xs-2 p-4">
-                            {{-- @foreach ($news_articles as $article) --}}
-                            <div href="#" target="_blank">
+                        <div class="col-12 px-xs-2 py-4">
+                            @foreach ($announcements as $item)
                                 <div class="row align-items-center bg-light1">
-                                    {{-- <div class="col-2 col-md-3">
-                                        <img src="https://www.wma.go.tz/uploads/1718109034-4Z9A8735.jpg"
-                                            style="width: 128px; height: 90px; object-fit: cover;"
-                                            class="img-thumbnail" /> --}}
-                                    {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
-                                    {{-- </div> --}}
-                                    <div class="col-10 col-md-9">
+                                    <div class="col-10 col-md-12">
                                         <p class="text-justify mb-2">
                                             <b>
-                                                <h6 class="article-h2">TANGAZO KWA WAUZAJI WA SARUJI</h6>
+                                                <h6 class="article-h2 text-uppercase">{{ $item->title }}</h6>
                                             </b>
                                         </p>
-                                        <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Feb 27 2024</p>
-                                        <p>Wakala wa Vipimo ni Taasisi ya Serikali iliyopo chini ya...
-                                        </p>
+                                        <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
+                                            {{ $item->created_at->format('M j, Y') }}</p>
+                                        <p>{{ Str::limit($item->description, 165) }}</p>
                                         <a href="" class="read ml-2">Read more</a>
                                     </div>
                                 </div>
                                 <div style="margin-top: 20px"></div>
-                                <div class="row align-items-center bg-light1">
-                                    {{-- <div class="col-2 col-md-3">
-                                        <img src="https://www.wma.go.tz/uploads/news/medium/1717517519-4Z9A8371.jpg"
-                                            style="width: 128px; height: 90px; object-fit: cover;"
-                                            class="img-thumbnail" /> --}}
-                                    {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
-                                    {{-- </div> --}}
-                                    <div class="col-10 col-md-9">
-                                        <p class="text-justify mb-2">
-                                            <b>
-                                                <h6 class="article-h2">TANGAZO KWA WAUZAJI WA SARUJI</h6>
-                                            </b>
-                                        </p>
-                                        <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Feb 27 2024</p>
-                                        <p>Wakala wa Vipimo ni Taasisi ya Serikali iliyopo chini ya...
-                                        </p>
-                                        <a href="" class="read ml-2">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- <hr class="hr"> --}}
+                            @endforeach
                             <img src="https://www.wma.go.tz/site/images/strip.png" width="1055px">
-                            {{-- @endforeach --}}
                             <!-- Add a link for "Tazama Zote" -->
                             <div class="row justify-content-center mt-3">
                                 {{-- <a href="{{ route('news.all_articles', ['language' => $current_language]) }}" class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -474,51 +210,31 @@
                 <div class="row mt-0">
                     <div class="col-md-12 pb-2 mb-2">
                         <div class="col-12 px-xs-2 p-4">
-                            {{-- @foreach ($news_articles as $article) --}}
-                            <div href="#" target="_blank">
-                                <div class="row align-items-center bg-light1">
-                                    <div class="col-2 col-md-3">
-                                        {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
-                                        <img src="https://www.wma.go.tz/uploads/news/medium/1716281495-LO2A0468%20sokoni.jpg"
-                                            style="width: 128px; height: 90px; object-fit: cover;" alt="Thumbnail"
-                                            class="img-thumbnail">
+                            @foreach ($events as $item)
+                                <div href="#" target="_blank">
+                                    <div class="row align-items-center bg-light1">
+                                        <div class="col-2 col-md-3">
+                                            <img src="{{ asset('storage/' . $item->image) }}"
+                                                style="width: 128px; height: 90px; object-fit: cover;" alt="Thumbnail"
+                                                class="img-thumbnail">
+                                        </div>
+                                        <div class="col-10 col-md-9">
+                                            <p class="text-justify mb-2">
+                                                <b>
+                                                    <h6 class="article-h2 text-uppercase">{{ $item->title }}</h6>
+                                                </b>
+                                            </p>
+                                            <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
+                                                {{ $item->created_at->format('M j, Y') }}</p>
+                                            <p>{{ Str::limit($item->description, 100) }}
+                                            </p>
+                                            <a href="" class="read ml-2">Read more</a>
+                                        </div>
                                     </div>
-                                    <div class="col-10 col-md-9">
-                                        <p class="text-justify mb-2">
-                                            <b>
-                                                <h6 class="article-h2">World Metrology Day 2023</h6>
-                                            </b>
-                                        </p>
-                                        <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Jule 12 2024</p>
-                                        <p>WMA ILALA
-                                        </p>
-                                        <a href="" class="read ml-2">Read more</a>
-                                    </div>
+                                    <div style="margin-top: 20px"></div>
                                 </div>
-                                <div style="margin-top: 20px"></div>
-                                <div class="row align-items-center bg-light1">
-                                    <div class="col-2 col-md-3">
-                                        {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
-                                        <img src="https://www.wma.go.tz/uploads/news/medium/1717157606-4Z9A8201%20mbb.jpg"
-                                            style="width: 128px; height: 90px; object-fit: cover;" alt="Thumbnail"
-                                            class="img-thumbnail">
-                                    </div>
-                                    <div class="col-10 col-md-9">
-                                        <p class="text-justify mb-2">
-                                            <b>
-                                                <h6 class="article-h2">World Metrology Day 2023</h6>
-                                            </b>
-                                        </p>
-                                        <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Jule 12 2024</p>
-                                        <p>WMA ILALA
-                                        </p>
-                                        <a href="" class="read ml-2">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- <hr class="hr"> --}}
+                            @endforeach
                             <img src="https://www.wma.go.tz/site/images/strip.png" width="1055px">
-                            {{-- @endforeach --}}
                             <!-- Add a link for "Tazama Zote" -->
                             <div class="row justify-content-center mt-3">
                                 {{-- <a href="{{ route('news.all_articles', ['language' => $current_language]) }}" class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}

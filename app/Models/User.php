@@ -3,10 +3,19 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\News;
+use App\Models\forms;
+use App\Models\Events;
+use App\Models\Carousel;
+use App\Models\speeches;
+use App\Models\Vacancies;
+use App\Models\PressRelease;
+use App\Models\Publications;
+use App\Models\Announcements;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -25,48 +34,57 @@ class User extends Authenticatable
     ];
 
 
-    public function carousels(){
+    public function carousels()
+    {
         return  $this->hasMany(Carousel::class);
     }
-    public function news(){
+    public function news()
+    {
 
         return  $this->hasMany(News::class);
     }
 
-    public function events(){
+    public function events()
+    {
 
         return  $this->hasMany(Events::class);
     }
 
-    public function announcements(){
+    public function announcements()
+    {
 
         return  $this->hasMany(Announcements::class);
     }
 
-    public function forms(){
+    public function forms()
+    {
 
         return  $this->hasMany(forms::class);
     }
 
-    public function publications(){
+    public function publications()
+    {
 
-        return  $this->hasMany(publications::class);
+        return  $this->hasMany(Publications::class);
     }
 
-    public function speeches(){
+    public function speeches()
+    {
 
         return  $this->hasMany(speeches::class);
     }
 
-    public function vacancies(){
+    public function vacancies()
+    {
 
-        return  $this->hasMany(Vachancies::class);
+        return  $this->hasMany(Vacancies::class);
     }
 
 
-    public function press_releases(){
+    public function press_releases()
+    {
 
-        return  $this->hasMany(press_releases::class);
+        return  $this->hasMany(PressRelease::class);
     }
     /**
      * The attributes that should be hidden for serialization.

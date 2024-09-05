@@ -14,11 +14,13 @@ class Events extends Model
         'sw_title',
         'en_description',
         'sw_description',
+        'image',
         'created_by',
         'slug',
         'is_active',
     ];
-    public function user(){
-        return  $this->belongsTo(User::class,'created_by');
+    public function user()
+    {
+        return  $this->belongsTo(User::class, 'created_by');
     }
 }

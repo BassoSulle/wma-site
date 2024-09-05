@@ -39,51 +39,55 @@ class EventsResource extends Resource
             ->schema([
                 Section::make([
                     Grid::make()
-                    ->schema([
-                        TextInput::make('en_title')
-                        ->required()
-                        ->maxlength(255)
-                        ->live(onBlur:true)
-                        ->afterStateUpdated(fn (string $operation, $state, Set $set)=>$operation
-                          ==='create'? $set('slug', Str::slug($state)):null),
+                        ->schema([
+                            TextInput::make('en_title')
+                                ->required()
+                                ->maxlength(255)
+                                ->live(onBlur: true)
+                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
+                                    === 'create' ? $set('slug', Str::slug($state)) : null),
 
 
-                        TextInput::make('sw_title')
-                        ->required()
-                        ->maxlength(255),
+                            TextInput::make('sw_title')
+                                ->required()
+                                ->maxlength(255),
 
 
-                        TextInput::make('slug')
-                        ->required()
-                        ->maxlength(255)
-                        ->disabled()
-                        ->dehydrated()
-                        ->unique(Events::class, 'slug', ignoreRecord:true),
+                            TextInput::make('slug')
+                                ->required()
+                                ->maxlength(255)
+                                ->disabled()
+                                ->dehydrated()
+                                ->unique(Events::class, 'slug', ignoreRecord: true),
 
-                        Textarea::make('en_description')
-                        ->required()
-                        ->maxlength(255),
+                            Textarea::make('en_description')
+                                ->required()
+                                ->maxlength(255),
 
 
-                        Textarea::make('sw_description')
-                        ->required()
-                        ->maxlength(255),
+                            Textarea::make('sw_description')
+                                ->required()
+                                ->maxlength(255),
 
-                        DatePicker::make('created_at')
-                            ->nullable(),
+                            FileUpload::make('image')
+                                ->image()
+                                ->directory('events'),
 
-                        Hidden::make('created_by')
-                        ->default(fn ()=> Auth::id()),
+                            DatePicker::make('created_at')
+                                ->nullable(),
 
-                        Placeholder::make('created_by_name')
-                        ->label('Created By')
-                        ->content(fn ()=>Auth::user()->name),
+                            Hidden::make('created_by')
+                                ->default(fn() => Auth::id()),
 
-                        Toggle::make('is_active')
-                        ->required()
-                        ->default(true)
+                            Placeholder::make('created_by_name')
+                                ->label('Created By')
+                                ->content(fn() => Auth::user()->name),
 
-                    ])
+                            Toggle::make('is_active')
+                                ->required()
+                                ->default(true)
+
+                        ])
                 ])
                 //
             ]);
@@ -93,44 +97,51 @@ class EventsResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('image')
+                    ->searchable()
+                    ->html()
+                    ->formatStateUsing(function ($state) {
+                        return '<img src="' . asset('storage/events/' . basename($state)) . '" width="30", height="40" />';
+                    }),
+
                 Tables\Columns\TextColumn::make('en_title')
-                ->searchable()
-                ->formatStateUsing(function ($state){
-                    return Str::words($state, 5,'.....');
-                }),
+                    ->searchable()
+                    ->formatStateUsing(function ($state) {
+                        return Str::words($state, 5, '.....');
+                    }),
 
                 Tables\Columns\TextColumn::make('sw_title')
-                ->searchable()
-                ->formatStateUsing(function ($state){
-                    return Str::words($state, 5,'.....');
-                }),
+                    ->searchable()
+                    ->formatStateUsing(function ($state) {
+                        return Str::words($state, 5, '.....');
+                    }),
 
                 Tables\Columns\TextColumn::make('user.name')
-                ->label('Created By')
-                ->searchable(query: function (Builder $query, string $search): Builder {
-                    return $query->whereHas('user', function (Builder $query) use ($search) {
-                        $query->where('name', 'like', "%{$search}%");
-                    });
-                }),
+                    ->label('Created By')
+                    ->searchable(query: function (Builder $query, string $search): Builder {
+                        return $query->whereHas('user', function (Builder $query) use ($search) {
+                            $query->where('name', 'like', "%{$search}%");
+                        });
+                    }),
 
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable(),
 
                 IconColumn::make('is_active')
-                ->label('Status')
-                ->boolean()
-                ->trueIcon('heroicon-o-check-circle')
-                ->falseIcon('heroicon-o-x-circle')
-                ->trueColor('primary')
-                ->falseColor('danger'),
+                    ->label('Status')
+                    ->boolean()
+                    ->trueIcon('heroicon-o-check-circle')
+                    ->falseIcon('heroicon-o-x-circle')
+                    ->trueColor('primary')
+                    ->falseColor('danger'),
 
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\ActionGroup:: make([
+                Tables\Actions\ActionGroup::make([
                     Tables\Actions\EditAction::make(),
                     Tables\Actions\ViewAction::make(),
                     Tables\Actions\DeleteAction::make(),
