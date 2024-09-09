@@ -49,17 +49,16 @@ class User extends Authenticatable
 
         return  $this->hasMany(Events::class);
     }
+    public function wmaforms()
+    {
+
+        return  $this->hasMany(WMAForms::class);
+    }
 
     public function announcements()
     {
 
         return  $this->hasMany(Announcements::class);
-    }
-
-    public function forms()
-    {
-
-        return  $this->hasMany(forms::class);
     }
 
     public function publications()
