@@ -85,6 +85,22 @@ class User extends Authenticatable
 
         return  $this->hasMany(PressRelease::class);
     }
+
+    public function photo()
+    {
+
+        return  $this->hasMany(Photos::class);
+    }
+    public function gallery()
+    {
+
+        return  $this->hasMany(Gallery::class);
+    }
+    public function video()
+    {
+
+        return  $this->hasMany(Video::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
