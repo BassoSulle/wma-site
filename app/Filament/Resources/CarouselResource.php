@@ -40,6 +40,7 @@ class CarouselResource extends Resource
                         TextInput::make('en_title')
                         ->required()
                         ->maxlength(255)
+                        ->label('English Title')
                         ->live(onBlur:true)
                         ->afterStateUpdated(fn (string $operation, $state, Set $set)=>$operation
                           ==='create'? $set('slug', Str::slug($state)):null),
@@ -47,6 +48,7 @@ class CarouselResource extends Resource
 
                         TextInput::make('sw_title')
                         ->required()
+                        ->label('Swahili Title')
                         ->maxlength(255),
 
 
@@ -59,15 +61,18 @@ class CarouselResource extends Resource
 
                         Textarea::make('en_description')
                         ->required()
+                        ->label('English Description')
                         ->maxlength(255),
 
 
                         Textarea::make('sw_description')
                         ->required()
+                        ->label('Swahili Description')
                         ->maxlength(255),
 
                         FileUpload::make('image')
                         ->image()
+                        ->label('Insert Image')
                         ->directory('carousel'),
 
                         DatePicker::make('created_at')

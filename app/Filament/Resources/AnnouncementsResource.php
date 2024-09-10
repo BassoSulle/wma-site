@@ -43,6 +43,7 @@ class AnnouncementsResource extends Resource
                         TextInput::make('en_title')
                         ->required()
                         ->maxlength(255)
+                        ->label('English Title')
                         ->live(onBlur:true)
                         ->afterStateUpdated(fn (string $operation, $state, Set $set)=>$operation
                           ==='create'? $set('slug', Str::slug($state)):null),
@@ -50,6 +51,7 @@ class AnnouncementsResource extends Resource
 
                         TextInput::make('sw_title')
                         ->required()
+                        ->label('Swahili Title')
                         ->maxlength(255),
 
 
@@ -62,11 +64,13 @@ class AnnouncementsResource extends Resource
 
                         Textarea::make('en_description')
                         ->required()
+                        ->label('English Description')
                         ->maxlength(255),
 
 
                         Textarea::make('sw_description')
                         ->required()
+                        ->label('Swahili Description')
                         ->maxlength(255),
 
                         DatePicker::make('created_at')
@@ -108,7 +112,7 @@ class AnnouncementsResource extends Resource
             Tables\Columns\TextColumn::make('user.name')
             ->label('Created By')
             ->searchable(query: function (Builder $query, string $search): Builder {
-                return $query->whereHas('user', function (Builder $query) use ($search) { 
+                return $query->whereHas('user', function (Builder $query) use ($search) {
                     $query->where('name', 'like', "%{$search}%");
                 });
             }),

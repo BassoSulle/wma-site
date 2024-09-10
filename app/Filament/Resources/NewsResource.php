@@ -42,6 +42,7 @@ class NewsResource extends Resource
                     ->schema([
                         TextInput::make('en_title')
                         ->required()
+                        ->label('English Title')
                         ->maxlength(255)
                         ->live(onBlur:true)
                         ->afterStateUpdated(fn (string $operation, $state, Set $set)=>$operation
@@ -50,6 +51,7 @@ class NewsResource extends Resource
 
                         TextInput::make('sw_title')
                         ->required()
+                        ->label('Swahili Title')
                         ->maxlength(255),
 
 
@@ -62,15 +64,18 @@ class NewsResource extends Resource
 
                         Textarea::make('en_description')
                         ->required()
+                        ->label('English Description')
                         ->maxlength(255),
 
 
                         Textarea::make('sw_description')
                         ->required()
+                        ->label('Swahili Description')
                         ->maxlength(255),
 
                         FileUpload::make('image')
                         ->image()
+                        ->label('Insert Image')
                         ->directory('news'),
 
 
@@ -100,7 +105,7 @@ class NewsResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('en_caption')
+                Tables\Columns\TextColumn::make('en_title')
                 ->searchable()
                 ->formatStateUsing(function ($state){
                     return Str::words($state, 5,'.....');

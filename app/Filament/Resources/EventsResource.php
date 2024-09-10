@@ -43,6 +43,7 @@ class EventsResource extends Resource
                             TextInput::make('en_title')
                                 ->required()
                                 ->maxlength(255)
+                                ->label('English Title')
                                 ->live(onBlur: true)
                                 ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                     === 'create' ? $set('slug', Str::slug($state)) : null),
@@ -50,8 +51,21 @@ class EventsResource extends Resource
 
                             TextInput::make('sw_title')
                                 ->required()
+                                ->label('Swahili Title')
                                 ->maxlength(255),
 
+                            DatePicker::make('start_date')
+                            ->label('Start Date')
+                            ->nullable(),
+
+                            DatePicker::make('end_date')
+                            ->label('End Date')
+                            ->nullable(),
+
+                            TextInput::make('event_time')
+                            ->required()
+                            ->label('Event Time')
+                            ->placeholder('HH:MM'),
 
                             TextInput::make('slug')
                                 ->required()
@@ -60,18 +74,38 @@ class EventsResource extends Resource
                                 ->dehydrated()
                                 ->unique(Events::class, 'slug', ignoreRecord: true),
 
+                            TextInput::make('en_audience')
+                            ->required()
+                            ->label('English Audience')
+                            ->maxlength(255),
+
+                            TextInput::make('sw_audience')
+                            ->required()
+                            ->label('Swahili Audience')
+                            ->maxlength(255),
+
+
+
                             Textarea::make('en_description')
                                 ->required()
+                                ->label('English Event Description')
                                 ->maxlength(255),
 
 
                             Textarea::make('sw_description')
                                 ->required()
+                                ->label('Swahili Event Description')
                                 ->maxlength(255),
 
                             FileUpload::make('image')
                                 ->image()
+                                ->label('Artical Related Photo')
                                 ->directory('events'),
+
+                            TextInput::make('location')
+                            ->required()
+                            ->label('Location')
+                            ->maxlength(255),
 
                             DatePicker::make('created_at')
                                 ->nullable(),
