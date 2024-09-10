@@ -17,7 +17,8 @@ class FormCategory extends Model
         'is_active',
     ];
 
-    public function forms(){
-        return $this->hasMany(forms::class);
+    public function forms()
+    {
+        return $this->hasMany(WMAForms::class, 'form_category_id');
     }
 }
