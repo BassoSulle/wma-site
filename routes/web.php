@@ -169,4 +169,10 @@ Route::get('/{language}/posters', [WmaController::class, 'posters'])
 Route::get('/{language}/newsletter', [WmaController::class, 'newsletter'])
     ->name('newsletter');
 
+// forms
+Route::get('form/{language}/{slug}', [WmaController::class, 'dynamic_forms'])
+    ->name('form');
 
+// publications
+Route::get('publication/{language}/{slug}', [WmaController::class, 'dynamic_publications'])
+    ->name('publication');

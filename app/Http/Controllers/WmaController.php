@@ -535,7 +535,7 @@ class WmaController extends Controller
             // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
-           
+
         ];
         return view($templatePath, $data);
     }
@@ -622,7 +622,7 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            'press_release' => PressRelease::select($language.'_title as title', $language.'_file as file','created_at')->latest()->get(),
+            'press_release' => PressRelease::select($language . '_title as title', $language . '_file as file', 'created_at')->latest()->get(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
 
@@ -732,5 +732,18 @@ class WmaController extends Controller
 
         ];
         return view($templatePath, $data);
+    }
+
+    // forms
+    public function dynamic_forms($language, $slug)
+    {
+
+        return view('livewire.layout.en.navbar', ['language' => $language, 'slug' => $slug]);
+    }
+
+    public function dynamic_publications($language, $slug)
+    {
+
+        return view('livewire.layout.en.navbar', ['language' => $language, 'slug' => $slug]);
     }
 }
