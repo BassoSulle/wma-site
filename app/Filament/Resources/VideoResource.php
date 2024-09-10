@@ -2,12 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\NewsResource\Pages;
-use App\Filament\Resources\NewsResource\RelationManagers;
-use App\Models\News;
+use App\Filament\Resources\VideoResource\Pages;
+use App\Filament\Resources\VideoResource\RelationManagers;
+use App\Models\Video;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\TextInput;
@@ -19,17 +26,11 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Set;
-use Filament\Tables;
-use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Auth;
-use Filament\Tables\Columns\IconColumn;
+use App\Models\Gallery;
 
-class NewsResource extends Resource
+class VideoResource extends Resource
 {
-    protected static ?string $model = News::class;
+    protected static ?string $model = Video::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -43,6 +44,7 @@ class NewsResource extends Resource
                         TextInput::make('en_title')
                         ->required()
                         ->maxlength(255)
+                        ->label('English Title')
                         ->live(onBlur:true)
                         ->afterStateUpdated(fn (string $operation, $state, Set $set)=>$operation
                           ==='create'? $set('slug', Str::slug($state)):null),
@@ -50,28 +52,30 @@ class NewsResource extends Resource
 
                         TextInput::make('sw_title')
                         ->required()
+                        ->label('Swahili Title')
                         ->maxlength(255),
 
 
-                        TextInput::make('slug')
+                        Textarea::make('en_content')
                         ->required()
-                        ->maxlength(255)
-                        ->disabled()
-                        ->dehydrated()
-                        ->unique(News::class, 'slug', ignoreRecord:true),
-
-                        Textarea::make('en_description')
-                        ->required()
+                        ->label('English Content')
                         ->maxlength(255),
 
 
-                        Textarea::make('sw_description')
+                        Textarea::make('sw_content')
                         ->required()
+                        ->label('Swahili Content')
                         ->maxlength(255),
 
-                        FileUpload::make('image')
-                        ->image()
-                        ->directory('news'),
+                        FileUpload::make('video')
+                        ->label('Insert VIdeo')
+                        ->acceptedFileTypes(['video/mp4', 'video/avi', 'video/mkv'])
+                        ->directory('vodeo'),
+
+                        TextInput::make('url')
+                        ->label('Video URL')
+                        ->required()
+                        ->maxlength(255),
 
 
                         DatePicker::make('created_at')
@@ -84,6 +88,12 @@ class NewsResource extends Resource
                             ->label('Created By')
                             ->content(fn() => Auth::user()->name),
 
+                        TextInput::make('slug')
+                        ->required()
+                        ->maxlength(255)
+                        ->disabled()
+                        ->dehydrated()
+                        ->unique(Video::class, 'slug', ignoreRecord:true),
 
 
                         Toggle::make('is_active')
@@ -92,7 +102,6 @@ class NewsResource extends Resource
 
                     ])
                 ])
-                //
             ]);
     }
 
@@ -100,24 +109,34 @@ class NewsResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('en_caption')
+                Tables\Columns\TextColumn::make('en_title')
                 ->searchable()
+                ->label('English Title')
                 ->formatStateUsing(function ($state){
                     return Str::words($state, 5,'.....');
                 }),
 
                 Tables\Columns\TextColumn::make('sw_title')
                 ->searchable()
+                ->label('Swahili Title')
                 ->formatStateUsing(function ($state){
                     return Str::words($state, 5,'.....');
                 }),
 
-                Tables\Columns\TextColumn::make('image')
+                Tables\Columns\TextColumn::make('video')
                 ->searchable()
                 ->html()
                 ->formatStateUsing(function ($state) {
-                    return '<img src="'. asset('storage/news/' . basename($state)) .'" width="30", height="40" />';
+                    $videoUrl = asset('storage/video/' . basename($state));
+                    return '<a href="'. $videoUrl .'" target="_blank">
+                                <video width="100" height="60" controls>
+                                    <source src="'. $videoUrl .'" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>';
                 }),
+
+
 
                 Tables\Columns\TextColumn::make('user.name')
                     ->label('Created By')
@@ -140,16 +159,16 @@ class NewsResource extends Resource
                 ->trueColor('primary')
                 ->falseColor('danger'),
 
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\ActionGroup:: make([
-                    Tables\Actions\EditAction::make(),
-                    Tables\Actions\ViewAction::make(),
-                    Tables\Actions\DeleteAction::make(),
-                ])
+                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -168,9 +187,9 @@ class NewsResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListNews::route('/'),
-            'create' => Pages\CreateNews::route('/create'),
-            'edit' => Pages\EditNews::route('/{record}/edit'),
+            'index' => Pages\ListVideos::route('/'),
+            'create' => Pages\CreateVideo::route('/create'),
+            'edit' => Pages\EditVideo::route('/{record}/edit'),
         ];
     }
 }

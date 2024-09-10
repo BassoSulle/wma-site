@@ -49,17 +49,16 @@ class User extends Authenticatable
 
         return  $this->hasMany(Events::class);
     }
+    public function wmaforms()
+    {
+
+        return  $this->hasMany(WMAForms::class);
+    }
 
     public function announcements()
     {
 
         return  $this->hasMany(Announcements::class);
-    }
-
-    public function forms()
-    {
-
-        return  $this->hasMany(forms::class);
     }
 
     public function publications()
@@ -85,6 +84,22 @@ class User extends Authenticatable
     {
 
         return  $this->hasMany(PressRelease::class);
+    }
+
+    public function photo()
+    {
+
+        return  $this->hasMany(Photos::class);
+    }
+    public function gallery()
+    {
+
+        return  $this->hasMany(Gallery::class);
+    }
+    public function video()
+    {
+
+        return  $this->hasMany(Video::class);
     }
     /**
      * The attributes that should be hidden for serialization.

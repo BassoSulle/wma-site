@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\FormsResource\Pages;
+namespace App\Filament\Resources\VideoResource\Pages;
 
-use App\Filament\Resources\FormsResource;
+use App\Filament\Resources\VideoResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditForms extends EditRecord
+class EditVideo extends EditRecord
 {
-    protected static string $resource = FormsResource::class;
+    protected static string $resource = VideoResource::class;
 
     protected function getHeaderActions(): array
     {
