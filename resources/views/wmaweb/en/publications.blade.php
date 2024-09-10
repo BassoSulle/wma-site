@@ -14,7 +14,7 @@
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
                                 {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
-                                <li class="breadcrumb-item list-inline-item active">{{ $form_category->title }} </li>
+                                <li class="breadcrumb-item list-inline-item active">{{ $publication_category->title }}</li>
                             </ol>
                         </nav>
                     </div>
@@ -23,7 +23,7 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        <h4>{{ $form_category->title }} </h4>
+                        <h4>{{ $publication_category->title }}</h4>
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <table class="table table-striped">
@@ -36,25 +36,25 @@
                                             <h4>Date Added</h4>
                                         </th>
                                         <th>
-                                            <h4>Downloads</h4>
+                                            <h4>Download</h4>
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($form_category->forms as $item)
+                                    @forelse ($publication_category->publications as $item)
                                         <tr>
                                             @php
                                                 $file = $current_language == 'en' ? $item->en_file : $item->sw_file;
-                                                $title = $current_language == 'en' ? $item->en_title : $item->sw_title;
                                             @endphp
-                                            <td>{{ $title }} </td>
+                                            <td>{{ $current_language == 'en' ? $item->en_title : $item->sw_title }} </td>
                                             <td>{{ $item->created_at->format('M d, Y') }}</td>
-                                            <td><a href="{{ asset('storage/forms/' . $current_language . '/' . $file) }}"
-                                                    download="{{ $title }}" target="_blank">Downloads</a></td>
+                                            <td><a href="{{ asset('storage/publications/' . $current_language . '/' . $file) }}"
+                                                    download="{{ $current_language == 'en' ? $item->en_title : $item->sw_title }}"
+                                                    target="_blank">Download</a></td>
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="3" class="text-center">No forms available</td>
+                                            <td colspan="3" class="text-center">No publications available</td>
                                         </tr>
                                     @endforelse
                                 </tbody>

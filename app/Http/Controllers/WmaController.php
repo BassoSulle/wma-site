@@ -8,6 +8,7 @@ use App\Models\FormCategory;
 use App\Models\PressRelease;
 use Illuminate\Http\Request;
 use App\Models\Announcements;
+use App\Models\PublicationCategory;
 use App\Models\Events as EventsModel;
 
 class WmaController extends Controller
@@ -707,6 +708,15 @@ class WmaController extends Controller
     public function dynamic_publications($language, $slug)
     {
 
-        return view('livewire.layout.en.navbar', ['language' => $language, 'slug' => $slug]);
+        $templateName = 'publications';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'publication_category' => PublicationCategory::select($language . '_title as title', 'id')->where('is_active', true)->where('slug', $slug)->first(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
     }
 }

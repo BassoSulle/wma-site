@@ -44,6 +44,9 @@
                                 <tbody>
                                     @forelse ($form_category->forms as $item)
                                         <tr>
+                                            @php
+                                                $file = $current_language == 'en' ? $item->en_file : $item->sw_file;
+                                            @endphp
                                             <td>{{ $current_language == 'en' ? $item->en_title : $item->sw_title }} </td>
                                             <td>{{ $item->created_at->format('M d, Y') }}</td>
                                             <td><a href="{{ asset('storage/forms/' . $current_language . '/' . $file) }}"

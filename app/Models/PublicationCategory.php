@@ -17,7 +17,8 @@ class PublicationCategory extends Model
         'is_active',
     ];
 
-    public function publicatios(){
-        return $this->hasMany(Publications::class);
+    public function publications()
+    {
+        return $this->hasMany(Publications::class, 'pub_category_id');
     }
 }
