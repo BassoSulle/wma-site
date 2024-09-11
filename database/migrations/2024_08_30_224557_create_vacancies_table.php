@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('en_file')->unique();
             $table->string('sw_file')->unique();
             $table->date('start_date')->unique();
-            $table->string('end_date')->unique();
+            $table->date('end_date')->unique();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();

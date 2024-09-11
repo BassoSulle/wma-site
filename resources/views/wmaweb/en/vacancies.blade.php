@@ -32,23 +32,35 @@
                                     <tr>
                                         <th>
                                             <h4>
-                                                Job Vacancy</h4>
+                                             Vacancy Name</h4>
                                         </th>
                                         <th>
                                             <h4>Published Date</h4>
                                         </th>
+                                        <th>
+                                            <h4>Deadline</h4>
+                                        </th>
+
                                         <th>
                                             <h4>Download</h4>
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Job vacancy</td>
-                                        <td>06/09/2017</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1503304103-TANGAZO%20LA%20KAZI%20-%20JULAI%202017.pdf"
-                                                target="_blank">Download </a></td>
+                                   @forelse ( $vacancies as $item )
+                                   <tr>
+                                    <td>{{$item->title}}</td>
+                                    <td>{{$item->created_at->format('F d, Y')}}</td>
+                                    <td>{{$item->end_date}}</td>
+                                    <td><a href="{{asset('storage/'.$item->file)}}" download="{{ $item->title . '_' . basename($item->file) }}" target="_blank">Download </a></td>
                                     </tr>
+                                   @empty
+                                   <tr>
+                                    <td colspan="4" class="text-center">No Vacancy Found..!</td>
+
+                                </tr>
+                                   @endforelse
+
                                 </tbody>
                             </table>
                         </div>
