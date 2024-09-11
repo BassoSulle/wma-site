@@ -8,6 +8,7 @@ use App\Models\FormCategory;
 use App\Models\PressRelease;
 use Illuminate\Http\Request;
 use App\Models\Announcements;
+use App\Models\RegionOffices;
 use App\Models\Vacancies;
 use App\Models\faqs;
 use App\Models\PublicationCategory;
@@ -352,6 +353,7 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
+            'region_offices' => RegionOffices::select('slug','region_name', 'location', 'address', 'fax', 'telephone','email', $language . '_content as content')->where('is_active', true)->latest()->get(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
 

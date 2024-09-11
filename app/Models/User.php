@@ -12,6 +12,7 @@ use App\Models\Vacancies;
 use App\Models\PressRelease;
 use App\Models\Publications;
 use App\Models\Announcements;
+use App\Models\RegionOffices;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -100,6 +101,12 @@ class User extends Authenticatable
     {
 
         return  $this->hasMany(Video::class);
+    }
+
+    public function region_offices()
+    {
+
+        return  $this->hasMany(RegionOffices::class);
     }
     /**
      * The attributes that should be hidden for serialization.

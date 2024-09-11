@@ -1,6 +1,6 @@
 @extends('wmaweb.en.base_layout')
-<!-- /HEADER -->
 
+<!-- /HEADER -->
 <style>
     .regional-office-select {
         display: inline-block;
@@ -25,7 +25,7 @@
                     <div class="col-12 px-xs-0 px-1">
                         <nav aria-label="breadcrumb" class="mb-0">
                             <ol class="breadcrumb px-0">
-                                <li class="breadcrumb-item ">
+                                <li class="breadcrumb-item">
                                     <a href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a>
                                 </li>
@@ -42,77 +42,52 @@
                                 <h4><label for="regionalOffice">Select regional office:</label></h4>
                                 <select class="form-control" id="regionalOffice" name="regionalOffice">
                                     <option selected>Select office</option>
-                                    <option value="arusha">Arusha</option>
-                                    <option value="dodoma">Dodoma</option>
-                                    <option value="ilala">Ilala</option>
-                                    <option value="singida">Singida</option>
-                                    <option value="mwanza">Mwanza</option>
-                                    <option value="pwani">Pwani</option>
+                                    @foreach($region_offices as $office)
+                                        <option value="{{ $office->slug }}">{{ $office->region_name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
 
-                        <div id="arushaInfo" class="office-info"><br>
-                            <h2>ARUSHA</h2>
-                            <hr>
-                            <p>Arusha</p><br>
-                            <p><span style="font-weight: bold;">Location: </span>ENGO LA CAMARTEC, BARABARA YA NJIRO</p>
-                            <p><span style="font-weight: bold;">Address: </span>7335 Arusha</p>
-                            <p><span style="font-weight: bold;">Fax: </span>-</p>
-                            <p><span style="font-weight: bold;">Phone No: </span>027 2549438</p>
-                            <p><span style="font-weight: bold;">Email: </span>arusha@wma.go.tz</p>
-                        </div>
-
-                        <div id="dodomaInfo" class="office-info"><br>
-                            <h2>DODOMA</h2>
-                            <hr>
-                            <p>Dodoma</p><br>
-                            <p><span style="font-weight: bold;">Location: </span>JENGO LA KAMBARAGE OROFA YA 10 </p>
-                            <p><span style="font-weight: bold;">Address: </span>266 Dodoma</p>
-                            <p><span style="font-weight: bold;">Fax: </span>-</p>
-                            <p><span style="font-weight: bold;">Phone No: </span>026 2321757</p>
-                            <p><span style="font-weight: bold;">Email: </span>dodoma@wma.go.tz</p>
-                        </div>
-
-                        <div id="ilalainfo" class="office-info"><br>
-                            <h2>ILALA</h2>
-                            <hr>
-                            <p>Ilala</p><br>
-                            <p><span style="font-weight: bold;">Location: </span>Mtaa wa Uhuru, Ilala Boma </p>
-                            <p><span style="font-weight: bold;">Address: </span>313, Dar Es Salaam</p>
-                            <p><span style="font-weight: bold;">Fax: </span>-</p>
-                            <p><span style="font-weight: bold;">Phone No: </span>022 2203105 </p>
-                            <p><span style="font-weight: bold;">Email: </span>@wma.go.tz</p>
-                        </div>
+                        @foreach($region_offices as $office)
+                            <div id="{{ $office->slug }}Info" class="office-info"><br>
+                                <p>{{ strtoupper($office->content) }}</p>
+                                <hr>
+                                <p>{{ $office->region_name }}</p><br>
+                                <p><span style="font-weight: bold;">Location: </span>{{ $office->location }}</p>
+                                <p><span style="font-weight: bold;">Address: </span>{{ $office->address }}</p>
+                                <p><span style="font-weight: bold;">Fax: </span>{{ $office->fax }}</p>
+                                <p><span style="font-weight: bold;">Phone No: </span>{{ $office->telephone }}</p>
+                                <p><span style="font-weight: bold;">Email: </span>{{ $office->email }}</p>
+                            </div>
+                        @endforeach
                     </div>
 
                     <div class="col-md-3 navigation-column">
                         @include('wmaweb.en.announcments_and_events')
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 
     <script>
         document.getElementById('regionalOffice').addEventListener('change', function() {
-            var arushaInfo = document.getElementById('arushaInfo');
-            var dodomaInfo = document.getElementById('dodomaInfo');
-            var ilalainfo = document.getElementById('ilalainfo');
+            var selectedValue = this.value;
+            var officeInfos = document.getElementsByClassName('office-info');
 
-            arushaInfo.style.display = 'none';
-            dodomaInfo.style.display = 'none';
-            ilalainfo.style.display = 'none';
-
-            if (this.value === 'arusha') {
-                arushaInfo.style.display = 'block';
-            } else if (this.value === 'dodoma') {
-                dodomaInfo.style.display = 'block';
-            } else if (this.value === 'ilala') {
-                ilalainfo.style.display = 'block';
+            // Hide all office information
+            for (var i = 0; i < officeInfos.length; i++) {
+                officeInfos[i].style.display = 'none';
             }
 
+            // Display the selected office information
+            if (selectedValue) {
+                var selectedOfficeInfo = document.getElementById(selectedValue + 'Info');
+                if (selectedOfficeInfo) {
+                    selectedOfficeInfo.style.display = 'block';
+                }
+            }
         });
     </script>
 @endsection
