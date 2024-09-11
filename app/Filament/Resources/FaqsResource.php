@@ -111,7 +111,7 @@ class FaqsResource extends Resource
                 return Str::words($state, 5,'.....');
             }),
 
-            Tables\Columns\TextColumn::make('sw_answe')
+            Tables\Columns\TextColumn::make('sw_answer')
                 ->searchable()
                 ->label('Swahili Answer')
                 ->formatStateUsing(function ($state){
