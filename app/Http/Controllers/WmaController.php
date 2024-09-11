@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Announcements;
 use App\Models\RegionOffices;
 use App\Models\Vacancies;
+use App\Models\Tender;
 use App\Models\faqs;
 use App\Models\PublicationCategory;
 use App\Models\Events as EventsModel;
@@ -339,6 +340,7 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
+            'tender' => Tender::select('slug', $language . '_title as title', $language . '_file as file','start_date','end_date')->where('is_active', true)->latest()->get(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
 

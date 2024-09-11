@@ -11,19 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vacancies', function (Blueprint $table) {
+        Schema::create('tenders', function (Blueprint $table) {
             $table->id();
             $table->string('en_title')->required();
             $table->string('sw_title')->required();
             $table->string('slug')->unique();
-            $table->string('en_file')->nullable();
-            $table->string('sw_file')->nullable();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
-            $table->unsignedBigInteger('created_by')->nullable();
+            $table->string('en_file')->nullable();
+            $table->date('sw_file')->nullable();
+            $table->UnsignedBigInteger('created_by')->nullbale();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
-
 
             $table->foreign('created_by')
             ->references('id')
@@ -37,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('vacancies');
+        Schema::dropIfExists('tenders');
     }
 };
