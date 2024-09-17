@@ -53,8 +53,8 @@
                                                     target="_blank">Download</a></td>
                                         </tr>
                                     @empty
-                                        <tr>
-                                            <td colspan="3" class="text-center">No publications available</td>
+                                        <tr style="background-color: rgb(239, 239, 122);">
+                                            <td colspan="3"  class="text-center">No publications available</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
