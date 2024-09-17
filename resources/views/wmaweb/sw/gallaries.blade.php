@@ -39,7 +39,7 @@
                                             echo 'No photos available.';
                                         }
                                     @endphp
-                                    <div class="image-wrapper">
+                                    <div class="col-12 bg-light px-xs-2 p-3 image-wrapper">
                                         <div class="strip" style="cursor: pointer;">
                                             <img src="{{ asset('storage/' . $image) }}" alt="Gallery Image"
                                                 style="width: 260px; height: 240px; object-fit: cover">
@@ -104,7 +104,7 @@
                                                                                     class="col-md-12 order-md-1 mt-2 order-2 text-center">
                                                                                     <p class="text-primary"
                                                                                         style="font-size: 16px;">
-                                                                                        {{ $photo->en_caption }}</p>
+                                                                                        {{ $photo->sw_caption }}</p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -116,13 +116,13 @@
                                                             role="button" data-slide="prev">
                                                             <span class="carousel-control-prev-icon"
                                                                 aria-hidden="true"></span>
-                                                            <span class="sr-only">Previous</span>
+                                                            <span class="sr-only">Iliyopita</span>
                                                         </a>
                                                         <a class="carousel-control-next" href="#carouselExampleIndicators"
                                                             role="button" data-slide="next">
                                                             <span class="carousel-control-next-icon"
                                                                 aria-hidden="true"></span>
-                                                            <span class="sr-only">Next</span>
+                                                            <span class="sr-only">Inayofuata</span>
                                                         </a>
                                                     </div>
                                                 </div>

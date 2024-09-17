@@ -9,8 +9,9 @@
                         <nav aria-label="breadcrumb" class="mb-0">
                             <ol class="breadcrumb px-0">
                                 <li class="breadcrumb-item ">
-                                       <a href="{{ route('home', ['language' => $current_language]) }}"><span
-                                            class="fas fa-home"></span></a></li>
+                                    <a href="{{ route('home', ['language' => $current_language]) }}"><span
+                                            class="fas fa-home"></span></a>
+                                </li>
                                 <li class="breadcrumb-item list-inline-item active">Photo Gallery</li>
                             </ol>
                         </nav>
@@ -21,80 +22,119 @@
                     <div class="col-md-9 bg-white py-3 page-content">
                         <h4>Photo Gallery</h4>
                         <div class="row mt-4">
-                            <div class="col-md-4 pb-3 mb-3">
-                                <div class="image-wrapper">
-                                    <a href="https://www.youtube.com/watch?v=Pzed721iKWU" class="strip" data-strip-caption="WAFANYABIASHARA WA GESI WAPATIWA ELIMU NA WAKALA WA VIPIMO." data-strip-options="side: 'top'">
-                                        <img src="https://www.wma.go.tz/uploads/video_thumbs/1683528028-4Z9A8377 gesi.jpg" alt="Gallery Thumb">
-                                    </a>
-                                    {{-- <a href="https://www.wma.go.tz/uploads/1481792964-DSC_1022.JPG" class="strip" data-strip-caption="Nanenane exibition" data-strip-options="side: 'right'" data-strip-group="001">
-                                        <img class="lazy" data-original="https://www.wma.go.tz/uploads/1481792964-DSC_1022.JPG" alt="" style="display: inline;" src="https://www.wma.go.tz/uploads/1481792964-DSC_1022.JPG"> --}}
+                            @forelse ($galleries as $item)
+                                <div class="col-md-4 pb-3 mb-3">
+                                    @php
+                                        if ($item->photos->count() > 0) {
+                                            $latestPhoto = null;
 
-                                        </a>
-                                </div>
-                                <div class="col-12 bg-light px-xs-2 p-3">
-                                    <div>
-                                        <p class="text-justify mb-2">
-                                            <b>
-                                                <h6 class="article-h2">AWARERNESS</h6>
-                                            </b>
-                                            (12 Pictures)
-                                            <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i> 1 years ago
-                                        </p>
+                                            foreach ($item->photos as $photo) {
+                                                $latestPhoto = $photo;
+                                            }
+
+                                            $image = $latestPhoto->image;
+
+                                            $date = $latestPhoto->updated_at->format('M d, Y');
+                                        } else {
+                                            echo 'No photos available.';
+                                        }
+                                    @endphp
+                                    <div class="col-12 bg-light px-xs-2 p-3 image-wrapper">
+                                        <div class="strip" style="cursor: pointer;">
+                                            <img src="{{ asset('storage/' . $image) }}" alt="Gallery Image"
+                                                style="width: 260px; height: 240px; object-fit: cover">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 bg-light px-xs-2 p-3">
+                                        <div>
+                                            <p class="text-justify mb-2">
+                                                <b>
+                                                    <h6 class="article-h2 text-left">{{ $item->title }}</h6>
+                                                </b>
+                                                <small>(Picha {{ $item->photos->count() }})</small>
+                                                <i class="fa fa-calendar blue-icon ml-2" style="color: #006f8b;"></i>
+                                                {{ $date }}
+                                            </p>
+                                            <style>
+                                                .view-btn {
+                                                    background-color: #F89629;
+                                                }
+
+                                                .view-btn:hover {
+                                                    background-color: #e68804;
+                                                }
+                                            </style>
+                                            <span>
+                                                <button class="btn btn-block view-btn" data-toggle="modal"
+                                                    data-target="#exampleModal">View pictures</button>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="col-md-4 pb-3 mb-3">
-                                <div class="image-wrapper">
-                                    <a href="https://www.youtube.com/watch?v=Pzed721iKWU" class="strip" data-strip-caption="WAFANYABIASHARA WA GESI WAPATIWA ELIMU NA WAKALA WA VIPIMO." data-strip-options="side: 'top'">
-                                        <img src="https://www.wma.go.tz/uploads/video_thumbs/1683528028-4Z9A8377 gesi.jpg" alt="Gallery Thumb">
-                                    </a>
-                                    {{-- <a href="https://www.wma.go.tz/uploads/1481792964-DSC_1022.JPG" class="strip" data-strip-caption="Nanenane exibition" data-strip-options="side: 'right'" data-strip-group="001">
-                                        <img class="lazy" data-original="https://www.wma.go.tz/uploads/1481792964-DSC_1022.JPG" alt="" style="display: inline;" src="https://www.wma.go.tz/uploads/1481792964-DSC_1022.JPG"> --}}
-
-                                        </a>
-                                </div>
-                                <div class="col-12 bg-light px-xs-2 p-3">
-                                    <div>
-                                        <p class="text-justify mb-2">
-                                            <b>
-                                                <h6 class="article-h2">AWARERNESS</h6>
-                                            </b>
-                                            (32 Pictures)
-                                            <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i> 2 years ago
-                                        </p>
+                                <!-- Modal -->
+                                <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-uppercase" style="color: #D79E12;"
+                                                    id="exampleModalLabel">
+                                                    {{ $item->title }}
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body px-1 py-1">
+                                                <div>
+                                                    <div id="carouselExampleIndicators" class="carousel slide carousel-fade"
+                                                        data-ride="carousel" data-interval="10000">
+                                                        <div class="carousel-inner">
+                                                            @foreach ($item->photos as $key => $photo)
+                                                                <div
+                                                                    class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                                                    <img class="d-block w-100"
+                                                                        src="{{ asset('storage/' . $photo->image) }}">
+                                                                    <div class="mask flex-center">
+                                                                        <div class="container">
+                                                                            <div class="row align-items-center">
+                                                                                <div
+                                                                                    class="col-md-12 order-md-1 mt-2 order-2 text-center">
+                                                                                    <p class="text-primary"
+                                                                                        style="font-size: 16px;">
+                                                                                        {{ $photo->en_caption }}</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                        <a class="carousel-control-prev" href="#carouselExampleIndicators"
+                                                            role="button" data-slide="prev">
+                                                            <span class="carousel-control-prev-icon"
+                                                                aria-hidden="true"></span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="carousel-control-next" href="#carouselExampleIndicators"
+                                                            role="button" data-slide="next">
+                                                            <span class="carousel-control-next-icon"
+                                                                aria-hidden="true"></span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            {{--  --}}
-
-
-                            <div class="col-md-4 pb-3 mb-3">
-                                <div class="image-wrapper">
-                                    <a href="https://www.youtube.com/watch?v=Pzed721iKWU" class="strip" data-strip-caption="WAFANYABIASHARA WA GESI WAPATIWA ELIMU NA WAKALA WA VIPIMO." data-strip-options="side: 'top'">
-                                        <img src="https://www.wma.go.tz/uploads/video_thumbs/1683528028-4Z9A8377 gesi.jpg" alt="Gallery Thumb">
-                                    </a>
-                                    {{-- <a href="https://www.wma.go.tz/uploads/1481792964-DSC_1022.JPG" class="strip" data-strip-caption="Nanenane exibition" data-strip-options="side: 'right'" data-strip-group="001">
-                                        <img class="lazy" data-original="https://www.wma.go.tz/uploads/1481792964-DSC_1022.JPG" alt="" style="display: inline;" src="https://www.wma.go.tz/uploads/1481792964-DSC_1022.JPG"> --}}
-
-                                        </a>
+                            @empty
+                                <div class="col-md-12 pb-3 my-3 text-center align-items-center justify-content-center">
+                                    <p>No Images found.</p>
                                 </div>
-                                <div class="col-12 bg-light px-xs-2 p-3">
-                                    <div>
-                                        <p class="text-justify mb-2">
-                                            <b>
-                                                <h6 class="article-h2">AWARERNESS</h6>
-                                            </b>
-                                            (20 Pictures)
-                                            <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i> 3 years ago
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                               {{-- <h5>Under Constraction..!</h5> --}}
-
-
+                            @endforelse
                         </div>
                     </div>
 
