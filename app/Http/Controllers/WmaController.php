@@ -12,12 +12,6 @@ use App\Models\PressRelease;
 use Illuminate\Http\Request;
 use App\Models\Announcements;
 use App\Models\RegionOffices;
-<<<<<<< HEAD
-use App\Models\Vacancies;
-use App\Models\Tender;
-use App\Models\faqs;
-=======
->>>>>>> 3335eb192ec9d3191b661e6d5a787df961563b6b
 use App\Models\PublicationCategory;
 use App\Models\Events as EventsModel;
 
@@ -27,7 +21,7 @@ class WmaController extends Controller
     {
         return "wmaweb.$language.$templateName";
     }
-    
+
     public function index($language = 'en')
     {
         $templateName = 'index';
