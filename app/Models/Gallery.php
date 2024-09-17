@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Gallery extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'en_title',
         'sw_title',
@@ -20,8 +21,8 @@ class Gallery extends Model
     {
         return $this->belongsTo(User::class, 'created_by');
     }
-    public function photo()
+    public function photos()
     {
-        return $this->hasMany(Photos::class);
+        return $this->hasMany(Photos::class, 'gallery_id');
     }
 }

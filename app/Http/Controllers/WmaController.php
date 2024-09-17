@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\faqs;
 use App\Models\News;
+use App\Models\Gallery;
 use App\Models\Carousel;
+use App\Models\Vacancies;
 use App\Models\FormCategory;
 use App\Models\PressRelease;
 use Illuminate\Http\Request;
 use App\Models\Announcements;
 use App\Models\RegionOffices;
+<<<<<<< HEAD
 use App\Models\Vacancies;
 use App\Models\Tender;
 use App\Models\faqs;
+=======
+>>>>>>> 3335eb192ec9d3191b661e6d5a787df961563b6b
 use App\Models\PublicationCategory;
 use App\Models\Events as EventsModel;
 
@@ -356,7 +362,7 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            'region_offices' => RegionOffices::select('slug','region_name', 'location', 'address', 'fax', 'telephone','email', $language . '_content as content')->where('is_active', true)->latest()->get(),
+            'region_offices' => RegionOffices::select('slug', 'region_name', 'location', 'address', 'fax', 'telephone', 'email', $language . '_content as content')->where('is_active', true)->latest()->get(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
 
@@ -577,6 +583,7 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
+            'galleries' => Gallery::select('slug', $language . '_title as title', 'created_at', 'id')->where('is_active', true)->latest()->get(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
 
