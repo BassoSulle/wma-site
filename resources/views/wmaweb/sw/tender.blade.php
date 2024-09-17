@@ -26,10 +26,42 @@
                     <div class="col-md-9 bg-white py-3 page-content">
                         <h4>Zabuni</h4>
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
-                            <p class="about_hub">
-                                Kazi Inaendelea ...
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <h4>
+                                             Tebder Name</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Published Date</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Deadline</h4>
+                                        </th>
 
-                            </p>
+                                        <th>
+                                            <h4>Download</h4>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   @forelse ( $tender as $item )
+                                   <tr>
+                                    <td>{{$item->title}}</td>
+                                    <td>{{$item->start_date}}</td>
+                                    <td>{{$item->end_date}}</td>
+                                    <td><a href="{{asset('storage/'.$item->file)}}" download="{{ $item->title . '_' . basename($item->file) }}" target="_blank">Download </a></td>
+                                    </tr>
+                                   @empty
+                                   <tr>
+                                    <td colspan="4" class="text-center">Hakuna Zabuni yeyote..!</td>
+
+                                </tr>
+                                   @endforelse
+
+                                </tbody>
+                            </table>
 
                         </div>
                     </div>
