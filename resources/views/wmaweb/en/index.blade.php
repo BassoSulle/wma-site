@@ -258,7 +258,8 @@
             <div class="service-icon">
                 <img src="{{ asset('assets/images/doc_approval_icon.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
             </div>
-            <div class="service-title">Sandy & Ballast Lorry (SBL)</div>
+            <div class="service-title">Metrological Supervision (On Board & Shore Tanks)
+            </div>
             <div class="service-btn-wrapper">
                 <a target="_blank" href="" class="serv-btn orange">Read More</a>
             </div>
@@ -268,7 +269,7 @@
             <div class="service-icon">
                 <img src="{{ asset('assets/images/service_icon1.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
             </div>
-            <div class="service-title">Fixed Storage Tank (FST) & Bulk Storage Tank (BST)</div>
+            <div class="service-title">E/m- Electricity meter</div>
             <div class="service-btn-wrapper">
                 <a target="_blank" href="" class="serv-btn orange">Read More</a>
             </div>
@@ -278,7 +279,7 @@
             <div class="service-icon">
                 <img src="{{ asset('assets/images/service_icon2.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
             </div>
-            <div class="service-title">Pre-packages</div>
+            <div class="service-title">Water Meter</div>
             <div class="service-btn-wrapper">
                 <a target="_blank" href="" class="serv-btn orange">Read More</a>
             </div>
@@ -291,7 +292,7 @@
                     <div class="service-icon">
                         <img src="{{ asset('assets/images/service_icon3.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
                     </div>
-                    <div class="service-title">Wagon Tank (WGT)</div>
+                    <div class="service-title">Sandy & Ballast lorry (SBL)</div>
                     <div class="service-btn-wrapper">
                         <a target="_blank" href="" class="serv-btn orange">Read More</a>
                     </div>
@@ -301,7 +302,7 @@
                     <div class="service-icon">
                         <img src="{{ asset('assets/images/service_icon4.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
                     </div>
-                    <div class="service-title">Fuel Pump & CNG Filling Station</div>
+                    <div class="service-title">FST – Fixed Storage Tank</div>
                     <div class="service-btn-wrapper">
                         <a target="_blank" href="" class="serv-btn orange">Read More</a>
                     </div>
@@ -311,7 +312,7 @@
                     <div class="service-icon">
                         <img src="{{ asset('assets/images/service_icon5.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
                     </div>
-                    <div class="service-title">Flow Meter (F/M) & Check Pump (Ch/p)</div>
+                    <div class="service-title">Fuel pump</div>
                     <div class="service-btn-wrapper">
                         <a target="_blank" href="" class="serv-btn orange">Read More</a>
                     </div>
@@ -321,7 +322,7 @@
                     <div class="service-icon">
                         <img src="{{ asset('assets/images/service_icon6.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
                     </div>
-                    <div class="service-title">Water Meter & Metrological Supervision </div>
+                    <div class="service-title">Wb - Weighbridge</div>
                     <div class="service-btn-wrapper">
                         <a target="_blank" href="" class="serv-btn orange">Read More</a>
                     </div>
