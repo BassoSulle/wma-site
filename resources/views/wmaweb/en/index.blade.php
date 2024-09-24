@@ -1,68 +1,68 @@
 @extends('wmaweb.en.base_layout')
-<!-- /HEADER -->
 
-<!-- contents -->
 @section('content')
-    <div class="home-page ">
-        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000">
-            <ol class="carousel-indicators">
-                @foreach ($carousel_items as $key => $item)
-                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}"
-                        {{ $loop->first ? 'class=active' : '' }}></li>
-                @endforeach
-                <li data-target="#carouselExampleIndicators"></li>
-            </ol>
-            <div class="carousel-inner">
-                @foreach ($carousel_items as $key => $item)
-                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                        <img class="d-block w-100" alt="{{ $item->description }}"
-                            src="{{ asset('storage/' . $item->image) }}">
-                        <div class="mask flex-center">
-                            <div class="container">
-                                <div class="row align-items-center">
-                                    <div class="col-md-12 order-md-1 order-2 text-center">
-                                        <p class="text-primary" style="font-size: 10px;">{{ $item->description }}</p>
-                                    </div>
+<div class="home-page ">
+    <!-- Carousel Section with 70% width -->
+    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000">
+        <ol class="carousel-indicators">
+            @foreach ($carousel_items as $key => $item)
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}"
+                    {{ $loop->first ? 'class=active' : '' }}></li>
+            @endforeach
+            <li data-target="#carouselExampleIndicators"></li>
+        </ol>
+        <div class="carousel-inner">
+            @foreach ($carousel_items as $key => $item)
+                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                    <img class="d-block w-100" alt="{{ $item->description }}"
+                        src="{{ asset('storage/' . $item->image) }}">
+                    <div class="mask flex-center">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-md-12 order-md-1 order-2 text-center">
+                                    <p class="text-primary" style="font-size: 10px;">{{ $item->description }}</p>
                                 </div>
                             </div>
-                            <div class="wave-svg max-1920 container sm-hide">
-                                <svg width="2000" height="128" x="2000" y="128" viewBox="0 0 2000 128"
-                                    enable-background="new 0 0 2000 128" xml:space="preserve">
-                                    <path opacity="0.2" fill="#f7f7f7"
-                                        d="M1999.5,22.2c-346-0.6-524.6-4.7-878.8,4.4c-286.6,7.4-442.3,54-608.1,51.2C307.3,74.3,202.5,5-0.5,28.1v100.4l2000-0.5V22.2z">
-                                    </path>
-                                    <path opacity="0.2" fill="#f7f7f7"
-                                        d="M-0.3,46.1C251,15.3,440.9,84.7,499.6,98.4c54.7,12.8,122.5,12,186.7-5.3c154.2-41.6,315.5-70.9,475.2-67.5s324.6,22.4,484.3,19.7c133-2.3,302.8,1.7,352.8,3.7c0,21.3,0,80,0,80H-0.5L-0.3,46.1z">
-                                    </path>
-                                    <path opacity="0.4" fill="#f7f7f7"
-                                        d="M2000,41.2c-139.8-12.7-219.9-10.8-360.2-11.2c-285.5-0.8-487.5,18-736.2,51.1C647,115.4,546.7,116.4,199.2,53.6C140.3,43,59.5,45.6-0.5,52.3V130h2000L2000,41.2z">
-                                    </path>
-                                    <path fill="#EDEEF0"
-                                        d="M1634.6,50.1c-193.8,11.9-366.9,24.9-569,50c-110.2,13.7-221.2,21.5-332.3,19.6c-187-3.3-344.5-29.7-560.9-69.8c-122.2-22.6-172.8-4-172.8-4V130h1998V46C1997.5,46,1831,38.1,1634.6,50.1z">
-                                    </path>
-                                </svg>
-                            </div>
+                        </div>
+                        <div class="wave-svg max-1920 container sm-hide">
+                            <svg width="2000" height="128" x="2000" y="128" viewBox="0 0 2000 128"
+                                enable-background="new 0 0 2000 128" xml:space="preserve">
+                                <path opacity="0.2" fill="#f7f7f7"
+                                    d="M1999.5,22.2c-346-0.6-524.6-4.7-878.8,4.4c-286.6,7.4-442.3,54-608.1,51.2C307.3,74.3,202.5,5-0.5,28.1v100.4l2000-0.5V22.2z">
+                                </path>
+                                <path opacity="0.2" fill="#f7f7f7"
+                                    d="M-0.3,46.1C251,15.3,440.9,84.7,499.6,98.4c54.7,12.8,122.5,12,186.7-5.3c154.2-41.6,315.5-70.9,475.2-67.5s324.6,22.4,484.3,19.7c133-2.3,302.8,1.7,352.8,3.7c0,21.3,0,80,0,80H-0.5L-0.3,46.1z">
+                                </path>
+                                <path opacity="0.4" fill="#f7f7f7"
+                                    d="M2000,41.2c-139.8-12.7-219.9-10.8-360.2-11.2c-285.5-0.8-487.5,18-736.2,51.1C647,115.4,546.7,116.4,199.2,53.6C140.3,43,59.5,45.6-0.5,52.3V130h2000L2000,41.2z">
+                                </path>
+                                <path fill="#EDEEF0"
+                                    d="M1634.6,50.1c-193.8,11.9-366.9,24.9-569,50c-110.2,13.7-221.2,21.5-332.3,19.6c-187-3.3-344.5-29.7-560.9-69.8c-122.2-22.6-172.8-4-172.8-4V130h1998V46C1997.5,46,1831,38.1,1634.6,50.1z">
+                                </path>
+                            </svg>
                         </div>
                     </div>
-                @endforeach
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+                </div>
+            @endforeach
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
+</div>
 
+    <!-- Welcome Note Section -->
     <div class="container-fluid mb-3">
         <div class="col-md-12 bg-white py-3 page-content">
             <div class="col-12 px-0 mt-4">
 
                 <div class="row">
-                    <div class="col-md-4 my-5 mx-5 col-xs-6">
+                    <div class="col-md-4 my-4 mx-5 col-xs-6">
                         <div
                             class="img-frame p-3 border rounded d-flex justify-content-center align-items-center img-fluid">
                             <img src="https://www.wma.go.tz/uploads/profiles/9-0.30810600%201721628167.png"
@@ -120,334 +120,217 @@
 
                 </div>
 
-            </div>
-        </div>
-        <div class="row px-xs-3">
-            <div class="col-md-12 my-3">
-                <h5 class="my-xs-2 mt-3 text-center text-xs-center section-title"> <b>Top News</b> </h5>
-                <div class="row mt-4">
-                    @foreach ($news_articles as $article)
-                        <div class="col-md-4 pb-3 mb-3">
-                            <style>
-                                .image-wrapper {
-                                    max-width: 1200px;
-                                    /* Adjust the maximum width as needed */
-                                    max-height: 638px;
-                                    /* Adjust the maximum height as needed */
-                                    text-align: center;
-                                    /* margin: 10px; */
-                                }
-
-                                img {
-                                    max-width: 100%;
-                                    height: auto;
-                                }
-                            </style>
-                            <div class="image-wrapper">
-                                <img src="{{ asset('storage/' . $article->image) }}" class="w-100"
-                                    style="width: 422px; height: 245px;" alt="Thumbnail">
-                            </div>
-                            <div class="col-12 bg-light px-xs-2 p-3">
-                                <div>
-                                    <p class="text-justify mb-2">
-                                        <b>
-                                            <h6 class="article-h2 text-uppercase">{{ $article->title }}
-                                            </h6>
-                                        </b>
-                                        <i class="fa fa-calendar blue-icon" style="color: #006f8b;"></i>
-                                        {{ $article->created_at->format('M j, Y') }}
-                                    <p class="mt-2">{{ Str::limit($article->description, 95) }}</p>
-                                    <a href="">Read More</a>
-                                    </p>
-                                </div>
-                            </div>
+    <div class="container-fluid mb-3">
+        <div class="col-md-12 bg-white py-3 page-content">
+            <!-- Section: Announcements, Events, How Do I -->
+            <div class="row my-4">
+                <!-- Announcements Column -->
+                <div class="col-md-4">
+                    @foreach ($announcements as $item)
+                    <h5 class="section-title"><b>Announcements</b></h5>
+                    <div class="d-flex align-items-start">
+                        <div class="icon-announcement pr-2">
+                            <i class="fa fa-bullhorn fa-2x"></i>
                         </div>
+                        <div>
+                            <b>
+                                <h6 class="article-h2 text-uppercase">{{ $item->title }}</h6>
+                                <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
+                                    {{ $item->created_at->format('M j, Y') }}</p>
+                                <p>{{ Str::limit($item->description, 30) }}</p>
+                            </b>
+                            <a href="" class="read ml-2">Read more</a>
+
+                        </div>
+                    </div>
                     @endforeach
                 </div>
 
-                {{-- <div class="row justify-content-center mt-3"> --}}
-                {{-- <a href="{{ route('product.all_products', ['language' => $current_language]) }}"class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
-                {{-- </div> --}}
-            </div>
-        </div>
+                <!-- Events Column -->
+                <div class="col-md-4">
+                    @foreach ($events as $item)
+                    <h5 class="section-title"><b>Events</b></h5>
+                    <div class="d-flex align-items-start">
+                        <div class="event-thumbnail pr-2">
+                            <img src="{{ asset('storage/' . $item->image) }}"
+                            style="width: 150px; height: 90px; object-fit: cover;" alt="Thumbnail"
+                            class="img-thumbnail">
+                        </div>
+                        <div>
+                            <p class="text-justify mb-2">
+                                <b>
+                                    <h6 class="article-h2 text-uppercase">{{ $item->title }}</h6>
+                                </b>
+                            </p>
+                            <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
+                                {{ $item->created_at->format('M j, Y') }}</p>
+                            <p>{{ Str::limit($item->description, 30) }}
+                            </p>
+                            <a href="" class="read ml-2">Read more</a>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
 
-        {{-- Anouncement and news --}}
-        <div class="row">
-            <div class="col-md-6 my-3">
-                <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Announcements</b></h5>
-                <div class="row mt-0">
-                    <div class="col-md-12 pb-2 mb-2">
-                        <div class="col-12 px-xs-2 py-4">
-                            @foreach ($announcements as $item)
-                                <div class="row align-items-center bg-light1">
-                                    <div class="col-10 col-md-12">
-                                        <p class="text-justify mb-2">
-                                            <b>
-                                                <h6 class="article-h2 text-uppercase">{{ $item->title }}</h6>
-                                            </b>
-                                        </p>
-                                        <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
-                                            {{ $item->created_at->format('M j, Y') }}</p>
-                                        <p>{{ Str::limit($item->description, 165) }}</p>
-                                        <a href="" class="read ml-2">Read more</a>
-                                    </div>
-                                </div>
-                                <div style="margin-top: 20px"></div>
-                            @endforeach
-                            <img src="https://www.wma.go.tz/site/images/strip.png" width="1055px">
-                            <!-- Add a link for "Tazama Zote" -->
-                            <div class="row justify-content-center mt-3">
-                                {{-- <a href="{{ route('news.all_articles', ['language' => $current_language]) }}" class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
+
+            <!-- How Do I Column -->
+                <div class="col-md-4 text-center">
+                    <h5 class="section-title"><b>How Do I</b></h5>
+                    <!-- Card style as provided in your code -->
+                    <div class="row mt-4 px-xs-0 online-services flex-column align-items-center">
+                        <!-- First service item -->
+                        <div class="service-item col-4 mb-4">
+                            <div class="service-icon">
+                                <img src="{{ asset('assets/images/licence_icon.png') }}" alt="" height="40" width="70px" style="margin-bottom: 10px;">
+                            </div>
+                            <div class="service-title">Request for the Licence</div>
+                            <div class="service-btn-wrapper mt-3">
+                                <a target="_blank" href="https://www.wma.go.tz/howdo/6" class="serv-btn orange">Get instruction</a>
+                            </div>
+                        </div>
+
+                        <!-- Second service item -->
+                        <div class="service-item col-4 mb-4">
+                            <div class="service-icon">
+                                <img src="{{ asset('assets/images/doc_approval_icon.png') }}" alt=""  height="40" width="70px" style="margin-bottom: 10px;">
+                            </div>
+                            <div class="service-title">Request for the Pattern Approval</div>
+                            <div class="service-btn-wrapper mt-3">
+                                <a target="_blank" href="https://www.wma.go.tz/howdo/4" class="serv-btn orange">Get instruction</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {{-- Top Events --}}
-            <div class="col-md-6 my-3">
-                <h5 class="my-xs-4 text-center text-xs-center section-title"><b>Top Events</b></h5>
-                <div class="row mt-0">
-                    <div class="col-md-12 pb-2 mb-2">
-                        <div class="col-12 px-xs-2 p-4">
-                            @foreach ($events as $item)
-                                <div href="#" target="_blank">
-                                    <div class="row align-items-center bg-light1">
-                                        <div class="col-2 col-md-3">
-                                            <img src="{{ asset('storage/' . $item->image) }}"
-                                                style="width: 128px; height: 90px; object-fit: cover;" alt="Thumbnail"
-                                                class="img-thumbnail">
+            <div style="margin-top: 100px"></div>
+
+
+          <!-- Section: Top News Slider -->
+            <div class="row my-4">
+                <div class="col-md-9 mx-auto">
+                    <h5 class="text-center section-title"><b>Top News</b></h5>
+                    <div id="topNewsSlider" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            @foreach ($news_articles as $key => $article)
+                                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                    <div class="row">
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <img src="{{ asset('storage/' . $article->image) }}" class="img-fluid" alt="News Image">
                                         </div>
-                                        <div class="col-10 col-md-9">
-                                            <p class="text-justify mb-2">
-                                                <b>
-                                                    <h6 class="article-h2 text-uppercase">{{ $item->title }}</h6>
-                                                </b>
-                                            </p>
-                                            <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
-                                                {{ $item->created_at->format('M j, Y') }}</p>
-                                            <p>{{ Str::limit($item->description, 100) }}
-                                            </p>
-                                            <a href="" class="read ml-2">Read more</a>
+                                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                                            <h6 class="article-title">{{ $article->title }}</h6>
+                                            <p>{{ Str::limit($article->description, 150) }}</p>
+                                            <a href="#" style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read more</a>
                                         </div>
                                     </div>
-                                    <div style="margin-top: 20px"></div>
                                 </div>
                             @endforeach
-                            <img src="https://www.wma.go.tz/site/images/strip.png" width="1055px">
-                            <!-- Add a link for "Tazama Zote" -->
-                            <div class="row justify-content-center mt-3">
-                                {{-- <a href="{{ route('news.all_articles', ['language' => $current_language]) }}" class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
-                            </div>
-
                         </div>
+                        <a class="carousel-control-prev" href="#topNewsSlider" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#topNewsSlider" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
+           <!-- Section: Our Core Services -->
+<div class="col-12 my-3">
+    <h5 class="my-xs-4 text-center text-xs-center section-title"><b>Our Core Services</b></h5>
+
+    <!-- First Row of Cards -->
+    <div class="row mt-4 px-xs-0 online-services">
+        <div class="service-item col mx-2">
+            <div class="service-icon">
+                <img src="{{ asset('assets/images/licence_icon.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
+            </div>
+            <div class="service-title">Vehicle Tank Verification (VTV)</div>
+            <div class="service-btn-wrapper">
+                <a target="_blank" href="" class="serv-btn orange">Read More</a>
+            </div>
+        </div>
+
+        <div class="service-item col mx-2">
+            <div class="service-icon">
+                <img src="{{ asset('assets/images/doc_approval_icon.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
+            </div>
+            <div class="service-title">Sandy & Ballast Lorry (SBL)</div>
+            <div class="service-btn-wrapper">
+                <a target="_blank" href="" class="serv-btn orange">Read More</a>
+            </div>
+        </div>
+
+        <div class="service-item col mx-2">
+            <div class="service-icon">
+                <img src="{{ asset('assets/images/service_icon1.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
+            </div>
+            <div class="service-title">Fixed Storage Tank (FST) & Bulk Storage Tank (BST)</div>
+            <div class="service-btn-wrapper">
+                <a target="_blank" href="" class="serv-btn orange">Read More</a>
+            </div>
+        </div>
+
+        <div class="service-item col mx-2">
+            <div class="service-icon">
+                <img src="{{ asset('assets/images/service_icon2.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
+            </div>
+            <div class="service-title">Pre-packages</div>
+            <div class="service-btn-wrapper">
+                <a target="_blank" href="" class="serv-btn orange">Read More</a>
+            </div>
+        </div>
+    </div>
+
+        <!-- Second Row of Cards -->
+            <div class="row mt-4 px-xs-0 online-services">
+                <div class="service-item col mx-2">
+                    <div class="service-icon">
+                        <img src="{{ asset('assets/images/service_icon3.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
+                    </div>
+                    <div class="service-title">Wagon Tank (WGT)</div>
+                    <div class="service-btn-wrapper">
+                        <a target="_blank" href="" class="serv-btn orange">Read More</a>
+                    </div>
+                </div>
+
+                <div class="service-item col mx-2">
+                    <div class="service-icon">
+                        <img src="{{ asset('assets/images/service_icon4.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
+                    </div>
+                    <div class="service-title">Fuel Pump & CNG Filling Station</div>
+                    <div class="service-btn-wrapper">
+                        <a target="_blank" href="" class="serv-btn orange">Read More</a>
+                    </div>
+                </div>
+
+                <div class="service-item col mx-2">
+                    <div class="service-icon">
+                        <img src="{{ asset('assets/images/service_icon5.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
+                    </div>
+                    <div class="service-title">Flow Meter (F/M) & Check Pump (Ch/p)</div>
+                    <div class="service-btn-wrapper">
+                        <a target="_blank" href="" class="serv-btn orange">Read More</a>
+                    </div>
+                </div>
+
+                <div class="service-item col mx-2">
+                    <div class="service-icon">
+                        <img src="{{ asset('assets/images/service_icon6.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
+                    </div>
+                    <div class="service-title">Water Meter & Metrological Supervision </div>
+                    <div class="service-btn-wrapper">
+                        <a target="_blank" href="" class="serv-btn orange">Read More</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    {{-- </div> --}}
 
-    <div class="col-12 my-3">
-        <h5 class="my-xs-4 text-center text-xs-center section-title"><b>How Do I</b>
-        </h5>
-        <div class="row mt-4 px-xs-0 online-services">
-            <div class="service-item col mx-2">
-                <div class="service-icon">
-                    <img src="{{ asset('assets/images/licence_icon.png') }}" alt="" width="80px"
-                        style="margin-bottom: 10px;">
-                </div>
-                <div class="service-title">Request for the Liecence</div>
-                <div class="service-btn-wrapper">
-                    <a target="_blank" href="https://www.wma.go.tz/howdo/6" class="serv-btn orange">Get
-                        instruction</a>
-                </div>
-            </div>
 
-            <div class="service-item col mx-2">
-                <div class="service-icon">
-                    <img src="{{ asset('assets/images/doc_approval_icon.png') }}" alt="" width="80px"
-                        style="margin-bottom: 10px;">
-
-                    {{-- <img src="/uploads/icon/contract.png" alt=""> --}}
-                </div>
-                <div class="service-title">Request for the Parttern Approval</div>
-                <div class="service-btn-wrapper">
-                    <a target="_blank" href="https://www.wma.go.tz/howdo/4" class="serv-btn orange">Get
-                        instruction</a>
-                </div>
-            </div>
         </div>
     </div>
-
-    {{-- <div class="container mb-5">
-                <div class="col-md-10 mt-5 mb-3">
-
-                    <h5 class="my-xs-2 text-center text-xs-center section-title"><b>Our Patners</b></h5>
-
-                    <div class="row mt-4 slick-slide1">
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href=""
-                            target="_blank">
-                            <img src="/uploads/patners/partners-pic9.jpg" class="w-50"
-                                alt="UNITED REPUBLIC OF TANZANIA">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://comsats.org/"
-                            target="_blank">
-                            <img src="/uploads/patners/partners-pic1.jpg" class="w-50"
-                                alt="Commission on Science and Technology for Sustainable Development in the South(COMSATS)">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide"
-                            href="https://costechanalytical.com/" target="_blank">
-                            <img src="/uploads/patners/partners-pic2.jpg" class="w-50"
-                                alt="Costech Analytical Technologies">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href=""
-                            target="_blank">
-                            <img src="/uploads/patners/partners-pic4.jpg" class="w-50"
-                                alt="The Small and Medium Enterprise Competitive Facility">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://tpsftz.org/"
-                            target="_blank">
-                            <img src="/uploads/patners/partners-pic7.jpg" class="w-50"
-                                alt="Tanzania Private Sector Foundation">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://www.sirim.my/"
-                            target="_blank">
-                            <img src="/uploads/patners/partners-pic5.jpg" class="w-50"
-                                alt="Standards and Industrial Research Institute of Malaysia (SIRIM)">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://www.tib.co.tz/"
-                            target="_blank">
-                            <img src="/uploads/patners/partners-pic6.jpg" class="w-50"
-                                alt="Tanzania Investment Bank (TIB)">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://cti.co.tz/"
-                            target="_blank">
-                            <img src="/uploads/patners/partners-pic10.jpg" class="w-50"
-                                alt="Confederation of Tanzania Industries">
-                        </a>
-
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://waitro.org/"
-                            target="_blank">
-                            <img src="/uploads/patners/partners-pic8.jpg" class="w-50"
-                                alt="World Association of Industrial and Technological Research Organizations (WAITRO)">
-                        </a>
-
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://www.undp.org"
-                            target="_blank">
-                            <img src="/uploads/patners/partners-pic12.png" class="w-50" alt="UNDP">
-                        </a>
-
-                        <a class="col-md-2 justify-content-center text-center slick-slide"
-                            href="https://www.european-union.europa.eu/" target="_blank">
-                            <img src="/uploads/patners/partners-pic11.jpg" class="w-50" alt="european union">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://www.iaea.org/"
-                            target="_blank">
-                            <img src="/uploads/patners/partners-pic3.jpg" class="w-50"
-                                alt="International Atomic Energy Agency (IAEA)">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="http://www.sido.go.tz/"
-                            target="_blank" style="width: 101px;" tabindex="-1" data-slick-index="0"
-                            aria-hidden="true">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/bb54e0f99d18c766e962076b504d90c9.jpeg"
-                                class="w-50" alt="SHIRIKA LA KUHUDUMIA VIWANDA VIDOGO (SIDO)">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://ndc.go.tz/"
-                            target="_blank" style="width: 101px;" tabindex="-1" data-slick-index="1"
-                            aria-hidden="true">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/e5a80978d0a0a78629782212f6c660a1.jpeg"
-                                class="w-50" alt="Shirika la Maendeleo la Taifa">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://www.wma.go.tz/"
-                            target="_blank" style="width: 101px;" tabindex="-1" data-slick-index="2"
-                            aria-hidden="true">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/a6deeddfc54ae5089fad690528347876.jpeg"
-                                class="w-50" alt="Wakala wa Vipimo">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide"
-                            href="https://www.tantrade.go.tz/" target="_blank" style="width: 101px;" tabindex="-1"
-                            data-slick-index="3" aria-hidden="true">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/1ca8e18928f6df79de599c9b546ee585.jpeg"
-                                class="w-50" alt="Mamlaka ya Maendeleo ya Biashara Tanzania (TanTrade)">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide"
-                            href="https://www.competition.or.tz/" target="_blank" style="width: 101px;" tabindex="-1"
-                            data-slick-index="4" aria-hidden="true">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/9b995fa32f92228202cbafa8d7d4539f.jpeg"
-                                class="w-50" alt="Tume ya Ushindani">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://www.brela.go.tz/"
-                            target="_blank" style="width: 101px;" tabindex="-1" data-slick-index="5"
-                            aria-hidden="true">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/f580af64eb8b3a62519858191152fe5b.jpeg"
-                                class="w-50" alt="Wakala ya Usajili wa Biashara na Leseni (BRELA)">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://www.tbs.go.tz/"
-                            target="_blank" style="width: 101px;" tabindex="-1" data-slick-index="6"
-                            aria-hidden="true">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/0950ad25fa4507cfd233d9cd6dbb7d7e.jpeg"
-                                class="w-50" alt="Shirika la Viwango Tanzania">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://www.cbe.ac.tz/"
-                            target="_blank" style="width: 101px;" tabindex="-1" data-slick-index="7"
-                            aria-hidden="true">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/1e0ff3a8cc446a81e033a76fe7f651af.jpeg"
-                                class="w-50" alt="Chuo cha Biashara">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://www.tirdo.or.tz/"
-                            target="_blank" style="width: 101px;" tabindex="-1" data-slick-index="8"
-                            aria-hidden="true">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/38c5c640c1d8d75633b3f4ec9760d3ce.jpeg"
-                                class="w-50" alt="Shirika la Utafiti na Maendeleo ya Viwanda Tanzania (TIRDO)">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://www.temdo.or.tz/"
-                            target="_blank" style="width: 101px;" tabindex="-1" data-slick-index="9"
-                            aria-hidden="true">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/728164dafa89398128befaf194b1df2b.jpeg"
-                                class="w-50" alt="Shirika la Uhandisi na Usanifu Mitambo Tanzania (TEMDO)">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://www.epza.go.tz/"
-                            target="_blank" style="width: 101px;" tabindex="-1" data-slick-index="10"
-                            aria-hidden="true">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/b37babc68675b66ba4febfa5706e638f.jpeg"
-                                class="w-50" alt="Mamlaka  ya Maeneo Maalum yaKuzalisha Bidhaa za Kuuza Nje( EPZA)">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide slick-current slick-active"
-                            href="https://www.wrrb.go.tz/" target="_blank" style="width: 101px;" tabindex="0"
-                            data-slick-index="11" aria-hidden="false">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/5726e8ab1fea2aaf506fa6d41b522388.jpeg"
-                                class="w-50" alt="Bodi ya Usimamizi wa Stakabadhi za Ghala (WRRB)">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide slick-active"
-                            href="http://tic.go.tz/" target="_blank" style="width: 101px;" tabindex="0"
-                            data-slick-index="12" aria-hidden="false">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/57f52310ef7992817c9b28a38ff92f42.jpeg"
-                                class="w-50" alt="Kituo cha Uwekezaji Tanzania">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide slick-active"
-                            href="https://www.uwezeshaji.go.tz/" target="_blank" style="width: 101px;" tabindex="0"
-                            data-slick-index="13" aria-hidden="false">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/1aba239b3817f9f4169476a5109a91d9.png"
-                                class="w-50" alt="Baraza la Taifa la Uwezeshaji Wananchi Kiuchumi">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide"
-                            href="https://www.camartec.go.tz/" target="_blank" style="width: 101px;" tabindex="-1"
-                            data-slick-index="14" aria-hidden="true">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/3b35cdc3950e8b71db613fec06c7287b.png"
-                                class="w-50" alt="Kituo cha Zana za. Kilimo na Teknolojia Vijijini (CAMARTEC)">
-                        </a>
-                        <a class="col-md-2 justify-content-center text-center slick-slide" href="https://www.fct.or.tz/"
-                            target="_blank" style="width: 101px;" tabindex="-1" data-slick-index="15"
-                            aria-hidden="true">
-                            <img src="https://www.viwanda.go.tz/uploads/institutions/2b631839c6acf0b04fe8b8fe30cedcd5.png"
-                                class="w-50" alt="Baraza la Ushindani (FCT)">
-                        </a>
-                    </div>
-                </div>
-
-            </div> --}}
-    </div>
-    <!-- /contents -->
+</div>
 @endsection

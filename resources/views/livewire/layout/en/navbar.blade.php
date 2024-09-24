@@ -14,7 +14,7 @@
                                 <li class="list-inline-item sm-hide pr-2">
                                     <div class="search-form">
                                         {{-- <form class="form-inline py-0 mr-auto" action="{% url 'search' language=current_language %}" method="post">
-    
+
                                             <input class="form-control mr-sm-2" type="text" name="search"
                                                 placeholder="Search" aria-label="Search">
                                             <button type="submit" class="search-icon" name="button">
@@ -180,7 +180,7 @@
                                         </li>
                                         <li><a class='dropdown-item' href="{{ route('administration', ['language' => $current_language]) }}">Administration</a></li>
                                         <li><a class='dropdown-item' href="{{ route('successstory', ['language' => $current_language]) }}">Success story</a>
-    
+
                                         <li><a class='dropdown-item' href="{{ route('ongoingresearch', ['language' => $current_language]) }}">Ongoing Research Projects</a></li>
                                         </li> --}}
 
