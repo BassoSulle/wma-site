@@ -117,7 +117,7 @@ class RegionOfficesResource extends Resource
 
                             TextInput::make('telephone')
                                 ->required()
-                                ->label('Telephone')
+                                ->label('Phone number')
                                 ->maxlength(255),
 
                             TextInput::make('email')
@@ -178,7 +178,7 @@ class RegionOfficesResource extends Resource
 
                 Tables\Columns\TextColumn::make('telephone')
                     ->searchable()
-                    ->label('Telephone')
+                    ->label('Phone number')
                     ->formatStateUsing(function ($state) {
                         return Str::words($state, 5, '.....');
                     }),
@@ -190,8 +190,6 @@ class RegionOfficesResource extends Resource
                         return Str::words($state, 5, '.....');
                     }),
 
-
-
                 Tables\Columns\TextColumn::make('user.name')
                     ->label('Created By')
                     ->searchable(query: function (Builder $query, string $search): Builder {
@@ -200,14 +198,18 @@ class RegionOfficesResource extends Resource
                         });
                     }),
 
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean(),
 
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
             ])
             ->filters([
                 //

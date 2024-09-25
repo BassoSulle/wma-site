@@ -120,13 +120,6 @@ class PublicationCategoryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('en_title')
-                    ->searchable()
-                    ->label('English Title')
-                    ->formatStateUsing(function ($state) {
-                        return Str::words($state, 5, '.....');
-                    }),
-
                 Tables\Columns\TextColumn::make('sw_title')
                     ->searchable()
                     ->label('Swahili Title')
@@ -134,13 +127,25 @@ class PublicationCategoryResource extends Resource
                         return Str::words($state, 5, '.....');
                     }),
 
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('en_title')
+                    ->searchable()
+                    ->label('English Title')
+                    ->formatStateUsing(function ($state) {
+                        return Str::words($state, 5, '.....');
+                    }),
 
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean(),
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
 
             ])
 

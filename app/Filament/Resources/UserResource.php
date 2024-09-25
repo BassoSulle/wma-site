@@ -55,34 +55,28 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required(),
+                Forms\Components\Section::make('User Information')
+                    ->schema([
+                        Forms\Components\TextInput::make('name')
+                            ->required(),
 
+                        Forms\Components\TextInput::make('email')
+                            ->label('Email Address')
+                            ->email()
+                            ->required()
+                            ->maxlength(255)
+                            ->unique(ignoreRecord: true),
 
-                Forms\Components\TextInput::make('email')
-                    ->label('Email Address')
-                    ->email()
-                    ->required()
-                    ->maxlength(255)
-                    ->unique(ignoreRecord: true),
+                        Forms\Components\TextInput::make('email_verified_at')
+                            ->label('Email Verifyied At')
+                            ->default(now()),
 
-                Forms\Components\TextInput::make('email_verified_at')
-                    ->label('Email Verifyied At')
-                    ->default(now()),
-
-                Forms\Components\TextInput::make('password')
-                    ->label('Password')
-                    ->password()
-                    ->dehydrated(fn($state) => filled($state))
-                    ->required(),
-
-
-
-
-
-
-
-
+                        Forms\Components\TextInput::make('password')
+                            ->label('Password')
+                            ->password()
+                            ->dehydrated(fn($state) => filled($state))
+                            ->required(),
+                    ])->columns(2),
 
             ]);
     }
@@ -105,6 +99,16 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make('created_at')
                     ->sortable()
                     ->dateTime(),
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
 
             ])
             ->filters([

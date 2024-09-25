@@ -11,6 +11,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Section;
@@ -66,53 +67,62 @@ class CarouselResource extends Resource
     {
         return $form
             ->schema([
-                Section::make([
-                    Grid::make()
-                        ->schema([
-                            TextInput::make('en_title')
-                                ->required()
-                                ->maxlength(255)
-                                ->live(onBlur: true)
-                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
-                                    === 'create' ? $set('slug', Str::slug($state)) : null),
+                Section::make()
+                    ->description("Fill all required fields on both tabs")
+                    ->schema([
+                        Tabs::make('Tabs')
+                            ->tabs([
+                                Tabs\Tab::make('Swahili')
+                                    ->schema([
+                                        TextInput::make('sw_title')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->columnSpanFull(),
 
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(Carousel::class, 'slug', ignoreRecord: true),
 
-                            TextInput::make('sw_title')
-                                ->required()
-                                ->maxlength(255),
+                                        Textarea::make('sw_description')
+                                            ->required()
+                                            ->maxlength(255),
+                                    ]),
 
+                                Tabs\Tab::make('English')
+                                    ->schema([
+                                        TextInput::make('en_title')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
+                                                === 'create' ? $set('slug', Str::slug($state)) : null),
 
-                            TextInput::make('slug')
-                                ->required()
-                                ->maxlength(255)
-                                ->disabled()
-                                ->dehydrated()
-                                ->unique(Carousel::class, 'slug', ignoreRecord: true),
+                                        Textarea::make('en_description')
+                                            ->required()
+                                            ->maxlength(255),
 
-                            Textarea::make('en_description')
-                                ->required()
-                                ->maxlength(255),
+                                    ])
 
+                            ])->activeTab(1)->columnSpanFull()
 
-                            Textarea::make('sw_description')
-                                ->required()
-                                ->maxlength(255),
+                    ]),
+                Section::make()
+                    ->schema([
+                        FileUpload::make('image')
+                            ->image()
+                            ->directory('carousel'),
 
-                            FileUpload::make('image')
-                                ->image()
-                                ->directory('carousel'),
+                        DatePicker::make('created_at')
+                            ->nullable(),
 
-                            DatePicker::make('created_at')
-                                ->nullable(),
-
-
-                            Toggle::make('is_active')
-                                ->required()
-                                ->default(true)
-
-                        ])
-                ])
-                //
+                        Toggle::make('is_active')
+                            ->required()
+                            ->default(true)
+                    ])
             ]);
     }
 
@@ -120,13 +130,15 @@ class CarouselResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('en_title')
+                Tables\Columns\TextColumn::make('sw_title')
+                    ->label("Swahili title")
                     ->searchable()
                     ->formatStateUsing(function ($state) {
                         return Str::words($state, 5, '.....');
                     }),
 
-                Tables\Columns\TextColumn::make('sw_title')
+                Tables\Columns\TextColumn::make('en_title')
+                    ->label("English title")
                     ->searchable()
                     ->formatStateUsing(function ($state) {
                         return Str::words($state, 5, '.....');
@@ -139,10 +151,15 @@ class CarouselResource extends Resource
                         return '<img src="' . asset('storage/carousel/' . basename($state)) . '" width="30", height="40" />';
                     }),
 
-                // Tables\Columns\TextColumn::make('created_at')
-                // ->dateTime()
-                // ->sortable()
-                //
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

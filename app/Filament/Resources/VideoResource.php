@@ -131,7 +131,6 @@ class VideoResource extends Resource
                             Toggle::make('is_active')
                                 ->required()
                                 ->default(true)
-
                         ])
                 ])
             ]);
@@ -141,20 +140,6 @@ class VideoResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('en_title')
-                    ->searchable()
-                    ->label('English Title')
-                    ->formatStateUsing(function ($state) {
-                        return Str::words($state, 5, '.....');
-                    }),
-
-                Tables\Columns\TextColumn::make('sw_title')
-                    ->searchable()
-                    ->label('Swahili Title')
-                    ->formatStateUsing(function ($state) {
-                        return Str::words($state, 5, '.....');
-                    }),
-
                 Tables\Columns\TextColumn::make('video')
                     ->searchable()
                     ->html()
@@ -168,7 +153,19 @@ class VideoResource extends Resource
                             </a>';
                     }),
 
+                Tables\Columns\TextColumn::make('sw_title')
+                    ->searchable()
+                    ->label('Swahili Title')
+                    ->formatStateUsing(function ($state) {
+                        return Str::words($state, 5, '.....');
+                    }),
 
+                Tables\Columns\TextColumn::make('en_title')
+                    ->searchable()
+                    ->label('English Title')
+                    ->formatStateUsing(function ($state) {
+                        return Str::words($state, 5, '.....');
+                    }),
 
                 Tables\Columns\TextColumn::make('user.name')
                     ->label('Created By')
@@ -178,11 +175,6 @@ class VideoResource extends Resource
                         });
                     }),
 
-
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable(),
-
                 IconColumn::make('is_active')
                     ->label('Status')
                     ->boolean()
@@ -190,6 +182,11 @@ class VideoResource extends Resource
                     ->falseIcon('heroicon-o-x-circle')
                     ->trueColor('primary')
                     ->falseColor('danger'),
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
@@ -200,7 +197,11 @@ class VideoResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ])
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

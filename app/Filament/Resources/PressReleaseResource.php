@@ -142,13 +142,6 @@ class PressReleaseResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('en_title')
-                    ->searchable()
-                    ->label('English Title')
-                    ->formatStateUsing(function ($state) {
-                        return Str::words($state, 5, '.....');
-                    }),
-
                 Tables\Columns\TextColumn::make('sw_title')
                     ->searchable()
                     ->label('Swahili Title')
@@ -156,13 +149,12 @@ class PressReleaseResource extends Resource
                         return Str::words($state, 5, '.....');
                     }),
 
-
-
-                Tables\Columns\TextColumn::make('en_file')
+                Tables\Columns\TextColumn::make('en_title')
                     ->searchable()
-                    ->label('English File')
-                    ->formatStateUsing(fn($state) => $state ? '<a href="' . Storage::url($state) . '" target="_blank" class="text-blue-500 hover:underline">Download</a>' : 'No File')
-                    ->html(),
+                    ->label('English Title')
+                    ->formatStateUsing(function ($state) {
+                        return Str::words($state, 5, '.....');
+                    }),
 
                 Tables\Columns\TextColumn::make('sw_file')
                     ->searchable()
@@ -170,6 +162,11 @@ class PressReleaseResource extends Resource
                     ->formatStateUsing(fn($state) => $state ? '<a href="' . Storage::url($state) . '" target="_blank" class="text-blue-500 hover:underline">Download</a>' : 'No File')
                     ->html(),
 
+                Tables\Columns\TextColumn::make('en_file')
+                    ->searchable()
+                    ->label('English File')
+                    ->formatStateUsing(fn($state) => $state ? '<a href="' . Storage::url($state) . '" target="_blank" class="text-blue-500 hover:underline">Download</a>' : 'No File')
+                    ->html(),
 
                 Tables\Columns\TextColumn::make('user.name')
                     ->label('Created By')
@@ -179,15 +176,19 @@ class PressReleaseResource extends Resource
                         });
                     }),
 
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean(),
 
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
-                //
             ])
             ->filters([
                 //

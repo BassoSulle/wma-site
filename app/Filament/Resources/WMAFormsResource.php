@@ -123,8 +123,6 @@ class WMAFormsResource extends Resource
                                 ->label('Created By')
                                 ->content(fn() => Auth::user()->name),
 
-
-
                             Toggle::make('is_active')
                                 ->required()
                                 ->default(true)
@@ -137,6 +135,13 @@ class WMAFormsResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('sw_title')
+                    ->searchable()
+                    ->label('Swahili Title')
+                    ->formatStateUsing(function ($state) {
+                        return Str::words($state, 5, '.....');
+                    }),
+
                 Tables\Columns\TextColumn::make('en_title')
                     ->searchable()
                     ->label('English Title')
@@ -172,13 +177,18 @@ class WMAFormsResource extends Resource
                         });
                     }),
 
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean(),
+
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
             ])
             ->filters([
                 //

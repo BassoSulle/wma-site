@@ -79,11 +79,9 @@ class NewsResource extends Resource
                                 ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                     === 'create' ? $set('slug', Str::slug($state)) : null),
 
-
                             TextInput::make('sw_title')
                                 ->required()
                                 ->maxlength(255),
-
 
                             TextInput::make('slug')
                                 ->required()
@@ -116,8 +114,6 @@ class NewsResource extends Resource
                                 ->label('Created By')
                                 ->content(fn() => Auth::user()->name),
 
-
-
                             Toggle::make('is_active')
                                 ->required()
                                 ->default(true)
@@ -132,23 +128,25 @@ class NewsResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('en_caption')
-                    ->searchable()
-                    ->formatStateUsing(function ($state) {
-                        return Str::words($state, 5, '.....');
-                    }),
-
-                Tables\Columns\TextColumn::make('sw_title')
-                    ->searchable()
-                    ->formatStateUsing(function ($state) {
-                        return Str::words($state, 5, '.....');
-                    }),
-
                 Tables\Columns\TextColumn::make('image')
                     ->searchable()
                     ->html()
                     ->formatStateUsing(function ($state) {
                         return '<img src="' . asset('storage/news/' . basename($state)) . '" width="30", height="40" />';
+                    }),
+
+                Tables\Columns\TextColumn::make('sw_title')
+                    ->label("Swahili title")
+                    ->searchable()
+                    ->formatStateUsing(function ($state) {
+                        return Str::words($state, 5, '.....');
+                    }),
+
+                Tables\Columns\TextColumn::make('en_title')
+                    ->label("English title")
+                    ->searchable()
+                    ->formatStateUsing(function ($state) {
+                        return Str::words($state, 5, '.....');
                     }),
 
                 Tables\Columns\TextColumn::make('user.name')
@@ -159,11 +157,6 @@ class NewsResource extends Resource
                         });
                     }),
 
-
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable(),
-
                 IconColumn::make('is_active')
                     ->label('Status')
                     ->boolean()
@@ -171,6 +164,16 @@ class NewsResource extends Resource
                     ->falseIcon('heroicon-o-x-circle')
                     ->trueColor('primary')
                     ->falseColor('danger'),
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
 
             ])
             ->filters([
