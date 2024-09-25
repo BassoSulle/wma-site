@@ -2,37 +2,69 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PhotosResource\Pages;
-use App\Filament\Resources\PhotosResource\RelationManagers;
-use App\Models\Photos;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Auth;
-use Filament\Tables\Columns\IconColumn;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\Toggle;
-use Filament\Forms\Set;
+use App\Models\Photos;
 use App\Models\Gallery;
+use Filament\Forms\Set;
+use Filament\Forms\Form;
+use Filament\Tables\Table;
+use Illuminate\Support\Str;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Grid;
+use Illuminate\Support\Facades\Auth;
+use Filament\Forms\Components\Hidden;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Textarea;
+use Filament\Tables\Columns\IconColumn;
+use Illuminate\Database\Eloquent\Model;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
+use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\Placeholder;
+use Illuminate\Contracts\Support\Htmlable;
+use App\Filament\Resources\PhotosResource\Pages;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\PhotosResource\RelationManagers;
 
 class PhotosResource extends Resource
 {
     protected static ?string $model = Photos::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-photo';
+
+    // name to be used in navigation
+    protected static ?string $navigationLabel = 'Photos';
+
+    // position of the resource in navigation
+    protected static ?int $navigationSort = 2;
+
+    // name to be used in page titles
+    protected static ?string $modelLabel = 'Photo';
+
+    // navigation group to be used in navigation
+    protected static ?string $navigationGroup = 'Media Center';
+
+    // slug to be used in route names abd urls
+    protected static ?string $slug = 'photos';
+
+    // multiple fields global search with annotation
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['en_caption', 'sw_caption'];
+    }
+
+    // global search result
+    public static function getGlobalSearchResultTitle(Model $record): string | Htmlable
+    {
+        return $record->sw_caption;
+    }
+
+    // limit global search results
+    protected static int $globalSearchResultsLimit = 20;
 
     public static function form(Form $form): Form
     {
@@ -40,55 +72,55 @@ class PhotosResource extends Resource
             ->schema([
                 Section::make([
                     Grid::make()
-                    ->schema([
-                        Select::make('gallery_id')
-                            ->label('Gallery')
-                            ->options(Gallery::all()->pluck('en_title', 'id')) // Assuming 'name' is the display field and 'id' is the value field
-                            ->required(),
+                        ->schema([
+                            Select::make('gallery_id')
+                                ->label('Gallery')
+                                ->options(Gallery::all()->pluck('en_title', 'id')) // Assuming 'name' is the display field and 'id' is the value field
+                                ->required(),
 
-                        TextInput::make('slug')
-                        ->required()
-                        ->maxlength(255)
-                        ->disabled()
-                        ->dehydrated()
-                        ->unique(Photos::class, 'slug', ignoreRecord: true),
+                            TextInput::make('slug')
+                                ->required()
+                                ->maxlength(255)
+                                ->disabled()
+                                ->dehydrated()
+                                ->unique(Photos::class, 'slug', ignoreRecord: true),
 
-                        Textarea::make('en_caption')
-                        ->required()
-                        ->maxlength(255)
-                        ->label('English Caption')
-                        ->live(onBlur:true)
-                        ->afterStateUpdated(fn (string $operation, $state, Set $set)=>$operation
-                          ==='create'? $set('slug', Str::slug($state)):null),
-
-
-                        Textarea::make('sw_caption')
-                        ->required()
-                        ->label('Swahili Caption')
-                        ->maxlength(255),
-
-                        FileUpload::make('image')
-                        ->image()
-                        ->label('Insert Photo')
-                        ->directory('photos'),
+                            Textarea::make('en_caption')
+                                ->required()
+                                ->maxlength(255)
+                                ->label('English Caption')
+                                ->live(onBlur: true)
+                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
+                                    === 'create' ? $set('slug', Str::slug($state)) : null),
 
 
-                        DatePicker::make('created_at')
-                            ->nullable(),
+                            Textarea::make('sw_caption')
+                                ->required()
+                                ->label('Swahili Caption')
+                                ->maxlength(255),
 
-                        Hidden::make('created_by')
-                            ->default(fn () => Auth::id()),
-
-                        Placeholder::make('created_by_name')
-                            ->label('Created By')
-                            ->content(fn () => Auth::user()->name),
+                            FileUpload::make('image')
+                                ->image()
+                                ->label('Insert Photo')
+                                ->directory('photos'),
 
 
+                            DatePicker::make('created_at')
+                                ->nullable(),
 
-                        Toggle::make('is_active')
-                            ->required()
-                            ->default(true)
-                    ])
+                            Hidden::make('created_by')
+                                ->default(fn() => Auth::id()),
+
+                            Placeholder::make('created_by_name')
+                                ->label('Created By')
+                                ->content(fn() => Auth::user()->name),
+
+
+
+                            Toggle::make('is_active')
+                                ->required()
+                                ->default(true)
+                        ])
                 ])
             ]);
     }
@@ -98,23 +130,23 @@ class PhotosResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('en_caption')
-                ->searchable()
-                ->formatStateUsing(function ($state){
-                    return Str::words($state, 5,'.....');
-                }),
+                    ->searchable()
+                    ->formatStateUsing(function ($state) {
+                        return Str::words($state, 5, '.....');
+                    }),
 
                 Tables\Columns\TextColumn::make('sw_caption')
-                ->searchable()
-                ->formatStateUsing(function ($state){
-                    return Str::words($state, 5,'.....');
-                }),
+                    ->searchable()
+                    ->formatStateUsing(function ($state) {
+                        return Str::words($state, 5, '.....');
+                    }),
 
                 Tables\Columns\TextColumn::make('image')
-                ->searchable()
-                ->html()
-                ->formatStateUsing(function ($state) {
-                    return '<img src="'. asset('storage/photos/' . basename($state)) .'" width="30", height="40" />';
-                }),
+                    ->searchable()
+                    ->html()
+                    ->formatStateUsing(function ($state) {
+                        return '<img src="' . asset('storage/photos/' . basename($state)) . '" width="30", height="40" />';
+                    }),
 
                 Tables\Columns\TextColumn::make('gallery.en_title')
                     ->label('Gallery')
@@ -138,12 +170,12 @@ class PhotosResource extends Resource
                     ->sortable(),
 
                 IconColumn::make('is_active')
-                ->label('Status')
-                ->boolean()
-                ->trueIcon('heroicon-o-check-circle')
-                ->falseIcon('heroicon-o-x-circle')
-                ->trueColor('primary')
-                ->falseColor('danger'),
+                    ->label('Status')
+                    ->boolean()
+                    ->trueIcon('heroicon-o-check-circle')
+                    ->falseIcon('heroicon-o-x-circle')
+                    ->trueColor('primary')
+                    ->falseColor('danger'),
 
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
@@ -154,7 +186,7 @@ class PhotosResource extends Resource
                 //
             ])
             ->actions([
-                 Tables\Actions\ActionGroup:: make([
+                Tables\Actions\ActionGroup::make([
                     Tables\Actions\EditAction::make(),
                     Tables\Actions\ViewAction::make(),
                     Tables\Actions\DeleteAction::make(),

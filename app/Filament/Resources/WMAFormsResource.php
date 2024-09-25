@@ -20,12 +20,14 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\IconColumn;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Placeholder;
+use Illuminate\Contracts\Support\Htmlable;
 use App\Filament\Resources\WMAFormsResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\WMAFormsResource\RelationManagers;
@@ -34,7 +36,37 @@ class WMAFormsResource extends Resource
 {
     protected static ?string $model = WMAForms::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-duplicate';
+
+    // name to be used in navigation
+    protected static ?string $navigationLabel = 'Forms';
+
+    // position of the resource in navigation
+    protected static ?int $navigationSort = 2;
+
+    // name to be used in page titles
+    protected static ?string $modelLabel = 'Form';
+
+    // navigation group to be used in navigation
+    protected static ?string $navigationGroup = 'WMA Forms';
+
+    // slug to be used in route names abd urls
+    protected static ?string $slug = 'forms';
+
+    // multiple fields global search with annotation
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['en_title', 'sw_title'];
+    }
+
+    // global search result
+    public static function getGlobalSearchResultTitle(Model $record): string | Htmlable
+    {
+        return $record->sw_title;
+    }
+
+    // limit global search results
+    protected static int $globalSearchResultsLimit = 20;
 
     public static function form(Form $form): Form
     {

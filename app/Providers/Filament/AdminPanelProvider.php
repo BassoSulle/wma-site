@@ -30,12 +30,21 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
-        
             ->favicon(asset('static/asset/images/logo.png'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 Pages\Dashboard::class,
+            ])
+            ->navigationGroups([
+                'User Management',
+                'Home Contents',
+                'Information Hub',
+                'Media Center',
+                'WMA Forms',
+                'Opportunities & Locations',
+                'Publication Management',
+                'Miscellaneous',
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
