@@ -139,7 +139,7 @@
                                     {{ $item->created_at->format('M j, Y') }}</p>
                                 <p>{{ Str::limit($item->description, 30) }}</p>
                             </b>
-                            <a href="" class="read ml-2">Read more</a>
+                            <a href="{{route('announcement_details', ['language' => $current_language, 'slug'=>$item->slug])}}" class="read ml-2">Read more</a>
 
                         </div>
                     </div>
@@ -166,7 +166,8 @@
                                 {{ $item->created_at->format('M j, Y') }}</p>
                             <p>{{ Str::limit($item->description, 30) }}
                             </p>
-                            <a href="" class="read ml-2">Read more</a>
+                            <a href="{{route('event_details', ['language' => $current_language, 'slug'=>$item->slug])}}" class="read ml-2">Read more</a>
+
                         </div>
                     </div>
                     @endforeach
@@ -220,7 +221,9 @@
                                         <div class="col-md-6 d-flex flex-column justify-content-center">
                                             <h6 class="article-title">{{ $article->title }}</h6>
                                             <p>{{ Str::limit($article->description, 150) }}</p>
-                                            <a href="#" style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read more</a>
+                                            <a href="{{route('new_details', ['language' => $current_language, 'slug'=>$article->slug])}}" style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read more</a>
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -242,95 +245,19 @@
 <div class="col-12 my-3">
     <h5 class="my-xs-4 text-center text-xs-center section-title"><b>Our Core Services</b></h5>
 
-    <!-- First Row of Cards -->
+    <!-- Row of Cards -->
     <div class="row mt-4 px-xs-0 online-services">
+        @foreach ($services as $service )
         <div class="service-item col mx-2">
-            <div class="service-icon">
-                <img src="{{ asset('assets/images/licence_icon.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
-            </div>
-            <div class="service-title">Vehicle Tank Verification (VTV)</div>
-            <div class="service-btn-wrapper">
-                <a target="_blank" href="" class="serv-btn orange">Read More</a>
-            </div>
-        </div>
-
-        <div class="service-item col mx-2">
-            <div class="service-icon">
-                <img src="{{ asset('assets/images/doc_approval_icon.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
-            </div>
-            <div class="service-title">Metrological Supervision (On Board & Shore Tanks)
-            </div>
-            <div class="service-btn-wrapper">
-                <a target="_blank" href="" class="serv-btn orange">Read More</a>
-            </div>
-        </div>
-
-        <div class="service-item col mx-2">
-            <div class="service-icon">
-                <img src="{{ asset('assets/images/service_icon1.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
-            </div>
-            <div class="service-title">E/m- Electricity meter</div>
-            <div class="service-btn-wrapper">
-                <a target="_blank" href="" class="serv-btn orange">Read More</a>
-            </div>
-        </div>
-
-        <div class="service-item col mx-2">
-            <div class="service-icon">
-                <img src="{{ asset('assets/images/service_icon2.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
-            </div>
-            <div class="service-title">Water Meter</div>
-            <div class="service-btn-wrapper">
-                <a target="_blank" href="" class="serv-btn orange">Read More</a>
-            </div>
-        </div>
-    </div>
-
-        <!-- Second Row of Cards -->
-            <div class="row mt-4 px-xs-0 online-services">
-                <div class="service-item col mx-2">
                     <div class="service-icon">
-                        <img src="{{ asset('assets/images/service_icon3.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
+                        <img src="{{ asset('storage/'. $service->icon) }}" alt="" width="80px" style="margin-bottom: 10px;">
                     </div>
-                    <div class="service-title">Sandy & Ballast lorry (SBL)</div>
+                    <div class="service-title">{{$service->name}}</div>
                     <div class="service-btn-wrapper">
-                        <a target="_blank" href="" class="serv-btn orange">Read More</a>
+                        <a  href="{{route('service_details', ['language' => $current_language, 'slug'=>$service->slug])}}" class="serv-btn orange">Read More</a>
                     </div>
                 </div>
-
-                <div class="service-item col mx-2">
-                    <div class="service-icon">
-                        <img src="{{ asset('assets/images/service_icon4.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
-                    </div>
-                    <div class="service-title">FST – Fixed Storage Tank</div>
-                    <div class="service-btn-wrapper">
-                        <a target="_blank" href="" class="serv-btn orange">Read More</a>
-                    </div>
-                </div>
-
-                <div class="service-item col mx-2">
-                    <div class="service-icon">
-                        <img src="{{ asset('assets/images/service_icon5.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
-                    </div>
-                    <div class="service-title">Fuel pump</div>
-                    <div class="service-btn-wrapper">
-                        <a target="_blank" href="" class="serv-btn orange">Read More</a>
-                    </div>
-                </div>
-
-                <div class="service-item col mx-2">
-                    <div class="service-icon">
-                        <img src="{{ asset('assets/images/service_icon6.png') }}" alt="" width="80px" style="margin-bottom: 10px;">
-                    </div>
-                    <div class="service-title">Wb - Weighbridge</div>
-                    <div class="service-btn-wrapper">
-                        <a target="_blank" href="" class="serv-btn orange">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
+        @endforeach
         </div>
     </div>
 </div>

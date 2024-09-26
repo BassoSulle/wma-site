@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Models\Announcements;
 use App\Models\RegionOffices;
 use App\Models\PublicationCategory;
+use App\Models\Services;
 use App\Models\Events as EventsModel;
 
 class WmaController extends Controller
@@ -33,6 +34,7 @@ class WmaController extends Controller
             'news_articles' => News::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(6)->get(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+            'services' => Services::select('slug', 'image','icon', $language . '_name as name', $language . '_content as content', 'created_at')->where('is_active', true)->latest()->limit(8)->get(),
             // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
         ];
 
@@ -729,4 +731,65 @@ class WmaController extends Controller
         ];
         return view($templatePath, $data);
     }
+
+    public function service_details($language, $slug)
+    {
+
+        $templateName = 'service_details';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'service_details' => Services::select('slug', 'image','icon', $language . '_name as name', $language . '_content as content', 'created_at')->where('is_active', true)->where('slug', $slug)->first(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function event_details($language, $slug)
+    {
+
+        $templateName = 'event_details';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'event_details' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->where('slug', $slug)->first(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function announcement_details($language, $slug)
+    {
+
+        $templateName = 'announcement_details';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'announcement_details' => Announcements::select('slug',  $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->where('slug', $slug)->first(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function new_details($language, $slug)
+    {
+
+        $templateName = 'news_details';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'new_details' => News::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->where('slug', $slug)->first(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
 }

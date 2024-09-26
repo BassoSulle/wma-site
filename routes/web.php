@@ -176,3 +176,16 @@ Route::get('form/{language}/{slug}', [WmaController::class, 'dynamic_forms'])
 // publications
 Route::get('publication/{language}/{slug}', [WmaController::class, 'dynamic_publications'])
     ->name('publication');
+
+//Services
+Route::get('/{language}/service_details/{slug}', [WmaController::class, 'service_details'])
+->name('service_details');
+
+Route::get('/{language}/event_details/{slug}', [WmaController::class, 'event_details'])
+->name('event_details');
+
+Route::get('/{language}/announcement_details/{slug}', [WmaController::class, 'announcement_details'])
+->name('announcement_details');
+
+Route::get('/{language}/new_details/{slug}', [WmaController::class, 'new_details'])
+->name('new_details');

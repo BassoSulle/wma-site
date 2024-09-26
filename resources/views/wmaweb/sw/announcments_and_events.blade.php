@@ -22,7 +22,7 @@
                     <div class="media-body">
                         <div class="news-title">
                             <h2 class="title-small pt-0 mt-0">
-                                <a href="#" class="link-no-underline">{{$item->title}}</a>
+                                <a href="{{route('event_details', ['language' => $current_language, 'slug'=>$item->slug])}}" class="link-no-underline">{{$item->title}}</a>
                             </h2>
                         </div>
                         <small class="text-muted"><i class="fa fa-calendar" style="color: #006f8b;"></i>
@@ -44,7 +44,7 @@
                     <div class="media-body">
                         <div class="news-title">
                             <h2 class="title-small pt-0 mt-0">
-                                <a href="#" class="link-no-underline">TANGAZO KWA WAUZAJI WA SARUJ</a>
+                                <a href="{{route('announcement_details', ['language' => $current_language, 'slug'=>$item->slug])}}" class="link-no-underline">TANGAZO KWA WAUZAJI WA SARUJ</a>
                             </h2>
                         </div>
                         <small class="text-muted"><i class="fa fa-calendar" style="color: #006f8b;"></i>

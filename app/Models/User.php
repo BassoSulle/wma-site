@@ -108,6 +108,12 @@ class User extends Authenticatable
 
         return  $this->hasMany(RegionOffices::class);
     }
+
+    public function services()
+    {
+
+        return  $this->hasMany(Services::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
