@@ -2,36 +2,68 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\EventsResource\Pages;
-use App\Filament\Resources\EventsResource\RelationManagers;
-use App\Models\Events;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Auth;
-use Filament\Tables\Columns\IconColumn;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\Toggle;
+use App\Models\Events;
 use Filament\Forms\Set;
+use Filament\Forms\Form;
+use Filament\Tables\Table;
+use Illuminate\Support\Str;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Grid;
+use Illuminate\Support\Facades\Auth;
+use Filament\Forms\Components\Hidden;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Textarea;
+use Filament\Tables\Columns\IconColumn;
+use Illuminate\Database\Eloquent\Model;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
+use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\Placeholder;
+use Illuminate\Contracts\Support\Htmlable;
+use App\Filament\Resources\EventsResource\Pages;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\EventsResource\RelationManagers;
 
 class EventsResource extends Resource
 {
     protected static ?string $model = Events::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-calendar-days';
+
+    // name to be used in navigation
+    protected static ?string $navigationLabel = 'Events';
+
+    // position of the resource in navigation
+    protected static ?int $navigationSort = 2;
+
+    // name to be used in page titles
+    protected static ?string $modelLabel = 'Event';
+
+    // navigation group to be used in navigation
+    protected static ?string $navigationGroup = 'Information Hub';
+
+    // slug to be used in route names abd urls
+    protected static ?string $slug = 'events';
+
+    // multiple fields global search with annotation
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['en_title', 'sw_title'];
+    }
+
+    // global search result
+    public static function getGlobalSearchResultTitle(Model $record): string | Htmlable
+    {
+        return $record->sw_title;
+    }
+
+    // limit global search results
+    protected static int $globalSearchResultsLimit = 20;
 
     public static function form(Form $form): Form
     {
