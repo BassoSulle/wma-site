@@ -1,5 +1,4 @@
 @extends('wmaweb.sw.base_layout')
-<!-- /HEADER -->
 
 <!-- contents -->
 @section('content')
@@ -13,8 +12,7 @@
                                 <li class="breadcrumb-item "><a
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
-                                {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
-                                <li class="breadcrumb-item list-inline-item active">Directorates</li>
+                                <li class="breadcrumb-item list-inline-item active">Kurugenzi</li>
                             </ol>
                         </nav>
                     </div>
@@ -23,55 +21,47 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        <h4>Directorate</h4>
+                        <h4>Kurugenzi</h4>
 
-                        <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
+                        <div class="col-12 px-0 mt-4 mb-4 justify-content-center align-items-center">
                             <p class="vision and mission">
-                            <h5>We have two Directorate</h5><br>
+                            <h5>Wakala wa Vipimo ina kurugenzi mbili;</h5><br>
 
 
-                            <h5>1. Directorate of Business Support (DBS)</h5><br>
-                            - It's Objective is to ensure proper management of resources and application of ICT for
-                            development of the Agency. Thus, DBS<br>
+                            <h5>1. Kurugenzi ya Huduma za Biashara</h5><br>
+                            - Kusimamia kwa usahihi rasilimali za taasisi na kuhusisha matumizi ya Tehama kwa lengo la kutoa
+                            huduma bora na kuleta ustawi wa taasisi. Hivyo, Kurugenzi hii;<br>
 
-                            (i) Provide advice on organizational efficiency and Business Process improvement;<br>
+                            (i) Utoa ushauri juu ya ufanisi wa Taasisi na namna bora ya kuboresha utoaji wa huduma<br>
 
-                            (ii) Facilitate implementation of Agency’s policies and mandate;<br>
+                            (ii) Uwezesha Wakala kutekeleza Sera na majukumu ya Kisheria<br>
 
-                            (iii) Establish and provide technical advice on financial and physical resources management
-                            system;<br>
+                            (iii) Uandaa na kutoa ushauri wa Kitaalam juu ya mifumo ya usimamizi wa fedha na rasilimali za
+                            Wakala<br>
 
-                            (iv) Ensure Cross-cutting issues are addressed in the Strategic Plans;<br>
-                            (v) Ensure effective use of Physical and financial resources and<br>
+                            (iv) Ensure Cross-cutting issues are addressed in the Strategic Plans<br>
+                            (v) Kusimamia masuala mtambuka yanafanyiwa kazi katika Mpango Mkakati wa Wakala pamoja na<br>
 
-                            (vi) Coordinate Strategic Planning and Budgeting in the Agency.<br><br><br><br>
-
-
-                            <h5>2. Directorate of Technical Services</h5><br>
-                            -It's Objective is to direct Operational and fiscal activities in Legal metrological control to
-                            ensure the public of
-                            correct measurement results when used in public and private transactions in areas of trade,
-                            safety, health and
-                            environment.
+                            (vi) Kuratibu uandaaji wa Mpango Mkakati na Bajeti katika Wakala.<br><br><br><br>
 
 
-
-
-
+                            <h5>2. Kurugenzi ya Ufundi</h5><br>
+                            - Kusimamia utekelezaji wa Sheria ya Vipimo Sura Na. 340 na mapitio yake ya mwaka 2002 kwa
+                            kuratibu ukaguzi na Uhakiki wa Vipimo vyote vinavyotumika katika Biashara, Afya, Mazingira na
+                            Usalama.<br>
+                            - Kuratibu utekelezaji wa kanuni ya ufungashaji wa bidhaa za Viwandani na mazao ya Kilimo.
                             </p>
 
                         </div>
                     </div>
 
                     <div class="col-md-3 navigation-column">
-                        @include('wmaweb.en.announcments_and_events')
+                        @include('wmaweb.sw.announcments_and_events')
                     </div>
                 </div>
 
             </div>
         </div>
-    </div>
-
     </div>
     <!-- /contents -->
 @endsection

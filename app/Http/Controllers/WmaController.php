@@ -2,7 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\faqs;
+use App\Models\News;
+use App\Models\Tender;
+use App\Models\Gallery;
+use App\Models\Carousel;
+use App\Models\Vacancies;
+use App\Models\FormCategory;
+use App\Models\PressRelease;
 use Illuminate\Http\Request;
+use App\Models\Announcements;
+use App\Models\RegionOffices;
+use App\Models\PublicationCategory;
+use App\Models\Services;
+use App\Models\Events as EventsModel;
 
 class WmaController extends Controller
 {
@@ -10,6 +23,7 @@ class WmaController extends Controller
     {
         return "wmaweb.$language.$templateName";
     }
+
     public function index($language = 'en')
     {
         $templateName = 'index';
@@ -17,8 +31,11 @@ class WmaController extends Controller
 
         $data = [
             'current_language' => $language,
-            // 'carousel_items' => CarouselItem::latest()->get(),
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            'carousel_items' => Carousel::select('slug', 'image', $language . '_title as title', $language . '_description as description')->where('is_active', true)->latest()->get(),
+            'news_articles' => News::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(6)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+            'services' => Services::select('slug', 'image','icon', $language . '_name as name', $language . '_content as content', 'created_at')->where('is_active', true)->latest()->limit(8)->get(),
             // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
         ];
 
@@ -31,8 +48,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
 
         return view($templatePath, $data);
@@ -45,8 +63,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -58,8 +77,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -71,8 +91,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -84,8 +105,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -97,8 +119,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -110,8 +133,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -123,8 +147,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -136,8 +161,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -149,8 +175,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -162,8 +189,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -175,8 +203,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -188,8 +217,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -201,8 +231,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -215,8 +246,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -228,8 +260,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -241,8 +274,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -254,8 +288,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -267,8 +302,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -280,8 +316,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -293,8 +330,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -306,8 +344,10 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'tender' => Tender::select('slug', $language . '_title as title', $language . '_file as file', 'start_date', 'end_date')->where('is_active', true)->latest()->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -319,8 +359,10 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'region_offices' => RegionOffices::select('slug', 'region_name', 'location', 'address', 'fax', 'telephone', 'email', $language . '_content as content')->where('is_active', true)->latest()->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -332,8 +374,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -345,8 +388,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -358,8 +402,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -371,8 +416,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -384,8 +430,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -397,8 +444,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -410,8 +458,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -423,8 +472,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -436,7 +486,6 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
             // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
         ];
         return view($templatePath, $data);
@@ -449,7 +498,6 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
             // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
         ];
         return view($templatePath, $data);
@@ -462,8 +510,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -475,8 +524,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -488,8 +538,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
-            // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
         ];
         return view($templatePath, $data);
     }
@@ -501,9 +552,245 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            // 'resources_products' => ResourcesProduct::latest()->limit(4)->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function video($language)
+    {
+
+        $templateName = 'video';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function gallaries($language)
+    {
+
+        $templateName = 'gallaries';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'galleries' => Gallery::select('slug', $language . '_title as title', 'created_at', 'id')->where('is_active', true)->latest()->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function pressrelease($language)
+    {
+
+        $templateName = 'pressrelease';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'press_release' => PressRelease::select($language . '_title as title', $language . '_file as file', 'created_at')->latest()->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function vacancies($language)
+    {
+
+        $templateName = 'vacancies';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'vacancies' => Vacancies::select($language . '_title as title', $language . '_file as file', 'created_at', 'end_date')->latest()->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function faqs($language)
+    {
+
+        $templateName = 'faqs';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'faqs' => faqs::select($language . '_question as question', $language . '_answer as answer', 'created_at')->latest()->get(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+
+    public function request_for_license_procedures($language)
+    {
+
+        $templateName = 'request_for_license_procedures';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
             // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
         ];
         return view($templatePath, $data);
     }
+
+    public function speeches($language)
+    {
+
+        $templateName = 'speeches';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function brochures($language)
+    {
+
+        $templateName = 'brochures';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function posters($language)
+    {
+
+        $templateName = 'posters';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function newsletter($language)
+    {
+
+        $templateName = 'newsletter';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    // forms
+    public function dynamic_forms($language, $slug)
+    {
+        $templateName = 'forms';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'form_category' => FormCategory::select($language . '_title as title', 'id')->where('is_active', true)->where('slug', $slug)->first(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+        // return view('', ['language' => $language, 'form_category_slug' => $slug]);
+    }
+
+    public function dynamic_publications($language, $slug)
+    {
+
+        $templateName = 'publications';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'publication_category' => PublicationCategory::select($language . '_title as title', 'id')->where('is_active', true)->where('slug', $slug)->first(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function service_details($language, $slug)
+    {
+
+        $templateName = 'service_details';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'service_details' => Services::select('slug', 'image','icon', $language . '_name as name', $language . '_content as content', 'created_at')->where('is_active', true)->where('slug', $slug)->first(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function event_details($language, $slug)
+    {
+
+        $templateName = 'event_details';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'event_details' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->where('slug', $slug)->first(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function announcement_details($language, $slug)
+    {
+
+        $templateName = 'announcement_details';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'announcement_details' => Announcements::select('slug',  $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->where('slug', $slug)->first(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function new_details($language, $slug)
+    {
+
+        $templateName = 'news_details';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'new_details' => News::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->where('slug', $slug)->first(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
 }

@@ -14,7 +14,7 @@
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
                                 {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
-                                <li class="breadcrumb-item list-inline-item active">WMA Regulations</li>
+                                <li class="breadcrumb-item list-inline-item active">Kanuni</li>
                             </ol>
                         </nav>
                     </div>
@@ -23,153 +23,66 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        <h4>WMA Regulations</h4>
+                        <h4>Kanuni</h4>
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
-                            {{-- <p class="vision and mission">
-                                <h5>VISION</h5>
-                                Accurate and reliable measurements for all.<br><br>
-
-
-                               <h5>MISSION</h5>
-
-                                To provide Consumer protection in relation to legal metrology through Verification
-                                 of measuring instruments or measuring instruments, metrological supervision and expertise for socio-economic development.
-                                <br>
-
-                            </p> --}}
-
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <h4>
+                                                Jina la Chapisho</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Tarehe ya Kutolewa</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Pakua</h4>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>WEIGHTS AND MEASURES GENERAL REGULATIONS, GN 288 OF 2019 (2)</td>
+                                        <td>07/11/2019</td>
+                                        <td><a href="#" target="_blank">Pakua</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>WEIGHTS AND MEASURES GENERAL REGULATIONS, GN 288 OF 2019</td>
+                                        <td>16/09/2019</td>
+                                        <td><a href="#" target="_blank">Pakua</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>(SAND AND OTHER BALLAST) REGULATIONS-2013</td>
+                                        <td>21/12/2016</td>
+                                        <td><a href="#" target="_blank">Pakua</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>(SALE OF LIQUEFIED PETROLEUM GAS) REGULATIONS, 2013</td>
+                                        <td>21/12/2016</td>
+                                        <td><a href="#" target="_blank">Pakua</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>(METROLOGICAL CONTROL OF WATER METERS) REGULATIONS, 2014</td>
+                                        <td>21/12/2016</td>
+                                        <td><a href="#" target="_blank">Pakua</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>(CREDIT AND DEBT CONTROL) REGULATIONS, 2014</td>
+                                        <td>21/12/2016</td>
+                                        <td><a href="#" target="_blank">Pakua</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
-                    <div class="col-md-3">
-                        {{-- Anouncement and news --}}
-                        <div class="row ml-2 mr-0">
-                            <div class="col-md-12">
-                                <h5 class="my-xs-2 text-center text-xs-center"><b>Announcements</b></h5>
-                                <div class="row mt-0">
-                                    <div class="col-md-12 col-12 pb-2 mb-2 px-xs-2 p-4">
-                                        {{-- @foreach ($news_articles as $article) --}}
-                                        <div href="#" target="_blank">
-                                            <div class="row align-items-center bg-light1">
-                                                <div class="col-2 col-md-3">
-                                                    <img src="https://www.wma.go.tz/uploads/1718109034-4Z9A8735.jpg"
-                                                        style="width: 128px; height: 90px; object-fit: cover;"
-                                                        class="img-thumbnail" />
-                                                    {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
-                                                </div>
-                                                <div class="col-10 col-md-9">
-                                                    <p class="text-justify mb-2">
-                                                        <b>
-                                                            <h6 class="article-h2">TANGAZO KWA WAUZAJI WA SARUJ</h6>
-                                                        </b>
-                                                    </p>
-                                                    <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Feb 27 2024
-                                                    </p>
-                                                    <p>Wakala wa Vipimo ni Taasisi ya Serikali iliyopo chini ya...
-                                                    </p>
-                                                    <a href="" class="read ml-2">Read more</a>
-                                                </div>
-                                            </div>
-                                            <div style="margin-top: 20px"></div>
-                                            <div class="row align-items-center bg-light1">
-                                                <div class="col-2 col-md-3">
-                                                    <img src="https://www.wma.go.tz/uploads/news/medium/1717517519-4Z9A8371.jpg"
-                                                        style="width: 128px; height: 90px; object-fit: cover;"
-                                                        class="img-thumbnail" />
-                                                    {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
-                                                </div>
-                                                <div class="col-10 col-md-9">
-                                                    <p class="text-justify mb-2">
-                                                        <b>
-                                                            <h6 class="article-h2">TANGAZO KWA WAUZAJI WA SARUJ</h6>
-                                                        </b>
-                                                    </p>
-                                                    <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Feb 27 2024
-                                                    </p>
-                                                    <p>Wakala wa Vipimo ni Taasisi ya Serikali iliyopo chini ya...
-                                                    </p>
-                                                    <a href="" class="read ml-2">Read more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr class="hr">
-                                        {{-- @endforeach --}}
-                                        <!-- Add a link for "Tazama Zote" -->
-                                        <div class="row justify-content-center mt-3">
-                                            {{-- <a href="{{ route('news.all_articles', ['language' => $current_language]) }}" class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            {{-- Top Events --}}
-                            <div class="col-md-12 my-3">
-                                <h5 class="my-xs-4 text-center text-xs-center"><b>Top Events</b></h5>
-                                <div class="row mt-0">
-                                    <div class="col-md-12 pb-2 mb-2">
-                                        <div class="col-12 px-xs-2 p-4">
-                                            {{-- @foreach ($news_articles as $article) --}}
-                                            <div href="#" target="_blank">
-                                                <div class="row align-items-center bg-light1">
-                                                    <div class="col-2 col-md-3">
-                                                        {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
-                                                        <img src="https://www.wma.go.tz/uploads/news/medium/1716281495-LO2A0468%20sokoni.jpg"
-                                                            style="width: 128px; height: 90px; object-fit: cover;"
-                                                            alt="Thumbnail" class="img-thumbnail">
-                                                    </div>
-                                                    <div class="col-10 col-md-9">
-                                                        <p class="text-justify mb-2">
-                                                            <b>
-                                                                <h6 class="article-h2">World Metrology Day 2023</h6>
-                                                            </b>
-                                                        </p>
-                                                        <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Jule 12
-                                                            2024</p>
-                                                        <p>WMA ILALA
-                                                        </p>
-                                                        <a href="" class="read ml-2">Read more</a>
-                                                    </div>
-                                                </div>
-                                                <div style="margin-top: 20px"></div>
-                                                <div class="row align-items-center bg-light1">
-                                                    <div class="col-2 col-md-3">
-                                                        {{-- <img src="{{ asset('storage/'.$article->img) }}" alt="Thumbnail" class="img-thumbnail"> --}}
-                                                        <img src="https://www.wma.go.tz/uploads/news/medium/1717157606-4Z9A8201%20mbb.jpg"
-                                                            style="width: 128px; height: 90px; object-fit: cover;"
-                                                            alt="Thumbnail" class="img-thumbnail">
-                                                    </div>
-                                                    <div class="col-10 col-md-9">
-                                                        <p class="text-justify mb-2">
-                                                            <b>
-                                                                <h6 class="article-h2">World Metrology Day 2023</h6>
-                                                            </b>
-                                                        </p>
-                                                        <p><i class="fa fa-calendar" style="color: #006f8b;"></i>Jule 12
-                                                            2024</p>
-                                                        <p>WMA ILALA
-                                                        </p>
-                                                        <a href="" class="read ml-2">Read more</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <hr class="hr">
-                                            {{-- @endforeach --}}
-                                            <!-- Add a link for "Tazama Zote" -->
-                                            <div class="row justify-content-center mt-3">
-                                                {{-- <a href="{{ route('news.all_articles', ['language' => $current_language]) }}" class="link-no-underline"><i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-md-3 navigation-column">
+                        @include('wmaweb.sw.announcments_and_events')
                     </div>
+
                 </div>
-                {{-- @include('tirdoweb.en.newsection') --}}
-
             </div>
         </div>
     </div>

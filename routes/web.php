@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WmaController;
+use App\Http\Controllers\AdminPanelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,51 +92,100 @@ Route::get('/{language}/wma-management', [WmaController::class, 'wma_management'
     ->name('wma-management');
 
 Route::get('/{language}/tender', [WmaController::class, 'tender'])
-->name('tender');
+    ->name('tender');
 
 Route::get('/{language}/regianal-office', [WmaController::class, 'regional_office'])
-->name('regional-office');
+    ->name('regional-office');
 
 Route::get('/{language}/audit-report-2018-2019', [WmaController::class, 'audit_report_2018_2019'])
-->name('audit-report-2018-2019');
+    ->name('audit-report-2018-2019');
 
 Route::get('/{language}/audit-report-2019-2020', [WmaController::class, 'audit_report_2019_2020'])
-->name('audit-report-2019-2020');
+    ->name('audit-report-2019-2020');
 
 Route::get('/{language}/audit-report-2020-2021', [WmaController::class, 'audit_report_2020_2021'])
-->name('audit-report-2020-2021');
+    ->name('audit-report-2020-2021');
 
 Route::get('/{language}/audit-report-2021-2022', [WmaController::class, 'audit_report_2021_2022'])
-->name('audit-report-2021-2022');
+    ->name('audit-report-2021-2022');
 
 Route::get('/{language}/audit-report-2022-2023', [WmaController::class, 'audit_report_2022_2023'])
-->name('audit-report-2022-2023');
+    ->name('audit-report-2022-2023');
 
 Route::get('/{language}/miscalleneous-amendment-act', [WmaController::class, 'miscalleneous_amendment_act'])
-->name('miscalleneous-amendment-act');
+    ->name('miscalleneous-amendment-act');
 
 Route::get('/{language}/technical-manual', [WmaController::class, 'technical_manual'])
-->name('technical-manual');
+    ->name('technical-manual');
 
 Route::get('/{language}/establishment-order', [WmaController::class, 'establishment_order'])
-->name('establishment-order');
+    ->name('establishment-order');
 
 Route::get('/{language}/framework-document', [WmaController::class, 'framework_document'])
-->name('framework-document');
+    ->name('framework-document');
 
 Route::get('/{language}/client-service-charter', [WmaController::class, 'client_service_charter'])
-->name('client-service-charter');
+    ->name('client-service-charter');
 
 Route::get('/{language}/application-form-for-tank-calibrator', [WmaController::class, 'application_form_for_tank_calibrator'])
-->name('application-form-for-tank-calibrator');
+    ->name('application-form-for-tank-calibrator');
 
 Route::get('/{language}/form-d-for-pump-mechanics', [WmaController::class, 'form_d_for_pump_mechanics'])
-->name('form-d-for-pump-mechanics');
+    ->name('form-d-for-pump-mechanics');
 
 Route::get('/{language}/application-form-for-licencing-scale', [WmaController::class, 'application_form_for_licencing_scale'])
-->name('application-form-for-licencing-scale');
+    ->name('application-form-for-licencing-scale');
 
 Route::get('/{language}/compounding-form', [WmaController::class, 'compounding_form'])
-->name('compounding-form');
+    ->name('compounding-form');
 
+Route::get('/{language}/video', [WmaController::class, 'video'])
+    ->name('video');
 
+Route::get('/{language}/gallaries', [WmaController::class, 'gallaries'])
+    ->name('gallaries');
+
+Route::get('/{language}/pressrelease', [WmaController::class, 'pressrelease'])
+    ->name('pressrelease');
+
+Route::get('/{language}/vacancies', [WmaController::class, 'vacancies'])
+    ->name('vacancies');
+
+Route::get('/{language}/faqs', [WmaController::class, 'faqs'])
+    ->name('faqs');
+
+Route::get('/{language}/request_for_license_procedures', [WmaController::class, 'request_for_license_procedures'])
+    ->name('request_for_license_procedures');
+
+Route::get('/{language}/speeches', [WmaController::class, 'speeches'])
+    ->name('speeches');
+
+Route::get('/{language}/brochures', [WmaController::class, 'brochures'])
+    ->name('brochures');
+
+Route::get('/{language}/posters', [WmaController::class, 'posters'])
+    ->name('posters');
+
+Route::get('/{language}/newsletter', [WmaController::class, 'newsletter'])
+    ->name('newsletter');
+
+// forms
+Route::get('form/{language}/{slug}', [WmaController::class, 'dynamic_forms'])
+    ->name('form');
+
+// publications
+Route::get('publication/{language}/{slug}', [WmaController::class, 'dynamic_publications'])
+    ->name('publication');
+
+//Services
+Route::get('/{language}/service_details/{slug}', [WmaController::class, 'service_details'])
+->name('service_details');
+
+Route::get('/{language}/event_details/{slug}', [WmaController::class, 'event_details'])
+->name('event_details');
+
+Route::get('/{language}/announcement_details/{slug}', [WmaController::class, 'announcement_details'])
+->name('announcement_details');
+
+Route::get('/{language}/new_details/{slug}', [WmaController::class, 'new_details'])
+->name('new_details');

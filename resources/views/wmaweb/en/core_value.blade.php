@@ -28,7 +28,7 @@
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="core values">
                             <h5 style="font-weight:bold">Result oriented</h5>
-                            Ø WMA is intended in the final outcome rather than going through the process.<br><br><br>
+                            Ø WMA is intended in the final outcome rather than going through the process.<br><br>
 
                             <h5 style="font-weight:bold">Team work</h5>
                             Ø WMA staffs work collaboratively to achieve the Agency’s goal.<br><br>
@@ -46,9 +46,6 @@
                             <h5 style="font-weight:bold">Accountability</h5>
                             Ø WMA staff intends to be responsible for what they do and be able to give a satisfactory reason
                             for it.<br><br>
-
-
-
                             </p>
 
                         </div>
