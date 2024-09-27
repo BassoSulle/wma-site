@@ -129,23 +129,25 @@ class PhotosResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('en_caption')
-                    ->searchable()
-                    ->formatStateUsing(function ($state) {
-                        return Str::words($state, 5, '.....');
-                    }),
-
-                Tables\Columns\TextColumn::make('sw_caption')
-                    ->searchable()
-                    ->formatStateUsing(function ($state) {
-                        return Str::words($state, 5, '.....');
-                    }),
-
                 Tables\Columns\TextColumn::make('image')
                     ->searchable()
                     ->html()
                     ->formatStateUsing(function ($state) {
                         return '<img src="' . asset('storage/photos/' . basename($state)) . '" width="30", height="40" />';
+                    }),
+
+                Tables\Columns\TextColumn::make('sw_caption')
+                    ->label("Swahili Caption")
+                    ->searchable()
+                    ->formatStateUsing(function ($state) {
+                        return Str::words($state, 5, '.....');
+                    }),
+
+                Tables\Columns\TextColumn::make('en_caption')
+                    ->label("English Caption")
+                    ->searchable()
+                    ->formatStateUsing(function ($state) {
+                        return Str::words($state, 5, '.....');
                     }),
 
                 Tables\Columns\TextColumn::make('gallery.en_title')
@@ -164,11 +166,6 @@ class PhotosResource extends Resource
                         });
                     }),
 
-
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable(),
-
                 IconColumn::make('is_active')
                     ->label('Status')
                     ->boolean()
@@ -176,6 +173,11 @@ class PhotosResource extends Resource
                     ->falseIcon('heroicon-o-x-circle')
                     ->trueColor('primary')
                     ->falseColor('danger'),
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()

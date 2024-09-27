@@ -5,7 +5,7 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Set;
-use App\Models\Speeches;
+use App\Models\speeches;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
@@ -32,7 +32,7 @@ use App\Filament\Resources\SpeechesResource\RelationManagers;
 
 class SpeechesResource extends Resource
 {
-    protected static ?string $model = Speeches::class;
+    protected static ?string $model = speeches::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
@@ -43,7 +43,7 @@ class SpeechesResource extends Resource
     protected static ?int $navigationSort = 4;
 
     // name to be used in page titles
-    protected static ?string $modelLabel = 'Speeches';
+    protected static ?string $modelLabel = 'Speech';
 
     // navigation group to be used in navigation
     protected static ?string $navigationGroup = 'Media Center';
@@ -54,13 +54,13 @@ class SpeechesResource extends Resource
     // multiple fields global search with annotation
     public static function getGloballySearchableAttributes(): array
     {
-        return ['en_caption', 'sw_caption'];
+        return ['en_title', 'sw_title'];
     }
 
     // global search result
     public static function getGlobalSearchResultTitle(Model $record): string | Htmlable
     {
-        return $record->sw_caption;
+        return $record->sw_title;
     }
 
     // limit global search results
@@ -138,16 +138,16 @@ class SpeechesResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('en_title')
+                Tables\Columns\TextColumn::make('sw_title')
                     ->searchable()
-                    ->label('English Title')
+                    ->label('Swahili Title')
                     ->formatStateUsing(function ($state) {
                         return Str::words($state, 5, '.....');
                     }),
 
-                Tables\Columns\TextColumn::make('sw_title')
+                Tables\Columns\TextColumn::make('en_title')
                     ->searchable()
-                    ->label('Swahili Title')
+                    ->label('English Title')
                     ->formatStateUsing(function ($state) {
                         return Str::words($state, 5, '.....');
                     }),
@@ -166,19 +166,17 @@ class SpeechesResource extends Resource
                 //         return Str::words($state, 5,'.....');
                 //     }),
 
-
-                Tables\Columns\TextColumn::make('en_file')
-                    ->searchable()
-                    ->label('English File')
-                    ->formatStateUsing(fn($state) => $state ? '<a href="' . Storage::url($state) . '" target="_blank" class="text-blue-500 hover:underline">Download</a>' : 'No File')
-                    ->html(),
-
                 Tables\Columns\TextColumn::make('sw_file')
                     ->searchable()
                     ->label('Swahili File')
                     ->formatStateUsing(fn($state) => $state ? '<a href="' . Storage::url($state) . '" target="_blank" class="text-blue-500 hover:underline">Download</a>' : 'No File')
                     ->html(),
 
+                Tables\Columns\TextColumn::make('en_file')
+                    ->searchable()
+                    ->label('English File')
+                    ->formatStateUsing(fn($state) => $state ? '<a href="' . Storage::url($state) . '" target="_blank" class="text-blue-500 hover:underline">Download</a>' : 'No File')
+                    ->html(),
 
                 Tables\Columns\TextColumn::make('user.name')
                     ->label('Created By')
@@ -188,14 +186,18 @@ class SpeechesResource extends Resource
                         });
                     }),
 
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean(),
 
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
             ])
             ->filters([
                 //

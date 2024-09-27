@@ -136,13 +136,15 @@ class EventsResource extends Resource
                         return '<img src="' . asset('storage/events/' . basename($state)) . '" width="30", height="40" />';
                     }),
 
-                Tables\Columns\TextColumn::make('en_title')
+                Tables\Columns\TextColumn::make('sw_title')
+                    ->label("Swahili title")
                     ->searchable()
                     ->formatStateUsing(function ($state) {
                         return Str::words($state, 5, '.....');
                     }),
 
-                Tables\Columns\TextColumn::make('sw_title')
+                Tables\Columns\TextColumn::make('en_title')
+                    ->label("English title")
                     ->searchable()
                     ->formatStateUsing(function ($state) {
                         return Str::words($state, 5, '.....');
@@ -156,10 +158,6 @@ class EventsResource extends Resource
                         });
                     }),
 
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable(),
-
                 IconColumn::make('is_active')
                     ->label('Status')
                     ->boolean()
@@ -167,6 +165,16 @@ class EventsResource extends Resource
                     ->falseIcon('heroicon-o-x-circle')
                     ->trueColor('primary')
                     ->falseColor('danger'),
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
 
             ])
             ->filters([

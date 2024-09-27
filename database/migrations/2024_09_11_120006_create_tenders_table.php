@@ -19,15 +19,15 @@ return new class extends Migration
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->string('en_file')->nullable();
-            $table->date('sw_file')->nullable();
+            $table->string('sw_file')->nullable();
             $table->UnsignedBigInteger('created_by')->nullbale();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
 
             $table->foreign('created_by')
-            ->references('id')
-            ->on('users')
-            ->OnDelete('cascade');
+                ->references('id')
+                ->on('users')
+                ->OnDelete('cascade');
         });
     }
 

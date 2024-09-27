@@ -136,6 +136,12 @@ class PublicationsResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('sw_file')
+                    ->searchable()
+                    ->label('Swahili File')
+                    ->formatStateUsing(fn($state) => $state ? '<a href="' . Storage::url($state) . '" target="_blank" class="text-blue-500 hover:underline">Download</a>' : 'No File')
+                    ->html(),
+
                 Tables\Columns\TextColumn::make('en_title')
                     ->searchable()
                     ->label('English Title')
@@ -143,15 +149,15 @@ class PublicationsResource extends Resource
                         return Str::words($state, 5, '.....');
                     }),
 
-                Tables\Columns\TextColumn::make('en_file')
-                    ->searchable()
-                    ->label('English File')
-                    ->formatStateUsing(fn($state) => $state ? '<a href="' . Storage::url($state) . '" target="_blank" class="text-blue-500 hover:underline">Download</a>' : 'No File')
-                    ->html(),
-
                 Tables\Columns\TextColumn::make('sw_file')
                     ->searchable()
                     ->label('Swahili File')
+                    ->formatStateUsing(fn($state) => $state ? '<a href="' . Storage::url($state) . '" target="_blank" class="text-blue-500 hover:underline">Download</a>' : 'No File')
+                    ->html(),
+
+                Tables\Columns\TextColumn::make('en_file')
+                    ->searchable()
+                    ->label('English File')
                     ->formatStateUsing(fn($state) => $state ? '<a href="' . Storage::url($state) . '" target="_blank" class="text-blue-500 hover:underline">Download</a>' : 'No File')
                     ->html(),
 
@@ -171,13 +177,18 @@ class PublicationsResource extends Resource
                         });
                     }),
 
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean(),
+
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
 
             ])
             ->filters([

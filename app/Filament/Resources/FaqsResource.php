@@ -134,12 +134,6 @@ class FaqsResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('en_question')
-                    ->searchable()
-                    ->label('English Question')
-                    ->formatStateUsing(function ($state) {
-                        return Str::words($state, 5, '.....');
-                    }),
 
                 Tables\Columns\TextColumn::make('sw_question')
                     ->searchable()
@@ -148,9 +142,9 @@ class FaqsResource extends Resource
                         return Str::words($state, 5, '.....');
                     }),
 
-                Tables\Columns\TextColumn::make('en_answer')
+                Tables\Columns\TextColumn::make('en_question')
                     ->searchable()
-                    ->label('English Answer')
+                    ->label('English Question')
                     ->formatStateUsing(function ($state) {
                         return Str::words($state, 5, '.....');
                     }),
@@ -158,6 +152,13 @@ class FaqsResource extends Resource
                 Tables\Columns\TextColumn::make('sw_answer')
                     ->searchable()
                     ->label('Swahili Answer')
+                    ->formatStateUsing(function ($state) {
+                        return Str::words($state, 5, '.....');
+                    }),
+
+                Tables\Columns\TextColumn::make('en_answer')
+                    ->searchable()
+                    ->label('English Answer')
                     ->formatStateUsing(function ($state) {
                         return Str::words($state, 5, '.....');
                     }),
@@ -170,14 +171,18 @@ class FaqsResource extends Resource
                         });
                     }),
 
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean(),
 
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
             ])
             ->filters([
                 //
