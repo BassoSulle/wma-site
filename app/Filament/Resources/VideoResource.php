@@ -6,6 +6,7 @@ use Filament\Forms;
 use Filament\Tables;
 use App\Models\Video;
 use App\Models\Gallery;
+use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
@@ -125,15 +126,17 @@ class VideoResource extends Resource
                     ->schema([
                         FileUpload::make('video')
                             ->label('Video')
-                            ->nullable()
+                            ->live()
                             ->acceptedFileTypes(['video/mp4', 'video/avi', 'video/mkv'])
                             ->directory('videos')
-                            ->required(),
+                            ->required(fn(Get $get): bool => empty($get('url'))) // Require if 'url' is empty,
+                            ->visible(fn(Get $get): bool => empty($get('url'))), // Visible if 'url' is empty,
 
                         TextInput::make('url')
                             ->label('Video Link')
-                            ->nullable()
-                            ->required()
+                            ->live()
+                            ->required(fn(Get $get): bool => empty($get('video'))) // Require if 'video' is empty
+                            ->visible(fn(Get $get): bool => empty($get('video'))) // Visible if 'video' is empty
                             ->type('url')
                             ->maxlength(255),
                     ]),
