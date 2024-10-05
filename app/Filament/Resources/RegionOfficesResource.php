@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 use App\Models\RegionOffices;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Tabs;
 use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
@@ -71,76 +72,90 @@ class RegionOfficesResource extends Resource
     {
         return $form
             ->schema([
-                Section::make([
-                    Grid::make()
-                        ->schema([
-                            TextInput::make('region_name')
-                                ->required()
-                                ->maxlength(255)
-                                ->live(onBlur: true)
-                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+                Section::make()
+                    ->description("Region Office information")
+                    ->schema([
+                        TextInput::make('region_name')
+                            ->required()
+                            ->maxlength(255)
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
 
+                        TextInput::make('slug')
+                            ->required()
+                            ->maxlength(255)
+                            ->disabled()
+                            ->dehydrated()
+                            ->hidden()
+                            ->unique(RegionOffices::class, 'slug', ignoreRecord: true),
 
+                        TextInput::make('location')
+                            ->required()
+                            ->label('Location')
+                            ->maxlength(255),
 
-                            TextInput::make('slug')
-                                ->required()
-                                ->maxlength(255)
-                                ->disabled()
-                                ->dehydrated()
-                                ->unique(RegionOffices::class, 'slug', ignoreRecord: true),
+                        TextInput::make('address')
+                            ->required()
+                            ->label('Address')
+                            ->maxlength(255),
 
-                            Textarea::make('en_content')
-                                ->required()
-                                ->label('English Content')
-                                ->maxlength(255),
+                        TextInput::make('email')
+                            ->required()
+                            ->label('Email Address')
+                            ->maxlength(255),
 
+                        TextInput::make('telephone')
+                            ->required()
+                            ->label('Phone number')
+                            ->maxlength(255),
 
-                            Textarea::make('sw_content')
-                                ->required()
-                                ->label('Swahili Content')
-                                ->maxlength(255),
+                        TextInput::make('fax')
+                            ->required()
+                            ->label('Fax')
+                            ->maxlength(255),
 
-                            TextInput::make('location')
-                                ->required()
-                                ->label('Location')
-                                ->maxlength(255),
+                    ])->columns(2),
+                Section::make()
+                    ->description("Fill description fields on both tabs")
+                    ->schema([
+                        Tabs::make('Tabs')
+                            ->tabs([
+                                Tabs\Tab::make('Swahili')
+                                    ->schema([
+                                        Textarea::make('sw_content')
+                                            ->required()
+                                            ->label('Description')
+                                            ->maxlength(255),
+                                    ]),
 
-                            TextInput::make('address')
-                                ->required()
-                                ->label('Adress')
-                                ->maxlength(255),
+                                Tabs\Tab::make('English')
+                                    ->schema([
+                                        Textarea::make('en_content')
+                                            ->required()
+                                            ->label('Description')
+                                            ->maxlength(255),
+                                    ])
 
-                            TextInput::make('fax')
-                                ->required()
-                                ->label('Fax')
-                                ->maxlength(255),
+                            ])->activeTab(1)->columnSpanFull()
 
-                            TextInput::make('telephone')
-                                ->required()
-                                ->label('Phone number')
-                                ->maxlength(255),
+                    ]),
+                Section::make()
+                    ->schema([
+                        DatePicker::make('created_at')
+                            ->nullable()
+                            ->columnSpanFull(),
 
-                            TextInput::make('email')
-                                ->required()
-                                ->label('Email')
-                                ->maxlength(255),
+                        Hidden::make('created_by')
+                            ->default(fn() => Auth::id()),
 
-                            DatePicker::make('created_at')
-                                ->nullable(),
+                        Placeholder::make('created_by_name')
+                            ->label('Created By')
+                            ->content(fn() => Auth::user()->name),
 
-                            Hidden::make('created_by')
-                                ->default(fn() => Auth::id()),
-
-                            Placeholder::make('created_by_name')
-                                ->label('Created By')
-                                ->content(fn() => Auth::user()->name),
-
-                            Toggle::make('is_active')
-                                ->required()
-                                ->default(true)
-
-                        ])
-                ])
+                        Toggle::make('is_active')
+                            ->required()
+                            ->default(true)
+                    ])->columns(2)
             ]);
     }
 
