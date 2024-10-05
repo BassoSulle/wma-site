@@ -91,14 +91,6 @@ class VideoResource extends Resource
                                             ->required()
                                             ->label('Description')
                                             ->maxlength(255),
-
-                                        TextInput::make('slug')
-                                            ->required()
-                                            ->maxlength(255)
-                                            ->disabled()
-                                            ->dehydrated()
-                                            ->hidden()
-                                            ->unique(Video::class, 'slug', ignoreRecord: true),
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -110,6 +102,14 @@ class VideoResource extends Resource
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                                 === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(Video::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make(name: 'en_content')
                                             ->label('Description')

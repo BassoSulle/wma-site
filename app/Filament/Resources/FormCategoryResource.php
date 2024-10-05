@@ -86,14 +86,6 @@ class FormCategoryResource extends Resource
                                             ->label('Description')
                                             ->maxlength(255),
 
-                                        TextInput::make('slug')
-                                            ->required()
-                                            ->maxlength(255)
-                                            ->disabled()
-                                            ->dehydrated()
-                                            ->hidden()
-                                            ->unique(FormCategory::class, 'slug', ignoreRecord: true),
-
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -105,6 +97,14 @@ class FormCategoryResource extends Resource
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                                 === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(FormCategory::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_detail')
                                             ->label('Description')

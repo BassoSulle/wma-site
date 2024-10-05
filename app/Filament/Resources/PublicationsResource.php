@@ -84,14 +84,6 @@ class PublicationsResource extends Resource
                             ->tabs([
                                 Tabs\Tab::make('Swahili')
                                     ->schema([
-                                        TextInput::make('slug')
-                                            ->required()
-                                            ->maxlength(255)
-                                            ->disabled()
-                                            ->dehydrated()
-                                            ->hidden()
-                                            ->unique(Publications::class, 'slug', ignoreRecord: true),
-
                                         TextInput::make('sw_title')
                                             ->required()
                                             ->label('Title')
@@ -113,6 +105,14 @@ class PublicationsResource extends Resource
                                             ->label('Title')
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(Publications::class, 'slug', ignoreRecord: true),
 
                                         FileUpload::make('en_file')
                                             ->label('PDF Document')

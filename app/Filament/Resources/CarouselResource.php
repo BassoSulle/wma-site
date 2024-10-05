@@ -80,14 +80,6 @@ class CarouselResource extends Resource
                                             ->maxlength(255)
                                             ->columnSpanFull(),
 
-                                        TextInput::make('slug')
-                                            ->required()
-                                            ->maxlength(255)
-                                            ->disabled()
-                                            ->dehydrated()
-                                            ->hidden()
-                                            ->unique(Carousel::class, 'slug', ignoreRecord: true),
-
                                         Textarea::make('sw_description')
                                             ->label('Description')
                                             ->required()
@@ -103,6 +95,14 @@ class CarouselResource extends Resource
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                                 === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(Carousel::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_description')
                                             ->label('Description')

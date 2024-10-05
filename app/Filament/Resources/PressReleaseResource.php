@@ -95,14 +95,6 @@ class PressReleaseResource extends Resource
                                             ->directory('press_release/sw')
                                             ->maxSize(10240),
 
-                                        TextInput::make('slug')
-                                            ->required()
-                                            ->maxlength(255)
-                                            ->disabled()
-                                            ->dehydrated()
-                                            ->hidden()
-                                            ->unique(PressRelease::class, 'slug', ignoreRecord: true),
-
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -114,6 +106,14 @@ class PressReleaseResource extends Resource
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                                 === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(PressRelease::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_content')
                                             ->label('Description')

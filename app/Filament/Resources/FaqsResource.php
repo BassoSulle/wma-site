@@ -99,13 +99,6 @@ class FaqsResource extends Resource
                                             ->label('Answer')
                                             ->maxlength(555),
 
-                                        TextInput::make('slug')
-                                            ->required()
-                                            ->maxlength(255)
-                                            ->disabled()
-                                            ->dehydrated()
-                                            ->hidden()
-                                            ->unique(faqs::class, 'slug', ignoreRecord: true),
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -116,6 +109,14 @@ class FaqsResource extends Resource
                                             ->label('Question')
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(faqs::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_answer')
                                             ->required()

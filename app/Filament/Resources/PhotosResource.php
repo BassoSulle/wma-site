@@ -89,14 +89,6 @@ class PhotosResource extends Resource
                     ->tabs([
                         Tabs\Tab::make('Swahili')
                             ->schema([
-                                TextInput::make('slug')
-                                    ->required()
-                                    ->maxlength(255)
-                                    ->disabled()
-                                    ->dehydrated()
-                                    ->Hidden()
-                                    ->unique(Photos::class, 'slug', ignoreRecord: true),
-
                                 Textarea::make('sw_caption')
                                     ->label("Caption")
                                     ->required()
@@ -112,6 +104,14 @@ class PhotosResource extends Resource
                                     ->live(onBlur: true)
                                     ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                         === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                                TextInput::make('slug')
+                                    ->required()
+                                    ->maxlength(255)
+                                    ->disabled()
+                                    ->dehydrated()
+                                    ->Hidden()
+                                    ->unique(Photos::class, 'slug', ignoreRecord: true),
                             ])
 
                     ])->activeTab(1)->columnSpanFull(),

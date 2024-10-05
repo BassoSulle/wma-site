@@ -89,14 +89,6 @@ class VacanciesResource extends Resource
                                             ->acceptedFileTypes(['application/pdf'])
                                             ->directory('vacancies/sw')
                                             ->maxSize(10240),
-
-                                        TextInput::make('slug')
-                                            ->required()
-                                            ->maxlength(255)
-                                            ->disabled()
-                                            ->dehydrated()
-                                            ->hidden()
-                                            ->unique(Vacancies::class, 'slug', ignoreRecord: true),
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -107,6 +99,14 @@ class VacanciesResource extends Resource
                                             ->label('Title')
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(Vacancies::class, 'slug', ignoreRecord: true),
 
                                         FileUpload::make('en_file')
                                             ->label('PDF Document')

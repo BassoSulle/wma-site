@@ -82,15 +82,6 @@ class GalleryResource extends Resource
                                             ->required()
                                             ->label('Name')
                                             ->maxlength(255),
-
-
-                                        TextInput::make('slug')
-                                            ->required()
-                                            ->maxlength(255)
-                                            ->disabled()
-                                            ->dehydrated()
-                                            ->hidden()
-                                            ->unique(Gallery::class, 'slug', ignoreRecord: true),
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -102,6 +93,14 @@ class GalleryResource extends Resource
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                                 === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(Gallery::class, 'slug', ignoreRecord: true),
                                     ])
 
                             ])->activeTab(1)->columnSpanFull()

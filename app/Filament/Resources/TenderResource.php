@@ -83,21 +83,12 @@ class TenderResource extends Resource
                                             ->label('Title')
                                             ->maxlength(255),
 
-
                                         FileUpload::make('sw_file')
                                             ->label('PDF Document')
                                             ->required()
                                             ->acceptedFileTypes(['application/pdf'])
                                             ->directory('tenders/sw')
                                             ->maxSize(10240),
-
-                                        TextInput::make('slug')
-                                            ->required()
-                                            ->maxlength(255)
-                                            ->disabled()
-                                            ->dehydrated()
-                                            ->hidden()
-                                            ->unique(Tender::class, 'slug', ignoreRecord: true),
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -108,6 +99,14 @@ class TenderResource extends Resource
                                             ->label('Title')
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(Tender::class, 'slug', ignoreRecord: true),
 
                                         FileUpload::make('en_file')
                                             ->label('PDF Document')

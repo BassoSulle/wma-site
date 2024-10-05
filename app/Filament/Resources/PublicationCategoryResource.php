@@ -87,14 +87,6 @@ class PublicationCategoryResource extends Resource
                                             ->label('Detail')
                                             ->maxlength(255),
 
-                                        TextInput::make('slug')
-                                            ->required()
-                                            ->maxlength(255)
-                                            ->disabled()
-                                            ->dehydrated()
-                                            ->hidden()
-                                            ->unique(PublicationCategory::class, 'slug', ignoreRecord: true),
-
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -106,6 +98,14 @@ class PublicationCategoryResource extends Resource
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                                 === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(PublicationCategory::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_detail')
                                             ->required()

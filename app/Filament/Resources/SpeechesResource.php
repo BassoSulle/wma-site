@@ -94,14 +94,6 @@ class SpeechesResource extends Resource
                                             ->required()
                                             ->acceptedFileTypes(['application/pdf'])
                                             ->maxSize(10240),
-
-                                        TextInput::make('slug')
-                                            ->required()
-                                            ->maxlength(255)
-                                            ->disabled()
-                                            ->dehydrated()
-                                            ->hidden()
-                                            ->unique(speeches::class, 'slug', ignoreRecord: true),
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -112,6 +104,14 @@ class SpeechesResource extends Resource
                                             ->label('Title')
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(speeches::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_content')
                                             ->label('Description')

@@ -107,7 +107,7 @@ class ServicesResource extends Resource
                                             ->required()
                                             ->disabled()
                                             ->dehydrated()
-                                            // ->hidden()
+                                            ->hidden()
                                             ->unique(Services::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_content')
