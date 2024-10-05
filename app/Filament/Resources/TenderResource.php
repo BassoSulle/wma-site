@@ -11,6 +11,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Tabs;
 use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
@@ -70,64 +71,79 @@ class TenderResource extends Resource
     {
         return $form
             ->schema([
-                Section::make([
-                    Grid::make()
-                        ->schema([
-                            TextInput::make('en_title')
-                                ->required()
-                                ->maxlength(255)
-                                ->label('English Title')
-                                ->live(onBlur: true)
-                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
-
-                            TextInput::make('sw_title')
-                                ->required()
-                                ->label('Swahili Title')
-                                ->maxlength(255),
-
-                            DatePicker::make('start_date')
-                                ->required(),
-
-                            DatePicker::make('end_date')
-                                ->required()
-                                ->afterOrEqual('start_date'),
-
-                            FileUpload::make('en_file')
-                                ->label('English PDF')
-                                ->required()
-                                ->acceptedFileTypes(['application/pdf'])
-                                ->maxSize(10240),
-
-                            FileUpload::make('sw_file')
-                                ->label('Swahili PDF')
-                                ->required()
-                                ->acceptedFileTypes(['application/pdf'])
-                                ->maxSize(10240),
+                Section::make()
+                    ->description("Fill all required fields on both tabs")
+                    ->schema([
+                        Tabs::make('Tabs')
+                            ->tabs([
+                                Tabs\Tab::make('Swahili')
+                                    ->schema([
+                                        TextInput::make('sw_title')
+                                            ->required()
+                                            ->label('Title')
+                                            ->maxlength(255),
 
 
-                            DatePicker::make('created_at')
-                                ->nullable(),
+                                        FileUpload::make('sw_file')
+                                            ->label('PDF Document')
+                                            ->required()
+                                            ->acceptedFileTypes(['application/pdf'])
+                                            ->directory('tenders/sw')
+                                            ->maxSize(10240),
 
-                            Hidden::make('created_by')
-                                ->default(fn() => Auth::id()),
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(Tender::class, 'slug', ignoreRecord: true),
+                                    ]),
 
-                            Placeholder::make('created_by_name')
-                                ->label('Created By')
-                                ->content(fn() => Auth::user()->name),
+                                Tabs\Tab::make('English')
+                                    ->schema([
+                                        TextInput::make('en_title')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->label('Title')
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
 
+                                        FileUpload::make('en_file')
+                                            ->label('PDF Document')
+                                            ->required()
+                                            ->acceptedFileTypes(['application/pdf'])
+                                            ->directory('tenders/en')
+                                            ->maxSize(10240),
+                                    ])
 
-                            TextInput::make('slug')
-                                ->required()
-                                ->maxlength(255)
-                                ->disabled()
-                                ->dehydrated()
-                                ->unique(Tender::class, 'slug', ignoreRecord: true),
+                            ])->activeTab(1)->columnSpanFull()
 
-                            Toggle::make('is_active')
-                                ->required()
-                                ->default(true)
-                        ])
-                ])
+                    ]),
+                Section::make()
+                    ->schema([
+                        DatePicker::make('start_date')
+                            ->required(),
+
+                        DatePicker::make('end_date')
+                            ->required()
+                            ->afterOrEqual('start_date'),
+
+                        DatePicker::make('created_at')
+                            ->nullable()
+                            ->columnSpanFull(),
+
+                        Hidden::make('created_by')
+                            ->default(fn() => Auth::id()),
+
+                        Placeholder::make('created_by_name')
+                            ->label('Created By')
+                            ->content(fn() => Auth::user()->name),
+
+                        Toggle::make('is_active')
+                            ->required()
+                            ->default(true)
+                    ])->columns(2)
             ]);
     }
 

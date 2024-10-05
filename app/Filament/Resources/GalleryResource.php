@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use App\Models\PublicationCategory;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Tabs;
 use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
@@ -70,48 +71,59 @@ class GalleryResource extends Resource
     {
         return $form
             ->schema([
-                Section::make([
-                    Grid::make()
-                        ->schema([
-                            TextInput::make('en_title')
-                                ->label('English Title')
-                                ->required()
-                                ->maxlength(255)
-                                ->live(onBlur: true)
-                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
-                                    === 'create' ? $set('slug', Str::slug($state)) : null),
+                Section::make()
+                    ->description("Fill all required fields on both tabs")
+                    ->schema([
+                        Tabs::make('Tabs')
+                            ->tabs([
+                                Tabs\Tab::make('Swahili')
+                                    ->schema([
+                                        TextInput::make('sw_title')
+                                            ->required()
+                                            ->label('Name')
+                                            ->maxlength(255),
 
 
-                            TextInput::make('sw_title')
-                                ->required()
-                                ->label('Swahili Title')
-                                ->maxlength(255),
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(Gallery::class, 'slug', ignoreRecord: true),
+                                    ]),
 
+                                Tabs\Tab::make('English')
+                                    ->schema([
+                                        TextInput::make('en_title')
+                                            ->label('Name')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
+                                                === 'create' ? $set('slug', Str::slug($state)) : null),
+                                    ])
 
-                            TextInput::make('slug')
-                                ->required()
-                                ->maxlength(255)
-                                ->disabled()
-                                ->dehydrated()
-                                ->unique(Gallery::class, 'slug', ignoreRecord: true),
+                            ])->activeTab(1)->columnSpanFull()
 
+                    ]),
+                Section::make()
+                    ->schema([
+                        DatePicker::make('created_at')
+                            ->nullable()
+                            ->columnSpanFull(),
 
-                            DatePicker::make('created_at')
-                                ->nullable(),
+                        Hidden::make('created_by')
+                            ->default(fn() => Auth::id()),
 
-                            Hidden::make('created_by')
-                                ->default(fn() => Auth::id()),
+                        Placeholder::make('created_by_name')
+                            ->label('Created By')
+                            ->content(fn() => Auth::user()->name),
 
-                            Placeholder::make('created_by_name')
-                                ->label('Created By')
-                                ->content(fn() => Auth::user()->name),
-
-                            Toggle::make('is_active')
-                                ->required()
-                                ->default(true)
-
-                        ])
-                ])
+                        Toggle::make('is_active')
+                            ->required()
+                            ->default(true)
+                    ])->columns(2)
             ]);
     }
 

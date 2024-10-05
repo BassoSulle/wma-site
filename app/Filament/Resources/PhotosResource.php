@@ -12,6 +12,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Tabs;
 use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
@@ -70,58 +71,68 @@ class PhotosResource extends Resource
     {
         return $form
             ->schema([
-                Section::make([
-                    Grid::make()
-                        ->schema([
-                            Select::make('gallery_id')
-                                ->label('Gallery')
-                                ->options(Gallery::all()->pluck('en_title', 'id')) // Assuming 'name' is the display field and 'id' is the value field
-                                ->required(),
+                Section::make()
+                    ->description("Fill all required fields on both tabs")
+                    ->schema([
+                        Select::make('gallery_id')
+                            ->label('Gallery')
+                            ->options(Gallery::all()->pluck('en_title', 'id')) // Assuming 'name' is the display field and 'id' is the value field
+                            ->required(),
 
-                            TextInput::make('slug')
-                                ->required()
-                                ->maxlength(255)
-                                ->disabled()
-                                ->dehydrated()
-                                ->unique(Photos::class, 'slug', ignoreRecord: true),
+                        FileUpload::make('image')
+                            ->image()
+                            ->label('Photo')
+                            ->directory('photos'),
+                    ]),
 
-                            Textarea::make('en_caption')
-                                ->required()
-                                ->maxlength(255)
-                                ->label('English Caption')
-                                ->live(onBlur: true)
-                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
-                                    === 'create' ? $set('slug', Str::slug($state)) : null),
+                Tabs::make('Tabs')
+                    ->tabs([
+                        Tabs\Tab::make('Swahili')
+                            ->schema([
+                                TextInput::make('slug')
+                                    ->required()
+                                    ->maxlength(255)
+                                    ->disabled()
+                                    ->dehydrated()
+                                    ->Hidden()
+                                    ->unique(Photos::class, 'slug', ignoreRecord: true),
 
+                                Textarea::make('sw_caption')
+                                    ->label("Caption")
+                                    ->required()
+                                    ->maxlength(255),
+                            ]),
 
-                            Textarea::make('sw_caption')
-                                ->required()
-                                ->label('Swahili Caption')
-                                ->maxlength(255),
+                        Tabs\Tab::make('English')
+                            ->schema([
+                                Textarea::make('en_caption')
+                                    ->label("Caption")
+                                    ->required()
+                                    ->maxlength(255)
+                                    ->live(onBlur: true)
+                                    ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
+                                        === 'create' ? $set('slug', Str::slug($state)) : null),
+                            ])
 
-                            FileUpload::make('image')
-                                ->image()
-                                ->label('Insert Photo')
-                                ->directory('photos'),
+                    ])->activeTab(1)->columnSpanFull(),
 
+                Section::make()
+                    ->schema([
+                        DatePicker::make('created_at')
+                            ->nullable()
+                            ->columnSpanFull(),
 
-                            DatePicker::make('created_at')
-                                ->nullable(),
+                        Hidden::make('created_by')
+                            ->default(fn() => Auth::id()),
 
-                            Hidden::make('created_by')
-                                ->default(fn() => Auth::id()),
+                        Placeholder::make('created_by_name')
+                            ->label('Created By')
+                            ->content(fn() => Auth::user()->name),
 
-                            Placeholder::make('created_by_name')
-                                ->label('Created By')
-                                ->content(fn() => Auth::user()->name),
-
-
-
-                            Toggle::make('is_active')
-                                ->required()
-                                ->default(true)
-                        ])
-                ])
+                        Toggle::make('is_active')
+                            ->required()
+                            ->default(true)
+                    ])->columns(2)
             ]);
     }
 

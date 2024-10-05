@@ -11,7 +11,10 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
+use Livewire\Attributes\Computed;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Tabs;
+use Filament\Forms\Components\Group;
 use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
@@ -26,6 +29,7 @@ use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Placeholder;
 use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Validation\ValidationException;
 use App\Filament\Resources\VideoResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\VideoResource\RelationManagers;
@@ -70,69 +74,87 @@ class VideoResource extends Resource
     {
         return $form
             ->schema([
-                Section::make([
-                    Grid::make()
-                        ->schema([
-                            TextInput::make('en_title')
-                                ->required()
-                                ->maxlength(255)
-                                ->label('English Title')
-                                ->live(onBlur: true)
-                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
-                                    === 'create' ? $set('slug', Str::slug($state)) : null),
+                Section::make()
+                    ->description("Fill all required fields on both tabs")
+                    ->schema([
+                        Tabs::make('Tabs')
+                            ->tabs([
+                                Tabs\Tab::make('Swahili')
+                                    ->schema([
+                                        TextInput::make('sw_title')
+                                            ->required()
+                                            ->label('Title')
+                                            ->maxlength(255),
 
+                                        Textarea::make('sw_content')
+                                            ->required()
+                                            ->label('Description')
+                                            ->maxlength(255),
 
-                            TextInput::make('sw_title')
-                                ->required()
-                                ->label('Swahili Title')
-                                ->maxlength(255),
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(Video::class, 'slug', ignoreRecord: true),
+                                    ]),
 
+                                Tabs\Tab::make('English')
+                                    ->schema([
+                                        TextInput::make('en_title')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->label('Title')
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
+                                                === 'create' ? $set('slug', Str::slug($state)) : null),
 
-                            Textarea::make('en_content')
-                                ->required()
-                                ->label('English Content')
-                                ->maxlength(255),
+                                        Textarea::make(name: 'en_content')
+                                            ->label('Description')
+                                            ->required()
+                                            ->maxlength(255),
 
+                                    ])
 
-                            Textarea::make('sw_content')
-                                ->required()
-                                ->label('Swahili Content')
-                                ->maxlength(255),
+                            ])->activeTab(1)->columnSpanFull(),
+                    ]),
 
-                            FileUpload::make('video')
-                                ->label('Insert VIdeo')
-                                ->acceptedFileTypes(['video/mp4', 'video/avi', 'video/mkv'])
-                                ->directory('vodeo'),
+                Section::make()
+                    ->description("Upload video or Add video Link")
+                    ->schema([
+                        FileUpload::make('video')
+                            ->label('Video')
+                            ->nullable()
+                            ->acceptedFileTypes(['video/mp4', 'video/avi', 'video/mkv'])
+                            ->directory('videos')
+                            ->required(),
 
-                            TextInput::make('url')
-                                ->label('Video URL')
-                                ->required()
-                                ->maxlength(255),
+                        TextInput::make('url')
+                            ->label('Video Link')
+                            ->nullable()
+                            ->required()
+                            ->type('url')
+                            ->maxlength(255),
+                    ]),
 
+                Section::make()
+                    ->schema([
+                        DatePicker::make('created_at')
+                            ->nullable()
+                            ->columnSpanFull(),
 
-                            DatePicker::make('created_at')
-                                ->nullable(),
+                        Hidden::make('created_by')
+                            ->default(fn() => Auth::id()),
 
-                            Hidden::make('created_by')
-                                ->default(fn() => Auth::id()),
+                        Placeholder::make('created_by_name')
+                            ->label('Created By')
+                            ->content(fn() => Auth::user()->name),
 
-                            Placeholder::make('created_by_name')
-                                ->label('Created By')
-                                ->content(fn() => Auth::user()->name),
-
-                            TextInput::make('slug')
-                                ->required()
-                                ->maxlength(255)
-                                ->disabled()
-                                ->dehydrated()
-                                ->unique(Video::class, 'slug', ignoreRecord: true),
-
-
-                            Toggle::make('is_active')
-                                ->required()
-                                ->default(true)
-                        ])
-                ])
+                        Toggle::make('is_active')
+                            ->required()
+                            ->default(true)
+                    ])->columns(2)
             ]);
     }
 

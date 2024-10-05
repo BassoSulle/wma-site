@@ -12,6 +12,7 @@ use App\Models\Publications;
 use Filament\Resources\Resource;
 use App\Models\PublicationCategory;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Tabs;
 use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
@@ -71,64 +72,76 @@ class PublicationsResource extends Resource
     {
         return $form
             ->schema([
-                Section::make([
-                    Grid::make()
-                        ->schema([
-                            Select::make('pub_category_id')
-                                ->label('Publication Category')
-                                ->options(PublicationCategory::all()->pluck('en_title', 'id')) // Assuming 'name' is the display field and 'id' is the value field
-                                ->required(),
+                Section::make()
+                    ->description("Fill all required fields on both tabs")
+                    ->schema([
+                        Select::make('pub_category_id')
+                            ->label('Publication Category')
+                            ->options(PublicationCategory::all()->pluck('en_title', 'id')) // Assuming 'name' is the display field and 'id' is the value field
+                            ->required(),
 
-                            TextInput::make('slug')
-                                ->required()
-                                ->maxlength(255)
-                                ->disabled()
-                                ->dehydrated()
-                                ->unique(Publications::class, 'slug', ignoreRecord: true),
+                        Tabs::make('Tabs')
+                            ->tabs([
+                                Tabs\Tab::make('Swahili')
+                                    ->schema([
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(Publications::class, 'slug', ignoreRecord: true),
 
-                            TextInput::make('en_title')
-                                ->required()
-                                ->maxlength(255)
-                                ->label('English Title')
-                                ->live(onBlur: true)
-                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+                                        TextInput::make('sw_title')
+                                            ->required()
+                                            ->label('Title')
+                                            ->maxlength(255),
 
-                            TextInput::make('sw_title')
-                                ->required()
-                                ->label('Swahili Title')
-                                ->maxlength(255),
+                                        FileUpload::make('sw_file')
+                                            ->label('PDF Document')
+                                            ->required()
+                                            ->directory('publications/sw')
+                                            ->acceptedFileTypes(['application/pdf'])
+                                            ->maxSize(10240),
+                                    ]),
 
-                            FileUpload::make('en_file')
-                                ->label('English PDF')
-                                ->required()
-                                ->directory('publications/en')
-                                ->acceptedFileTypes(['application/pdf'])
-                                ->maxSize(10240),
+                                Tabs\Tab::make('English')
+                                    ->schema([
+                                        TextInput::make('en_title')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->label('Title')
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
 
-                            FileUpload::make('sw_file')
-                                ->label('Swahili PDF')
-                                ->required()
-                                ->directory('publications/sw')
-                                ->acceptedFileTypes(['application/pdf'])
-                                ->maxSize(10240),
+                                        FileUpload::make('en_file')
+                                            ->label('PDF Document')
+                                            ->required()
+                                            ->directory('publications/en')
+                                            ->acceptedFileTypes(['application/pdf'])
+                                            ->maxSize(10240),
+                                    ])
 
-                            DatePicker::make('created_at')
-                                ->nullable(),
+                            ])->activeTab(1)->columnSpanFull()
 
-                            Hidden::make('created_by')
-                                ->default(fn() => Auth::id()),
+                    ]),
+                Section::make()
+                    ->schema([
+                        DatePicker::make('created_at')
+                            ->nullable()
+                            ->columnSpanFull(),
 
-                            Placeholder::make('created_by_name')
-                                ->label('Created By')
-                                ->content(fn() => Auth::user()->name),
+                        Hidden::make('created_by')
+                            ->default(fn() => Auth::id()),
 
+                        Placeholder::make('created_by_name')
+                            ->label('Created By')
+                            ->content(fn() => Auth::user()->name),
 
-
-                            Toggle::make('is_active')
-                                ->required()
-                                ->default(true)
-                        ])
-                ])
+                        Toggle::make('is_active')
+                            ->required()
+                            ->default(true)
+                    ])->columns(2)
             ]);
     }
 

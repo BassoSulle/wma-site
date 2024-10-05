@@ -11,6 +11,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Tabs;
 use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
@@ -70,67 +71,81 @@ class SpeechesResource extends Resource
     {
         return $form
             ->schema([
-                Section::make([
-                    Grid::make()
-                        ->schema([
-                            TextInput::make('en_title')
-                                ->required()
-                                ->maxlength(255)
-                                ->label('English Title')
-                                ->live(onBlur: true)
-                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+                Section::make()
+                    ->description("Fill all required fields on both tabs")
+                    ->schema([
+                        Tabs::make('Tabs')
+                            ->tabs([
+                                Tabs\Tab::make('Swahili')
+                                    ->schema([
+                                        TextInput::make('sw_title')
+                                            ->required()
+                                            ->label('Title')
+                                            ->maxlength(255),
 
-                            TextInput::make('sw_title')
-                                ->required()
-                                ->label('Swahili Title')
-                                ->maxlength(255),
+                                        Textarea::make('sw_content')
+                                            ->required()
+                                            ->label('Description')
+                                            ->maxlength(555),
 
-                            Textarea::make('en_content')
-                                ->required()
-                                ->label('English Content')
-                                ->maxlength(555),
+                                        FileUpload::make('sw_file')
+                                            ->label('PDF Document')
+                                            ->directory('speeches/sw')
+                                            ->required()
+                                            ->acceptedFileTypes(['application/pdf'])
+                                            ->maxSize(10240),
 
-                            Textarea::make('sw_content')
-                                ->required()
-                                ->label('Swahili Content')
-                                ->maxlength(555),
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(speeches::class, 'slug', ignoreRecord: true),
+                                    ]),
 
+                                Tabs\Tab::make('English')
+                                    ->schema([
+                                        TextInput::make('en_title')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->label('Title')
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
 
-                            FileUpload::make('en_file')
-                                ->label('English PDF')
-                                ->required()
-                                ->acceptedFileTypes(['application/pdf'])
-                                ->maxSize(10240),
+                                        Textarea::make('en_content')
+                                            ->label('Description')
+                                            ->required()
+                                            ->maxlength(255),
 
-                            FileUpload::make('sw_file')
-                                ->label('Swahili PDF')
-                                ->required()
-                                ->acceptedFileTypes(['application/pdf'])
-                                ->maxSize(10240),
+                                        FileUpload::make('en_file')
+                                            ->label('PDF Document')
+                                            ->directory('speeches/en')
+                                            ->required()
+                                            ->acceptedFileTypes(['application/pdf'])
+                                            ->maxSize(10240),
+                                    ])
 
-                            DatePicker::make('created_at')
-                                ->nullable(),
+                            ])->activeTab(1)->columnSpanFull()
 
-                            Hidden::make('created_by')
-                                ->default(fn() => Auth::id()),
+                    ]),
+                Section::make()
+                    ->schema([
+                        DatePicker::make('created_at')
+                            ->nullable()
+                            ->columnSpanFull(),
 
-                            Placeholder::make('created_by_name')
-                                ->label('Created By')
-                                ->content(fn() => Auth::user()->name),
+                        Hidden::make('created_by')
+                            ->default(fn() => Auth::id()),
 
+                        Placeholder::make('created_by_name')
+                            ->label('Created By')
+                            ->content(fn() => Auth::user()->name),
 
-                            TextInput::make('slug')
-                                ->required()
-                                ->maxlength(255)
-                                ->disabled()
-                                ->dehydrated()
-                                ->unique(speeches::class, 'slug', ignoreRecord: true),
-
-                            Toggle::make('is_active')
-                                ->required()
-                                ->default(true)
-                        ])
-                ])
+                        Toggle::make('is_active')
+                            ->required()
+                            ->default(true)
+                    ])->columns(2)
             ]);
     }
 

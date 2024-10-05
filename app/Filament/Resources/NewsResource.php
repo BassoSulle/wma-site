@@ -11,6 +11,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Tabs;
 use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
@@ -69,58 +70,75 @@ class NewsResource extends Resource
     {
         return $form
             ->schema([
-                Section::make([
-                    Grid::make()
-                        ->schema([
-                            TextInput::make('en_title')
-                                ->required()
-                                ->maxlength(255)
-                                ->live(onBlur: true)
-                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
-                                    === 'create' ? $set('slug', Str::slug($state)) : null),
+                Section::make()
+                    ->description("Fill all required fields on both tabs")
+                    ->schema([
+                        Tabs::make('Tabs')
+                            ->tabs([
+                                Tabs\Tab::make('Swahili')
+                                    ->schema([
+                                        TextInput::make('sw_title')
+                                            ->label('Title')
+                                            ->required()
+                                            ->maxlength(255),
 
-                            TextInput::make('sw_title')
-                                ->required()
-                                ->maxlength(255),
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            ->hidden()
+                                            ->unique(News::class, 'slug', ignoreRecord: true),
 
-                            TextInput::make('slug')
-                                ->required()
-                                ->maxlength(255)
-                                ->disabled()
-                                ->dehydrated()
-                                ->unique(News::class, 'slug', ignoreRecord: true),
+                                        Textarea::make('sw_description')
+                                            ->label('Description')
+                                            ->required()
+                                            ->maxlength(255),
 
-                            Textarea::make('en_description')
-                                ->required()
-                                ->maxlength(255),
+                                    ]),
 
+                                Tabs\Tab::make('English')
+                                    ->schema([
+                                        TextInput::make('en_title')
+                                            ->label('Title')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
+                                                === 'create' ? $set('slug', Str::slug($state)) : null),
 
-                            Textarea::make('sw_description')
-                                ->required()
-                                ->maxlength(255),
+                                        Textarea::make('en_description')
+                                            ->label('Description')
+                                            ->required()
+                                            ->maxlength(255),
 
-                            FileUpload::make('image')
-                                ->image()
-                                ->directory('news'),
+                                    ])
 
+                            ])->activeTab(1)->columnSpanFull()
 
-                            DatePicker::make('created_at')
-                                ->nullable(),
+                    ]),
+                Section::make()
+                    ->schema([
+                        FileUpload::make('image')
+                            ->image()
+                            ->directory('news')
+                            ->columnSpanFull(),
 
-                            Hidden::make('created_by')
-                                ->default(fn() => Auth::id()),
+                        DatePicker::make('created_at')
+                            ->nullable()
+                            ->columnSpanFull(),
 
-                            Placeholder::make('created_by_name')
-                                ->label('Created By')
-                                ->content(fn() => Auth::user()->name),
+                        Hidden::make('created_by')
+                            ->default(fn() => Auth::id()),
 
-                            Toggle::make('is_active')
-                                ->required()
-                                ->default(true)
+                        Placeholder::make('created_by_name')
+                            ->label('Created By')
+                            ->content(fn() => Auth::user()->name),
 
-                        ])
-                ])
-                //
+                        Toggle::make('is_active')
+                            ->required()
+                            ->default(true)
+                    ])->columns(2)
             ]);
     }
 

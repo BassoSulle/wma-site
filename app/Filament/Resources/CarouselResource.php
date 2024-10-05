@@ -75,6 +75,7 @@ class CarouselResource extends Resource
                                 Tabs\Tab::make('Swahili')
                                     ->schema([
                                         TextInput::make('sw_title')
+                                            ->label('Title')
                                             ->required()
                                             ->maxlength(255)
                                             ->columnSpanFull(),
@@ -88,6 +89,7 @@ class CarouselResource extends Resource
                                             ->unique(Carousel::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('sw_description')
+                                            ->label('Description')
                                             ->required()
                                             ->maxlength(255),
                                     ]),
@@ -95,6 +97,7 @@ class CarouselResource extends Resource
                                 Tabs\Tab::make('English')
                                     ->schema([
                                         TextInput::make('en_title')
+                                            ->label('Title')
                                             ->required()
                                             ->maxlength(255)
                                             ->live(onBlur: true)
@@ -102,6 +105,7 @@ class CarouselResource extends Resource
                                                 === 'create' ? $set('slug', Str::slug($state)) : null),
 
                                         Textarea::make('en_description')
+                                            ->label('Description')
                                             ->required()
                                             ->maxlength(255),
 
