@@ -134,6 +134,13 @@ class CarouselResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('image')
+                    ->searchable()
+                    ->html()
+                    ->formatStateUsing(function ($state) {
+                        return '<img src="' . asset('storage/carousel/' . basename($state)) . '" width="30", height="40" />';
+                    }),
+
                 Tables\Columns\TextColumn::make('sw_title')
                     ->label("Swahili title")
                     ->searchable()
@@ -146,13 +153,6 @@ class CarouselResource extends Resource
                     ->searchable()
                     ->formatStateUsing(function ($state) {
                         return Str::words($state, 5, '.....');
-                    }),
-
-                Tables\Columns\TextColumn::make('image')
-                    ->searchable()
-                    ->html()
-                    ->formatStateUsing(function ($state) {
-                        return '<img src="' . asset('storage/carousel/' . basename($state)) . '" width="30", height="40" />';
                     }),
 
                 Tables\Columns\TextColumn::make('created_at')
