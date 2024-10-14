@@ -104,7 +104,7 @@ class PublicationCategoryResource extends Resource
                                             ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
-                                            ->hidden()
+                                            // ->hidden()
                                             ->unique(PublicationCategory::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_detail')

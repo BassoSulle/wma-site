@@ -108,7 +108,7 @@ class VideoResource extends Resource
                                             ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
-                                            ->hidden()
+                                            // ->hidden()
                                             ->unique(Video::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make(name: 'en_content')

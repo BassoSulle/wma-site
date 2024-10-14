@@ -105,7 +105,7 @@ class VacanciesResource extends Resource
                                             ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
-                                            ->hidden()
+                                            // ->hidden()
                                             ->unique(Vacancies::class, 'slug', ignoreRecord: true),
 
                                         FileUpload::make('en_file')

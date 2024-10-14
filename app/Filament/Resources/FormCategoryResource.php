@@ -103,7 +103,7 @@ class FormCategoryResource extends Resource
                                             ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
-                                            ->hidden()
+                                            // ->hidden()
                                             ->unique(FormCategory::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_detail')

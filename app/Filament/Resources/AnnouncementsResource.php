@@ -102,7 +102,7 @@ class AnnouncementsResource extends Resource
                                             ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
-                                            ->hidden()
+                                            // ->hidden()
                                             ->unique(Announcements::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_description')

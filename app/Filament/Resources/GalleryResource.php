@@ -99,7 +99,7 @@ class GalleryResource extends Resource
                                             ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
-                                            ->hidden()
+                                            // ->hidden()
                                             ->unique(Gallery::class, 'slug', ignoreRecord: true),
                                     ])
 

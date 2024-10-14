@@ -112,7 +112,7 @@ class PressReleaseResource extends Resource
                                             ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
-                                            ->hidden()
+                                            // // ->hidden()
                                             ->unique(PressRelease::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_content')

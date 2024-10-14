@@ -101,7 +101,7 @@ class CarouselResource extends Resource
                                             ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
-                                            ->hidden()
+                                            // ->hidden()
                                             ->unique(Carousel::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_description')

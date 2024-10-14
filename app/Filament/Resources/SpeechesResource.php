@@ -110,7 +110,7 @@ class SpeechesResource extends Resource
                                             ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
-                                            ->hidden()
+                                            // ->hidden()
                                             ->unique(speeches::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_content')

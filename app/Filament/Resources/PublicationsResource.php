@@ -111,7 +111,7 @@ class PublicationsResource extends Resource
                                             ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
-                                            ->hidden()
+                                            // // ->hidden()
                                             ->unique(Publications::class, 'slug', ignoreRecord: true),
 
                                         FileUpload::make('en_file')

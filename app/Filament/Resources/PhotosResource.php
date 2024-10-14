@@ -110,7 +110,7 @@ class PhotosResource extends Resource
                                     ->maxlength(255)
                                     ->disabled()
                                     ->dehydrated()
-                                    ->Hidden()
+                                    // ->hidden()
                                     ->unique(Photos::class, 'slug', ignoreRecord: true),
                             ])
 

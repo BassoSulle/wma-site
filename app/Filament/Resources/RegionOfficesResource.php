@@ -56,13 +56,13 @@ class RegionOfficesResource extends Resource
     // multiple fields global search with annotation
     public static function getGloballySearchableAttributes(): array
     {
-        return ['en_title', 'sw_title'];
+        return ['region_name'];
     }
 
     // global search result
     public static function getGlobalSearchResultTitle(Model $record): string | Htmlable
     {
-        return $record->sw_title;
+        return $record->region_name;
     }
 
     // limit global search results
@@ -86,7 +86,7 @@ class RegionOfficesResource extends Resource
                             ->maxlength(255)
                             ->disabled()
                             ->dehydrated()
-                            ->hidden()
+                            // ->hidden()
                             ->unique(RegionOffices::class, 'slug', ignoreRecord: true),
 
                         TextInput::make('location')

@@ -104,7 +104,7 @@ class NewsResource extends Resource
                                             ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
-                                            ->hidden()
+                                            // ->hidden()
                                             ->unique(News::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_description')

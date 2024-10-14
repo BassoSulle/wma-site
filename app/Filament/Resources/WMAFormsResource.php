@@ -112,7 +112,7 @@ class WMAFormsResource extends Resource
                                             ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
-                                            ->hidden()
+                                            // ->hidden()
                                             ->unique(WMAForms::class, 'slug', ignoreRecord: true),
 
                                         FileUpload::make('en_file')

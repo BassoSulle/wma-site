@@ -104,7 +104,7 @@ class EventsResource extends Resource
                                             ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
-                                            ->hidden()
+                                            // ->hidden()
                                             ->unique(Events::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_description')
