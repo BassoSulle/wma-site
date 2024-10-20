@@ -87,19 +87,19 @@ class EventsResource extends Resource
 
                             TextInput::make('slug')
                                 ->required()
-                                ->maxlength(255)
+                                // ->maxlength(255)
                                 ->disabled()
                                 ->dehydrated()
                                 ->unique(Events::class, 'slug', ignoreRecord: true),
 
                             Textarea::make('en_description')
-                                ->required()
-                                ->maxlength(255),
+                                ->required(),
+                                // ->maxlength(255),
 
 
                             Textarea::make('sw_description')
-                                ->required()
-                                ->maxlength(255),
+                                ->required(),
+                                // ->maxlength(255),
 
                             FileUpload::make('image')
                                 ->image()
