@@ -778,6 +778,21 @@ class WmaController extends Controller
         return view($templatePath, $data);
     }
 
+    public function all_announcements($language)
+    {
+
+        $templateName = 'all_announcements';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'announcement_details' => Announcements::select('slug',  $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->first(),
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
     public function new_details($language, $slug)
     {
 
@@ -790,6 +805,36 @@ class WmaController extends Controller
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
 
         ];
+        return view($templatePath, $data);
+    }
+
+    public function how_do_i_1($language)
+    {
+        $templateName = 'how_do_i_1';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+        'current_language' => $language,
+        'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+        'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+
+        ];
+
+        return view($templatePath, $data);
+    }
+
+    public function how_do_i_2($language)
+    {
+        $templateName = 'how_do_i_2';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+        'current_language' => $language,
+        'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+        'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+
+        ];
+
         return view($templatePath, $data);
     }
 

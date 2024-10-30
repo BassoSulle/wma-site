@@ -74,7 +74,7 @@
                                              Trade and Investiment</a>
                                      </li> <br>
                                      <li class="list-inline-item pr-1 py-2">
-                                         <a href="https://business.go.tz/" target="_blank">International Organization of
+                                         <a href="https://www.oiml.org/en/" target="_blank">International Organization of
                                              Legal Metrology </a>
                                      </li> <br>
                                      <br>

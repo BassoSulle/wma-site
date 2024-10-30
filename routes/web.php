@@ -189,3 +189,12 @@ Route::get('/{language}/announcement_details/{slug}', [WmaController::class, 'an
 
 Route::get('/{language}/new_details/{slug}', [WmaController::class, 'new_details'])
 ->name('new_details');
+
+Route::get('/{language}/how_do_i_1', [WmaController::class, 'how_do_i_1'])
+->name('how_do_i_1');
+
+Route::get('/{language}/how_do_i_2', [WmaController::class, 'how_do_i_2'])
+->name('how_do_i_2');
+
+Route::get('/{language}/all_announcements/', [WmaController::class, 'all_announcements'])
+->name('all_announcements');

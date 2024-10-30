@@ -186,7 +186,7 @@
                             </div>
                             <div class="service-title">Request for the Licence</div>
                             <div class="service-btn-wrapper mt-3">
-                                <a target="_blank" href="https://www.wma.go.tz/howdo/6" class="serv-btn orange">Get instruction</a>
+                                <a  href="{{route('how_do_i_1', ['language'=>$current_language])}}" class="serv-btn orange">Get instruction</a>
                             </div>
                         </div>
 
@@ -197,7 +197,7 @@
                             </div>
                             <div class="service-title">Request for the Pattern Approval</div>
                             <div class="service-btn-wrapper mt-3">
-                                <a target="_blank" href="https://www.wma.go.tz/howdo/4" class="serv-btn orange">Get instruction</a>
+                                <a  href="{{route('how_do_i_2', ['language'=>$current_language])}}" class="serv-btn orange">Get instruction</a>
                             </div>
                         </div>
                     </div>

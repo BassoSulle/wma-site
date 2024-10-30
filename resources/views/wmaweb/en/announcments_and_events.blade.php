@@ -55,7 +55,7 @@
 
                 <!-- Add a link for "Tazama Zote" -->
                 <div class="row justify-content-center mt-2">
-                    <a href="#" class="link-no-underline"><i>View all <i
+                    <a href="{{route('all_announcements', ['language'=>$current_language])}}" class="link-no-underline"><i>View all <i
                                 class="far fa-arrow-alt-circle-right"></i></i></a>
                 </div>
             </div>

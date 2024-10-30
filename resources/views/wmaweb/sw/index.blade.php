@@ -181,7 +181,7 @@
                             </div>
                             <div class="service-title">Utaratibu wa Uombaji Leseni</div>
                             <div class="service-btn-wrapper mt-3">
-                                <a target="_blank" href="https://www.wma.go.tz/howdo/6" class="serv-btn orange">Maelezo</a>
+                                <a  href="{{route('how_do_i_1', ['language'=>$current_language])}}" class="serv-btn orange">Maelezo</a>
                             </div>
                         </div>
 
@@ -192,7 +192,7 @@
                             </div>
                             <div class="service-title">Maombi ya kuidhinisha Vipimo</div>
                             <div class="service-btn-wrapper mt-3">
-                                <a target="_blank" href="https://www.wma.go.tz/howdo/4" class="serv-btn orange">Maelezo</a>
+                                <a  href="{{route('how_do_i_2', ['language'=>$current_language])}}" class="serv-btn orange">Maelezo</a>
                             </div>
                         </div>
                     </div>
