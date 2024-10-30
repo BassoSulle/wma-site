@@ -76,7 +76,10 @@
                                      <li class="list-inline-item pr-1 py-2">
                                          <a href="https://www.oiml.org/en/" target="_blank">International Organization of
                                              Legal Metrology </a>
-                                     </li> <br>
+                                     </li>
+                                     <li class="list-inline-item pr-1 py-2">
+                                        <a href="http://www.afrimets.org/SitePages/Home.aspx" target="_blank">Intra-Africa Metology System (AFRIMETS) </a>
+                                    </li> <br>
                                      <br>
                                  </ul>
                              </div>
@@ -109,6 +112,22 @@
                                              Service Charter
                                              Slip Portal</a></li>
                                      <br>
+                                     <li class="list-inline-item pr-1 py-2"><a
+                                        href="https://www.tamisemi.go.tz/">TAMISEMI </a></li>
+                                        <br>
+                                    <li class="list-inline-item pr-1 py-2"><a
+                                            href="https://www.tanroads.go.tz/about-us">TANROARDS </a></li>
+                                            <br>
+                                    <li class="list-inline-item pr-1 py-2"><a
+                                                href="https://www.ewura.go.tz/">EWURA </a></li>
+                                <br>
+                                <li class="list-inline-item pr-1 py-2"><a
+                                    href="https://www.tbs.go.tz/"> Tanzania Breau of Standard (TBS) </a></li>
+                    <br>
+
+                    <li class="list-inline-item pr-1 py-2"><a
+                        href="https://www.pbpa.go.tz/">Petroleum Bulk Procurement Agency (PBPA) </a></li>
+        <br>
                                  </ul>
                              </div>
 

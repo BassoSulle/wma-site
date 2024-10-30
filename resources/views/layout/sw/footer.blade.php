@@ -105,6 +105,22 @@
                                              href="https://salaryslip.mof.go.tz/Account/Login?ReturnUrl=%2F">Mkataba wa
                                              Huduma kwa Mteja</a></li>
                                      <br>
+                                     <li class="list-inline-item pr-1 py-2"><a
+                                        href="https://www.tamisemi.go.tz/">TAMISEMI </a></li>
+                                        <br>
+                                    <li class="list-inline-item pr-1 py-2"><a
+                                            href="https://www.tanroads.go.tz/about-us">TANROARDS </a></li>
+                                            <br>
+                                    <li class="list-inline-item pr-1 py-2"><a
+                                                href="https://www.ewura.go.tz/">EWURA </a></li>
+                                <br>
+                                <li class="list-inline-item pr-1 py-2"><a
+                                    href="https://www.tbs.go.tz/"> Shirika la Viwango Tanzania (TBS) </a></li>
+                    <br>
+
+                    <li class="list-inline-item pr-1 py-2"><a
+                        href="https://www.pbpa.go.tz/">Petroleum Bulk Procurement Agency (PBPA) </a></li>
+        <br>
                                  </ul>
                              </div>
 

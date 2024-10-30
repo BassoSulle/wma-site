@@ -83,31 +83,29 @@
                                 <h5 class="title mb-2"><br>Karibu WMA</h5>
                                 <small><i></i></small>
                             </div>
-                            <div class="col-12 px-0 my-2">
+                            <div class="col-12 px-0 my-1">
                                 <p class="card-text" class="text-justify;"
-                                    style="letter-spacing: 0.05em; line-height: 1.5;">
-                                    Historia ya Uzito na Vipimo inafuatiliwa nyuma tangu ustaarabu wa mapema wa mwanadamu.
-                                     Mfumo wa Vipimo bila shaka ni moja ya uvumbuzi mkubwa na muhimu zaidi wa mwanadamu ambayo
-                                     haiwezi kuachwa kando katika historia ya mageuzi ya ustaarabu. Kila binadamu kwenye sayari
-                                      yetu huathiriwa na vipimo kwa njia moja au nyingine. Fikiria, kutoka kwa dakika tunazaliwa
-                                      na katika maisha yetu ya kila siku, kitendo cha kupima au kupima ni muhimu na mara nyingi
-                                       sehemu muhimu ya uwepo wetu. Miili yetu, chakula tunachokula na bidhaa zote sisi matumizi kama
-                                        sehemu muhimu ya maisha ya kisasa yote yamepimwa na kupimwa kwa baadhi jukwaa au mwingine
-                                        katika maendeleo yao.
+                                    style="letter-spacing: 0.05em; line-height: 1.5; text-align: justify; text-align-last: left;">
+                                    Wakala wa Vipimo ni Wakala ya Serikali ambayo ipo chini ya Wizara ya Viwanda na Biashara.
+                                    Ilianzishwa tarehe 17.05.2002 kwa agizo la Serikali (Government Establishment Order) Na.194 kupitia
+                                    Sheria ya uanzishwaji wa Wakala za Serikali sura 245.Kabla ya kuanzishwa kwake majukumu yake yalikuwa
+                                    yakitekelezwa chini ya idara iliyokuwa ndani Wizara ya Viwanda na Biashara.
 
-                                    </br>
-                                    </br>
-                                    Karibu haiwezekani kuelezea chochote bila akimaanisha uzito na vipimo.
-                                     Kwa hiyo, kupima au kupima ni asili na muhimu sehemu ya maisha yetu ya kila siku.
-                                     Uchumi ulimwenguni hutegemea vipimo vya kuaminika ambavyo vinaaminika na kukubalika kimataifa.
-                                      Hii hurahisisha biashara na kupunguza gharama za muamala.
+                                    Lengo kuu la kuanzishwa Wakala wa Vipimo ni kuboresha huduma zilizokuwa zikitolewa na Idara hiyo ya Vipimo chini ya Wizara ya Viwanda na Biashara na kupunguza gharama za uendeshaji kutoka katika mfuko mkuu wa Serikali kuu.
 
+                                    Ili kufanikisha lengo hilo, Wakala wa Vipimo inatekeleza majukumu yake kwa mujibu wa Sheria ya Vipimo Sura Na. 340. Majukumu yanayotekelezwa kupitia sheria hii ni uhakiki na ukaguzi wa Vipimo, kutoa ushauri wa kitaalam kwa waundaji wa vipimo hapa nchini, kuidhinisha miundo ya vipimo mbalimbali kabla ya kuingizwa hapa nchini,
+                                    ukaguzi wa bidhaa zilizofungashwa ambazo zinazalishwa kwenye viwanda vyetu vilivyopo hapa nchini na zile zinazotoka nje ya nchi.
+                                    </br>
+                                    Wakala wa Vipimo katika utekelezaji wa majukumu yake unasaidia katika kujenga uchumi wa kisasa, shirikishi na shindani,
+                                    msingi mkuu wa kufanikisha haya ni kuwa na viwanda vinavyotumia ipasavyo vilivyohakikiwa na kukidhi matakwa ya kimataifa (Traceability to International Standards)
+                                     ambavyo huongeza tija, ufanisi na usahihi wa vipimo vya bidhaa zinazozalishwa kwenye viwanda hivyo kuwa shindani katika soko la ndani na la nje matokeo yake ni
+                                     kuongeza kasi ya ukuaji wa uchumi na pato la Taifa.
                                     <br>
                                     <br>
-                                    {{-- <a href="{{ route('aboutus', ['language' => $current_language]) }}" class=""> --}}
-                                    <a href="#"> Read more..</a>
+                                    <a href="{{route('welcome_note', ['language'=>$current_language])}} "> Tazama zaidi..</a>
+
                                 </p>
-                                <!-- <a href="aboutus" class="link-no-underline">Read more</a> -->
+                                <!-- <a href="aboutus" class="link-no-underline">Tazama zaidi</a> -->
                             </div>
                         </div>
                     </div>
@@ -134,7 +132,7 @@
                                     {{ $item->created_at->format('M j, Y') }}</p>
                                 <p>{{ Str::limit($item->description, 30) }}</p>
                             </b>
-                            <a href="{{route('announcement_details', ['language' => $current_language, 'slug'=>$item->slug])}}" class="read ml-2">Read more</a>
+                            <a href="{{route('announcement_details', ['language' => $current_language, 'slug'=>$item->slug])}}" class="read ml-2">Tazama zaidi</a>
 
                         </div>
                     </div>
@@ -161,7 +159,7 @@
                                 {{ $item->created_at->format('M j, Y') }}</p>
                             <p>{{ Str::limit($item->description, 30) }}
                             </p>
-                            <a href="{{route('event_details', ['language' => $current_language, 'slug'=>$item->slug])}}" class="read ml-2">Read more</a>
+                            <a href="{{route('event_details', ['language' => $current_language, 'slug'=>$item->slug])}}" class="read ml-2">Tazama zaidi</a>
 
                         </div>
                     </div>
@@ -216,7 +214,7 @@
                                         <div class="col-md-6 d-flex flex-column justify-content-center">
                                             <h6 class="article-title">{{ $article->title }}</h6>
                                             <p>{{ Str::limit($article->description, 150) }}</p>
-                                            <a href="{{route('new_details', ['language' => $current_language, 'slug'=>$article->slug])}}" style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read more</a>
+                                            <a href="{{route('new_details', ['language' => $current_language, 'slug'=>$article->slug])}}" style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Tazama zaidi</a>
 
                                         </div>
                                     </div>
@@ -248,7 +246,7 @@
                     </div>
                     <div class="service-title">{{$service->name}}</div>
                     <div class="service-btn-wrapper">
-                        <a  href="{{route('service_details', ['language' => $current_language, 'slug'=>$service->slug])}}" class="serv-btn orange">Read More</a>
+                        <a  href="{{route('service_details', ['language' => $current_language, 'slug'=>$service->slug])}}" class="serv-btn orange">Tazama zaidi</a>
                     </div>
                 </div>
         @endforeach

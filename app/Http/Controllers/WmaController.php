@@ -838,4 +838,19 @@ class WmaController extends Controller
         return view($templatePath, $data);
     }
 
+    public function welcome_note($language)
+    {
+        $templateName = 'welcome_note';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+        'current_language' => $language,
+        'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(2)->get(),
+        'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+
+        ];
+
+        return view($templatePath, $data);
+    }
+
 }
