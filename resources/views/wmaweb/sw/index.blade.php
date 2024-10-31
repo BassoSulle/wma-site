@@ -276,7 +276,7 @@
                             </div>
                             <div class="col-md-12 justify-content-center my-5 text-center">
                                 <a href="{{ route('all_news', ['language' => $current_language]) }}"
-                                    class="link-no-underline" previewlistener="true"><i>See all <i
+                                    class="link-no-underline" previewlistener="true"><i>Tazama zote <i
                                             class="far fa-arrow-alt-circle-right"></i></i></a>
                             </div>
                         </div>
@@ -304,7 +304,7 @@
                             </div>
                             <div class="col-md-12 justify-content-center my-4 text-center">
                                 <a href="{{ route('all_services', ['language' => $current_language]) }}"
-                                    class="link-no-underline" previewlistener="true"><i>See all <i
+                                    class="link-no-underline" previewlistener="true"><i>Tazama zote <i
                                             class="far fa-arrow-alt-circle-right"></i></i></a>
                             </div>
                         </div>

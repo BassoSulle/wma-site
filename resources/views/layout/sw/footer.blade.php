@@ -106,21 +106,21 @@
                                              Huduma kwa Mteja</a></li>
                                      <br>
                                      <li class="list-inline-item pr-1 py-2"><a
-                                        href="https://www.tamisemi.go.tz/">TAMISEMI </a></li>
-                                        <br>
-                                    <li class="list-inline-item pr-1 py-2"><a
-                                            href="https://www.tanroads.go.tz/about-us">TANROARDS </a></li>
-                                            <br>
-                                    <li class="list-inline-item pr-1 py-2"><a
-                                                href="https://www.ewura.go.tz/">EWURA </a></li>
-                                <br>
-                                <li class="list-inline-item pr-1 py-2"><a
-                                    href="https://www.tbs.go.tz/"> Shirika la Viwango Tanzania (TBS) </a></li>
-                    <br>
+                                             href="https://www.tamisemi.go.tz/">TAMISEMI </a></li>
+                                     <br>
+                                     <li class="list-inline-item pr-1 py-2"><a
+                                             href="https://www.tanroads.go.tz/about-us">TANROARDS </a></li>
+                                     <br>
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.ewura.go.tz/">EWURA
+                                         </a></li>
+                                     <br>
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.tbs.go.tz/"> Shirika la
+                                             Viwango Tanzania (TBS) </a></li>
+                                     <br>
 
-                    <li class="list-inline-item pr-1 py-2"><a
-                        href="https://www.pbpa.go.tz/">Petroleum Bulk Procurement Agency (PBPA) </a></li>
-        <br>
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.pbpa.go.tz/">Petroleum
+                                             Bulk Procurement Agency (PBPA) </a></li>
+                                     <br>
                                  </ul>
                              </div>
 
@@ -128,8 +128,9 @@
                              <div class="col-lg-4 no-padding-sm">
                                  <h5 class="footer-heading">Washirika wetu</h5>
                                  <ul class="list-inline text-left">
-                                    <li class="list-inline-item pr-1 py-2"><a href="https://www.tirdo.or.tz/en/home" target="_blank">Tanzania Industrial Research and Devolopment Organization
-                                        (TIRDO)</a></li>
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.tirdo.or.tz/en/home"
+                                             target="_blank">Tanzania Industrial Research and Devolopment Organization
+                                             (TIRDO)</a></li>
                                      <br>
                                      <li class="list-inline-item pr-1 py-2"><a
                                              href="https://costechanalytical.com/">Tanzania Commission for Science and
@@ -141,7 +142,8 @@
                                      <li class="list-inline-item pr-1 py-2"><a href="https://tpsftz.org/">Tanzania
                                              Private Sector Foundation (TPSF)</a></li>
                                      <br>
-                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.tbs.go.tz/" target="_blank">Tanzania Bereau of Standard (TBS)</a>
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.tbs.go.tz/"
+                                             target="_blank">Tanzania Bereau of Standard (TBS)</a>
                                      </li>
                                      <!-- <br>
                                    <li class="list-inline-item pr-1 py-2"><a
@@ -153,7 +155,7 @@
                                    <br> -->
                                  </ul>
                                  <div class="row justify-content-center mt-2">
-                                     {{-- <a href="{{route('partners', ['language' => $current_language])}}" class="link-no-underline"> <i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
+                                     {{-- <a href="{{route('partners', ['language' => $current_language])}}" class="link-no-underline"> <i>Tazama zote <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
                                  </div>
                              </div>
 
@@ -190,7 +192,8 @@
                      <div class="row  pr-3">
                          <div class="col-md-8 text-left text-white-50 text-xs-center">
                              Imeundwa na Kutengenezwa na
-                             <a href="{{ route('home', ['language' => $current_language]) }}" target="_blank">TIRDO</a>
+                             <a href="{{ route('home', ['language' => $current_language]) }}"
+                                 target="_blank">TIRDO</a>
                          </div>
                          <div class="col-md-4 text-right text-white-50 text-xs-center">
                              © {{ date('Y') }} TIRDO, Haki zote zimehifadhiwa.

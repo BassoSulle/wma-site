@@ -86,21 +86,30 @@
                             <div class="col-12 px-0 my-2">
                                 <p class="card-text" class="text-justify;"
                                     style="letter-spacing: 0.05em; line-height: 1.5; text-align: justify; text-align-last: left;">
-                                    The Weights and Measures Agency is a Government Agency under the Ministry of Industry and Trade.
-                                    It was established on 17.05.2002 by Government Establishment Order No. 194 through the Act for the Establishment of Government Agencies,
-                                    Chapter 245. Before its establishment, its responsibilities were carried out under a department within the Ministry of Industry and Trade.
-                                    The main objective of establishing the Weights and Measures Agency is to improve the services that were being provided by the Weights Department
-                                     under the Ministry of Industry and Trade and to reduce operational costs from the central government fund.
+                                    The Weights and Measures Agency is a Government Agency under the Ministry of Industry
+                                    and Trade.
+                                    It was established on 17.05.2002 by Government Establishment Order No. 194 through the
+                                    Act for the Establishment of Government Agencies,
+                                    Chapter 245. Before its establishment, its responsibilities were carried out under a
+                                    department within the Ministry of Industry and Trade.
+                                    The main objective of establishing the Weights and Measures Agency is to improve the
+                                    services that were being provided by the Weights Department
+                                    under the Ministry of Industry and Trade and to reduce operational costs from the
+                                    central government fund.
                                     </br>
-                                </br>
-                                    To achieve this goal, the Weights and Measures Agency carries out its duties in accordance with the Weights and Measures Act,
-                                     Chapter No. 340. The responsibilities executed under this law include verification and inspection of measurements, providing
-                                     technical advice to manufacturers of measuring instruments in the country, approving various types of measuring instruments before they are imported into the country,
-                                     and inspecting packaged products produced in our local industries and those imported from abroad.
+                                    </br>
+                                    To achieve this goal, the Weights and Measures Agency carries out its duties in
+                                    accordance with the Weights and Measures Act,
+                                    Chapter No. 340. The responsibilities executed under this law include verification and
+                                    inspection of measurements, providing
+                                    technical advice to manufacturers of measuring instruments in the country, approving
+                                    various types of measuring instruments before they are imported into the country,
+                                    and inspecting packaged products produced in our local industries and those imported
+                                    from abroad.
 
                                     <br>
                                 </p>
-                                <a href="{{route('welcome_note', ['language'=>$current_language])}} "> Read more..</a>
+                                <a href="{{ route('welcome_note', ['language' => $current_language]) }} "> Read more..</a>
                                 <!-- <a href="aboutus" class="link-no-underline">Read more</a> -->
                             </div>
                         </div>
@@ -138,7 +147,7 @@
                                 </div>
                                 <div class="col-md-12 justify-content-center mt-4 text-center">
                                     <a href="{{ route('all_announcements', ['language' => $current_language]) }}"
-                                        class="link-no-underline" previewlistener="true"><i>See all <i
+                                        class="link-no-underline" previewlistener="true"><i>View all <i
                                                 class="far fa-arrow-alt-circle-right"></i></i></a>
                                 </div>
                             </div>
@@ -170,7 +179,7 @@
                                 </div>
                                 <div class="col-md-12 justify-content-center mt-4 text-center">
                                     <a href="{{ route('all_events', ['language' => $current_language]) }}"
-                                        class="link-no-underline" previewlistener="true"><i>See all <i
+                                        class="link-no-underline" previewlistener="true"><i>View all <i
                                                 class="far fa-arrow-alt-circle-right"></i></i></a>
                                 </div>
                             </div>
@@ -255,7 +264,7 @@
                             </div>
                             <div class="col-md-12 justify-content-center my-5 text-center">
                                 <a href="{{ route('all_news', ['language' => $current_language]) }}"
-                                    class="link-no-underline" previewlistener="true"><i>See all <i
+                                    class="link-no-underline" previewlistener="true"><i>View all <i
                                             class="far fa-arrow-alt-circle-right"></i></i></a>
                             </div>
                         </div>
@@ -283,7 +292,7 @@
                             </div>
                             <div class="col-md-12 justify-content-center my-4 text-center">
                                 <a href="{{ route('all_services', ['language' => $current_language]) }}"
-                                    class="link-no-underline" previewlistener="true"><i>See all <i
+                                    class="link-no-underline" previewlistener="true"><i>View all <i
                                             class="far fa-arrow-alt-circle-right"></i></i></a>
                             </div>
                         </div>
