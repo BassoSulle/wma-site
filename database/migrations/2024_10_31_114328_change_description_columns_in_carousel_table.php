@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('carousel', function (Blueprint $table) {
+        Schema::table('carousels', function (Blueprint $table) {
             $table->text('en_description')->nullabe()->change();
             $table->text('sw_description')->nullabe()->change();
         });
