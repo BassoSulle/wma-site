@@ -13,8 +13,9 @@
                                 <li class="breadcrumb-item "><a
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
-                                {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
-                                <li class="breadcrumb-item list-inline-item active">{{$event_details->title}}</li>
+                                <li class="breadcrumb-item list-inline-item font-weight-bold"><a
+                                        href="{{ route('all_events', ['language' => $current_language]) }}">Events</a></li>
+                                <li class="breadcrumb-item list-inline-item active">{{ $event_details->title }}</li>
                             </ol>
                         </nav>
                     </div>
@@ -23,12 +24,14 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        <h4>{{$event_details->title}}</h4>
-                        <p class="text-muted">Date: {{$event_details->created_at}}</p><br>
-                        <div style="width: 90%; height: 400px; overflow: hidden;"> <!-- Adjust height as needed -->
-                            <img src="{{ asset('storage/'. $event_details->image) }}"
-                                 style="width: 60%; height: 80%; object-fit: cover;"
-                                 alt="" class="img-fluid">
+                        <h4 class="text-uppercase">{{ $event_details->title }}</h4>
+                        <p class="my-3"><i class="fa fa-calendar" style="color: #006f8b;"></i>
+                            {{ $event_details->created_at->format('M j, Y') }}</p>
+                        <div style="width: 100%; height: 400px; overflow: hidden;"> <!-- Adjust height as needed -->
+                            <center>
+                                <img src="{{ asset('storage/' . $event_details->image) }}"
+                                    style="width: 100%; height: 90%; object-fit: cover;" alt="" class="img-fluid">
+                            </center>
                         </div>
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="vision and mission">

@@ -13,7 +13,8 @@
                                 <li class="breadcrumb-item "><a
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
-                                <li class="breadcrumb-item list-inline-item font-weight-bold">News</li>
+                                <li class="breadcrumb-item list-inline-item font-weight-bold"><a
+                                        href="{{ route('all_news', ['language' => $current_language]) }}">News</a></li>
                                 <li class="breadcrumb-item list-inline-item active">{{ $new_details->title }}
                                 </li>
                             </ol>
@@ -25,11 +26,14 @@
 
                     <div class="col-md-9 bg-white py-3 page-content">
                         <h4 class="text-uppercase mb-3">{{ $new_details->title }}</h4>
-                        <div style="width: 90%; height: 400px; overflow: hidden;"> <!-- Adjust height as needed -->
-                            <img src="{{ asset('storage/' . $new_details->image) }}"
-                                style="width: 100%; height: 100%; object-fit: cover;" alt="" class="img-fluid">
+                        <p class="my-3"><i class="fa fa-calendar" style="color: #006f8b;"></i>
+                            {{ $new_details->created_at->format('M j, Y') }}</p>
+                        <div style="width: 100%; height: 400px; overflow: hidden;"> <!-- Adjust height as needed -->
+                            <center>
+                                <img src="{{ asset('storage/' . $new_details->image) }}"
+                                    style="width: 100%; height: 90%; object-fit: cover;" alt="" class="img-fluid">
+                            </center>
                         </div>
-                        <br>
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="vision and mission">
                                 {!! nl2br(e($new_details->description)) !!}
