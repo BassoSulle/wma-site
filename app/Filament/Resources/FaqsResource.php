@@ -93,22 +93,18 @@ class FaqsResource extends Resource
 
                             TextInput::make('sw_question')
                                 ->required()
-                                ->label('Swahili Question')
-                                ->maxlength(255),
+                                ->label('Swahili Question'),
 
                             Textarea::make('en_answer')
                                 ->required()
-                                ->label('English Answer')
-                                ->maxlength(555),
+                                ->label('English Answer'),
 
                             Textarea::make('sw_answer')
                                 ->required()
-                                ->label('Swahili Answer')
-                                ->maxlength(555),
+                                ->label('Swahili Answer'),
 
                             TextInput::make('slug')
                                 ->required()
-                                ->maxlength(255)
                                 ->disabled()
                                 ->dehydrated()
                                 ->unique(faqs::class, 'slug', ignoreRecord: true),

@@ -87,13 +87,11 @@ class SpeechesResource extends Resource
 
                             Textarea::make('en_content')
                                 ->required()
-                                ->label('English Content')
-                                ->maxlength(555),
+                                ->label('English Content'),
 
                             Textarea::make('sw_content')
                                 ->required()
-                                ->label('Swahili Content')
-                                ->maxlength(555),
+                                ->label('Swahili Content'),
 
 
                             FileUpload::make('en_file')

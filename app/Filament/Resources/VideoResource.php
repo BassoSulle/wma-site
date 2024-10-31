@@ -90,14 +90,12 @@ class VideoResource extends Resource
 
                             Textarea::make('en_content')
                                 ->required()
-                                ->label('English Content')
-                                ->maxlength(255),
+                                ->label('English Content'),
 
 
                             Textarea::make('sw_content')
                                 ->required()
-                                ->label('Swahili Content')
-                                ->maxlength(255),
+                                ->label('Swahili Content'),
 
                             FileUpload::make('video')
                                 ->label('Insert VIdeo')

@@ -90,12 +90,12 @@ class AnnouncementsResource extends Resource
                                 ->unique(Announcements::class, 'slug', ignoreRecord: true),
 
                             Textarea::make('en_description')
-                                ->required()
-                                ->maxlength(255),
+                                ->required(),
+
 
                             Textarea::make('sw_description')
-                                ->required()
-                                ->maxlength(255),
+                                ->required(),
+                               
 
                             DatePicker::make('created_at')
                                 ->nullable(),

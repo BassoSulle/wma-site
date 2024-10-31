@@ -87,7 +87,6 @@ class PhotosResource extends Resource
 
                             Textarea::make('en_caption')
                                 ->required()
-                                ->maxlength(255)
                                 ->label('English Caption')
                                 ->live(onBlur: true)
                                 ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
@@ -96,8 +95,7 @@ class PhotosResource extends Resource
 
                             Textarea::make('sw_caption')
                                 ->required()
-                                ->label('Swahili Caption')
-                                ->maxlength(255),
+                                ->label('Swahili Caption'),
 
                             FileUpload::make('image')
                                 ->image()

@@ -87,14 +87,12 @@ class PublicationCategoryResource extends Resource
 
                             Textarea::make('en_detail')
                                 ->required()
-                                ->label('English Detail')
-                                ->maxlength(255),
+                                ->label('English Detail'),
 
 
                             Textarea::make('sw_detail')
                                 ->required()
-                                ->label('Swahili Detail')
-                                ->maxlength(255),
+                                ->label('Swahili Detail'),
 
 
                             DatePicker::make('created_at')

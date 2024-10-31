@@ -88,8 +88,7 @@ class CarouselResource extends Resource
                                             ->unique(Carousel::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('sw_description')
-                                            ->required()
-                                            ->maxlength(255),
+                                            ->required(),
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -102,8 +101,7 @@ class CarouselResource extends Resource
                                                 === 'create' ? $set('slug', Str::slug($state)) : null),
 
                                         Textarea::make('en_description')
-                                            ->required()
-                                            ->maxlength(255),
+                                            ->required(),
 
                                     ])
 

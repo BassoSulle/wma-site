@@ -80,20 +80,16 @@ class FormCategoryResource extends Resource
 
 
                             TextInput::make('sw_title')
-                                ->required()
-                                ->maxlength(255),
-
+                                ->required(),
 
                             Textarea::make('en_detail')
                                 ->required()
-                                ->label('English Detail')
-                                ->maxlength(255),
+                                ->label('English Detail'),
 
 
                             Textarea::make('sw_detail')
                                 ->required()
-                                ->label('Swahili Detail')
-                                ->maxlength(255),
+                                ->label('Swahili Detail'),
 
 
                             DatePicker::make('created_at')
