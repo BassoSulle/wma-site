@@ -13,8 +13,9 @@
                                 <li class="breadcrumb-item "><a
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
-                                {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
-                                <li class="breadcrumb-item list-inline-item active">{{$new_details->title}}</li>
+                                <li class="breadcrumb-item list-inline-item font-weight-bold">News</li>
+                                <li class="breadcrumb-item list-inline-item active">{{ $new_details->title }}
+                                </li>
                             </ol>
                         </nav>
                     </div>
@@ -23,13 +24,12 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        <h4>{{$new_details->title}}</h4>
+                        <h4 class="text-uppercase mb-3">{{ $new_details->title }}</h4>
                         <div style="width: 90%; height: 400px; overflow: hidden;"> <!-- Adjust height as needed -->
-                            <img src="{{ asset('storage/'. $new_details->image) }}"
-                                 style="width: 100%; height: 100%; object-fit: cover;"
-                                 alt="" class="img-fluid">
+                            <img src="{{ asset('storage/' . $new_details->image) }}"
+                                style="width: 100%; height: 100%; object-fit: cover;" alt="" class="img-fluid">
                         </div>
-                       <br>
+                        <br>
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="vision and mission">
                                 {!! nl2br(e($new_details->description)) !!}

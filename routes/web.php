@@ -198,3 +198,12 @@ Route::get('/{language}/how_do_i_2', [WmaController::class, 'how_do_i_2'])
 
 Route::get('/{language}/all_announcements/', [WmaController::class, 'all_announcements'])
 ->name('all_announcements');
+
+Route::get('/{language}/all_events/', [WmaController::class, 'all_events'])
+->name('all_events');
+
+Route::get('/{language}/all_news/', [WmaController::class, 'all_news'])
+->name('all_news');
+
+Route::get('/{language}/all_services/', [WmaController::class, 'all_services'])
+->name('all_services');
