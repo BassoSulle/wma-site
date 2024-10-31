@@ -11,7 +11,7 @@
                                 <li class="breadcrumb-item "><a
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
-                                <li class="breadcrumb-item list-inline-item active">Announcements</li>
+                                <li class="breadcrumb-item list-inline-item active">Matangazo</li>
                             </ol>
                         </nav>
                     </div>
@@ -19,7 +19,7 @@
 
                 <div class="row">
                     <div class="col-12 bg-white py-3 page-content">
-                        <h4 class="mb-3">Announcements</h4>
+                        <h4 class="mb-3">Matangazo</h4>
                         <div class="row">
                             @foreach ($announcements as $item)
                                 <div class="col-md-4">
@@ -32,8 +32,8 @@
                                                         {{ $item->created_at->format('M j, Y') }}</p>
                                                     <p>{{ Str::limit($item->description, 45) }}</p>
                                                     <a href="{{ route('announcement_details', ['language' => $current_language, 'slug' => $item->slug]) }}"
-                                                        style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read
-                                                        more</a>
+                                                        style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Soma
+                                                        zaidi</a>
                                                 </div>
                                             </div>
                                         </div>
