@@ -112,6 +112,10 @@ Route::get('/{language}/audit-report-2021-2022', [WmaController::class, 'audit_r
 Route::get('/{language}/audit-report-2022-2023', [WmaController::class, 'audit_report_2022_2023'])
     ->name('audit-report-2022-2023');
 
+// audit-report.dynamic
+Route::get('{language}/audit-report/{slug}', [WmaController::class, 'audit_report_dynamic'])
+    ->name('audit-report.dynamic');
+
 Route::get('/{language}/miscalleneous-amendment-act', [WmaController::class, 'miscalleneous_amendment_act'])
     ->name('miscalleneous-amendment-act');
 
