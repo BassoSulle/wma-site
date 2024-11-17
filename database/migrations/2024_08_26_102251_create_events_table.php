@@ -15,9 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('en_title')->required();
             $table->string('sw_title')->required();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->time('event_time')->nullable();
             $table->string('en_description')->nullable();
             $table->string('sw_description')->nullable();
+            $table->string('en_audience')->nullable();
+            $table->string('sw_audience')->nullable();
             $table->string('image')->nullable();
+            $table->string('location')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->string('slug')->unique();
             $table->boolean('is_active')->default(true);

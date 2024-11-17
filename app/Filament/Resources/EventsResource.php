@@ -21,6 +21,7 @@ use Filament\Tables\Columns\IconColumn;
 use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\TimePicker;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Placeholder;
@@ -84,13 +85,40 @@ class EventsResource extends Resource
                                 ->required()
                                 ->maxlength(255),
 
-
                             TextInput::make('slug')
                                 ->required()
                                 // ->maxlength(255)
                                 ->disabled()
                                 ->dehydrated()
                                 ->unique(Events::class, 'slug', ignoreRecord: true),
+
+                            TimePicker::make('event_time')
+                                ->required()
+                                ->label('Event Time')
+                                ->format('H:i') // Time format (24-hour format)
+                                ->nullable(),
+
+
+
+                            DatePicker::make('start_date')
+                            ->required()
+                            ->label('Start Date')
+                            ->format('Y-m-d')
+                            ->nullable(),
+
+
+                            DatePicker::make('end_date')
+                                ->required()
+                                ->label('End Date')
+                                ->format('Y-m-d')
+                                ->nullable(),
+
+
+                            TextInput::make('en_audience')
+                            ->required(),
+
+                            TextInput::make('sw_audience')
+                            ->required(),
 
                             Textarea::make('en_description')
                                 ->required(),
@@ -100,6 +128,9 @@ class EventsResource extends Resource
                             Textarea::make('sw_description')
                                 ->required(),
                                 // ->maxlength(255),
+
+                            TextInput::make('location')
+                            ->required(),
 
                             FileUpload::make('image')
                                 ->image()
