@@ -2,37 +2,23 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\RoleResource\Pages;
-use App\Filament\Resources\RoleResource\RelationManagers;
-use App\Models\Role;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Forms\Form;
+use App\Models\Permission;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
+use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\PermissionResource\Pages;
+use App\Filament\Resources\PermissionResource\RelationManagers;
 
-class RoleResource extends Resource
+class PermissionResource extends Resource
 {
-    protected static ?string $model = Role::class;
+    protected static ?string $model = Permission::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
-    // name to be used in navigation
-    protected static ?string $navigationLabel = 'Roles';
-
-    // position of the resource in navigation
-    protected static ?int $navigationSort = 2;
-
-    // name to be used in page titles
-    protected static ?string $modelLabel = 'Role';
-
-    // navigation group to be used in navigation
-    protected static ?string $navigationGroup = 'User Management';
-
-    // slug to be used in route names abd urls
-    protected static ?string $slug = 'roles';
 
     public static function form(Form $form): Form
     {
@@ -46,7 +32,6 @@ class RoleResource extends Resource
                             ->unique()
                             ->required(),
                     ]),
-
             ]);
     }
 
@@ -55,7 +40,8 @@ class RoleResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
+                    ->searchable()
+                    ->formatStateUsing(fn($state) => Str::ucfirst($state)),
 
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Created At')
@@ -71,11 +57,7 @@ class RoleResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\ActionGroup::make([
-                    Tables\Actions\EditAction::make(),
-                    Tables\Actions\ViewAction::make(),
-                    Tables\Actions\DeleteAction::make(),
-                ])
+                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -94,9 +76,9 @@ class RoleResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListRoles::route('/'),
-            'create' => Pages\CreateRole::route('/create'),
-            'edit' => Pages\EditRole::route('/{record}/edit'),
+            'index' => Pages\ListPermissions::route('/'),
+            'create' => Pages\CreatePermission::route('/create'),
+            'edit' => Pages\EditPermission::route('/{record}/edit'),
         ];
     }
 }

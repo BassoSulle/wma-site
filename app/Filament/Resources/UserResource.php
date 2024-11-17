@@ -78,6 +78,17 @@ class UserResource extends Resource
                             ->required(),
                     ])->columns(2),
 
+                Forms\Components\Section::make("Roles and Permissions")
+                    ->schema([
+                        Forms\Components\Select::make('roles')
+                            ->relationship("roles", "name")
+                            ->preload(),
+                        Forms\Components\Select::make('permissions')
+                            ->relationship("permissions", "name")
+                            ->multiple()
+                            ->preload(),
+                    ]),
+
             ]);
     }
 
