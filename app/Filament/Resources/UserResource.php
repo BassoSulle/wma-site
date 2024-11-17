@@ -97,10 +97,6 @@ class UserResource extends Resource
                     ->dateTime(),
 
                 Tables\Columns\TextColumn::make('created_at')
-                    ->sortable()
-                    ->dateTime(),
-
-                Tables\Columns\TextColumn::make('created_at')
                     ->label('Created At')
                     ->dateTime()
                     ->sortable(),
