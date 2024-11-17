@@ -308,4 +308,9 @@
                                             class="far fa-arrow-alt-circle-right"></i></i></a>
                             </div>
                         </div>
-                    @endsection
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
