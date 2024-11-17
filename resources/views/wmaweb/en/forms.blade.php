@@ -49,8 +49,8 @@
                                             @endphp
                                             <td>{{ $title }} </td>
                                             <td>{{ $item->created_at->format('M d, Y') }}</td>
-                                            <td><a href="{{ asset('storage/forms/' . $current_language . '/' . $file) }}"
-                                                    download="{{ $title }}" target="_blank">Downloads</a></td>
+                                            <td><a href="{{ asset('storage/' . $file) }}" download="{{ $title }}"
+                                                    target="_blank">Downloads</a></td>
                                         </tr>
                                     @empty
                                         <tr>
