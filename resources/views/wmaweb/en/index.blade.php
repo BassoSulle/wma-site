@@ -57,7 +57,7 @@
     </div>
 
     <!-- Welcome Note Section -->
-    <div class="container-fluid mb-3">
+    <div class="container-fluid mb-0">
         <div class="col-md-12 bg-white py-3 page-content">
             <div class="col-12 px-0 mt-4">
 
@@ -114,8 +114,6 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
 
                 <div class="container-fluid mb-3">
@@ -296,4 +294,9 @@
                                             class="far fa-arrow-alt-circle-right"></i></i></a>
                             </div>
                         </div>
-                    @endsection
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
