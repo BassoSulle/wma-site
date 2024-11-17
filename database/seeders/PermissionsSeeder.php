@@ -14,89 +14,89 @@ class PermissionsSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('permissions')->delete();
+        DB::table('permissions')->Delete();
 
         $data = array(
             0 =>
             array(
-                'name' => 'view roles',
+                'name' => 'View roles',
                 'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             1 =>
             array(
-                'name' => 'add role',
+                'name' => 'Add role',
                 'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             2 =>
             array(
-                'name' => 'edit role',
+                'name' => 'Edit role',
                 'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             3 =>
             array(
-                'name' => 'delete role',
+                'name' => 'Delete role',
                 'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             4 =>
             array(
-                'name' => 'view permissions',
+                'name' => 'View permissions',
                 'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             5 =>
             array(
-                'name' => 'add permission',
+                'name' => 'Add permission',
                 'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             6 =>
             array(
-                'name' => 'edit permission',
+                'name' => 'Edit permission',
                 'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             7 =>
             array(
-                'name' => 'delete permission',
+                'name' => 'Delete permission',
                 'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             8 =>
             array(
-                'name' => 'view users',
+                'name' => 'View users',
                 'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             9 =>
             array(
-                'name' => 'add user',
+                'name' => 'Add user',
                 'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             10 =>
             array(
-                'name' => 'edit user',
+                'name' => 'Edit user',
                 'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ),
             11 =>
             array(
-                'name' => 'delete user',
+                'name' => 'Delete user',
                 'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
