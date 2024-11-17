@@ -112,6 +112,10 @@ Route::get('/{language}/audit-report-2021-2022', [WmaController::class, 'audit_r
 Route::get('/{language}/audit-report-2022-2023', [WmaController::class, 'audit_report_2022_2023'])
     ->name('audit-report-2022-2023');
 
+// audit-report.dynamic
+Route::get('{language}/audit-report/{slug}', [WmaController::class, 'audit_report_dynamic'])
+    ->name('audit-report.dynamic');
+
 Route::get('/{language}/miscalleneous-amendment-act', [WmaController::class, 'miscalleneous_amendment_act'])
     ->name('miscalleneous-amendment-act');
 
@@ -179,13 +183,33 @@ Route::get('publication/{language}/{slug}', [WmaController::class, 'dynamic_publ
 
 //Services
 Route::get('/{language}/service_details/{slug}', [WmaController::class, 'service_details'])
-->name('service_details');
+    ->name('service_details');
 
 Route::get('/{language}/event_details/{slug}', [WmaController::class, 'event_details'])
-->name('event_details');
+    ->name('event_details');
 
 Route::get('/{language}/announcement_details/{slug}', [WmaController::class, 'announcement_details'])
-->name('announcement_details');
+    ->name('announcement_details');
 
 Route::get('/{language}/new_details/{slug}', [WmaController::class, 'new_details'])
-->name('new_details');
+    ->name('new_details');
+
+Route::get('/{language}/how_do_i_1', [WmaController::class, 'how_do_i_1'])
+    ->name('how_do_i_1');
+
+Route::get('/{language}/how_do_i_2', [WmaController::class, 'how_do_i_2'])
+    ->name('how_do_i_2');
+
+Route::get('/{language}/all_announcements/', [WmaController::class, 'all_announcements'])
+    ->name('all_announcements');
+
+Route::get('/{language}/welcome_note/', [WmaController::class, 'welcome_note'])
+    ->name('welcome_note');
+Route::get('/{language}/all_events/', [WmaController::class, 'all_events'])
+    ->name('all_events');
+
+Route::get('/{language}/all_news/', [WmaController::class, 'all_news'])
+    ->name('all_news');
+
+Route::get('/{language}/all_services/', [WmaController::class, 'all_services'])
+    ->name('all_services');

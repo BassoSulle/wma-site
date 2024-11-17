@@ -85,6 +85,17 @@ class UserResource extends Resource
                             ->hidden(fn(Page $livewire) => ($livewire instanceof CreateUser)),
                     ])->columns(1),
 
+                Forms\Components\Section::make("Roles and Permissions")
+                    ->schema([
+                        Forms\Components\Select::make('roles')
+                            ->relationship("roles", "name")
+                            ->preload(),
+                        Forms\Components\Select::make('permissions')
+                            ->relationship("permissions", "name")
+                            ->multiple()
+                            ->preload(),
+                    ]),
+
             ]);
     }
 
@@ -100,10 +111,6 @@ class UserResource extends Resource
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make('email_verified_at')
-                    ->sortable()
-                    ->dateTime(),
-
-                Tables\Columns\TextColumn::make('created_at')
                     ->sortable()
                     ->dateTime(),
 
