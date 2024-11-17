@@ -46,6 +46,10 @@ class RoleResource extends Resource
                             ->unique()
                             ->required(),
                     ]),
+                Forms\Components\Select::make('permissions')
+                    ->relationship("permissions", "name")
+                    ->multiple()
+                    ->preload()
 
             ]);
     }
