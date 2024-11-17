@@ -18,7 +18,22 @@ class PermissionResource extends Resource
 {
     protected static ?string $model = Permission::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-key';
+
+    // name to be used in navigation
+    protected static ?string $navigationLabel = 'Permissions';
+
+    // position of the resource in navigation
+    protected static ?int $navigationSort = 3;
+
+    // name to be used in page titles
+    protected static ?string $modelLabel = 'Permission';
+
+    // navigation group to be used in navigation
+    protected static ?string $navigationGroup = 'User Management';
+
+    // slug to be used in route names abd urls
+    protected static ?string $slug = 'permissions';
 
     public static function form(Form $form): Form
     {
@@ -57,7 +72,11 @@ class PermissionResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ])
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
