@@ -39,6 +39,7 @@ class AdminPanelProvider extends PanelProvider
             ->navigationGroups([
                 'User Management',
                 'Home Contents',
+                'Services',
                 'Information Hub',
                 'Media Center',
                 'WMA Forms',

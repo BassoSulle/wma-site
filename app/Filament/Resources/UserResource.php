@@ -8,11 +8,15 @@ use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
+use Filament\Resources\Pages\Page;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Contracts\Support\Htmlable;
 use App\Filament\Resources\UserResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\UserResource\Pages\EditUser;
+use App\Filament\Resources\UserResource\Pages\CreateUser;
 use App\Filament\Resources\UserResource\RelationManagers;
 
 class UserResource extends Resource
@@ -67,16 +71,19 @@ class UserResource extends Resource
                             ->maxlength(255)
                             ->unique(ignoreRecord: true),
 
-                        Forms\Components\TextInput::make('email_verified_at')
-                            ->label('Email Verifyied At')
-                            ->default(now()),
-
                         Forms\Components\TextInput::make('password')
                             ->label('Password')
                             ->password()
+                            ->dehydrateStateUsing(fn($state) => Hash::make($state))
                             ->dehydrated(fn($state) => filled($state))
-                            ->required(),
-                    ])->columns(2),
+                            ->required(fn(Page $livewire) => ($livewire instanceof CreateUser))
+                            ->visible(fn(Page $livewire) => ($livewire instanceof CreateUser)),
+
+                        Forms\Components\TextInput::make('email_verified_at')
+                            ->label('Email Verifyied At')
+                            ->default(now())
+                            ->hidden(fn(Page $livewire) => ($livewire instanceof CreateUser)),
+                    ])->columns(1),
 
             ]);
     }

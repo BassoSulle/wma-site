@@ -11,6 +11,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Tabs;
 use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
@@ -81,15 +82,17 @@ class FaqsResource extends Resource
     {
         return $form
             ->schema([
-                Section::make([
-                    Grid::make()
-                        ->schema([
-                            TextInput::make('en_question')
-                                ->required()
-                                ->maxlength(255)
-                                ->label('English Question')
-                                ->live(onBlur: true)
-                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+                Section::make()
+                    ->description("Fill all required fields on both tabs")
+                    ->schema([
+                        Tabs::make('Tabs')
+                            ->tabs([
+                                Tabs\Tab::make('Swahili')
+                                    ->schema([
+                                        TextInput::make('sw_question')
+                                            ->required()
+                                            ->label('Question')
+                                            ->maxlength(255),
 
                             TextInput::make('sw_question')
                                 ->required()
@@ -109,20 +112,32 @@ class FaqsResource extends Resource
                                 ->dehydrated()
                                 ->unique(faqs::class, 'slug', ignoreRecord: true),
 
-                            Hidden::make('created_by')
-                                ->default(fn() => Auth::id()),
-
-                            Placeholder::make('created_by_name')
-                                ->label('Created By')
-                                ->content(fn() => Auth::user()->name),
-
-
-
-                            Toggle::make('is_active')
+                            Textarea::make('en_answer')
                                 ->required()
-                                ->default(true)
-                        ])
-                ])
+                                ->label('Answer'),
+
+                                ])
+
+                            ])->activeTab(1)->columnSpanFull()
+
+                    ]),
+                Section::make()
+                    ->schema([
+                        DatePicker::make('created_at')
+                            ->nullable()
+                            ->columnSpanFull(),
+
+                        Hidden::make('created_by')
+                            ->default(fn() => Auth::id()),
+
+                        Placeholder::make('created_by_name')
+                            ->label('Created By')
+                            ->content(fn() => Auth::user()->name),
+
+                        Toggle::make('is_active')
+                            ->required()
+                            ->default(true)
+                    ])->columns(2)
             ]);
     }
 

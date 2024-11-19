@@ -75,17 +75,10 @@ class CarouselResource extends Resource
                                 Tabs\Tab::make('Swahili')
                                     ->schema([
                                         TextInput::make('sw_title')
+                                            ->label('Title')
                                             ->required()
                                             ->maxlength(255)
                                             ->columnSpanFull(),
-
-                                        TextInput::make('slug')
-                                            ->required()
-                                            ->maxlength(255)
-                                            ->disabled()
-                                            ->dehydrated()
-                                            ->hidden()
-                                            ->unique(Carousel::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('sw_description')
                                             ->required(),
@@ -94,11 +87,20 @@ class CarouselResource extends Resource
                                 Tabs\Tab::make('English')
                                     ->schema([
                                         TextInput::make('en_title')
+                                            ->label('Title')
                                             ->required()
                                             ->maxlength(255)
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                                 === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            // ->hidden()
+                                            ->unique(Carousel::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_description')
                                             ->required(),
@@ -128,6 +130,13 @@ class CarouselResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('image')
+                    ->searchable()
+                    ->html()
+                    ->formatStateUsing(function ($state) {
+                        return '<img src="' . asset('storage/carousel/' . basename($state)) . '" width="30", height="40" />';
+                    }),
+
                 Tables\Columns\TextColumn::make('sw_title')
                     ->label("Swahili title")
                     ->searchable()
@@ -140,13 +149,6 @@ class CarouselResource extends Resource
                     ->searchable()
                     ->formatStateUsing(function ($state) {
                         return Str::words($state, 5, '.....');
-                    }),
-
-                Tables\Columns\TextColumn::make('image')
-                    ->searchable()
-                    ->html()
-                    ->formatStateUsing(function ($state) {
-                        return '<img src="' . asset('storage/carousel/' . basename($state)) . '" width="30", height="40" />';
                     }),
 
                 Tables\Columns\TextColumn::make('created_at')
