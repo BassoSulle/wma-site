@@ -74,8 +74,13 @@
                                              Trade and Investiment</a>
                                      </li> <br>
                                      <li class="list-inline-item pr-1 py-2">
-                                         <a href="https://business.go.tz/" target="_blank">International Organization of
+                                         <a href="https://www.oiml.org/en/" target="_blank">International Organization
+                                             of
                                              Legal Metrology </a>
+                                     </li>
+                                     <li class="list-inline-item pr-1 py-2">
+                                         <a href="http://www.afrimets.org/SitePages/Home.aspx"
+                                             target="_blank">Intra-Africa Metology System (AFRIMETS) </a>
                                      </li> <br>
                                      <br>
                                  </ul>
@@ -109,6 +114,22 @@
                                              Service Charter
                                              Slip Portal</a></li>
                                      <br>
+                                     <li class="list-inline-item pr-1 py-2"><a
+                                             href="https://www.tamisemi.go.tz/">TAMISEMI </a></li>
+                                     <br>
+                                     <li class="list-inline-item pr-1 py-2"><a
+                                             href="https://www.tanroads.go.tz/about-us">TANROARDS </a></li>
+                                     <br>
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.ewura.go.tz/">EWURA
+                                         </a></li>
+                                     <br>
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.tbs.go.tz/"> Tanzania
+                                             Breau of Standard (TBS) </a></li>
+                                     <br>
+
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.pbpa.go.tz/">Petroleum
+                                             Bulk Procurement Agency (PBPA) </a></li>
+                                     <br>
                                  </ul>
                              </div>
 
@@ -116,19 +137,24 @@
                              <div class="col-lg-4 no-padding-sm">
                                  <h5 class="footer-heading">Our Partners</h5>
                                  <ul class="list-inline text-left">
-                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.tirdo.or.tz/en/home" target="_blank">Tanzania Industrial Research and Devolopment Organization (TIRDO)</a></li>
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.tirdo.or.tz/en/home"
+                                             target="_blank">Tanzania Industrial Research and Devolopment Organization
+                                             (TIRDO)</a></li>
                                      <br>
-                                     <li class="list-inline-item pr-1 py-2"><a
-                                             href="https://costechanalytical.com/" target="_blank">Tanzania Commission for Science and
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://costechanalytical.com/"
+                                             target="_blank">Tanzania Commission for Science and
                                              Technology (COSTECH)</a></li>
                                      <br>
-                                     <li class="list-inline-item pr-1 py-2"><a href="https://cti.co.tz/" target="_blank">Confederation
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://cti.co.tz/"
+                                             target="_blank">Confederation
                                              of Tanzania Industries (CTI)</a></li>
                                      <br>
-                                     <li class="list-inline-item pr-1 py-2"><a href="https://tpsftz.org/" target="_blank">Tanzania
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://tpsftz.org/"
+                                             target="_blank">Tanzania
                                              Private Sector Foundation (TPSF)</a></li>
                                      <br>
-                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.tbs.go.tz/" target="_blank">Tanzania Bereau of Standard (TBS)</a>
+                                     <li class="list-inline-item pr-1 py-2"><a href="https://www.tbs.go.tz/"
+                                             target="_blank">Tanzania Bereau of Standard (TBS)</a>
                                      </li>
                                      <!-- <br>
                                     <li class="list-inline-item pr-1 py-2"><a
@@ -140,7 +166,7 @@
                                     <br> -->
                                  </ul>
                                  <div class="row justify-content-center mt-2">
-                                     {{-- <a href="{{route('partners', ['language' => $current_language])}}" class="link-no-underline"> <i>See all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
+                                     {{-- <a href="{{route('partners', ['language' => $current_language])}}" class="link-no-underline"> <i>View all <i class="far fa-arrow-alt-circle-right"></i></i></a> --}}
                                  </div>
                              </div>
 
@@ -178,7 +204,8 @@
                      <div class="row  pr-3">
                          <div class="col-md-8 text-left text-white-50 text-xs-center">
                              Designed and Developed by
-                             <a href="{{ route('home', ['language' => $current_language]) }}" target="_blank">TIRDO</a>
+                             <a href="{{ route('home', ['language' => $current_language]) }}"
+                                 target="_blank">TIRDO</a>
                          </div>
                          <div class="col-md-4 text-right text-white-50 text-xs-center">
                              © 2023 TIRDO, All Rights Reserved.

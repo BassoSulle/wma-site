@@ -13,8 +13,10 @@
                                 <li class="breadcrumb-item "><a
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
-                                {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
-                                <li class="breadcrumb-item list-inline-item active">{{$announcement_details->title}}</li>
+                                <li class="breadcrumb-item list-inline-item font-weight-bold"><a
+                                        href="{{ route('all_announcements', ['language' => $current_language]) }}">Matangazo</a>
+                                </li>
+                                <li class="breadcrumb-item list-inline-item active">{{ $announcement_details->title }}</li>
                             </ol>
                         </nav>
                     </div>
@@ -23,8 +25,9 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        <h4>{{$announcement_details->title}}</h4>
-                       <br>
+                        <h4 class="text-uppercase">{{ $announcement_details->title }}</h4>
+                        <p class="my-3"><i class="fa fa-calendar" style="color: #006f8b;"></i>
+                            {{ $announcement_details->created_at->format('M j, Y') }}</p>
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="vision and mission">
                                 {!! nl2br(e($announcement_details->description)) !!}

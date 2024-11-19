@@ -100,7 +100,7 @@
                         </div>
 
                         <div class="col-md-8 col-sm-8 col-xs-8 text-center pt-2 pt-xs-0">
-                            <h5 class="" style="color: #000; ">The united Republic of Tanzania </h5>
+                            <h5 class="" style="color: #000; ">The United Republic of Tanzania </h5>
                             <h3 class="mb-0 title title-main" style="color: #000; text-shadow: 1px 1px 2px #f8a52f;"><b>
                                     WEIGHTS AND MEASURES AGENCY</b></h3>
                             <h3 class="mb-0 title title-main pt-2 pb-2"
@@ -312,7 +312,7 @@
                                 </li>
                                 <li class='nav-item dropdown'><a
                                         href='{{ route('regional-office', ['language' => $current_language]) }}'
-                                        class='nav-link'>Regional Office</a>
+                                        class='nav-link'>Regional Offices</a>
 
                                 </li>
                                 <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
@@ -333,6 +333,11 @@
                                         <li><a class='dropdown-item'
                                                 href="{{ route('audit-report-2022-2023', ['language' => $current_language]) }}">Audit
                                                 Report 2022-2023</a></li>
+                                        @foreach ($audit_reports as $report)
+                                            <li><a class='dropdown-item'
+                                                    href="{{ route('audit-report.dynamic', ['language' => $current_language, 'slug' => $report->slug]) }}">{{ $report->title }}</a>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li class='nav-item dropdown'><a

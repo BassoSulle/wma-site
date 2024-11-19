@@ -14,7 +14,7 @@
                                 <li class="list-inline-item sm-hide pr-2">
                                     <div class="search-form">
                                         {{-- <form class="form-inline py-0 mr-auto" action="{% url 'search' language=current_language %}" method="post">
-    
+
                                             <input class="form-control mr-sm-2" type="text" name="search"
                                                 placeholder="Search" aria-label="Search">
                                             <button type="submit" class="search-icon" name="button">
@@ -107,12 +107,12 @@
                         <div class="col-md-8 col-sm-8 col-xs-8 text-center pt-2 pt-xs-0">
                             <h5 class="" style="color: #000;">Jamhuri ya Muungano wa Tanzania </h5>
                             <h3 class="mb-0 title title-main" style="color: #000; text-shadow: 1px 1px 2px #f8a52f;">
-                                <b><i>
-                                        WAKALA WA VIPIMO</i></b>
+                                <b>
+                                        WAKALA WA VIPIMO</b>
                             </h3>
                             <h3 class="mb-0 title title-main pt-2 pb-2"
-                                style="color: #000; text-shadow: 1px 1px 2px #f8a52f; margin-bottom:8px;"><b><i>
-                                        (WMA)</i></b></h3>
+                                style="color: #000; text-shadow: 1px 1px 2px #f8a52f; margin-bottom:8px;"><b>
+                                        (WMA)</b></h3>
                         </div>
 
                         <div class="col-md-2 col-sm-2 col-xs-2 text-right pt-1 pr-0 logo-container position-relative">
@@ -187,7 +187,7 @@
                                         </li>
                                         <li><a class='dropdown-item' href="{{ route('administration', ['language' => $current_language]) }}">Administration</a></li>
                                         <li><a class='dropdown-item' href="{{ route('successstory', ['language' => $current_language]) }}">Success story</a>
-    
+
                                         <li><a class='dropdown-item' href="{{ route('ongoingresearch', ['language' => $current_language]) }}">Ongoing Research Projects</a></li>
                                         </li> --}}
 
