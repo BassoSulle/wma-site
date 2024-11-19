@@ -27,7 +27,14 @@ class Navbar extends Component
         $this->form_categories = FormCategory::Select($this->current_language . '_title as title', 'slug')->get();
         $this->publication_categories = PublicationCategory::Select($this->current_language . '_title as title', 'slug')->get();
         $audit_report_category = PublicationCategory::whereRaw('LOWER(en_title) like ?', ['%audit report%'])->first();
-        $this->audit_reports = Publications::Select($this->current_language . '_title as title', 'slug')->where('pub_category_id', $audit_report_category->id)->latest()->get();
+        if ($audit_report_category) {
+            $this->audit_reports = Publications::Select($this->current_language . '_title as title', 'slug')
+                ->where('pub_category_id', $audit_report_category->id)
+                ->latest()
+                ->get();
+        } else {
+            $this->audit_reports = collect(); // or = []; for an empty array
+        }
 
         return view('livewire.layout.en.navbar');
     }
