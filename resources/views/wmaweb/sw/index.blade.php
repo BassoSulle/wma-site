@@ -288,7 +288,7 @@
                                 <!-- Row of Cards -->
                                 <div class="row mt-3 px-xs-0 online-services">
                                     @foreach ($services as $service)
-                                        <div class="service-item col mx-2">
+                                        <div class="service-item col-md-3 mx-2">
                                             <div class="service-icon">
                                                 <img src="{{ asset('storage/' . $service->icon) }}" alt=""
                                                     width="80px" style="margin-bottom: 10px;">
