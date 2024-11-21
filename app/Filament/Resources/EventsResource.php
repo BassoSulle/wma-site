@@ -11,9 +11,9 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Tabs;
 use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
@@ -27,8 +27,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Placeholder;
 use Illuminate\Contracts\Support\Htmlable;
 use App\Filament\Resources\EventsResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\EventsResource\RelationManagers;
 
 class EventsResource extends Resource
 {
@@ -70,21 +68,26 @@ class EventsResource extends Resource
     {
         return $form
             ->schema([
-                Section::make([
-                    Grid::make()
-                        ->schema([
-                            TextInput::make('en_title')
-                                ->required()
-                                ->maxlength(255)
-                                ->live(onBlur: true)
-                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
-                                    === 'create' ? $set('slug', Str::slug($state)) : null),
+                Section::make()
+                    ->description("Fill all required fields on both tabs")
+                    ->schema([
+                        Tabs::make('Tabs')
+                            ->tabs([
+                                Tabs\Tab::make('Swahili')
+                                    ->schema([
+                                        TextInput::make('sw_title')
+                                            ->label('Title')
+                                            ->required()
+                                            ->maxlength(255),
 
+                                        Textarea::make('sw_description')
+                                            ->label('Description')
+                                            ->required()
+                                            ->maxlength(255),
 
-                            TextInput::make('sw_title')
-                                ->required()
-                                ->maxlength(255),
-
+                                        TextInput::make('sw_audience')
+                                            ->required(),
+                                    ]),
                                 Tabs\Tab::make('English')
                                     ->schema([
                                         TextInput::make('en_title')
@@ -107,75 +110,56 @@ class EventsResource extends Resource
                                             ->label('Description')
                                             ->required()
                                             ->maxlength(255),
-                            TextInput::make('slug')
-                                ->required()
-                                // ->maxlength(255)
-                                ->disabled()
-                                ->dehydrated()
-                                ->unique(Events::class, 'slug', ignoreRecord: true),
 
-                            TimePicker::make('event_time')
-                                ->required()
-                                ->label('Event Time')
-                                ->format('H:i') // Time format (24-hour format)
-                                ->nullable(),
+                                        TextInput::make('en_audience')
+                                            ->required(),
+                                    ])
+                            ])->activeTab(1)->columnSpanFull()
+                    ]),
+                Section::make()
+                    ->schema([
+                        FileUpload::make('image')
+                            ->image()
+                            ->directory('events')
+                            ->columnSpanFull(),
 
+                        TextInput::make('location')
+                            ->required(),
 
+                        TimePicker::make('event_time')
+                            ->required()
+                            ->label('Event Time')
+                            ->format('H:i') // Time format (24-hour format)
+                            ->nullable(),
 
-                            DatePicker::make('start_date')
+                        DatePicker::make('start_date')
                             ->required()
                             ->label('Start Date')
                             ->format('Y-m-d')
                             ->nullable(),
 
+                        DatePicker::make('end_date')
+                            ->required()
+                            ->label('End Date')
+                            ->format('Y-m-d')
+                            ->nullable(),
 
-                            DatePicker::make('end_date')
-                                ->required()
-                                ->label('End Date')
-                                ->format('Y-m-d')
-                                ->nullable(),
+                        DatePicker::make('created_at')
+                            ->nullable()
+                            ->columnSpanFull(),
 
+                        Placeholder::make('created_by_name')
+                            ->label('Created By')
+                            ->content(fn() => Auth::user()->name),
 
-                            TextInput::make('en_audience')
-                            ->required(),
+                        Hidden::make('created_by')
+                            ->default(fn() => Auth::id()),
 
-                            TextInput::make('sw_audience')
-                            ->required(),
+                        Toggle::make('is_active')
+                            ->required()
+                            ->default(true)
+                    ])->columns(2)
 
-                            Textarea::make('en_description')
-                                ->required(),
-                                // ->maxlength(255),
-
-
-                            ])->activeTab(1)->columnSpanFull()
-                            Textarea::make('sw_description')
-                                ->required(),
-                                // ->maxlength(255),
-
-                            TextInput::make('location')
-                            ->required(),
-
-                            FileUpload::make('image')
-                                ->image()
-                                ->directory('events'),
-
-                            DatePicker::make('created_at')
-                                ->nullable(),
-
-                            Hidden::make('created_by')
-                                ->default(fn() => Auth::id()),
-
-                            Placeholder::make('created_by_name')
-                                ->label('Created By')
-                                ->content(fn() => Auth::user()->name),
-
-                            Toggle::make('is_active')
-                                ->required()
-                                ->default(true)
-
-                        ])
-                ])
-                //
             ]);
     }
 
