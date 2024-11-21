@@ -79,13 +79,11 @@ class NewsResource extends Resource
                                     ->schema([
                                         TextInput::make('sw_title')
                                             ->label('Title')
-                                            ->required()
-                                            ->maxlength(255),
+                                            ->required(),
 
                                         Textarea::make('sw_description')
                                             ->label('Description')
-                                            ->required()
-                                            ->maxlength(255),
+                                            ->required(),
 
                                     ]),
 

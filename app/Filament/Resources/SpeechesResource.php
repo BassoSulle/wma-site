@@ -80,34 +80,29 @@ class SpeechesResource extends Resource
                                     ->schema([
                                         TextInput::make('sw_title')
                                             ->required()
-                                            ->label('Title')
-                                            ->maxlength(255),
+                                            ->label('Title'),
 
                                         Textarea::make('sw_content')
                                             ->required()
-                                            ->label('Description')
-                                            ->maxlength(555),
+                                            ->label('Description'),
 
                                         FileUpload::make('sw_file')
                                             ->label('PDF Document')
                                             ->directory('speeches/sw')
                                             ->required()
-                                            ->acceptedFileTypes(['application/pdf'])
-                                            ->maxSize(10240),
+                                            ->acceptedFileTypes(['application/pdf']),
                                     ]),
 
                                 Tabs\Tab::make('English')
                                     ->schema([
                                         TextInput::make('en_title')
                                             ->required()
-                                            ->maxlength(255)
                                             ->label('Title')
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
 
                                         TextInput::make('slug')
                                             ->required()
-                                            ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
                                             // ->hidden()
@@ -115,15 +110,13 @@ class SpeechesResource extends Resource
 
                                         Textarea::make('en_content')
                                             ->label('Description')
-                                            ->required()
-                                            ->maxlength(255),
+                                            ->required(),
 
                                         FileUpload::make('en_file')
                                             ->label('PDF Document')
                                             ->directory('speeches/en')
                                             ->required()
-                                            ->acceptedFileTypes(['application/pdf'])
-                                            ->maxSize(10240),
+                                            ->acceptedFileTypes(['application/pdf']),
                                     ])
 
                             ])->activeTab(1)->columnSpanFull()

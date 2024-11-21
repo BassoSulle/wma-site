@@ -164,7 +164,7 @@
                                             <div>
                                                 <h6 class="article-h2 text-uppercase">{{ $item->title }}</h6>
                                                 <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
-                                                    {{ $item->created_at->format('M j, Y') }}</p>
+                                                    {{  \Carbon\Carbon::parse($item->start_date) ->format('M j, Y') }}</p>
                                                 <p>{{ Str::limit($item->description, 70) }}
                                                 </p>
                                                 <a href="{{ route('event_details', ['language' => $current_language, 'slug' => $item->slug]) }}"

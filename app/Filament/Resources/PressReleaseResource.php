@@ -80,20 +80,20 @@ class PressReleaseResource extends Resource
                                     ->schema([
                                         TextInput::make('sw_title')
                                             ->required()
-                                            ->label('Title')
-                                            ->maxlength(255),
+                                            ->label('Title'),
+
 
                                         Textarea::make('sw_content')
                                             ->required()
-                                            ->label('Description')
-                                            ->maxlength(555),
+                                            ->label('Description'),
+
 
                                         FileUpload::make('sw_file')
                                             ->label('PDF Document')
                                             ->required()
                                             ->acceptedFileTypes(['application/pdf'])
-                                            ->directory('press_release/sw')
-                                            ->maxSize(10240),
+                                            ->directory('press_release/sw'),
+
 
                                     ]),
 
@@ -109,7 +109,6 @@ class PressReleaseResource extends Resource
 
                                         TextInput::make('slug')
                                             ->required()
-                                            ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
                                             // // ->hidden()
@@ -117,15 +116,13 @@ class PressReleaseResource extends Resource
 
                                         Textarea::make('en_content')
                                             ->label('Description')
-                                            ->required()
-                                            ->maxlength(255),
+                                            ->required(),
 
                                         FileUpload::make('en_file')
                                             ->label('PDF Document')
                                             ->required()
                                             ->acceptedFileTypes(['application/pdf'])
-                                            ->directory('press_release/en')
-                                            ->maxSize(10240),
+                                            ->directory('press_release/en'),
                                     ])
 
                             ])->activeTab(1)->columnSpanFull()

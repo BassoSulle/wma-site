@@ -120,8 +120,8 @@ class FaqsResource extends Resource
 
                                         Textarea::make('en_answer')
                                             ->required()
-                                            ->label('Answer')
-                                            ->maxlength(555),
+                                            ->label('Answer'),
+
                                     ])
 
                             ])->activeTab(1)->columnSpanFull()

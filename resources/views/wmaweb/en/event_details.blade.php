@@ -26,7 +26,12 @@
                     <div class="col-md-9 bg-white py-3 page-content">
                         <h4 class="text-uppercase">{{ $event_details->title }}</h4>
                         <p class="my-3"><i class="fa fa-calendar" style="color: #006f8b;"></i>
-                            {{ $event_details->created_at->format('M j, Y') }}</p>
+                           Event date:  {{ \Carbon\Carbon::parse($event_details->start_date)->format('Y-m-d')}} to {{ \Carbon\Carbon::parse($event_details->end_date)->format('Y-m-d') }}<br>
+                           Time: {{  \Carbon\Carbon::parse($event_details->event_time)->format('Y-m-d')}} <br>
+                            Location: {{ $event_details->location}}
+
+
+                        </p>
                         <div style="width: 100%; height: 400px; overflow: hidden;"> <!-- Adjust height as needed -->
                             <center>
                                 <img src="{{ asset('storage/' . $event_details->image) }}"

@@ -110,7 +110,8 @@ class VideoResource extends Resource
 
                                         Textarea::make(name: 'en_content')
                                             ->label('Description')
-                                            ->required(),
+                                            ->required()
+                                            ->maxlength(255),
 
                                     ])
 

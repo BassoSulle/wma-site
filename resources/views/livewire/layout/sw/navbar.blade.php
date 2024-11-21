@@ -78,7 +78,7 @@
                                         href="{{ route('faqs', ['language' => $current_language]) }}"
                                         style="color: white">Maswali</a></li>
                                 </li>
-                                <li class='nav-item'><a class='nav-link' target='_black'
+                                <li class='nav-item'><a class='nav-link'
                                         href='{{ route('vacancies', ['language' => $current_language]) }}'
                                         style="color: white">Ajira</a></li>
                             </ul>

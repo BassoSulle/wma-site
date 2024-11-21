@@ -11,7 +11,6 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\Tabs;
 use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
@@ -22,6 +21,7 @@ use Filament\Tables\Columns\IconColumn;
 use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\TimePicker;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Placeholder;
@@ -70,24 +70,20 @@ class EventsResource extends Resource
     {
         return $form
             ->schema([
-                Section::make()
-                    ->description("Fill all required fields on both tabs")
-                    ->schema([
-                        Tabs::make('Tabs')
-                            ->tabs([
-                                Tabs\Tab::make('Swahili')
-                                    ->schema([
-                                        TextInput::make('sw_title')
-                                            ->label('Title')
-                                            ->required()
-                                            ->maxlength(255),
+                Section::make([
+                    Grid::make()
+                        ->schema([
+                            TextInput::make('en_title')
+                                ->required()
+                                ->maxlength(255)
+                                ->live(onBlur: true)
+                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
+                                    === 'create' ? $set('slug', Str::slug($state)) : null),
 
-                                        Textarea::make('sw_description')
-                                            ->label('Description')
-                                            ->required()
-                                            ->maxlength(255),
 
-                                    ]),
+                            TextInput::make('sw_title')
+                                ->required()
+                                ->maxlength(255),
 
                                 Tabs\Tab::make('English')
                                     ->schema([
@@ -111,35 +107,75 @@ class EventsResource extends Resource
                                             ->label('Description')
                                             ->required()
                                             ->maxlength(255),
+                            TextInput::make('slug')
+                                ->required()
+                                // ->maxlength(255)
+                                ->disabled()
+                                ->dehydrated()
+                                ->unique(Events::class, 'slug', ignoreRecord: true),
 
-                                    ])
+                            TimePicker::make('event_time')
+                                ->required()
+                                ->label('Event Time')
+                                ->format('H:i') // Time format (24-hour format)
+                                ->nullable(),
+
+
+
+                            DatePicker::make('start_date')
+                            ->required()
+                            ->label('Start Date')
+                            ->format('Y-m-d')
+                            ->nullable(),
+
+
+                            DatePicker::make('end_date')
+                                ->required()
+                                ->label('End Date')
+                                ->format('Y-m-d')
+                                ->nullable(),
+
+
+                            TextInput::make('en_audience')
+                            ->required(),
+
+                            TextInput::make('sw_audience')
+                            ->required(),
+
+                            Textarea::make('en_description')
+                                ->required(),
+                                // ->maxlength(255),
+
 
                             ])->activeTab(1)->columnSpanFull()
+                            Textarea::make('sw_description')
+                                ->required(),
+                                // ->maxlength(255),
 
-                    ]),
+                            TextInput::make('location')
+                            ->required(),
 
-                Section::make()
-                    ->schema([
-                        FileUpload::make('image')
-                            ->image()
-                            ->directory('events')
-                            ->columnSpanFull(),
+                            FileUpload::make('image')
+                                ->image()
+                                ->directory('events'),
 
-                        DatePicker::make('created_at')
-                            ->nullable()
-                            ->columnSpanFull(),
+                            DatePicker::make('created_at')
+                                ->nullable(),
 
-                        Placeholder::make('created_by_name')
-                            ->label('Created By')
-                            ->content(fn() => Auth::user()->name),
+                            Hidden::make('created_by')
+                                ->default(fn() => Auth::id()),
 
-                        Hidden::make('created_by')
-                            ->default(fn() => Auth::id()),
+                            Placeholder::make('created_by_name')
+                                ->label('Created By')
+                                ->content(fn() => Auth::user()->name),
 
-                        Toggle::make('is_active')
-                            ->required()
-                            ->default(true)
-                    ])->columns(2)
+                            Toggle::make('is_active')
+                                ->required()
+                                ->default(true)
+
+                        ])
+                ])
+                //
             ]);
     }
 
