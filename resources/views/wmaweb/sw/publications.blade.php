@@ -51,7 +51,7 @@
                                             <td>{{ $item->created_at->format('M d, Y') }}</td>
                                             <td><a href="{{ asset('storage/publications/' . $current_language . '/' . $file) }}"
                                                     download="{{ $current_language == 'en' ? $item->en_title : $item->sw_title }}"
-                                                    target="_blank">Download</a></td>
+                                                    target="_blank">Pakua</a></td>
                                         </tr>
                                     @empty
                                         <tr>

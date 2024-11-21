@@ -31,34 +31,36 @@
                                     <tr>
                                         <th>
                                             <h4>
-                                             Tebder Name</h4>
+                                                Kichwa cha Zabuni</h4>
                                         </th>
                                         <th>
-                                            <h4>Published Date</h4>
+                                            <h4>Tarehe ya Kutolewa</h4>
                                         </th>
                                         <th>
-                                            <h4>Deadline</h4>
+                                            <h4>Tarehe ya Mwisho</h4>
                                         </th>
 
                                         <th>
-                                            <h4>Download</h4>
+                                            <h4>Pakua</h4>
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   @forelse ( $tender as $item )
-                                   <tr>
-                                    <td>{{$item->title}}</td>
-                                    <td>{{$item->start_date}}</td>
-                                    <td>{{$item->end_date}}</td>
-                                    <td><a href="{{asset('storage/'.$item->file)}}" download="{{ $item->title . '_' . basename($item->file) }}" target="_blank">Download </a></td>
-                                    </tr>
-                                   @empty
-                                   <tr>
-                                    <td colspan="4" class="text-center">Hakuna Zabuni yeyote..!</td>
+                                    @forelse ($tender as $item)
+                                        <tr>
+                                            <td>{{ $item->title }}</td>
+                                            <td>{{ $item->start_date }}</td>
+                                            <td>{{ $item->end_date }}</td>
+                                            <td><a href="{{ asset('storage/' . $item->file) }}"
+                                                    download="{{ $item->title . '_' . basename($item->file) }}"
+                                                    target="_blank">Pakua</a></td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="4" class="text-center">Hakuna Zabuni yeyote..!</td>
 
-                                </tr>
-                                   @endforelse
+                                        </tr>
+                                    @endforelse
 
                                 </tbody>
                             </table>
