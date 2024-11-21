@@ -35,7 +35,7 @@ class WmaController extends Controller
             'carousel_items' => Carousel::select('slug', 'image', $language . '_title as title', $language . '_description as description')->where('is_active', true)->latest()->get(),
             'news_articles' => News::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(6)->get(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
-            'events' => EventsModel::select('slug', 'image','start_date', 'end_date','event_time','en_audience','sw_audience','location', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+            'events' => EventsModel::select('slug', 'image', 'start_date', 'end_date', 'event_time', 'en_audience', 'sw_audience', 'location', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
             'services' => Services::select('slug', 'image', 'icon', $language . '_name as name', $language . '_content as content', 'created_at')->where('is_active', true)->latest()->limit(8)->get(),
             // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
         ];
@@ -360,7 +360,7 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            'region_offices' => RegionOffices::select('slug', 'region_name', 'location', 'address', 'fax', 'telephone', 'email', $language . '_content as content')->where('is_active', true)->latest()->get(),
+            'region_offices' => RegionOffices::select('slug', 'contact_person_name', 'contact_person_position', 'region_name', 'location', 'address', 'telephone', 'email', $language . '_content as content')->where('is_active', true)->latest()->get(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
 
@@ -783,7 +783,7 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            'events' => EventsModel::select('slug', 'image','start_date', 'end_date','event_time','en_audience','sw_audience','location', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->get(),
+            'events' => EventsModel::select('slug', 'image', 'start_date', 'end_date', 'event_time', 'en_audience', 'sw_audience', 'location', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->get(),
         ];
         return view($templatePath, $data);
     }
@@ -795,9 +795,9 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
-            'event_details' => EventsModel::select('slug', 'image','start_date', 'end_date','event_time','en_audience','sw_audience','location',  $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->where('slug', $slug)->first(),
+            'event_details' => EventsModel::select('slug', 'image', 'start_date', 'end_date', 'event_time', 'en_audience', 'sw_audience', 'location',  $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->where('slug', $slug)->first(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
-            'events' => EventsModel::select('slug', 'image', 'start_date', 'end_date','event_time','en_audience','sw_audience','location', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+            'events' => EventsModel::select('slug', 'image', 'start_date', 'end_date', 'event_time', 'en_audience', 'sw_audience', 'location', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
 
         ];
         return view($templatePath, $data);

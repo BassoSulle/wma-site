@@ -13,23 +13,24 @@ return new class extends Migration
     {
         Schema::create('region_offices', function (Blueprint $table) {
             $table->id();
-            $table->string('region_name')->reqired();
+            $table->string('contact_person_name')->nullable();
+            $table->string('contact_person_position')->nullable();
+            $table->string('region_name')->required();
             $table->string('slug')->unique();
             $table->string('en_content')->nullable();
             $table->string('sw_content')->nullable();
-            $table->string('location')->reqired();
+            $table->string('location')->required();
             $table->string('address')->nullable();
-            $table->string('fax')->nullable();
             $table->string('telephone')->nullable();
             $table->string('email')->nullable();
-            $table->UnsignedBigInteger('created_by')->nullbale();
+            $table->UnsignedBigInteger('created_by')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
 
             $table->foreign('created_by')
-            ->references('id')
-            ->on('users')
-            ->OnDelete('cascade');
+                ->references('id')
+                ->on('users')
+                ->OnDelete('cascade');
         });
     }
 

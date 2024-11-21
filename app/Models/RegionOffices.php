@@ -9,13 +9,14 @@ class RegionOffices extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'contact_person_name',
+        'contact_person_position',
         'region_name',
         'slug',
         'en_content',
         'sw_content',
         'location',
         'address',
-        'fax',
         'telephone',
         'email',
         'created_by',

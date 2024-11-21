@@ -42,21 +42,23 @@
                                 <h4><label for="regionalOffice">Select regional office:</label></h4>
                                 <select class="form-control" id="regionalOffice" name="regionalOffice">
                                     <option selected>Select office</option>
-                                    @foreach($region_offices as $office)
+                                    @foreach ($region_offices as $office)
                                         <option value="{{ $office->slug }}">{{ $office->region_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
 
-                        @foreach($region_offices as $office)
+                        @foreach ($region_offices as $office)
                             <div id="{{ $office->slug }}Info" class="office-info"><br>
                                 <p>{{ strtoupper($office->content) }}</p>
                                 <hr>
                                 <p>{{ $office->region_name }}</p><br>
+                                <p><span style="font-weight: bold;">Contact person:
+                                        {{ $office->contact_person_name }}</span>, {{ $office->contact_person_position }}
+                                </p>
                                 <p><span style="font-weight: bold;">Location: </span>{{ $office->location }}</p>
                                 <p><span style="font-weight: bold;">Address: </span>{{ $office->address }}</p>
-                                <p><span style="font-weight: bold;">Fax: </span>{{ $office->fax }}</p>
                                 <p><span style="font-weight: bold;">Phone No: </span>{{ $office->telephone }}</p>
                                 <p><span style="font-weight: bold;">Email: </span>{{ $office->email }}</p>
                             </div>
