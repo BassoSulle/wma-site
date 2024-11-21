@@ -124,7 +124,7 @@ class RegionOfficesResource extends Resource
                                     ->schema([
                                         Textarea::make('sw_content')
                                             ->required()
-                                            ->label('Description')
+                                            ->label('Maelezo')
                                             ->maxlength(255),
                                     ]),
 

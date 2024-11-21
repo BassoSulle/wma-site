@@ -80,11 +80,11 @@ class TenderResource extends Resource
                                     ->schema([
                                         TextInput::make('sw_title')
                                             ->required()
-                                            ->label('Title')
+                                            ->label('kichwa cha habari')
                                             ->maxlength(255),
 
                                         FileUpload::make('sw_file')
-                                            ->label('PDF Document')
+                                            ->label('Hati ya PDF')
                                             ->required()
                                             ->acceptedFileTypes(['application/pdf'])
                                             ->directory('tenders/sw')

@@ -80,7 +80,7 @@ class GalleryResource extends Resource
                                     ->schema([
                                         TextInput::make('sw_title')
                                             ->required()
-                                            ->label('Name')
+                                            ->label('Jina')
                                             ->maxlength(255),
                                     ]),
 

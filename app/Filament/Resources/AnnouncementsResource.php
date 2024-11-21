@@ -78,12 +78,12 @@ class AnnouncementsResource extends Resource
                                 Tabs\Tab::make('Swahili')
                                     ->schema([
                                         TextInput::make('sw_title')
-                                            ->label('Title')
+                                            ->label('kichwa cha tangazo')
                                             ->required()
                                             ->maxlength(255),
 
                                         Textarea::make('sw_description')
-                                            ->label('Description')
+                                            ->label('Maelezo')
                                             ->required()
                                             ->maxlength(255)
                                     ]),

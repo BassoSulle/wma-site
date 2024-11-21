@@ -78,11 +78,11 @@ class NewsResource extends Resource
                                 Tabs\Tab::make('Swahili')
                                     ->schema([
                                         TextInput::make('sw_title')
-                                            ->label('Title')
+                                            ->label('Kichwa cha habari')
                                             ->required(),
 
                                         Textarea::make('sw_description')
-                                            ->label('Description')
+                                            ->label('Maelezo')
                                             ->required(),
 
                                     ]),

@@ -82,12 +82,12 @@ class ServicesResource extends Resource
                                 Tabs\Tab::make('Swahili')
                                     ->schema([
                                         TextInput::make('sw_name')
-                                            ->label('Name')
+                                            ->label('Jina la huduma')
                                             ->required()
                                             ->maxlength(255),
 
                                         Textarea::make('sw_content')
-                                            ->label('Description')
+                                            ->label('Maelezo')
                                             ->required()
                                             ->maxlength(255),
 

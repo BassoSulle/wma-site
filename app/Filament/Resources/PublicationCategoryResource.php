@@ -78,13 +78,13 @@ class PublicationCategoryResource extends Resource
                                 Tabs\Tab::make('Swahili')
                                     ->schema([
                                         TextInput::make('sw_title')
-                                            ->label('Title')
+                                            ->label('kichwa cha habari')
                                             ->required()
                                             ->maxlength(255),
 
                                         Textarea::make('sw_detail')
                                             ->required()
-                                            ->label('Detail')
+                                            ->label('Maelezo')
                                             ->maxlength(255),
 
                                     ]),
@@ -109,7 +109,7 @@ class PublicationCategoryResource extends Resource
 
                                         Textarea::make('en_detail')
                                             ->required()
-                                            ->label('Detail')
+                                            ->label('Description')
                                             ->maxlength(255),
                                     ])
 
