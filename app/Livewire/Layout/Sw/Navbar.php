@@ -25,7 +25,7 @@ class Navbar extends Component
     public function render()
     {
         $this->form_categories = FormCategory::Select($this->current_language . '_title as title', 'slug')->get();
-        $this->publication_categories = PublicationCategory::Select($this->current_language . '_title as title', 'slug')->get();
+        $this->publication_categories = PublicationCategory::Select($this->current_language . '_title as title', 'slug')->whereRaw('LOWER(en_title) NOT LIKE ?', ['%audit report%'])->where('is_active', true)->get();
         $audit_report_category = PublicationCategory::whereRaw('LOWER(en_title) like ?', ['%audit-report%'])->first();
         if ($audit_report_category) {
             $this->audit_reports = Publications::Select($this->current_language . '_title as title', 'slug')
