@@ -11,9 +11,9 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\Tabs;
 use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\Hidden;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
@@ -27,6 +27,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Placeholder;
 use Illuminate\Contracts\Support\Htmlable;
 use App\Filament\Resources\EventsResource\Pages;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\EventsResource\RelationManagers;
 
 class EventsResource extends Resource
 {
@@ -68,10 +70,10 @@ class EventsResource extends Resource
     {
         return $form
             ->schema([
-                Section::make()
-                    ->description("Fill all required fields on both tabs")
-                    ->schema([
-                        TextInput::make('en_title')
+                Section::make([
+                    Grid::make()
+                        ->schema([
+                            TextInput::make('en_title')
                                 ->required()
                                 ->maxlength(255)
                                 ->live(onBlur: true)
@@ -147,8 +149,10 @@ class EventsResource extends Resource
                             Toggle::make('is_active')
                                 ->required()
                                 ->default(true)
-                    ])->columns(2)
 
+                        ])
+                ])
+                //
             ]);
     }
 
