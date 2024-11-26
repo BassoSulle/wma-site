@@ -72,7 +72,7 @@
                         <center>
                             <div class="">
                                 <h5 class="title mb-2"><br>ALBAN M. KIHULLA.</h5>
-                                <small>CHIEF EXECUTIVE OFFICER </small>
+                                <small> AFISA MTENDAJI MKUU </small>
                             </div>
                         </center>
                     </div>
@@ -105,16 +105,10 @@
                                     ukaguzi wa bidhaa zilizofungashwa ambazo zinazalishwa kwenye viwanda vyetu vilivyopo
                                     hapa nchini na zile zinazotoka nje ya nchi.
                                     </br>
-                                    Wakala wa Vipimo katika utekelezaji wa majukumu yake unasaidia katika kujenga uchumi wa
-                                    kisasa, shirikishi na shindani,
-                                    msingi mkuu wa kufanikisha haya ni kuwa na viwanda vinavyotumia ipasavyo vilivyohakikiwa
-                                    na kukidhi matakwa ya kimataifa (Traceability to International Standards)
-                                    ambavyo huongeza tija, ufanisi na usahihi wa vipimo vya bidhaa zinazozalishwa kwenye
-                                    viwanda hivyo kuwa shindani katika soko la ndani na la nje matokeo yake ni
-                                    kuongeza kasi ya ukuaji wa uchumi na pato la Taifa.
+
+
                                     <br>
-                                    <br>
-                                    <a href="{{ route('welcome_note', ['language' => $current_language]) }} "> Tazama
+                                    <a href="{{ route('welcome_note', ['language' => $current_language]) }} "> Soma
                                         zaidi..</a>
 
                                 </p>

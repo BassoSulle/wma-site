@@ -44,10 +44,9 @@
 
                             6. Kukagua na kuhakiki bidhaa zilizofungashwa (Net quantity & labeling);<br>
 
-                            7. Give effect to the decisions and recommendations of the OIML Council and Committee with
-                            regard to legal metrology;
+                            7. Kutoaelimu na ushauri wa kitaalamu kuhusu masuala ya vipimo kwa wadau.
 
-                            8. Kutoaelimu na ushauri wa kitaalamu kuhusu masuala ya vipimo kwa wadau.
+
                             </p>
 
                         </div>

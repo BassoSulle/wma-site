@@ -96,7 +96,7 @@
                                     services that were being provided by the Weights Department
                                     under the Ministry of Industry and Trade and to reduce operational costs from the
                                     central government fund.
-                                    </br>
+
                                     </br>
                                     To achieve this goal, the Weights and Measures Agency carries out its duties in
                                     accordance with the Weights and Measures Act,
@@ -108,8 +108,9 @@
                                     from abroad.
 
                                     <br>
+                                    <br>
+                                     <a href="{{ route('welcome_note', ['language' => $current_language]) }} "> Read more..</a>
                                 </p>
-                                <a href="{{ route('welcome_note', ['language' => $current_language]) }} "> Read more..</a>
                                 <!-- <a href="aboutus" class="link-no-underline">Read more</a> -->
                             </div>
                         </div>
