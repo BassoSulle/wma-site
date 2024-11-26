@@ -7,14 +7,15 @@ use App\Models\News;
 use App\Models\Tender;
 use App\Models\Gallery;
 use App\Models\Carousel;
+use App\Models\Services;
 use App\Models\Vacancies;
 use App\Models\FormCategory;
 use App\Models\PressRelease;
+use App\Models\Publications;
 use Illuminate\Http\Request;
 use App\Models\Announcements;
 use App\Models\RegionOffices;
 use App\Models\PublicationCategory;
-use App\Models\Services;
 use App\Models\Events as EventsModel;
 
 class WmaController extends Controller
@@ -430,6 +431,21 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
+            'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+            'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+
+        ];
+        return view($templatePath, $data);
+    }
+
+    public function audit_report_dynamic($language, $slug)
+    {
+
+        $templateName = 'audit_report_dynamic';
+        $templatePath = $this->getTemplatePath($language, $templateName);
+        $data = [
+            'current_language' => $language,
+            'audit_report' => Publications::select('slug', $language . '_title as title', $language . '_file as file', 'created_at')->where('slug', $slug)->where('is_active', true)->first(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
 

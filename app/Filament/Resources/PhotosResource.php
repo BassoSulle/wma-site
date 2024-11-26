@@ -85,12 +85,15 @@ class PhotosResource extends Resource
                             ->directory('photos'),
                     ]),
 
-                            Textarea::make('en_caption')
-                                ->required()
-                                ->label('English Caption')
-                                ->live(onBlur: true)
-                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
-                                    === 'create' ? $set('slug', Str::slug($state)) : null),
+                Tabs::make('Tabs')
+                    ->tabs([
+                        Tabs\Tab::make('Swahili')
+                            ->schema([
+                                Textarea::make('sw_caption')
+                                    ->label("Caption")
+                                    ->required()
+                                    ->maxlength(255),
+                            ]),
 
                         Tabs\Tab::make('English')
                             ->schema([
@@ -101,9 +104,14 @@ class PhotosResource extends Resource
                                     ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                         === 'create' ? $set('slug', Str::slug($state)) : null),
 
-                            Textarea::make('sw_caption')
-                                ->required()
-                                ->label('Swahili Caption'),
+                                TextInput::make('slug')
+                                    ->required()
+                                    ->maxlength(255)
+                                    ->disabled()
+                                    ->dehydrated()
+                                    // ->hidden()
+                                    ->unique(Photos::class, 'slug', ignoreRecord: true),
+                            ])
 
                     ])->activeTab(1)->columnSpanFull(),
 
@@ -219,4 +227,3 @@ class PhotosResource extends Resource
         ];
     }
 }
- 

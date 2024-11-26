@@ -97,13 +97,18 @@ class AnnouncementsResource extends Resource
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
 
-                            Textarea::make('en_description')
-                                ->required(),
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            // ->hidden()
+                                            ->unique(Announcements::class, 'slug', ignoreRecord: true),
 
-
-                            Textarea::make('sw_description')
-                                ->required(),
-
+                                        Textarea::make('en_description')
+                                            ->label('Description')
+                                            ->required()
+                                            ->maxlength(255),
 
                                     ])
 

@@ -81,7 +81,9 @@ class CarouselResource extends Resource
                                             ->columnSpanFull(),
 
                                         Textarea::make('sw_description')
-                                            ->required(),
+                                            ->label('Description')
+                                            ->required()
+                                            ->maxlength(255)
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -103,7 +105,9 @@ class CarouselResource extends Resource
                                             ->unique(Carousel::class, 'slug', ignoreRecord: true),
 
                                         Textarea::make('en_description')
-                                            ->required(),
+                                            ->label('Description')
+                                            ->required()
+                                            ->maxlength(255),
 
                                     ])
 

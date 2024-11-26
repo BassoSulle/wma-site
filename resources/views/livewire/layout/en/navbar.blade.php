@@ -333,6 +333,11 @@
                                         <li><a class='dropdown-item'
                                                 href="{{ route('audit-report-2022-2023', ['language' => $current_language]) }}">Audit
                                                 Report 2022-2023</a></li>
+                                        @foreach ($audit_reports as $report)
+                                            <li><a class='dropdown-item'
+                                                    href="{{ route('audit-report.dynamic', ['language' => $current_language, 'slug' => $report->slug]) }}">{{ $report->title }}</a>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li class='nav-item dropdown'><a

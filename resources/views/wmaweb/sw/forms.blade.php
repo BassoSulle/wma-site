@@ -49,7 +49,7 @@
                                             @endphp
                                             <td>{{ $current_language == 'en' ? $item->en_title : $item->sw_title }} </td>
                                             <td>{{ $item->created_at->format('M d, Y') }}</td>
-                                            <td><a href="{{ asset('storage/forms/' . $current_language . '/' . $file) }}"
+                                            <td><a href="{{ asset('storage/' . $file) }}"
                                                     download="{{ $current_language == 'en' ? $item->en_title : $item->sw_title }}"
                                                     target="_blank">Pakua</a></td>
                                         </tr>

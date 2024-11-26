@@ -94,29 +94,35 @@ class FaqsResource extends Resource
                                             ->label('Question')
                                             ->maxlength(255),
 
-                            TextInput::make('sw_question')
-                                ->required()
-                                ->label('Swahili Question'),
+                                        Textarea::make('sw_answer')
+                                            ->required()
+                                            ->label('Answer')
+                                            ->maxlength(555),
 
-                            Textarea::make('en_answer')
-                                ->required()
-                                ->label('English Answer'),
+                                    ]),
 
-                            Textarea::make('sw_answer')
-                                ->required()
-                                ->label('Swahili Answer'),
+                                Tabs\Tab::make('English')
+                                    ->schema([
+                                        TextInput::make('en_question')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->label('Question')
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
 
-                            TextInput::make('slug')
-                                ->required()
-                                ->disabled()
-                                ->dehydrated()
-                                ->unique(faqs::class, 'slug', ignoreRecord: true),
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            // ->hidden()
+                                            ->unique(faqs::class, 'slug', ignoreRecord: true),
 
-                            Textarea::make('en_answer')
-                                ->required()
-                                ->label('Answer'),
+                                        Textarea::make('en_answer')
+                                            ->required()
+                                            ->label('Answer'),
 
-                                ])
+                                    ])
 
                             ])->activeTab(1)->columnSpanFull()
 

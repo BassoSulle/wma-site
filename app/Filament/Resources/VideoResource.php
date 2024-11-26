@@ -84,13 +84,11 @@ class VideoResource extends Resource
                                     ->schema([
                                         TextInput::make('sw_title')
                                             ->required()
-                                            ->label('Title')
-                                            ->maxlength(255),
+                                            ->label('Title'),
 
                                         Textarea::make('sw_content')
                                             ->required()
-                                            ->label('Description')
-                                            ->maxlength(255),
+                                            ->label('Description'),
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -105,7 +103,6 @@ class VideoResource extends Resource
 
                                         TextInput::make('slug')
                                             ->required()
-                                            ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
                                             // ->hidden()
@@ -137,8 +134,7 @@ class VideoResource extends Resource
                             ->live()
                             ->required(fn(Get $get): bool => empty($get('video'))) // Require if 'video' is empty
                             ->visible(fn(Get $get): bool => empty($get('video'))) // Visible if 'video' is empty
-                            ->type('url')
-                            ->maxlength(255),
+                            ->type('url'),
                     ]),
 
                 Section::make()

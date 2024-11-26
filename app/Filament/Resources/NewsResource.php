@@ -80,21 +80,22 @@ class NewsResource extends Resource
                                         TextInput::make('sw_title')
                                             ->label('Title')
                                             ->required(),
-                                            
+
                                         Textarea::make('sw_description')
                                             ->label('Description')
                                             ->required(),
 
-                            TextInput::make('slug')
-                                ->required()
-                                // ->maxlength(255)
-                                ->disabled()
-                                ->dehydrated()
-                                ->unique(News::class, 'slug', ignoreRecord: true),
+                                    ]),
 
-                            Textarea::make('en_description')
-                                ->required(),
-                                // ->maxlength(255),
+                                Tabs\Tab::make('English')
+                                    ->schema([
+                                        TextInput::make('en_title')
+                                            ->label('Title')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
+                                                === 'create' ? $set('slug', Str::slug($state)) : null),
 
                                         TextInput::make('slug')
                                             ->required()
@@ -104,9 +105,10 @@ class NewsResource extends Resource
                                             // ->hidden()
                                             ->unique(News::class, 'slug', ignoreRecord: true),
 
-                            Textarea::make('sw_description')
-                                ->required(),
-                                // ->maxlength(255),
+                                        Textarea::make('en_description')
+                                            ->label('Description')
+                                            ->required()
+                                            ->maxlength(255),
 
                                     ])
 

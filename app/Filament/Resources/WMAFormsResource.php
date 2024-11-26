@@ -87,29 +87,25 @@ class WMAFormsResource extends Resource
                                     ->schema([
                                         TextInput::make('sw_title')
                                             ->required()
-                                            ->label('Title')
-                                            ->maxlength(255),
+                                            ->label('Title'),
 
                                         FileUpload::make('sw_file')
                                             ->label('PDF Document')
                                             ->required()
                                             ->directory('forms/sw')
-                                            ->acceptedFileTypes(['application/pdf'])
-                                            ->maxSize(10240),
+                                            ->acceptedFileTypes(['application/pdf']),
                                     ]),
 
                                 Tabs\Tab::make('English')
                                     ->schema([
                                         TextInput::make('en_title')
                                             ->required()
-                                            ->maxlength(255)
                                             ->label('Title')
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
 
                                         TextInput::make('slug')
                                             ->required()
-                                            ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
                                             // ->hidden()
@@ -119,8 +115,7 @@ class WMAFormsResource extends Resource
                                             ->label('PDF Document')
                                             ->required()
                                             ->directory('forms/en')
-                                            ->acceptedFileTypes(['application/pdf'])
-                                            ->maxSize(10240),
+                                            ->acceptedFileTypes(['application/pdf']),
                                     ])
 
                             ])->activeTab(1)->columnSpanFull()

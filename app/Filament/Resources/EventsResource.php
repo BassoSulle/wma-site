@@ -70,90 +70,101 @@ class EventsResource extends Resource
     {
         return $form
             ->schema([
-                Section::make([
-                    Grid::make()
-                        ->schema([
-                            TextInput::make('en_title')
-                                ->required()
-                                ->maxlength(255)
-                                ->live(onBlur: true)
-                                ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
-                                    === 'create' ? $set('slug', Str::slug($state)) : null),
+                Section::make()
+                    ->description("Fill all required fields on both tabs")
+                    ->schema([
+                        Tabs::make('Tabs')
+                            ->tabs([
+                                Tabs\Tab::make('Swahili')
+                                    ->schema([
+                                        TextInput::make('sw_title')
+                                            ->label('Title')
+                                            ->required()
+                                            ->maxlength(255),
 
+                                        Textarea::make('sw_description')
+                                            ->label('Description')
+                                            ->required()
+                                            ->maxlength(255),
 
-                            TextInput::make('sw_title')
-                                ->required()
-                                ->maxlength(255),
+                                        TextInput::make('sw_audience')
+                                            ->required(),
+                                    ]),
+                                Tabs\Tab::make('English')
+                                    ->schema([
+                                        TextInput::make('en_title')
+                                            ->label('Title')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
+                                                === 'create' ? $set('slug', Str::slug($state)) : null),
 
-                            TextInput::make('slug')
-                                ->required()
-                                // ->maxlength(255)
-                                ->disabled()
-                                ->dehydrated()
-                                ->unique(Events::class, 'slug', ignoreRecord: true),
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxlength(255)
+                                            ->disabled()
+                                            ->dehydrated()
+                                            // ->hidden()
+                                            ->unique(Events::class, 'slug', ignoreRecord: true),
 
-                            TimePicker::make('event_time')
-                                ->required()
-                                ->label('Event Time')
-                                ->format('H:i') // Time format (24-hour format)
-                                ->nullable(),
+                                        Textarea::make('en_description')
+                                            ->label('Description')
+                                            ->required()
+                                            ->maxlength(255),
 
+                                        TextInput::make('en_audience')
+                                            ->required(),
+                                    ])
+                            ])->activeTab(1)->columnSpanFull()
+                    ]),
+                Section::make()
+                    ->schema([
+                        FileUpload::make('image')
+                            ->image()
+                            ->directory('events')
+                            ->columnSpanFull(),
 
+                        TextInput::make('location')
+                            ->required(),
 
-                            DatePicker::make('start_date')
+                        TimePicker::make('event_time')
+                            ->required()
+                            ->label('Event Time')
+                            ->format('H:i') // Time format (24-hour format)
+                            ->nullable(),
+
+                        DatePicker::make('start_date')
                             ->required()
                             ->label('Start Date')
                             ->format('Y-m-d')
                             ->nullable(),
 
+                        DatePicker::make('end_date')
+                            ->required()
+                            ->label('End Date')
+                            ->format('Y-m-d')
+                            ->nullable(),
 
-                            DatePicker::make('end_date')
-                                ->required()
-                                ->label('End Date')
-                                ->format('Y-m-d')
-                                ->nullable(),
+                        DatePicker::make('created_at')
+                            ->nullable()
+                            ->columnSpanFull(),
+
+                        Placeholder::make('created_by_name')
+                            ->label('Created By')
+                            ->content(fn() => Auth::user()->name),
+
+                        Hidden::make('created_by')
+                            ->default(fn() => Auth::id()),
+
+                        Toggle::make('is_active')
+                            ->required()
+                            ->default(true)
+                    ])->columns(2)
+
+                        ]);
 
 
-                            TextInput::make('en_audience')
-                            ->required(),
-
-                            TextInput::make('sw_audience')
-                            ->required(),
-
-                            Textarea::make('en_description')
-                                ->required(),
-                                // ->maxlength(255),
-
-
-                            Textarea::make('sw_description')
-                                ->required(),
-                                // ->maxlength(255),
-
-                            TextInput::make('location')
-                            ->required(),
-
-                            FileUpload::make('image')
-                                ->image()
-                                ->directory('events'),
-
-                            DatePicker::make('created_at')
-                                ->nullable(),
-
-                            Hidden::make('created_by')
-                                ->default(fn() => Auth::id()),
-
-                            Placeholder::make('created_by_name')
-                                ->label('Created By')
-                                ->content(fn() => Auth::user()->name),
-
-                            Toggle::make('is_active')
-                                ->required()
-                                ->default(true)
-
-                        ])
-                ])
-                //
-            ]);
     }
 
     public static function table(Table $table): Table
