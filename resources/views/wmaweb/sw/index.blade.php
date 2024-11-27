@@ -135,7 +135,7 @@
                                 <div class="col-md-12">
                                     <h5 class="section-title"><b>Matangazo</b></h5>
                                     @foreach ($announcements as $item)
-                                        <div class="d-flex align-items-start shadow bg-white px-3 pt-4 pb-3">
+                                        <div class="d-flex align-items-start shadow bg-white px-3 pt-4 pb-3 mb-2">
                                             <div class="icon-announcement pr-2">
                                                 <i class="fa fa-bullhorn fa-2x"></i>
                                             </div>
@@ -167,7 +167,7 @@
                                 <div class="col-md-12">
                                     <h5 class="section-title"><b>Matukio</b></h5>
                                     @foreach ($events as $item)
-                                        <div class="d-flex align-items-start shadow bg-white px-3 pt-4 pb-3">
+                                        <div class="d-flex align-items-start shadow bg-white px-3 pt-4 pb-3 mb-2">
                                             <div class="event-thumbnail pr-2">
                                                 <img src="{{ asset('storage/' . $item->image) }}"
                                                     style="width: 150px; height: 90px; object-fit: cover;" alt="Thumbnail"
@@ -205,26 +205,26 @@
                                 <!-- Card style as provided in your code -->
                                 <div class="row mt-2 px-xs-0 online-services justify-content-center">
                                     <!-- First service item -->
-                                    <div class="service-item col-5 mb-4 mx-2">
+                                    <div class="service-item col-md-6 mb-2" style="height: 232px;">
                                         <div class="service-icon">
                                             <img src="{{ asset('assets/images/licence_icon.png') }}" alt=""
-                                                height="40" width="70px" style="margin-bottom: 10px;">
+                                                height="90px" width="90px" style="margin-bottom: 10px;">
                                         </div>
                                         <div class="service-title">Utaratibu wa Uombaji Leseni</div>
-                                        <div class="service-btn-wrapper mt-3">
+                                        <div class="service-btn-wrapper mt-4">
                                             <a href="{{ route('how_do_i_1', ['language' => $current_language]) }}"
                                                 class="serv-btn" style="background-color: orange;">Soma zaidi</a>
                                         </div>
                                     </div>
 
                                     <!-- Second service item -->
-                                    <div class="service-item col-5 mb-4">
+                                    <div class="service-item col-md-6 mb-2" style="height: 232px;">
                                         <div class="service-icon">
                                             <img src="{{ asset('assets/images/doc_approval_icon.png') }}" alt=""
-                                                height="40" width="70px" style="margin-bottom: 10px;">
+                                                height="90px" width="90px" style="margin-bottom: 10px;">
                                         </div>
                                         <div class="service-title">Maombi ya kuidhinisha Vipimo</div>
-                                        <div class="service-btn-wrapper mt-3">
+                                        <div class="service-btn-wrapper mt-4">
                                             <a href="{{ route('how_do_i_2', ['language' => $current_language]) }}"
                                                 class="serv-btn" style="background-color: orange;">Soma zaidi</a>
                                         </div>
