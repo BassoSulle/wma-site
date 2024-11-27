@@ -286,9 +286,9 @@
                             <div class="col-12 my-3">
                                 <h5 class="my-xs-4 text-center text-xs-center section-title"><b>Huduma Zetu</b></h5>
                                 <!-- Row of Cards -->
-                                <div class="row mt-3 px-xs-0 online-services">
+                                <div class="row justify-content-center mt-3 px-xs-0 online-services">
                                     @foreach ($services as $service)
-                                        <div class="service-item col-md-3 mx-2">
+                                        <div class="service-item col-md-3 mt-2">
                                             <div class="service-icon">
                                                 <img src="{{ asset('storage/' . $service->icon) }}" alt=""
                                                     width="80px" style="margin-bottom: 10px;">

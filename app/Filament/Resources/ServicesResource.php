@@ -156,12 +156,12 @@ class ServicesResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('image')
-                    ->searchable()
-                    ->html()
-                    ->formatStateUsing(function ($state) {
-                        return '<img src="' . asset('storage/services/images/' . basename($state)) . '" width="30", height="40" />';
-                    }),
+                // Tables\Columns\TextColumn::make('image')
+                //     ->searchable()
+                //     ->html()
+                //     ->formatStateUsing(function ($state) {
+                //         return '<img src="' . asset('storage/services/images/' . basename($state)) . '" width="30", height="40" />';
+                //     }),
 
                 Tables\Columns\TextColumn::make('icon')
                     ->searchable()
