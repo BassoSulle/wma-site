@@ -83,7 +83,7 @@ class CarouselResource extends Resource
                                         Textarea::make('sw_description')
                                             ->label('Maelezo')
                                             ->required()
-                                            ->maxlength(255)
+                                        // ->maxlength(255)
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -107,7 +107,8 @@ class CarouselResource extends Resource
                                         Textarea::make('en_description')
                                             ->label('Description')
                                             ->required()
-                                            ->maxlength(255),
+                                        // ->maxlength(255)
+                                        ,
 
                                     ])
 

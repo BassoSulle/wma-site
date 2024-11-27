@@ -20,7 +20,7 @@
                             <div class="container">
                                 <div class="row align-items-center">
                                     <div class="col-md-12 order-md-1 order-2 text-center">
-                                        <p class="text-primary" style="font-size: 10px;">{{ $item->description }}</p>
+                                        <p class="text-primary" style="font-size: 15px;">{{ $item->description }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -164,7 +164,7 @@
                                             <div>
                                                 <h6 class="article-h2 text-uppercase">{{ $item->title }}</h6>
                                                 <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
-                                                    {{  \Carbon\Carbon::parse($item->start_date) ->format('M j, Y') }}</p>
+                                                    {{ \Carbon\Carbon::parse($item->start_date)->format('M j, Y') }}</p>
                                                 <p>{{ Str::limit($item->description, 70) }}
                                                 </p>
                                                 <a href="{{ route('event_details', ['language' => $current_language, 'slug' => $item->slug]) }}"

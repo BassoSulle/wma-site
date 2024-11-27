@@ -97,7 +97,8 @@ class FaqsResource extends Resource
                                         Textarea::make('sw_answer')
                                             ->required()
                                             ->label('Jibu')
-                                            ->maxlength(555),
+                                        // ->maxlength(555)
+                                        ,
 
                                     ]),
 

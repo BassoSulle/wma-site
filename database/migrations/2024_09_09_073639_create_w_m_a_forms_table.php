@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('en_title')->required();
             $table->string('sw_title')->required();
             $table->string('slug')->unique();
-            $table->string('en_details')->nullable();
-            $table->string('sw_details')->nullable();
+            $table->text('en_details')->nullable();
+            $table->text('sw_details')->nullable();
             $table->string('en_file')->unique();
             $table->string('sw_file')->unique();
             $table->unsignedBigInteger('form_category_id')->nullable();
@@ -26,14 +26,14 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('created_by')
-            ->references('id')
-            ->on('users')
-            ->OnDelete('cascade');
+                ->references('id')
+                ->on('users')
+                ->OnDelete('cascade');
 
             $table->foreign('form_category_id')
-            ->references('id')
-            ->on('form_categories')
-            ->OnDelete('cascade');
+                ->references('id')
+                ->on('form_categories')
+                ->OnDelete('cascade');
         });
     }
 

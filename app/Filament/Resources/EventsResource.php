@@ -83,7 +83,8 @@ class EventsResource extends Resource
                                         Textarea::make('sw_description')
                                             ->label('Maelezo')
                                             ->required()
-                                            ->maxlength(255),
+                                        // ->maxlength(255)
+                                        ,
 
                                         TextInput::make('sw_audience')
                                             ->label('Hadhira')
@@ -110,7 +111,8 @@ class EventsResource extends Resource
                                         Textarea::make('en_description')
                                             ->label('Description')
                                             ->required()
-                                            ->maxlength(255),
+                                        // ->maxlength(255)
+                                        ,
 
                                         TextInput::make('en_audience')
                                             ->label('Audience')

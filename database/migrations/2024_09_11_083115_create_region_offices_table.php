@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('contact_person_position')->nullable();
             $table->string('region_name')->required();
             $table->string('slug')->unique();
-            $table->string('en_content')->nullable();
-            $table->string('sw_content')->nullable();
+            $table->text('en_content')->nullable();
+            $table->text('sw_content')->nullable();
             $table->string('location')->required();
             $table->string('address')->nullable();
             $table->string('telephone')->nullable();

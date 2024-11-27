@@ -108,7 +108,8 @@ class NewsResource extends Resource
                                         Textarea::make('en_description')
                                             ->label('Description')
                                             ->required()
-                                            ->maxlength(255),
+                                        // ->maxlength(255)
+                                        ,
 
                                     ])
 

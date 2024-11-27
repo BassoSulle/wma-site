@@ -135,7 +135,8 @@ class RegionOfficesResource extends Resource
                                         Textarea::make('sw_content')
                                             ->required()
                                             ->label('Maelezo')
-                                            ->maxlength(255),
+                                        // ->maxlength(255)
+                                        ,
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -143,7 +144,8 @@ class RegionOfficesResource extends Resource
                                         Textarea::make('en_content')
                                             ->required()
                                             ->label('Description')
-                                            ->maxlength(255),
+                                        // ->maxlength(255)
+                                        ,
                                     ])
 
                             ])->activeTab(1)->columnSpanFull()

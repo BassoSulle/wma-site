@@ -85,7 +85,8 @@ class PublicationCategoryResource extends Resource
                                         Textarea::make('sw_detail')
                                             ->required()
                                             ->label('Maelezo')
-                                            ->maxlength(255),
+                                        // ->maxlength(255)
+                                        ,
 
                                     ]),
 
@@ -110,7 +111,8 @@ class PublicationCategoryResource extends Resource
                                         Textarea::make('en_detail')
                                             ->required()
                                             ->label('Description')
-                                            ->maxlength(255),
+                                        // ->maxlength(255)
+                                        ,
                                     ])
 
                             ])->activeTab(1)->columnSpanFull()

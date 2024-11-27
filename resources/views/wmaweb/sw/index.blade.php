@@ -20,7 +20,7 @@
                             <div class="container">
                                 <div class="row align-items-center">
                                     <div class="col-md-12 order-md-1 order-2 text-center">
-                                        <p class="text-primary" style="font-size: 10px;">{{ $item->description }}</p>
+                                        <p class="text-primary" style="font-size: 15px;">{{ $item->description }}</p>
                                     </div>
                                 </div>
                             </div>

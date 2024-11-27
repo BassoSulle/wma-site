@@ -89,7 +89,8 @@ class ServicesResource extends Resource
                                         Textarea::make('sw_content')
                                             ->label('Maelezo')
                                             ->required()
-                                            ->maxlength(255),
+                                        // ->maxlength(255)
+                                        ,
 
                                     ]),
 
@@ -113,7 +114,8 @@ class ServicesResource extends Resource
                                         Textarea::make('en_content')
                                             ->label('Description')
                                             ->required()
-                                            ->maxlength(255),
+                                        // ->maxlength(255)
+                                        ,
 
                                     ])
 

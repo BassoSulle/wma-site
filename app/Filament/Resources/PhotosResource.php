@@ -92,7 +92,8 @@ class PhotosResource extends Resource
                                 Textarea::make('sw_caption')
                                     ->label("Maelezo mafupi")
                                     ->required()
-                                    ->maxlength(255),
+                                // ->maxlength(255)
+                                ,
                             ]),
 
                         Tabs\Tab::make('English')

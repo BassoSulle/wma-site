@@ -84,7 +84,8 @@ class FormCategoryResource extends Resource
                                         Textarea::make('sw_detail')
                                             ->required()
                                             ->label('Maelezo')
-                                            ->maxlength(255),
+                                        // ->maxlength(255)
+                                        ,
 
                                     ]),
 

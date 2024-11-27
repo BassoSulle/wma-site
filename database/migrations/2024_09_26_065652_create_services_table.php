@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('en_name')->required();
             $table->string('sw_name')->required();
             $table->string('slug')->unique();
-            $table->string('en_content')->nullable();
-            $table->string('sw_content')->nullable();
+            $table->text('en_content')->nullable();
+            $table->text('sw_content')->nullable();
             $table->string('image')->nullable();
             $table->string('icon')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
@@ -27,9 +27,9 @@ return new class extends Migration
 
 
             $table->foreign('created_by')
-            ->references('id')
-            ->on('users')
-            ->OnDelete('cascade');
+                ->references('id')
+                ->on('users')
+                ->OnDelete('cascade');
         });
     }
 

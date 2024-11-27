@@ -16,18 +16,17 @@ return new class extends Migration
             $table->string('en_question')->required();
             $table->string('sw_question')->required();
             $table->string('slug')->unique();
-            $table->string('en_answer')->nullable();
-            $table->string('sw_answer')->nullable();
+            $table->text('en_answer')->nullable();
+            $table->text('sw_answer')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
 
 
             $table->foreign('created_by')
-            ->references('id')
-            ->on('users')
-            ->OnDelete('cascade');
-
+                ->references('id')
+                ->on('users')
+                ->OnDelete('cascade');
         });
     }
 
