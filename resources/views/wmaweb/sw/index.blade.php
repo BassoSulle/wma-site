@@ -140,10 +140,12 @@
                                                 <i class="fa fa-bullhorn fa-2x"></i>
                                             </div>
                                             <div>
-                                                <h6 class="article-h2 text-uppercase">{{ $item->title }}</h6>
+                                                <h6 class="article-h2 text-uppercase mb-3 mt-2">
+                                                    {{ Str::limit($item->title, 38) }}
+                                                </h6>
                                                 <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
                                                     {{ $item->created_at->format('M j, Y') }}</p>
-                                                <p>{{ Str::limit($item->description, 80) }}</p>
+                                                <p>{{ Str::limit($item->description, 90) }}</p>
                                                 <a href="{{ route('announcement_details', ['language' => $current_language, 'slug' => $item->slug]) }}"
                                                     class="read"
                                                     style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read
@@ -173,7 +175,8 @@
                                             </div>
                                             <div>
                                                 <p class="text-justify mb-2">
-                                                <h6 class="article-h2 text-uppercase">{{ $item->title }}</h6>
+                                                <h6 class="article-h2 text-uppercase">{{ Str::limit($item->title, 30) }}
+                                                </h6>
                                                 </p>
                                                 <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
                                                     {{ $item->created_at->format('M j, Y') }}</p>
