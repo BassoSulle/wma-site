@@ -72,7 +72,7 @@
                         <center>
                             <div class="">
                                 <h5 class="title mb-2"><br>ALBAN M. KIHULLA.</h5>
-                                <small>CHIEF EXECUTIVE OFFICER </small>
+                                <small>AFISA MTENDAJI MKUU </small>
                             </div>
                         </center>
                     </div>
