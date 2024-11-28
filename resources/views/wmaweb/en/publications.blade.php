@@ -33,7 +33,7 @@
                                             <h4>Publication Name</h4>
                                         </th>
                                         <th>
-                                            <h4>Date Added</h4>
+                                            <h4>Published On</h4>
                                         </th>
                                         <th>
                                             <h4>Download</h4>
@@ -54,7 +54,7 @@
                                         </tr>
                                     @empty
                                         <tr style="background-color: rgb(239, 239, 122);">
-                                            <td colspan="3"  class="text-center">No publications available</td>
+                                            <td colspan="3" class="text-center">No publications available</td>
                                         </tr>
                                     @endforelse
                                 </tbody>

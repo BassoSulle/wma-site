@@ -29,34 +29,41 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th><h4>Publication Name</h4></th>
-                                        <th><h4>Date Added</h4></th>
-                                        <th><h4>Downloads</h4></th>
+                                        <th>
+                                            <h4>Publication Name</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Published On</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Downloads</h4>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>Client service charter </td>
                                         <td>26/02/2020</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1582716367-MKATABA%20WA%20HUDUMA%20KWA%20MTEJA%20(2).pdf" target="_blank">Downloads</a></td>
+                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1582716367-MKATABA%20WA%20HUDUMA%20KWA%20MTEJA%20(2).pdf"
+                                                target="_blank">Downloads</a></td>
                                     </tr>
 
 
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 navigation-column">
+                        @include('wmaweb.en.announcments_and_events')
+                    </div>
+
                 </div>
             </div>
-
-
-            <div class="col-md-3 navigation-column">
-                @include('wmaweb.en.announcments_and_events')
-            </div>
+        </div>
+    </div>
 
     </div>
-</div>
-</div>
-</div>
-
-</div>
     <!-- /contents -->
 @endsection

@@ -9,6 +9,7 @@ use App\Models\Gallery;
 use App\Models\Carousel;
 use App\Models\Services;
 use App\Models\Vacancies;
+use App\Models\NewsLetter;
 use App\Models\FormCategory;
 use App\Models\PressRelease;
 use App\Models\Publications;
@@ -711,6 +712,7 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
+            'news_letters' => NewsLetter::select('slug', $language . '_title as title', $language . '_file as file', 'created_at')->where('is_active', true)->latest()->get(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
 

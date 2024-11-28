@@ -33,7 +33,7 @@
                                             <h4>Publication Name</h4>
                                         </th>
                                         <th>
-                                            <h4>Date Added</h4>
+                                            <h4>Published On</h4>
                                         </th>
                                         <th>
                                             <h4>Download</h4>

@@ -108,11 +108,11 @@
                             <h5 class="" style="color: #000;">Jamhuri ya Muungano wa Tanzania </h5>
                             <h3 class="mb-0 title title-main" style="color: #000; text-shadow: 1px 1px 2px #f8a52f;">
                                 <b>
-                                        WAKALA WA VIPIMO</b>
+                                    WAKALA WA VIPIMO</b>
                             </h3>
                             <h3 class="mb-0 title title-main pt-2 pb-2"
                                 style="color: #000; text-shadow: 1px 1px 2px #f8a52f; margin-bottom:8px;"><b>
-                                        (WMA)</b></h3>
+                                    (WMA)</b></h3>
                         </div>
 
                         <div class="col-md-2 col-sm-2 col-xs-2 text-right pt-1 pr-0 logo-container position-relative">
@@ -288,16 +288,30 @@
                                 <li class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle'
                                         data-toggle='dropdown'>Kituo cha Habari</a>
                                     <ul class='dropdown-menu'>
-                                        <li><a class='dropdown-item' href="#">Maktaba ya Picha</a></li>
-                                        <li><a class='dropdown-item' href="#">Maktaba ya Video</a></li>
+                                        <li><a class='dropdown-item'
+                                                href="{{ route('gallaries', ['language' => $current_language]) }}">Maktaba
+                                                ya Picha</a></li>
+                                        <li><a class='dropdown-item'
+                                                href="{{ route('video', ['language' => $current_language]) }}">Maktaba
+                                                ya Video</a></li>
                                         <li><a class='dropdown-item' href="#">Maktaba ya Sauti</a></li>
-                                        <li><a class='dropdown-item' href="#">Taarifa kwa Vyombo vya Habari</a>
+                                        <li><a class='dropdown-item'
+                                                href="{{ route('pressrelease', ['language' => $current_language]) }}">Taarifa
+                                                kwa Vyombo vya Habari</a>
                                         </li>
                                         <li><a class='dropdown-item' href="#">Matoleo Maalumu</a></li>
-                                        <li><a class='dropdown-item' href="#">Hotuba</a></li>
-                                        <li><a class='dropdown-item' href="#">Vipeperushi</a></li>
-                                        <li><a class='dropdown-item' href="#">Mabango</a></li>
-                                        <li><a class='dropdown-item' href="#">Jarida</a></li>
+                                        <li><a class='dropdown-item'
+                                                href="{{ route('speeches', ['language' => $current_language]) }}">Hotuba</a>
+                                        </li>
+                                        <li><a class='dropdown-item'
+                                                href="{{ route('brochures', ['language' => $current_language]) }}">Vipeperushi</a>
+                                        </li>
+                                        <li><a class='dropdown-item'
+                                                href="{{ route('posters', ['language' => $current_language]) }}">Mabango</a>
+                                        </li>
+                                        <li><a class='dropdown-item'
+                                                href="{{ route('newsletter', ['language' => $current_language]) }}">Jarida</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class='nav-item dropdown'><a
@@ -359,7 +373,7 @@
                                                     href="{{ route('publication', ['language' => $current_language, 'slug' => $item->slug]) }}">{{ $item->title }}</a>
                                             </li>
                                         @empty
-                                            <li><a class='dropdown-item' href="#">Machapisho hazipo kwa sasa</a>
+                                            <li><a class='dropdown-item' href="#">Hakuna Machapisho kwa sasa</a>
                                             </li>
                                         @endforelse
                                     </ul>
