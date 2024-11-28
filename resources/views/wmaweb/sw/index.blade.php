@@ -201,7 +201,7 @@
 
                             <!-- How Do I Column -->
                             <div class="col-md-4 text-center">
-                                <h5 class="section-title"><b>Nifanyeje</b></h5>
+                                <h5 class="section-title"><b>Nifanyeje Kuhusu</b></h5>
                                 <!-- Card style as provided in your code -->
                                 <div class="row mt-2 px-xs-0 online-services justify-content-center">
                                     <!-- First service item -->
