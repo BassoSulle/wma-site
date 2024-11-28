@@ -30,7 +30,7 @@
                             {{ $announcement_details->created_at->format('M j, Y') }}</p>
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="vision and mission">
-                                {!! nl2br(e($announcement_details->description)) !!}
+                                {!! Str::markdown(str($announcement_details->description)->sanitizeHtml()) !!}
                             </p>
 
                         </div>

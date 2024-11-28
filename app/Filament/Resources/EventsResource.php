@@ -21,11 +21,12 @@ use Filament\Tables\Columns\IconColumn;
 use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\TimePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\TimePicker;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Placeholder;
 use Illuminate\Contracts\Support\Htmlable;
+use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\EventsResource\Pages;
 
 class EventsResource extends Resource
@@ -80,11 +81,12 @@ class EventsResource extends Resource
                                             ->required()
                                             ->maxlength(255),
 
-                                        Textarea::make('sw_description')
+                                        MarkdownEditor::make('sw_description')
+                                            ->disableToolbarButtons([
+                                                'attachFiles',
+                                            ])
                                             ->label('Maelezo')
-                                            ->required()
-                                        // ->maxlength(255)
-                                        ,
+                                            ->required(),
 
                                         TextInput::make('sw_audience')
                                             ->label('Hadhira')
@@ -108,11 +110,12 @@ class EventsResource extends Resource
                                             // ->hidden()
                                             ->unique(Events::class, 'slug', ignoreRecord: true),
 
-                                        Textarea::make('en_description')
+                                        MarkdownEditor::make('en_description')
+                                            ->disableToolbarButtons([
+                                                'attachFiles',
+                                            ])
                                             ->label('Description')
-                                            ->required()
-                                        // ->maxlength(255)
-                                        ,
+                                            ->required(),
 
                                         TextInput::make('en_audience')
                                             ->label('Audience')

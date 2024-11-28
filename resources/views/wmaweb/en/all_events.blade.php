@@ -37,7 +37,8 @@
                                                     </p>
                                                     <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
                                                         {{ $item->created_at->format('M j, Y') }}</p>
-                                                    <p>{{ Str::limit($item->description, 30) }}
+                                                    <p>
+                                                        {!! Str::markdown(str(Str::limit($item->description, 70))->sanitizeHtml()) !!}
                                                     </p>
                                                     <a href="{{ route('event_details', ['language' => $current_language, 'slug' => $item->slug]) }}"
                                                         style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read

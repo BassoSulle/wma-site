@@ -33,8 +33,11 @@
                                                 <div class="col-md-12 d-flex flex-column justify-content-center">
                                                     <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
                                                         {{ $item->created_at->format('M j, Y') }}</p>
-                                                    <h6 class="article-title">{{ $item->title }}</h6>
-                                                    <p>{{ Str::limit($item->description, 65) }}</p>
+                                                    <h5 class="article-title text-uppercase text-warning">
+                                                        {{ $item->title }}</h5>
+                                                    <p>
+                                                        {!! Str::markdown(str(Str::limit($item->description, 90))->sanitizeHtml()) !!}
+                                                    </p>
                                                     <a href="{{ route('new_details', ['language' => $current_language, 'slug' => $item->slug]) }}"
                                                         style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read
                                                         more</a>

@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-12 bg-white py-3 page-content">
                         <h4 class="mb-3">Services</h4>
-                        <div class="row">
+                        <div class="row justify-content-center">
                             @foreach ($services as $item)
                                 <div class="col-md-4">
                                     <div class="card mb-4">

@@ -30,7 +30,7 @@
                                                     <h6 class="article-h2 text-uppercase">{{ $item->title }}</h6>
                                                     <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
                                                         {{ $item->created_at->format('M j, Y') }}</p>
-                                                    <p>{{ Str::limit($item->description, 45) }}</p>
+                                                    <p>{!! Str::markdown(str(Str::limit($item->description, 90))->sanitizeHtml()) !!}</p>
                                                     <a href="{{ route('announcement_details', ['language' => $current_language, 'slug' => $item->slug]) }}"
                                                         style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read
                                                         more</a>

@@ -26,6 +26,7 @@ use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Placeholder;
 use Illuminate\Contracts\Support\Htmlable;
+use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\NewsResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\NewsResource\RelationManagers;
@@ -81,7 +82,10 @@ class NewsResource extends Resource
                                             ->label('Kichwa cha habari')
                                             ->required(),
 
-                                        Textarea::make('sw_description')
+                                        MarkdownEditor::make('sw_description')
+                                            ->disableToolbarButtons([
+                                                'attachFiles',
+                                            ])
                                             ->label('Maelezo')
                                             ->required(),
 
@@ -105,11 +109,12 @@ class NewsResource extends Resource
                                             // ->hidden()
                                             ->unique(News::class, 'slug', ignoreRecord: true),
 
-                                        Textarea::make('en_description')
+                                        MarkdownEditor::make('en_description')
+                                            ->disableToolbarButtons([
+                                                'attachFiles',
+                                            ])
                                             ->label('Description')
-                                            ->required()
-                                        // ->maxlength(255)
-                                        ,
+                                            ->required(),
 
                                     ])
 

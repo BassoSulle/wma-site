@@ -26,7 +26,16 @@
                     <div class="col-md-9 bg-white py-3 page-content">
                         <h4 class="text-uppercase">{{ $event_details->title }}</h4>
                         <p class="my-3"><i class="fa fa-calendar" style="color: #006f8b;"></i>
-                            {{ $event_details->created_at->format('M j, Y') }}</p>
+                            @if ($event_details->start_date === $event_details->end_date)
+                                {{ \Carbon\Carbon::parse($event_details->start_date)->format('M d, Y') }}<br>
+                            @else
+                                <b>From: </b>{{ \Carbon\Carbon::parse($event_details->start_date)->format('M d, Y') }}
+                                <b>To</b>
+                                {{ \Carbon\Carbon::parse($event_details->end_date)->format('M d, Y') }}<br>
+                            @endif
+                            <b>Time: </b>{{ \Carbon\Carbon::parse($event_details->event_time)->format('h:i A') }} <br>
+                            <b>Location: </b>{{ $event_details->location }}
+                        </p>
                         <div style="width: 100%; height: 400px; overflow: hidden;"> <!-- Adjust height as needed -->
                             <center>
                                 <img src="{{ asset('storage/' . $event_details->image) }}"
@@ -35,7 +44,7 @@
                         </div>
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="vision and mission">
-                                {!! nl2br(e($event_details->description)) !!}
+                                {!! Str::markdown(str($event_details->description)->sanitizeHtml()) !!}
                             </p>
 
                         </div>
