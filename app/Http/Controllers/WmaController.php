@@ -8,6 +8,7 @@ use App\Models\Tender;
 use App\Models\Gallery;
 use App\Models\Carousel;
 use App\Models\Services;
+use App\Models\HowDoI;
 use App\Models\Vacancies;
 use App\Models\FormCategory;
 use App\Models\PressRelease;
@@ -37,6 +38,7 @@ class WmaController extends Controller
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
             'events' => EventsModel::select('slug', 'image','start_date', 'end_date','event_time','en_audience','sw_audience','location', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
             'services' => Services::select('slug', 'image', 'icon', $language . '_name as name', $language . '_content as content', 'created_at')->where('is_active', true)->latest()->limit(8)->get(),
+            'how_do_i' => HowDoI::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(4)->get(),
             // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
         ];
 
@@ -857,7 +859,7 @@ class WmaController extends Controller
         return view($templatePath, $data);
     }
 
-    public function how_do_i_1($language)
+    public function how_do_i_1($language, $slug)
     {
         $templateName = 'how_do_i_1';
         $templatePath = $this->getTemplatePath($language, $templateName);
@@ -865,6 +867,8 @@ class WmaController extends Controller
             'current_language' => $language,
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
+            'how_do_i' => HowDoI::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->where('slug', $slug)->latest()->limit(4)->get(),
+
 
 
         ];

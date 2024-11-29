@@ -92,14 +92,12 @@ class NewsResource extends Resource
                                         TextInput::make('en_title')
                                             ->label('Title')
                                             ->required()
-                                            ->maxlength(255)
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                                 === 'create' ? $set('slug', Str::slug($state)) : null),
 
                                         TextInput::make('slug')
                                             ->required()
-                                            ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
                                             // ->hidden()
@@ -107,8 +105,7 @@ class NewsResource extends Resource
 
                                         Textarea::make('en_description')
                                             ->label('Description')
-                                            ->required()
-                                            ->maxlength(255),
+                                            ->required(),
 
                                     ])
 

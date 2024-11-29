@@ -114,6 +114,12 @@ class User extends Authenticatable
 
         return  $this->hasMany(Services::class);
     }
+
+    public function how_do_i()
+    {
+
+        return  $this->hasMany(how_do_i::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

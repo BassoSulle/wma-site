@@ -29,6 +29,8 @@ use Illuminate\Contracts\Support\Htmlable;
 use App\Filament\Resources\EventsResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\EventsResource\RelationManagers;
+use Filament\Forms\Components\Tabs;
+
 
 class EventsResource extends Resource
 {
@@ -79,13 +81,11 @@ class EventsResource extends Resource
                                     ->schema([
                                         TextInput::make('sw_title')
                                             ->label('Title')
-                                            ->required()
-                                            ->maxlength(255),
+                                            ->required(),
 
                                         Textarea::make('sw_description')
                                             ->label('Description')
-                                            ->required()
-                                            ->maxlength(255),
+                                            ->required(),
 
                                         TextInput::make('sw_audience')
                                             ->required(),
@@ -95,14 +95,12 @@ class EventsResource extends Resource
                                         TextInput::make('en_title')
                                             ->label('Title')
                                             ->required()
-                                            ->maxlength(255)
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                                 === 'create' ? $set('slug', Str::slug($state)) : null),
 
                                         TextInput::make('slug')
                                             ->required()
-                                            ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
                                             // ->hidden()
@@ -110,8 +108,7 @@ class EventsResource extends Resource
 
                                         Textarea::make('en_description')
                                             ->label('Description')
-                                            ->required()
-                                            ->maxlength(255),
+                                            ->required(),
 
                                         TextInput::make('en_audience')
                                             ->required(),

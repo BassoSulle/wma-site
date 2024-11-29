@@ -3,7 +3,7 @@
 @section('content')
     <div class="home-page ">
         <!-- Carousel Section with 70% width -->
-        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="8000">
             <ol class="carousel-indicators">
                 @foreach ($carousel_items as $key => $item)
                     <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}"
@@ -196,20 +196,22 @@
                                 <!-- Card style as provided in your code -->
                                 <div class="row mt-2 px-xs-0 online-services justify-content-center">
                                     <!-- First service item -->
+                                    @foreach ($how_do_i as $item)
                                     <div class="service-item col-5 mb-4 mx-2">
                                         <div class="service-icon">
-                                            <img src="{{ asset('assets/images/licence_icon.png') }}" alt=""
+                                            <img src="{{ asset('storage/' .$item->image) }}" alt=""
                                                 height="40" width="70px" style="margin-bottom: 10px;">
                                         </div>
-                                        <div class="service-title">Utaratibu wa Uombaji Leseni</div>
+                                        <div class="service-title">{{$item->title}}</div>
                                         <div class="service-btn-wrapper mt-3">
-                                            <a href="{{ route('how_do_i_1', ['language' => $current_language]) }}"
-                                                class="serv-btn" style="background-color: orange;">Soma zaidi</a>
+                                            <a href="{{ route('how_do_i_1', ['language' => $current_language, 'slug' => $item->slug]) }}"
+                                                class="serv-btn" style="background-color: orange;">Soma Zaidi</a>
                                         </div>
                                     </div>
+                                    @endforeach
 
                                     <!-- Second service item -->
-                                    <div class="service-item col-5 mb-4">
+                                    {{-- <div class="service-item col-5 mb-4">
                                         <div class="service-icon">
                                             <img src="{{ asset('assets/images/doc_approval_icon.png') }}" alt=""
                                                 height="40" width="70px" style="margin-bottom: 10px;">
@@ -219,7 +221,7 @@
                                             <a href="{{ route('how_do_i_2', ['language' => $current_language]) }}"
                                                 class="serv-btn" style="background-color: orange;">Soma zaidi</a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
 
