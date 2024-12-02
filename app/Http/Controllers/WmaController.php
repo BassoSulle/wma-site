@@ -16,6 +16,7 @@ use App\Models\Publications;
 use Illuminate\Http\Request;
 use App\Models\Announcements;
 use App\Models\RegionOffices;
+use App\Models\WelcomeNote;
 use App\Models\PublicationCategory;
 use App\Models\Events as EventsModel;
 
@@ -39,6 +40,7 @@ class WmaController extends Controller
             'events' => EventsModel::select('slug', 'image','start_date', 'end_date','event_time','en_audience','sw_audience','location', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
             'services' => Services::select('slug', 'image', 'icon', $language . '_name as name', $language . '_content as content', 'created_at')->where('is_active', true)->latest()->limit(8)->get(),
             'how_do_i' => HowDoI::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(4)->get(),
+            'wecome_notes' => WelcomeNote::select('slug', 'image', 'name',  $language . '_status as status', $language . '_description as description', 'created_at')->where('is_active', true)->get(),
             // 'news_articles' => NewsArticle::latest()->limit(4)->get(),
         ];
 

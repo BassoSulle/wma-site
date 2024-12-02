@@ -62,17 +62,20 @@
             <div class="col-12 px-0 mt-4">
 
                 <div class="row">
+                    @foreach ($wecome_notes as $welcome_note )
+
                     <div class="col-md-4 my-4 mx-5 col-xs-6">
                         <div
                             class="img-frame p-3 border rounded d-flex justify-content-center align-items-center img-fluid">
-                            <img src="https://www.wma.go.tz/uploads/profiles/9-0.30810600%201721628167.png"
+
+                            <img src="{{asset('storage/'. $welcome_note->image)}}"
                                 alt="Prof. Mkumbukwa M. A." class="img-fluid">
 
                         </div>
                         <center>
                             <div class="">
-                                <h5 class="title mb-2"><br>ALBAN M. KIHULLA.</h5>
-                                <small>CHIEF EXECUTIVE OFFICER </small>
+                                <h5 class="title mb-2"><br>{{$welcome_note->name}}</h5>
+                                <small>{{$welcome_note->status}} </small>
                             </div>
                         </center>
                     </div>
@@ -86,26 +89,8 @@
                             <div class="col-12 px-0 my-2">
                                 <p class="card-text" class="text-justify;"
                                     style="letter-spacing: 0.05em; line-height: 1.5; text-align: justify; text-align-last: left;">
-                                    The Weights and Measures Agency is a Government Agency under the Ministry of Industry
-                                    and Trade.
-                                    It was established on 17.05.2002 by Government Establishment Order No. 194 through the
-                                    Act for the Establishment of Government Agencies,
-                                    Chapter 245. Before its establishment, its responsibilities were carried out under a
-                                    department within the Ministry of Industry and Trade.
-                                    The main objective of establishing the Weights and Measures Agency is to improve the
-                                    services that were being provided by the Weights Department
-                                    under the Ministry of Industry and Trade and to reduce operational costs from the
-                                    central government fund.
+                                   {{ Str::limit($welcome_note->description, 1000) }}
 
-                                    </br>
-                                    To achieve this goal, the Weights and Measures Agency carries out its duties in
-                                    accordance with the Weights and Measures Act,
-                                    Chapter No. 340. The responsibilities executed under this law include verification and
-                                    inspection of measurements, providing
-                                    technical advice to manufacturers of measuring instruments in the country, approving
-                                    various types of measuring instruments before they are imported into the country,
-                                    and inspecting packaged products produced in our local industries and those imported
-                                    from abroad.
 
                                     <br>
                                     <br>
@@ -115,6 +100,8 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
+
                 </div>
 
                 <div class="container-fluid mb-3">
@@ -166,7 +153,7 @@
                                                 <h6 class="article-h2 text-uppercase">{{ $item->title }}</h6>
                                                 <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
                                                     {{  \Carbon\Carbon::parse($item->start_date) ->format('M j, Y') }}</p>
-                                                <p>{{ Str::limit($item->description, 70) }}
+                                                <p>{!! nl2br(e(Str::limit($item->description, 70))) !!}}
                                                 </p>
                                                 <a href="{{ route('event_details', ['language' => $current_language, 'slug' => $item->slug]) }}"
                                                     class="read"

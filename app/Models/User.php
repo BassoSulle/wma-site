@@ -120,6 +120,11 @@ class User extends Authenticatable
 
         return  $this->hasMany(how_do_i::class);
     }
+    public function welcome_note()
+    {
+
+        return  $this->hasMany(WelcomeNote::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
