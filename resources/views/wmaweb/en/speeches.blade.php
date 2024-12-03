@@ -29,34 +29,41 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th><h4>Speeches Name</h4></th>
-                                        <th><h4>Date Added</h4></th>
-                                        <th><h4>Downloads</h4></th>
+                                        <th>
+                                            <h4>Speeches Name</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Published On</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Downloads</h4>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>Budget Speech Ministry of Industry, Trade and Investment 2017/2018</td>
                                         <td>August 11, 2017</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1502453420-HOTUBA%20VIWANDA.pdf" target="_blank">Downloads</a></td>
+                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1502453420-HOTUBA%20VIWANDA.pdf"
+                                                target="_blank">Downloads</a></td>
                                     </tr>
 
 
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 navigation-column">
+                        @include('wmaweb.en.announcments_and_events')
+                    </div>
+
                 </div>
             </div>
-
-
-            <div class="col-md-3 navigation-column">
-                @include('wmaweb.en.announcments_and_events')
-            </div>
+        </div>
+    </div>
 
     </div>
-</div>
-</div>
-</div>
-
-</div>
     <!-- /contents -->
 @endsection

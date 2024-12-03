@@ -84,11 +84,11 @@ class VideoResource extends Resource
                                     ->schema([
                                         TextInput::make('sw_title')
                                             ->required()
-                                            ->label('Title'),
+                                            ->label('kichwa cha habari'),
 
                                         Textarea::make('sw_content')
                                             ->required()
-                                            ->label('Description'),
+                                            ->label('Maelezo'),
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -111,7 +111,8 @@ class VideoResource extends Resource
                                         Textarea::make(name: 'en_content')
                                             ->label('Description')
                                             ->required()
-                                            ->maxlength(255),
+                                        // ->maxlength(255)
+                                        ,
 
                                     ])
 

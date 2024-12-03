@@ -29,9 +29,15 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th><h4>Publication Name</h4></th>
-                                        <th><h4>Date Added</h4></th>
-                                        <th><h4>Downloads</h4></th>
+                                        <th>
+                                            <h4>Publication Name</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Published On</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Downloads</h4>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,19 +54,19 @@
 
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 navigation-column">
+                        @include('wmaweb.en.announcments_and_events')
+                    </div>
+
                 </div>
             </div>
-
-
-            <div class="col-md-3 navigation-column">
-                @include('wmaweb.en.announcments_and_events')
-            </div>
+        </div>
+    </div>
 
     </div>
-</div>
-</div>
-</div>
-
-</div>
     <!-- /contents -->
 @endsection

@@ -91,13 +91,14 @@ class FaqsResource extends Resource
                                     ->schema([
                                         TextInput::make('sw_question')
                                             ->required()
-                                            ->label('Question')
+                                            ->label('Swali')
                                             ->maxlength(255),
 
                                         Textarea::make('sw_answer')
                                             ->required()
-                                            ->label('Answer')
-                                            ->maxlength(555),
+                                            ->label('Jibu')
+                                        // ->maxlength(555)
+                                        ,
 
                                     ]),
 

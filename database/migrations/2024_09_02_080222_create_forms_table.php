@@ -24,16 +24,15 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('created_by')
-            ->references('id')
-            ->on('users')
-            ->OnDelete('cascade');
+                ->references('id')
+                ->on('users')
+                ->OnDelete('cascade');
 
             $table->foreign('form_category_id')
-            ->references('id')
-            ->on('form_categories')
-            ->OnDelete('cascade');
+                ->references('id')
+                ->on('form_categories')
+                ->OnDelete('cascade');
         });
-       
     }
 
     /**

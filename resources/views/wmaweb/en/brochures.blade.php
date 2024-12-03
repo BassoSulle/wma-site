@@ -29,39 +29,47 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th><h4>Publication Name</h4></th>
-                                        <th><h4>Date Added</h4></th>
-                                        <th><h4>Downloads</h4></th>
+                                        <th>
+                                            <h4>Publication Name</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Published On</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Downloads</h4>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>WMA Roles</td>
                                         <td>31/01/2018</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1517388396-WMA%20-%20FLIER.pdf" target="_blank">Downloads</a></td>
+                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1517388396-WMA%20-%20FLIER.pdf"
+                                                target="_blank">Downloads</a></td>
                                     </tr>
                                     <tr>
                                         <td>About Weights and Measures Agency</td>
                                         <td>31/01/2018</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1517386300-WMA%20-%203%20FOLDS%20BROCHURE.pdf" target="_blank">Downloads</a></td>
+                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1517386300-WMA%20-%203%20FOLDS%20BROCHURE.pdf"
+                                                target="_blank">Downloads</a></td>
                                     </tr>
 
 
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 navigation-column">
+                        @include('wmaweb.en.announcments_and_events')
+                    </div>
+
                 </div>
             </div>
-
-
-            <div class="col-md-3 navigation-column">
-                @include('wmaweb.en.announcments_and_events')
-            </div>
+        </div>
+    </div>
 
     </div>
-</div>
-</div>
-</div>
-
-</div>
     <!-- /contents -->
 @endsection

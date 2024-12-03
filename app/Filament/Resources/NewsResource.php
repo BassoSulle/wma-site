@@ -26,6 +26,7 @@ use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Placeholder;
 use Illuminate\Contracts\Support\Htmlable;
+use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\NewsResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\NewsResource\RelationManagers;
@@ -78,11 +79,14 @@ class NewsResource extends Resource
                                 Tabs\Tab::make('Swahili')
                                     ->schema([
                                         TextInput::make('sw_title')
-                                            ->label('Title')
+                                            ->label('Kichwa cha habari')
                                             ->required(),
 
-                                        Textarea::make('sw_description')
-                                            ->label('Description')
+                                        MarkdownEditor::make('sw_description')
+                                            ->disableToolbarButtons([
+                                                'attachFiles',
+                                            ])
+                                            ->label('Maelezo')
                                             ->required(),
 
                                     ]),
@@ -92,23 +96,23 @@ class NewsResource extends Resource
                                         TextInput::make('en_title')
                                             ->label('Title')
                                             ->required()
-                                            ->maxlength(255)
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                                 === 'create' ? $set('slug', Str::slug($state)) : null),
 
                                         TextInput::make('slug')
                                             ->required()
-                                            ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
                                             // ->hidden()
                                             ->unique(News::class, 'slug', ignoreRecord: true),
 
-                                        Textarea::make('en_description')
+                                        MarkdownEditor::make('en_description')
+                                            ->disableToolbarButtons([
+                                                'attachFiles',
+                                            ])
                                             ->label('Description')
-                                            ->required()
-                                            ->maxlength(255),
+                                            ->required(),
 
                                     ])
 

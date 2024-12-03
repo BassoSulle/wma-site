@@ -87,10 +87,10 @@ class WMAFormsResource extends Resource
                                     ->schema([
                                         TextInput::make('sw_title')
                                             ->required()
-                                            ->label('Title'),
+                                            ->label('Jina la form'),
 
                                         FileUpload::make('sw_file')
-                                            ->label('PDF Document')
+                                            ->label('Hati ya PDF')
                                             ->required()
                                             ->directory('forms/sw')
                                             ->acceptedFileTypes(['application/pdf']),

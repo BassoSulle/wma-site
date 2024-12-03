@@ -14,7 +14,7 @@
                                         href="{{ route('home', ['language' => $current_language]) }}"><span
                                             class="fas fa-home"></span></a></li>
                                 {{-- <li class="breadcrumb-item list-inline-item font-weight-bold">TIRDO COMSATS</li> --}}
-                                <li class="breadcrumb-item list-inline-item active">News Letter  </li>
+                                <li class="breadcrumb-item list-inline-item active">News Letter </li>
                             </ol>
                         </nav>
                     </div>
@@ -23,38 +23,51 @@
                 <div class="row">
 
                     <div class="col-md-9 bg-white py-3 page-content">
-                        <h4>News Letter  </h4>
+                        <h4>News Letter </h4>
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th><h4>Publication Name</h4></th>
-                                        <th><h4>Date Added</h4></th>
-                                        <th><h4>Downloads</h4></th>
+                                        <th>
+                                            <h4>Title</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Published On</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Downloads</h4>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>First Edition</td>
-                                        <td>22/12/2016</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1481709451-newsletterdraft(6).pdf" target="_blank">Downloads</a></td>
-                                    </tr>
+                                    @forelse ($news_letters as $item)
+                                        <tr>
+                                            <td>{{ $item->title }} </td>
+                                            <td>{{ $item->created_at->format('M d, Y') }}</td>
+                                            <td><a href="{{ asset('storage/news_letters/' . $current_language . '/' . $item->file) }}"
+                                                    download="{{ $item->title }}" target="_blank">Download</a></td>
+                                        </tr>
+                                    @empty
+                                        <tr style="background-color: rgb(239, 239, 122);">
+                                            <td colspan="3" class="text-center">No News letter available</td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 navigation-column">
+                        @include('wmaweb.en.announcments_and_events')
+                    </div>
+
                 </div>
             </div>
-
-
-            <div class="col-md-3 navigation-column">
-                @include('wmaweb.en.announcments_and_events')
-            </div>
+        </div>
+    </div>
 
     </div>
-</div>
-</div>
-</div>
-
-</div>
     <!-- /contents -->
 @endsection

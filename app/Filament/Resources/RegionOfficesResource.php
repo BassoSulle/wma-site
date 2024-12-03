@@ -73,6 +73,21 @@ class RegionOfficesResource extends Resource
         return $form
             ->schema([
                 Section::make()
+                    ->description("Contact person information")
+                    ->schema([
+                        TextInput::make('contact_person_name')
+                            ->required()
+                            ->label('Full name')
+                            ->maxlength(255),
+
+                        TextInput::make('contact_person_position')
+                            ->required()
+                            ->label('Title')
+                            ->maxlength(255),
+
+                    ])->columns(2),
+
+                Section::make()
                     ->description("Region Office information")
                     ->schema([
                         TextInput::make('region_name')
@@ -108,13 +123,8 @@ class RegionOfficesResource extends Resource
                             ->required()
                             ->label('Phone number')
                             ->maxlength(255),
-
-                        TextInput::make('fax')
-                            ->required()
-                            ->label('Fax')
-                            ->maxlength(255),
-
                     ])->columns(2),
+
                 Section::make()
                     ->description("Fill description fields on both tabs")
                     ->schema([
@@ -124,8 +134,9 @@ class RegionOfficesResource extends Resource
                                     ->schema([
                                         Textarea::make('sw_content')
                                             ->required()
-                                            ->label('Description')
-                                            ->maxlength(255),
+                                            ->label('Maelezo')
+                                        // ->maxlength(255)
+                                        ,
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -133,7 +144,8 @@ class RegionOfficesResource extends Resource
                                         Textarea::make('en_content')
                                             ->required()
                                             ->label('Description')
-                                            ->maxlength(255),
+                                        // ->maxlength(255)
+                                        ,
                                     ])
 
                             ])->activeTab(1)->columnSpanFull()

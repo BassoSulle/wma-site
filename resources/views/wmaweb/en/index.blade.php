@@ -3,7 +3,7 @@
 @section('content')
     <div class="home-page ">
         <!-- Carousel Section with 70% width -->
-        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="8000">
             <ol class="carousel-indicators">
                 @foreach ($carousel_items as $key => $item)
                     <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}"
@@ -20,7 +20,7 @@
                             <div class="container">
                                 <div class="row align-items-center">
                                     <div class="col-md-12 order-md-1 order-2 text-center">
-                                        <p class="text-primary" style="font-size: 10px;">{{ $item->description }}</p>
+                                        <p class="text-primary" style="font-size: 16px;">{{ $item->description }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -62,58 +62,44 @@
             <div class="col-12 px-0 mt-4">
 
                 <div class="row">
-                    <div class="col-md-4 my-4 mx-5 col-xs-6">
-                        <div
-                            class="img-frame p-3 border rounded d-flex justify-content-center align-items-center img-fluid">
-                            <img src="https://www.wma.go.tz/uploads/profiles/9-0.30810600%201721628167.png"
-                                alt="Prof. Mkumbukwa M. A." class="img-fluid">
+                    @foreach ($wecome_notes as $welcome_note)
+                        <div class="col-md-4 my-4 mx-5 col-xs-6">
+                            <div
+                                class="img-frame p-3 border rounded d-flex justify-content-center align-items-center img-fluid">
 
+                                <img src="{{ asset('storage/' . $welcome_note->image) }}" alt="{{ $welcome_note->name }}"
+                                    class="img-fluid">
+
+                            </div>
+                            <center>
+                                <div class="">
+                                    <h5 class="title mb-2"><br>{{ $welcome_note->name }}</h5>
+                                    <small>{{ $welcome_note->status }} </small>
+                                </div>
+                            </center>
                         </div>
-                        <center>
-                            <div class="">
-                                <h5 class="title mb-2"><br>ALBAN M. KIHULLA.</h5>
-                                <small>CHIEF EXECUTIVE OFFICER </small>
-                            </div>
-                        </center>
-                    </div>
 
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <div class="">
-                                <h5 class="title mb-2"><br>Welcome to WMA</h5>
-                                <small><i></i></small>
-                            </div>
-                            <div class="col-12 px-0 my-2">
-                                <p class="card-text" class="text-justify;"
-                                    style="letter-spacing: 0.05em; line-height: 1.5; text-align: justify; text-align-last: left;">
-                                    The Weights and Measures Agency is a Government Agency under the Ministry of Industry
-                                    and Trade.
-                                    It was established on 17.05.2002 by Government Establishment Order No. 194 through the
-                                    Act for the Establishment of Government Agencies,
-                                    Chapter 245. Before its establishment, its responsibilities were carried out under a
-                                    department within the Ministry of Industry and Trade.
-                                    The main objective of establishing the Weights and Measures Agency is to improve the
-                                    services that were being provided by the Weights Department
-                                    under the Ministry of Industry and Trade and to reduce operational costs from the
-                                    central government fund.
-                                    </br>
-                                    </br>
-                                    To achieve this goal, the Weights and Measures Agency carries out its duties in
-                                    accordance with the Weights and Measures Act,
-                                    Chapter No. 340. The responsibilities executed under this law include verification and
-                                    inspection of measurements, providing
-                                    technical advice to manufacturers of measuring instruments in the country, approving
-                                    various types of measuring instruments before they are imported into the country,
-                                    and inspecting packaged products produced in our local industries and those imported
-                                    from abroad.
-
-                                    <br>
-                                </p>
-                                <a href="{{ route('welcome_note', ['language' => $current_language]) }} "> Read more..</a>
-                                <!-- <a href="aboutus" class="link-no-underline">Read more</a> -->
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <div class="">
+                                    <h5 class="title mb-2"><br>Welcome to WMA</h5>
+                                    <small><i></i></small>
+                                </div>
+                                <div class="col-12 px-0 my-2">
+                                    <p class="card-text" class="text-justify;"
+                                        style="letter-spacing: 0.05em; line-height: 1.5; text-align: justify; text-align-last: left;">
+                                        {!! Str::markdown(str(Str::limit($welcome_note->description, 1000))->sanitizeHtml()) !!}
+                                        <br>
+                                        <br>
+                                        <a href="{{ route('welcome_note', ['language' => $current_language]) }} "> Read
+                                            more..</a>
+                                    </p>
+                                    <!-- <a href="aboutus" class="link-no-underline">Read more</a> -->
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
+
                 </div>
 
                 <div class="container-fluid mb-3">
@@ -125,15 +111,18 @@
                                 <div class="col-md-12">
                                     <h5 class="section-title"><b>Announcements</b></h5>
                                     @foreach ($announcements as $item)
-                                        <div class="d-flex align-items-start shadow bg-white px-3 pt-4 pb-3">
+                                        <div class="d-flex align-items-start shadow bg-white px-3 pt-4 pb-3 mt-2">
                                             <div class="icon-announcement pr-2">
                                                 <i class="fa fa-bullhorn fa-2x"></i>
                                             </div>
                                             <div>
-                                                <h6 class="article-h2 text-uppercase">{{ $item->title }}</h6>
+                                                <h6 class="article-h2 text-uppercase mb-3 mt-2">
+                                                    {{ Str::limit($item->title, 38) }}</h6>
                                                 <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
                                                     {{ $item->created_at->format('M j, Y') }}</p>
-                                                <p>{{ Str::limit($item->description, 80) }}</p>
+                                                <p>
+                                                    {!! Str::markdown(str(Str::limit($item->description, 90))->sanitizeHtml()) !!}
+                                                </p>
                                                 <a href="{{ route('announcement_details', ['language' => $current_language, 'slug' => $item->slug]) }}"
                                                     class="read"
                                                     style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read
@@ -155,17 +144,21 @@
                                 <div class="col-md-12">
                                     <h5 class="section-title"><b>Events</b></h5>
                                     @foreach ($events as $item)
-                                        <div class="d-flex align-items-start shadow bg-white px-3 pt-4 pb-3">
+                                        <div class="d-flex align-items-start shadow bg-white px-3 pt-4 pb-3 mb-2">
                                             <div class="event-thumbnail pr-2">
                                                 <img src="{{ asset('storage/' . $item->image) }}"
                                                     style="width: 130px; height: 75px; object-fit: cover;" alt="Thumbnail"
                                                     class="img-thumbnail">
                                             </div>
                                             <div>
-                                                <h6 class="article-h2 text-uppercase">{{ $item->title }}</h6>
+                                                <p class="text-justify mb-2">
+                                                <h6 class="article-h2 text-uppercase">{{ Str::limit($item->title, 30) }}
+                                                </h6>
+                                                </p>
                                                 <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
-                                                    {{  \Carbon\Carbon::parse($item->start_date) ->format('M j, Y') }}</p>
-                                                <p>{{ Str::limit($item->description, 70) }}
+                                                    {{ \Carbon\Carbon::parse($item->start_date)->format('M j, Y') }}</p>
+                                                <p>
+                                                    {!! Str::markdown(str(Str::limit($item->description, 70))->sanitizeHtml()) !!}
                                                 </p>
                                                 <a href="{{ route('event_details', ['language' => $current_language, 'slug' => $item->slug]) }}"
                                                     class="read"
@@ -187,32 +180,20 @@
                             <div class="col-md-4 text-center">
                                 <h5 class="section-title"><b>How Do I</b></h5>
                                 <!-- Card style as provided in your code -->
-                                <div class="row mt-2 px-xs-0 mx-2 online-services justify-content-center">
-                                    <!-- First service item -->
-                                    <div class="service-item col-5 mb-4 mx-2">
-                                        <div class="service-icon">
-                                            <img src="{{ asset('assets/images/licence_icon.png') }}" alt=""
-                                                height="40" width="70px" style="margin-bottom: 10px;">
+                                <div class="row mt-2 px-xs-0 online-services justify-content-center">
+                                    @foreach ($how_do_i as $item)
+                                        <div class="service-item col-md-6 mb-2" style="height: 232px;">
+                                            <div class="service-icon">
+                                                <img src="{{ asset('storage/' . $item->image) }}" alt=""
+                                                    height="90px" width="90px" style="margin-bottom: 10px;">
+                                            </div>
+                                            <div class="service-title">{{ $item->title }}</div>
+                                            <div class="service-btn-wrapper mt-4">
+                                                <a href="{{ route('how_do_i_1', ['language' => $current_language, 'slug' => $item->slug]) }}"
+                                                    class="serv-btn" style="background-color: orange;">Soma Zaidi</a>
+                                            </div>
                                         </div>
-                                        <div class="service-title">Request for the Licence</div>
-                                        <div class="service-btn-wrapper mt-3">
-                                            <a href="{{ route('how_do_i_1', ['language' => $current_language]) }}"
-                                                class="serv-btn" style="background-color: orange;">Get instruction</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Second service item -->
-                                    <div class="service-item col-5 mb-4">
-                                        <div class="service-icon">
-                                            <img src="{{ asset('assets/images/doc_approval_icon.png') }}" alt=""
-                                                height="40" width="70px" style="margin-bottom: 10px;">
-                                        </div>
-                                        <div class="service-title">Request for the Pattern Approval</div>
-                                        <div class="service-btn-wrapper mt-3">
-                                            <a href="{{ route('how_do_i_2', ['language' => $current_language]) }}"
-                                                class="serv-btn" style="background-color: orange;">Get instruction</a>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
 
@@ -234,11 +215,14 @@
                                                                 class="img-fluid" alt="News Image">
                                                         </div>
                                                         <div class="col-md-6 d-flex flex-column justify-content-center">
-                                                            <h6 class="article-h2 text-uppercase">{{ $article->title }}
+                                                            <h6 class="article-h2 text-uppercase">
+                                                                {{ $article->title }}
                                                             </h6>
                                                             <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
                                                                 {{ $article->created_at->format('M j, Y') }}</p>
-                                                            <p>{{ Str::limit($article->description, 150) }}</p>
+                                                            <p>
+                                                                {!! Str::markdown(str(Str::limit($article->description, 150))->sanitizeHtml()) !!}
+                                                            </p>
                                                             <a href="{{ route('new_details', ['language' => $current_language, 'slug' => $article->slug]) }}"
                                                                 style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read
                                                                 more</a>
@@ -270,11 +254,12 @@
                         <!-- Section: Our Core Services -->
                         <div class="row">
                             <div class="col-12 my-3">
-                                <h5 class="my-xs-4 text-center text-xs-center section-title"><b>Our Core Services</b></h5>
+                                <h5 class="my-xs-4 text-center text-xs-center section-title"><b>Our Core Services</b>
+                                </h5>
                                 <!-- Row of Cards -->
-                                <div class="row mt-3 px-xs-0 online-services">
+                                <div class="row justify-content-center mt-3 px-xs-0 online-services">
                                     @foreach ($services as $service)
-                                        <div class="service-item col-md-3 mx-2">
+                                        <div class="service-item col-md-3 mt-2">
                                             <div class="service-icon">
                                                 <img src="{{ asset('storage/' . $service->icon) }}" alt=""
                                                     width="80px" style="margin-bottom: 10px;">

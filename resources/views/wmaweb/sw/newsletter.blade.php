@@ -29,32 +29,45 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th><h4>Jina la chapisho</h4></th>
-                                        <th><h4>Tarehe ya kutolewa</h4></th>
-                                        <th><h4>Pakua</h4></th>
+                                        <th>
+                                            <h4>Jina la Jarida</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Tarehe ya kutolewa</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Pakua</h4>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Toleo la kwanza</td>
-                                        <td>22/12/2016</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1481709451-newsletterdraft(6).pdf" target="_blank">Pakua</a></td>
-                                    </tr>
+                                    @forelse ($news_letters as $item)
+                                        <tr>
+                                            <td>{{ $item->title }} </td>
+                                            <td>{{ $item->created_at->format('M d, Y') }}</td>
+                                            <td><a href="{{ asset('storage/news_letters/' . $current_language . '/' . $item->file) }}"
+                                                    download="{{ $item->title }}" target="_blank">Pakua</a></td>
+                                        </tr>
+                                    @empty
+                                        <tr style="background-color: rgb(239, 239, 122);">
+                                            <td colspan="3" class="text-center">Hakuna Majarida kwa sasa</td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 navigation-column">
+                        @include('wmaweb.sw.announcments_and_events')
+                    </div>
+
                 </div>
             </div>
-
-
-            <div class="col-md-3 navigation-column">
-                @include('wmaweb.sw.announcments_and_events')
-            </div>
+        </div>
+    </div>
 
     </div>
-</div>
-</div>
-</div>
-
-</div>
     <!-- /contents -->
 @endsection

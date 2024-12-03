@@ -90,9 +90,10 @@ class PhotosResource extends Resource
                         Tabs\Tab::make('Swahili')
                             ->schema([
                                 Textarea::make('sw_caption')
-                                    ->label("Caption")
+                                    ->label("Maelezo mafupi")
                                     ->required()
-                                    ->maxlength(255),
+                                // ->maxlength(255)
+                                ,
                             ]),
 
                         Tabs\Tab::make('English')

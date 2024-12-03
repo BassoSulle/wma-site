@@ -21,14 +21,17 @@ use Filament\Tables\Columns\IconColumn;
 use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\TimePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\TimePicker;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Placeholder;
 use Illuminate\Contracts\Support\Htmlable;
+use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\EventsResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\EventsResource\RelationManagers;
+use Filament\Forms\Components\Tabs;
+
 
 class EventsResource extends Resource
 {
@@ -78,16 +81,19 @@ class EventsResource extends Resource
                                 Tabs\Tab::make('Swahili')
                                     ->schema([
                                         TextInput::make('sw_title')
-                                            ->label('Title')
+                                            ->label('Kichwa cha habari')
                                             ->required()
                                             ->maxlength(255),
 
-                                        Textarea::make('sw_description')
-                                            ->label('Description')
-                                            ->required()
-                                            ->maxlength(255),
+                                        MarkdownEditor::make('sw_description')
+                                            ->disableToolbarButtons([
+                                                'attachFiles',
+                                            ])
+                                            ->label('Maelezo')
+                                            ->required(),
 
                                         TextInput::make('sw_audience')
+                                            ->label('Hadhira')
                                             ->required(),
                                     ]),
                                 Tabs\Tab::make('English')
@@ -95,25 +101,26 @@ class EventsResource extends Resource
                                         TextInput::make('en_title')
                                             ->label('Title')
                                             ->required()
-                                            ->maxlength(255)
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn(string $operation, $state, Set $set) => $operation
                                                 === 'create' ? $set('slug', Str::slug($state)) : null),
 
                                         TextInput::make('slug')
                                             ->required()
-                                            ->maxlength(255)
                                             ->disabled()
                                             ->dehydrated()
                                             // ->hidden()
                                             ->unique(Events::class, 'slug', ignoreRecord: true),
 
-                                        Textarea::make('en_description')
+                                        MarkdownEditor::make('en_description')
+                                            ->disableToolbarButtons([
+                                                'attachFiles',
+                                            ])
                                             ->label('Description')
-                                            ->required()
-                                            ->maxlength(255),
+                                            ->required(),
 
                                         TextInput::make('en_audience')
+                                            ->label('Audience')
                                             ->required(),
                                     ])
                             ])->activeTab(1)->columnSpanFull()
@@ -162,9 +169,7 @@ class EventsResource extends Resource
                             ->default(true)
                     ])->columns(2)
 
-                        ]);
-
-
+            ]);
     }
 
     public static function table(Table $table): Table

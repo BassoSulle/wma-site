@@ -26,6 +26,7 @@ use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Placeholder;
 use Illuminate\Contracts\Support\Htmlable;
+use Filament\Forms\Components\MarkdownEditor;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\AnnouncementsResource\Pages;
 use App\Filament\Resources\AnnouncementsResource\RelationManagers;
@@ -78,14 +79,16 @@ class AnnouncementsResource extends Resource
                                 Tabs\Tab::make('Swahili')
                                     ->schema([
                                         TextInput::make('sw_title')
-                                            ->label('Title')
+                                            ->label('kichwa cha tangazo')
                                             ->required()
                                             ->maxlength(255),
 
-                                        Textarea::make('sw_description')
-                                            ->label('Description')
+                                        MarkdownEditor::make('sw_description')
+                                            ->disableToolbarButtons([
+                                                'attachFiles',
+                                            ])
+                                            ->label('Maelezo')
                                             ->required()
-                                            ->maxlength(255)
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -105,10 +108,12 @@ class AnnouncementsResource extends Resource
                                             // ->hidden()
                                             ->unique(Announcements::class, 'slug', ignoreRecord: true),
 
-                                        Textarea::make('en_description')
+                                        MarkdownEditor::make('en_description')
+                                            ->disableToolbarButtons([
+                                                'attachFiles',
+                                            ])
                                             ->label('Description')
-                                            ->required()
-                                            ->maxlength(255),
+                                            ->required(),
 
                                     ])
 

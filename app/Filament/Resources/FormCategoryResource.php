@@ -77,14 +77,15 @@ class FormCategoryResource extends Resource
                                 Tabs\Tab::make('Swahili')
                                     ->schema([
                                         TextInput::make('sw_title')
-                                            ->label('Title')
+                                            ->label('Kichwa cha habari')
                                             ->required()
                                             ->maxlength(255),
 
                                         Textarea::make('sw_detail')
                                             ->required()
-                                            ->label('Description')
-                                            ->maxlength(255),
+                                            ->label('Maelezo')
+                                        // ->maxlength(255)
+                                        ,
 
                                     ]),
 

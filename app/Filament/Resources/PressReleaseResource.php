@@ -80,16 +80,16 @@ class PressReleaseResource extends Resource
                                     ->schema([
                                         TextInput::make('sw_title')
                                             ->required()
-                                            ->label('Title'),
+                                            ->label('kichwa cha habari'),
 
 
                                         Textarea::make('sw_content')
                                             ->required()
-                                            ->label('Description'),
+                                            ->label('Maelezo'),
 
 
                                         FileUpload::make('sw_file')
-                                            ->label('PDF Document')
+                                            ->label('Hati ya PDF')
                                             ->required()
                                             ->acceptedFileTypes(['application/pdf'])
                                             ->directory('press_release/sw'),

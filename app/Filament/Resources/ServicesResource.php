@@ -29,6 +29,7 @@ use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Placeholder;
 use Illuminate\Contracts\Support\Htmlable;
+use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\ServicesResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ServicesResource\RelationManagers;
@@ -82,14 +83,16 @@ class ServicesResource extends Resource
                                 Tabs\Tab::make('Swahili')
                                     ->schema([
                                         TextInput::make('sw_name')
-                                            ->label('Name')
+                                            ->label('Jina la huduma')
                                             ->required()
                                             ->maxlength(255),
 
-                                        Textarea::make('sw_content')
-                                            ->label('Description')
-                                            ->required()
-                                            ->maxlength(255),
+                                        MarkdownEditor::make('sw_content')
+                                            ->disableToolbarButtons([
+                                                'attachFiles',
+                                            ])
+                                            ->label('Maelezo')
+                                            ->required(),
 
                                     ]),
 
@@ -110,10 +113,12 @@ class ServicesResource extends Resource
                                             // ->hidden()
                                             ->unique(Services::class, 'slug', ignoreRecord: true),
 
-                                        Textarea::make('en_content')
+                                        MarkdownEditor::make('en_content')
+                                            ->disableToolbarButtons([
+                                                'attachFiles',
+                                            ])
                                             ->label('Description')
-                                            ->required()
-                                            ->maxlength(255),
+                                            ->required(),
 
                                     ])
 
@@ -154,12 +159,12 @@ class ServicesResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('image')
-                    ->searchable()
-                    ->html()
-                    ->formatStateUsing(function ($state) {
-                        return '<img src="' . asset('storage/services/images/' . basename($state)) . '" width="30", height="40" />';
-                    }),
+                // Tables\Columns\TextColumn::make('image')
+                //     ->searchable()
+                //     ->html()
+                //     ->formatStateUsing(function ($state) {
+                //         return '<img src="' . asset('storage/services/images/' . basename($state)) . '" width="30", height="40" />';
+                //     }),
 
                 Tables\Columns\TextColumn::make('icon')
                     ->searchable()

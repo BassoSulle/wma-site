@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="vision and mission">
-                                {!! nl2br(e($new_details->description)) !!}
+                                {!! Str::markdown(str($new_details->description)->sanitizeHtml()) !!}
                             </p>
 
                         </div>

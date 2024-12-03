@@ -29,34 +29,41 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th><h4>Publication Name</h4></th>
-                                        <th><h4>Date Added</h4></th>
-                                        <th><h4>Downloads</h4></th>
+                                        <th>
+                                            <h4>Publication Name</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Published On</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Downloads</h4>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>Establishment order</td>
                                         <td>21/12/2016</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1482325714-ESTABLISHMENT%20ORDER.pdf" target="_blank">Downloads</a></td>
+                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1482325714-ESTABLISHMENT%20ORDER.pdf"
+                                                target="_blank">Downloads</a></td>
                                     </tr>
 
 
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 navigation-column">
+                        @include('wmaweb.en.announcments_and_events')
+                    </div>
+
                 </div>
             </div>
-
-
-            <div class="col-md-3 navigation-column">
-                @include('wmaweb.en.announcments_and_events')
-            </div>
+        </div>
+    </div>
 
     </div>
-</div>
-</div>
-</div>
-
-</div>
     <!-- /contents -->
 @endsection

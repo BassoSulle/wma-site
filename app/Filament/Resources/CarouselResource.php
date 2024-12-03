@@ -75,15 +75,15 @@ class CarouselResource extends Resource
                                 Tabs\Tab::make('Swahili')
                                     ->schema([
                                         TextInput::make('sw_title')
-                                            ->label('Title')
+                                            ->label('Kichwa cha habari')
                                             ->required()
                                             ->maxlength(255)
                                             ->columnSpanFull(),
 
                                         Textarea::make('sw_description')
-                                            ->label('Description')
+                                            ->label('Maelezo')
                                             ->required()
-                                            ->maxlength(255)
+                                        // ->maxlength(255)
                                     ]),
 
                                 Tabs\Tab::make('English')
@@ -107,7 +107,8 @@ class CarouselResource extends Resource
                                         Textarea::make('en_description')
                                             ->label('Description')
                                             ->required()
-                                            ->maxlength(255),
+                                        // ->maxlength(255)
+                                        ,
 
                                     ])
 

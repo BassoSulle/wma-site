@@ -29,47 +29,53 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th><h4>Publication Name</h4></th>
-                                        <th><h4>Date Added</h4></th>
-                                        <th><h4>Downloads</h4></th>
+                                        <th>
+                                            <h4>Publication Name</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Published On</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Downloads</h4>
+                                        </th>
                                     </tr>
                                 </thead>
 
 
                                 <tbody>
-                                    @forelse ( $press_release as $item )
-
-                                    <tr>
-                                        <td>{{$item->title}}</td>
-                                        <td>{{$item->created_at->format('F d, Y')}}</td>
-                                        <td><a href="{{asset('storage/'.$item->file)}}" download="{{ $item->title . '_' . basename($item->file) }}" target="_blank">Downloads</a></td>
-                                    </tr>
+                                    @forelse ($press_release as $item)
+                                        <tr>
+                                            <td>{{ $item->title }}</td>
+                                            <td>{{ $item->created_at->format('F d, Y') }}</td>
+                                            <td><a href="{{ asset('storage/' . $item->file) }}"
+                                                    download="{{ $item->title . '_' . basename($item->file) }}"
+                                                    target="_blank">Downloads</a></td>
+                                        </tr>
 
                                     @empty
 
-                                    <tr>
-                                        <td colspan="3" class="text-center">No Press Release found!.</td>
-                                    </tr>
-
+                                        <tr>
+                                            <td colspan="3" class="text-center">No Press Release found!.</td>
+                                        </tr>
                                     @endforelse
 
 
 
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 navigation-column">
+                        @include('wmaweb.en.announcments_and_events')
+                    </div>
+
                 </div>
             </div>
-
-
-            <div class="col-md-3 navigation-column">
-                @include('wmaweb.en.announcments_and_events')
-            </div>
+        </div>
+    </div>
 
     </div>
-</div>
-</div>
-</div>
-
-</div>
     <!-- /contents -->
 @endsection

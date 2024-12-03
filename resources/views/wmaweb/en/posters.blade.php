@@ -29,39 +29,47 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th><h4>Publication Name</h4></th>
-                                        <th><h4>Date Added</h4></th>
-                                        <th><h4>Downloads</h4></th>
+                                        <th>
+                                            <h4>Publication Name</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Published On</h4>
+                                        </th>
+                                        <th>
+                                            <h4>Downloads</h4>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>Local scale manufacturers banner</td>
-                                        <td> 	01/02/2018</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1517461334-WMA%20-%20Rollup%20Banner.pdf" target="_blank">Downloads</a></td>
+                                        <td> 01/02/2018</td>
+                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1517461334-WMA%20-%20Rollup%20Banner.pdf"
+                                                target="_blank">Downloads</a></td>
                                     </tr>
                                     <tr>
                                         <td>Awareness Banner</td>
                                         <td>01/02/2018</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1517461189-banner%201.pdf" target="_blank">Downloads</a></td>
+                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1517461189-banner%201.pdf"
+                                                target="_blank">Downloads</a></td>
                                     </tr>
 
 
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 navigation-column">
+                        @include('wmaweb.en.announcments_and_events')
+                    </div>
+
                 </div>
             </div>
-
-
-            <div class="col-md-3 navigation-column">
-                @include('wmaweb.en.announcments_and_events')
-            </div>
+        </div>
+    </div>
 
     </div>
-</div>
-</div>
-</div>
-
-</div>
     <!-- /contents -->
 @endsection
