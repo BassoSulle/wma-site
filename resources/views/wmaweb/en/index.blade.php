@@ -88,7 +88,7 @@
                                 <div class="col-12 px-0 my-2">
                                     <p class="card-text" class="text-justify;"
                                         style="letter-spacing: 0.05em; line-height: 1.5; text-align: justify; text-align-last: left;">
-                                        {{ Str::limit($welcome_note->description, 1000) }}
+                                        {!! Str::markdown(str(Str::limit($welcome_note->description, 1000))->sanitizeHtml()) !!}
                                         <br>
                                         <br>
                                         <a href="{{ route('welcome_note', ['language' => $current_language]) }} "> Read
@@ -120,7 +120,9 @@
                                                     {{ Str::limit($item->title, 38) }}</h6>
                                                 <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
                                                     {{ $item->created_at->format('M j, Y') }}</p>
-                                                <p>{{ Str::limit($item->description, 90) }}</p>
+                                                <p>
+                                                    {!! Str::markdown(str(Str::limit($item->description, 90))->sanitizeHtml()) !!}
+                                                </p>
                                                 <a href="{{ route('announcement_details', ['language' => $current_language, 'slug' => $item->slug]) }}"
                                                     class="read"
                                                     style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read
@@ -155,7 +157,8 @@
                                                 </p>
                                                 <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
                                                     {{ \Carbon\Carbon::parse($item->start_date)->format('M j, Y') }}</p>
-                                                <p>{!! nl2br(e(Str::limit($item->description, 70))) !!}
+                                                <p>
+                                                    {!! Str::markdown(str(Str::limit($item->description, 70))->sanitizeHtml()) !!}
                                                 </p>
                                                 <a href="{{ route('event_details', ['language' => $current_language, 'slug' => $item->slug]) }}"
                                                     class="read"
@@ -217,7 +220,9 @@
                                                             </h6>
                                                             <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
                                                                 {{ $article->created_at->format('M j, Y') }}</p>
-                                                            <p>{{ Str::limit($article->description, 150) }}</p>
+                                                            <p>
+                                                                {!! Str::markdown(str(Str::limit($article->description, 150))->sanitizeHtml()) !!}
+                                                            </p>
                                                             <a href="{{ route('new_details', ['language' => $current_language, 'slug' => $article->slug]) }}"
                                                                 style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read
                                                                 more</a>
