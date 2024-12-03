@@ -41,13 +41,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @forelse ($speeches as $item)
                                     <tr>
-                                        <td>Budget Speech Ministry of Industry, Trade and Investment 2017/2018</td>
-                                        <td>August 11, 2017</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1502453420-HOTUBA%20VIWANDA.pdf"
-                                                target="_blank">Downloads</a></td>
+                                        <td>{{ $item->title }} </td>
+                                        <td>{{ $item->created_at->format('M d, Y') }}</td>
+                                        <td><a href="{{ asset('storage/' . $item->file) }}"
+                                            download="{{ $item->title . '_' . basename($item->file) }}"
+                                            target="_blank">Downloads</a></td>>
                                     </tr>
-
+                                @empty
+                                    <tr style="background-color: rgb(239, 239, 122);">
+                                        <td colspan="3" class="text-center">No Speeches available!</td>
+                                    </tr>
+                                @endforelse
 
                                 </tbody>
                             </table>

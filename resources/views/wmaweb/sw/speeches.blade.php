@@ -35,13 +35,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @forelse ($speeches as $item)
                                     <tr>
-                                        <td>Hotuba ya Bajeti Wizara ya Viwanda, Biashara na Uwekezaji 2017/2018</td>
-                                        <td>August 11, 2017</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1502453420-HOTUBA%20VIWANDA.pdf" target="_blank">Pakua</a></td>
+                                        <td>{{ $item->title }} </td>
+                                        <td>{{ $item->created_at->format('M d, Y') }}</td>
+                                        <td><a href="{{ asset('storage/' . $item->file) }}"
+                                            download="{{ $item->title . '_' . basename($item->file) }}"
+                                            target="_blank">Pakua</a></td>
                                     </tr>
-
-
+                                @empty
+                                    <tr style="background-color: rgb(239, 239, 122);">
+                                        <td colspan="3" class="text-center">Hakuna Hotuba!</td>
+                                    </tr>
+                                @endforelse
                                 </tbody>
                             </table>
                 </div>

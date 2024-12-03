@@ -125,6 +125,17 @@ class User extends Authenticatable
 
         return  $this->hasMany(WelcomeNote::class);
     }
+
+    public function brochures()
+    {
+
+        return  $this->hasMany(Brochures::class);
+    }
+    public function posters()
+    {
+
+        return  $this->hasMany(Posters::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

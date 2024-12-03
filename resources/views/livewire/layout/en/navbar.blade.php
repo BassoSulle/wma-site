@@ -291,7 +291,7 @@
                                         <li><a class='dropdown-item'
                                                 href="{{ route('pressrelease', ['language' => $current_language]) }}">Press
                                                 Release</a></li>
-                                        <li><a class='dropdown-item' href="#">Special Supplements</a></li>
+                                        {{-- <li><a class='dropdown-item' href="#">Special Supplements</a></li> --}}
                                         <li><a class='dropdown-item'
                                                 href="{{ route('speeches', ['language' => $current_language]) }}">Speech</a>
                                         </li>

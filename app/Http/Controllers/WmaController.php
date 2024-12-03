@@ -12,6 +12,9 @@ use App\Models\HowDoI;
 use App\Models\Vacancies;
 use App\Models\NewsLetter;
 use App\Models\FormCategory;
+use App\Models\speeches;
+use App\Models\Posters;
+use App\Models\Brochures;
 use App\Models\PressRelease;
 use App\Models\Publications;
 use Illuminate\Http\Request;
@@ -674,6 +677,7 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
+            'speeches' => speeches::select('slug', $language . '_title as title', $language . '_file as file', 'created_at')->where('is_active', true)->latest()->get(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
 
@@ -688,6 +692,7 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
+            'brochures' => Brochures::select('slug', $language . '_title as title', $language . '_file as file', 'created_at')->where('is_active', true)->latest()->get(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
 
@@ -702,6 +707,7 @@ class WmaController extends Controller
         $templatePath = $this->getTemplatePath($language, $templateName);
         $data = [
             'current_language' => $language,
+            'posters' => Posters::select('slug', $language . '_title as title', $language . '_file as file', 'created_at')->where('is_active', true)->latest()->get(),
             'announcements' => Announcements::select('slug', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
             'events' => EventsModel::select('slug', 'image', $language . '_title as title', $language . '_description as description', 'created_at')->where('is_active', true)->latest()->limit(3)->get(),
 
@@ -723,6 +729,8 @@ class WmaController extends Controller
         ];
         return view($templatePath, $data);
     }
+
+
 
     // forms
     public function dynamic_forms($language, $slug)

@@ -30,7 +30,7 @@
                                 <thead>
                                     <tr>
                                         <th>
-                                            <h4>Publication Name</h4>
+                                            <h4>Poster Name</h4>
                                         </th>
                                         <th>
                                             <h4>Published On</h4>
@@ -41,19 +41,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Local scale manufacturers banner</td>
-                                        <td> 01/02/2018</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1517461334-WMA%20-%20Rollup%20Banner.pdf"
+                                    @forelse ($posters as $item)
+                                        <tr>
+                                            <td>{{ $item->title }} </td>
+                                            <td>{{ $item->created_at->format('M d, Y') }}</td>
+                                            <td><a href="{{ asset('storage/' . $item->file) }}"
+                                                download="{{ $item->title . '_' . basename($item->file) }}"
                                                 target="_blank">Downloads</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Awareness Banner</td>
-                                        <td>01/02/2018</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1517461189-banner%201.pdf"
-                                                target="_blank">Downloads</a></td>
-                                    </tr>
-
+                                        </tr>
+                                    @empty
+                                        <tr style="background-color: rgb(239, 239, 122);">
+                                            <td colspan="3" class="text-center">No Posters available!</td>
+                                        </tr>
+                                    @endforelse
 
                                 </tbody>
                             </table>

@@ -27,26 +27,31 @@
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th><h4>Jina la chapisho</h4></th>
-                                        <th><h4>Tarehe ya kutolewa</h4></th>
-                                        <th><h4>Pakua</h4></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Bango la Mizani zinazoundwa na Watanzania</td>
-                                        <td>01/02/2018</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1517461334-WMA%20-%20Rollup%20Banner.pdf" target="_blank">Pakua</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bango la elimu ya matumizi ya vipimo</td>
-                                        <td>01/02/2018</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1517461189-banner%201.pdf" target="_blank">Pakua</a></td>
-                                    </tr>
-
-
+                                <tr>
+                                    <th>
+                                        <h4>Jina la Bango</h4>
+                                    </th>
+                                    <th>
+                                        <h4>Tarehe ya kutolewa</h4>
+                                    </th>
+                                    <th>
+                                        <h4>Pakua</h4>
+                                    </th>
+                                </tr>
+                            </thead>
+                                    @forelse ($posters as $item)
+                                        <tr>
+                                            <td>{{ $item->title }} </td>
+                                            <td>{{ $item->created_at->format('M d, Y') }}</td>
+                                            <td><a href="{{ asset('storage/' . $item->file) }}"
+                                                download="{{ $item->title . '_' . basename($item->file) }}"
+                                                target="_blank">Pakua</a></td>
+                                        </tr>
+                                    @empty
+                                        <tr style="background-color: rgb(239, 239, 122);">
+                                            <td colspan="3" class="text-center">Hakuna mabango!</td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                 </div>

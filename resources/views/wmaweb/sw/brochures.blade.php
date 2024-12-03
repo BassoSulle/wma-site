@@ -35,18 +35,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @forelse ($brochures as $item)
                                     <tr>
-                                        <td>Majukumu ya Wakala wa Vipimo</td>
-                                        <td>31/01/2018</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1517388396-WMA%20-%20FLIER.pdf" target="_blank">Pakua</a></td>
+                                        <td>{{ $item->title }} </td>
+                                        <td>{{ $item->created_at->format('M d, Y') }}</td>
+                                        <td><a href="{{ asset('storage/' . $item->file) }}"
+                                            download="{{ $item->title . '_' . basename($item->file) }}"
+                                            target="_blank">Pakua</a></td>
                                     </tr>
-                                    <tr>
-                                        <td>Kuhusu Wakala wa Vipimo</td>
-                                        <td>31/01/2018</td>
-                                        <td><a href="https://www.wma.go.tz/uploads/documents/en/1517386300-WMA%20-%203%20FOLDS%20BROCHURE.pdf" target="_blank">Pakua</a></td>
+                                @empty
+                                    <tr style="background-color: rgb(239, 239, 122);">
+                                        <td colspan="3" class="text-center">Hakuna machapisho</td>
                                     </tr>
-
-
+                                @endforelse
                                 </tbody>
                             </table>
                 </div>

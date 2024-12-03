@@ -299,7 +299,7 @@
                                                 href="{{ route('pressrelease', ['language' => $current_language]) }}">Taarifa
                                                 kwa Vyombo vya Habari</a>
                                         </li>
-                                        <li><a class='dropdown-item' href="#">Matoleo Maalumu</a></li>
+                                        {{-- <li><a class='dropdown-item' href="#">Matoleo Maalumu</a></li> --}}
                                         <li><a class='dropdown-item'
                                                 href="{{ route('speeches', ['language' => $current_language]) }}">Hotuba</a>
                                         </li>
