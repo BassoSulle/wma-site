@@ -67,7 +67,7 @@
                             <div
                                 class="img-frame p-3 border rounded d-flex justify-content-center align-items-center img-fluid">
 
-                                <img src="{{ asset('storage/' . $welcome_note->image) }}" alt="Prof. Mkumbukwa M. A."
+                                <img src="{{ asset('storage/' . $welcome_note->image) }}" alt="{{ $welcome_note->name }}"
                                     class="img-fluid">
 
                             </div>
@@ -89,8 +89,6 @@
                                     <p class="card-text" class="text-justify;"
                                         style="letter-spacing: 0.05em; line-height: 1.5; text-align: justify; text-align-last: left;">
                                         {{ Str::limit($welcome_note->description, 1000) }}
-
-
                                         <br>
                                         <br>
                                         <a href="{{ route('welcome_note', ['language' => $current_language]) }} "> Read
@@ -194,91 +192,91 @@
                                         </div>
                                     @endforeach
                                 </div>
-
-                                <div style="margin-top: 100px"></div>
-
-
-                                <!-- Section: Top News Slider -->
-                                <div class="row mt-5">
-                                    <div class="col-md-9 mx-auto">
-                                        <h5 class="text-center section-title"><b>Top News</b></h5>
-                                        <div id="topNewsSlider" class="carousel slide shadow bg-white pr-3"
-                                            data-ride="carousel">
-                                            <div class="carousel-inner">
-                                                @foreach ($news_articles as $key => $article)
-                                                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                                        <div class="row">
-                                                            <div class="col-md-6 d-flex align-items-center">
-                                                                <img src="{{ asset('storage/' . $article->image) }}"
-                                                                    class="img-fluid" alt="News Image">
-                                                            </div>
-                                                            <div
-                                                                class="col-md-6 d-flex flex-column justify-content-center">
-                                                                <h6 class="article-h2 text-uppercase">
-                                                                    {{ $article->title }}
-                                                                </h6>
-                                                                <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
-                                                                    {{ $article->created_at->format('M j, Y') }}</p>
-                                                                <p>{{ Str::limit($article->description, 150) }}</p>
-                                                                <a href="{{ route('new_details', ['language' => $current_language, 'slug' => $article->slug]) }}"
-                                                                    style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read
-                                                                    more</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @endforeach
-                                            </div>
-                                            <a class="carousel-control-prev" href="#topNewsSlider" role="button"
-                                                data-slide="prev">
-                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                <span class="sr-only">Previous</span>
-                                            </a>
-                                            <a class="carousel-control-next" href="#topNewsSlider" role="button"
-                                                data-slide="next">
-                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span class="sr-only">Next</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 justify-content-center my-5 text-center">
-                                    <a href="{{ route('all_news', ['language' => $current_language]) }}"
-                                        class="link-no-underline" previewlistener="true"><i>View all <i
-                                                class="far fa-arrow-alt-circle-right"></i></i></a>
-                                </div>
                             </div>
 
-                            <!-- Section: Our Core Services -->
-                            <div class="row">
-                                <div class="col-12 my-3">
-                                    <h5 class="my-xs-4 text-center text-xs-center section-title"><b>Our Core Services</b>
-                                    </h5>
-                                    <!-- Row of Cards -->
-                                    <div class="row justify-content-center mt-3 px-xs-0 online-services">
-                                        @foreach ($services as $service)
-                                            <div class="service-item col-md-3 mt-2">
-                                                <div class="service-icon">
-                                                    <img src="{{ asset('storage/' . $service->icon) }}" alt=""
-                                                        width="80px" style="margin-bottom: 10px;">
+                            <div style="margin-top: 100px"></div>
+
+
+                            <!-- Section: Top News Slider -->
+                            <div class="row mt-5">
+                                <div class="col-md-9 mx-auto">
+                                    <h5 class="text-center section-title"><b>Top News</b></h5>
+                                    <div id="topNewsSlider" class="carousel slide shadow bg-white pr-3"
+                                        data-ride="carousel">
+                                        <div class="carousel-inner">
+                                            @foreach ($news_articles as $key => $article)
+                                                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                                    <div class="row">
+                                                        <div class="col-md-6 d-flex align-items-center">
+                                                            <img src="{{ asset('storage/' . $article->image) }}"
+                                                                class="img-fluid" alt="News Image">
+                                                        </div>
+                                                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                                                            <h6 class="article-h2 text-uppercase">
+                                                                {{ $article->title }}
+                                                            </h6>
+                                                            <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
+                                                                {{ $article->created_at->format('M j, Y') }}</p>
+                                                            <p>{{ Str::limit($article->description, 150) }}</p>
+                                                            <a href="{{ route('new_details', ['language' => $current_language, 'slug' => $article->slug]) }}"
+                                                                style="width: 100px; background-color: orange; color: white; text-align: center; display: inline-block; padding: 10px; border-radius: 5px;">Read
+                                                                more</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="service-title">{{ $service->name }}</div>
-                                                <div class="service-btn-wrapper">
-                                                    <a href="{{ route('service_details', ['language' => $current_language, 'slug' => $service->slug]) }}"
-                                                        class="serv-btn" style="background-color: orange;">Read More</a>
-                                                </div>
-                                            </div>
-                                        @endforeach
+                                            @endforeach
+                                        </div>
+                                        <a class="carousel-control-prev" href="#topNewsSlider" role="button"
+                                            data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#topNewsSlider" role="button"
+                                            data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="col-md-12 justify-content-center my-4 text-center">
-                                    <a href="{{ route('all_services', ['language' => $current_language]) }}"
-                                        class="link-no-underline" previewlistener="true"><i>View all <i
-                                                class="far fa-arrow-alt-circle-right"></i></i></a>
+                            </div>
+                            <div class="col-md-12 justify-content-center my-5 text-center">
+                                <a href="{{ route('all_news', ['language' => $current_language]) }}"
+                                    class="link-no-underline" previewlistener="true"><i>View all <i
+                                            class="far fa-arrow-alt-circle-right"></i></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Section: Our Core Services -->
+                        <div class="row">
+                            <div class="col-12 my-3">
+                                <h5 class="my-xs-4 text-center text-xs-center section-title"><b>Our Core Services</b>
+                                </h5>
+                                <!-- Row of Cards -->
+                                <div class="row justify-content-center mt-3 px-xs-0 online-services">
+                                    @foreach ($services as $service)
+                                        <div class="service-item col-md-3 mt-2">
+                                            <div class="service-icon">
+                                                <img src="{{ asset('storage/' . $service->icon) }}" alt=""
+                                                    width="80px" style="margin-bottom: 10px;">
+                                            </div>
+                                            <div class="service-title">{{ $service->name }}</div>
+                                            <div class="service-btn-wrapper">
+                                                <a href="{{ route('service_details', ['language' => $current_language, 'slug' => $service->slug]) }}"
+                                                    class="serv-btn" style="background-color: orange;">Read More</a>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
+                            </div>
+                            <div class="col-md-12 justify-content-center my-4 text-center">
+                                <a href="{{ route('all_services', ['language' => $current_language]) }}"
+                                    class="link-no-underline" previewlistener="true"><i>View all <i
+                                            class="far fa-arrow-alt-circle-right"></i></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    @endsection
+    </div>
+@endsection

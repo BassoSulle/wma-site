@@ -62,61 +62,43 @@
             <div class="col-12 px-0 mt-4">
 
                 <div class="row">
-                    <div class="col-md-4 my-4 mx-5 col-xs-6">
-                        <div
-                            class="img-frame p-3 border rounded d-flex justify-content-center align-items-center img-fluid">
-                            <img src="https://www.wma.go.tz/uploads/profiles/9-0.30810600%201721628167.png"
-                                alt="Prof. Mkumbukwa M. A." class="img-fluid">
+                    @foreach ($wecome_notes as $welcome_note)
+                        <div class="col-md-4 my-4 mx-5 col-xs-6">
+                            <div
+                                class="img-frame p-3 border rounded d-flex justify-content-center align-items-center img-fluid">
+                                <img src="{{ asset('storage/' . $welcome_note->image) }}" alt="{{ $welcome_note->name }}"
+                                    class="img-fluid">
 
+                            </div>
+                            <center>
+                                <div class="">
+                                    <h5 class="title mb-2"><br>{{ $welcome_note->name }}</h5>
+                                    <small>{{ $welcome_note->status }} </small>
+                                </div>
+                            </center>
                         </div>
-                        <center>
-                            <div class="">
-                                <h5 class="title mb-2"><br>ALBAN M. KIHULLA.</h5>
-                                <small>AFISA MTENDAJI MKUU </small>
-                            </div>
-                        </center>
-                    </div>
 
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <div class="">
-                                <h5 class="title mb-2"><br>Karibu WMA</h5>
-                                <small><i></i></small>
-                            </div>
-                            <div class="col-12 px-0 my-1">
-                                <p class="card-text" class="text-justify;"
-                                    style="letter-spacing: 0.05em; line-height: 1.5; text-align: justify; text-align-last: left;">
-                                    Wakala wa Vipimo ni Wakala ya Serikali ambayo ipo chini ya Wizara ya Viwanda na
-                                    Biashara.
-                                    Ilianzishwa tarehe 17.05.2002 kwa agizo la Serikali (Government Establishment Order)
-                                    Na.194 kupitia
-                                    Sheria ya uanzishwaji wa Wakala za Serikali sura 245.Kabla ya kuanzishwa kwake majukumu
-                                    yake yalikuwa
-                                    yakitekelezwa chini ya idara iliyokuwa ndani Wizara ya Viwanda na Biashara.
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <div class="">
+                                    <h5 class="title mb-2"><br>Karibu WMA</h5>
+                                    <small><i></i></small>
+                                </div>
+                                <div class="col-12 px-0 my-1">
+                                    <p class="card-text" class="text-justify;"
+                                        style="letter-spacing: 0.05em; line-height: 1.5; text-align: justify; text-align-last: left;">
+                                        {{ Str::limit($welcome_note->description, 1000) }}
+                                        <br>
+                                        <br>
+                                        <a href="{{ route('welcome_note', ['language' => $current_language]) }} "> Soma
+                                            zaidi..</a>
 
-                                    Lengo kuu la kuanzishwa Wakala wa Vipimo ni kuboresha huduma zilizokuwa zikitolewa na
-                                    Idara hiyo ya Vipimo chini ya Wizara ya Viwanda na Biashara na kupunguza gharama za
-                                    uendeshaji kutoka katika mfuko mkuu wa Serikali kuu.
-
-                                    Ili kufanikisha lengo hilo, Wakala wa Vipimo inatekeleza majukumu yake kwa mujibu wa
-                                    Sheria ya Vipimo Sura Na. 340. Majukumu yanayotekelezwa kupitia sheria hii ni uhakiki na
-                                    ukaguzi wa Vipimo, kutoa ushauri wa kitaalam kwa waundaji wa vipimo hapa nchini,
-                                    kuidhinisha miundo ya vipimo mbalimbali kabla ya kuingizwa hapa nchini,
-                                    ukaguzi wa bidhaa zilizofungashwa ambazo zinazalishwa kwenye viwanda vyetu vilivyopo
-                                    hapa nchini na zile zinazotoka nje ya nchi.
-                                    </br>
-
-
-                                    <br>
-                                    <a href="{{ route('welcome_note', ['language' => $current_language]) }} "> Soma
-                                        zaidi..</a>
-
-                                </p>
-                                <!-- <a href="aboutus" class="link-no-underline">Tazama zaidi</a> -->
+                                    </p>
+                                    <!-- <a href="aboutus" class="link-no-underline">Tazama zaidi</a> -->
+                                </div>
                             </div>
                         </div>
-                    </div>
-
+                    @endforeach
 
                 </div>
 
@@ -174,7 +156,7 @@
                                                 </p>
                                                 <p><i class="fa fa-calendar" style="color: #006f8b;"></i>
                                                     {{ $item->created_at->format('M j, Y') }}</p>
-                                                <p>{{ Str::limit($item->description, 70) }}
+                                                <p>{!! nl2br(e(Str::limit($item->description, 70))) !!}
                                                 </p>
                                                 <a href="{{ route('event_details', ['language' => $current_language, 'slug' => $item->slug]) }}"
                                                     class="read"
@@ -198,7 +180,6 @@
                                 <h5 class="section-title"><b>Nifanyeje Kuhusu</b></h5>
                                 <!-- Card style as provided in your code -->
                                 <div class="row mt-2 px-xs-0 online-services justify-content-center">
-                                    <!-- First service item -->
                                     @foreach ($how_do_i as $item)
                                         <div class="service-item col-md-6 mb-2" style="height: 232px;">
                                             <div class="service-icon">
