@@ -3,7 +3,7 @@
 @section('content')
     <div class="home-page ">
         <!-- Carousel Section with 70% width -->
-        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="8000">
             <ol class="carousel-indicators">
                 @foreach ($carousel_items as $key => $item)
                     <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}"
@@ -105,16 +105,10 @@
                                     ukaguzi wa bidhaa zilizofungashwa ambazo zinazalishwa kwenye viwanda vyetu vilivyopo
                                     hapa nchini na zile zinazotoka nje ya nchi.
                                     </br>
-                                    Wakala wa Vipimo katika utekelezaji wa majukumu yake unasaidia katika kujenga uchumi wa
-                                    kisasa, shirikishi na shindani,
-                                    msingi mkuu wa kufanikisha haya ni kuwa na viwanda vinavyotumia ipasavyo vilivyohakikiwa
-                                    na kukidhi matakwa ya kimataifa (Traceability to International Standards)
-                                    ambavyo huongeza tija, ufanisi na usahihi wa vipimo vya bidhaa zinazozalishwa kwenye
-                                    viwanda hivyo kuwa shindani katika soko la ndani na la nje matokeo yake ni
-                                    kuongeza kasi ya ukuaji wa uchumi na pato la Taifa.
+
+
                                     <br>
-                                    <br>
-                                    <a href="{{ route('welcome_note', ['language' => $current_language]) }} "> Tazama
+                                    <a href="{{ route('welcome_note', ['language' => $current_language]) }} "> Soma
                                         zaidi..</a>
 
                                 </p>
@@ -205,30 +199,19 @@
                                 <!-- Card style as provided in your code -->
                                 <div class="row mt-2 px-xs-0 online-services justify-content-center">
                                     <!-- First service item -->
-                                    <div class="service-item col-md-6 mb-2" style="height: 232px;">
-                                        <div class="service-icon">
-                                            <img src="{{ asset('assets/images/licence_icon.png') }}" alt=""
-                                                height="90px" width="90px" style="margin-bottom: 10px;">
+                                    @foreach ($how_do_i as $item)
+                                        <div class="service-item col-md-6 mb-2" style="height: 232px;">
+                                            <div class="service-icon">
+                                                <img src="{{ asset('storage/' . $item->image) }}" alt=""
+                                                    height="90px" width="90px" style="margin-bottom: 10px;">
+                                            </div>
+                                            <div class="service-title">{{ $item->title }}</div>
+                                            <div class="service-btn-wrapper mt-4">
+                                                <a href="{{ route('how_do_i_1', ['language' => $current_language, 'slug' => $item->slug]) }}"
+                                                    class="serv-btn" style="background-color: orange;">Soma Zaidi</a>
+                                            </div>
                                         </div>
-                                        <div class="service-title">Utaratibu wa Uombaji Leseni</div>
-                                        <div class="service-btn-wrapper mt-4">
-                                            <a href="{{ route('how_do_i_1', ['language' => $current_language]) }}"
-                                                class="serv-btn" style="background-color: orange;">Soma zaidi</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Second service item -->
-                                    <div class="service-item col-md-6 mb-2" style="height: 232px;">
-                                        <div class="service-icon">
-                                            <img src="{{ asset('assets/images/doc_approval_icon.png') }}" alt=""
-                                                height="90px" width="90px" style="margin-bottom: 10px;">
-                                        </div>
-                                        <div class="service-title">Maombi ya kuidhinisha Vipimo</div>
-                                        <div class="service-btn-wrapper mt-4">
-                                            <a href="{{ route('how_do_i_2', ['language' => $current_language]) }}"
-                                                class="serv-btn" style="background-color: orange;">Soma zaidi</a>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
 
