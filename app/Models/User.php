@@ -136,6 +136,12 @@ class User extends Authenticatable
 
         return  $this->hasMany(Posters::class);
     }
+
+    public function vision_mision()
+    {
+
+        return  $this->hasMany(VisionMission::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

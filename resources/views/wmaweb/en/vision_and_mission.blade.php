@@ -28,14 +28,22 @@
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="vision and mission">
                             <h5>VISION</h5>
-                            Accurate and reliable measurements for all.<br><br>
+
+                            @foreach ($vision_and_mission as $item )
+
+                            {{$item->vision}} <br><br><br>
+
+                            @endforeach
+                            
 
 
                             <h5>MISSION</h5>
 
-                            To provide Consumer protection in relation to legal metrology through Verification
-                            of measuring instruments or measuring instruments, metrological supervision and expertise for
-                            socio-economic development.
+                           @foreach ($vision_and_mission as $item )
+                            
+                            {{$item->mission}} <br>
+
+                            @endforeach
                             <br>
 
                             </p>

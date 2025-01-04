@@ -27,16 +27,24 @@
 
                         <div class="col-12 px-0 mt-4 justify-content-center align-items-center">
                             <p class="vision and mission">
+                                
                             <h5>DIRA</h5>
-                            Vipimo sahihi na vya kuaminika kwa wote.<br><br>
+                            @foreach ($vision_and_mission as $item )
+
+                            {{$item->vision}} <br><br><br>
+
+                            @endforeach
+                            
 
 
                             <h5>DHIMA</h5>
 
-                            Kutoa ulinzi wa Mtumiaji kuhusiana na vipimo vya kisheria kupitia Uthibitishaji wa vyombo vya
-                            kupimia, usimamizi wa vipimo na utaalam kwa maendeleo ya kijamii na kiuchumi.
-                            <br>
+                           @foreach ($vision_and_mission as $item )
+                            
+                            {{$item->mission}} <br>
 
+                            @endforeach
+                            <br>
                             </p>
 
                         </div>
