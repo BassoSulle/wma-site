@@ -13,6 +13,7 @@
             </ol>
             <div class="carousel-inner">
                 @foreach ($carousel_items as $key => $item)
+            
                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                         <img class="d-block w-100" alt="{{ $item->description }}"
                             src="{{ asset('storage/' . $item->image) }}">
